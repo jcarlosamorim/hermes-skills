@@ -19,17 +19,24 @@ Antes de instalar qualquer skill deste repositório:
 
 Cada release publica links imutáveis para os arquivos `SKILL.md`.
 
+Primeira release disponível:
+
+```text
+https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.1.0/skills/google-oauth-onboarding/SKILL.md
+```
+
 No Hermes, peça:
 
 ```text
-Inspecione e instale esta skill do repositório jcarlosamorim/hermes-skills: <LINK-DA-RELEASE>
+Inspecione e instale esta skill:
+https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.1.0/skills/google-oauth-onboarding/SKILL.md
 ```
 
 Ou use a CLI:
 
 ```bash
-hermes skills inspect <LINK-DA-RELEASE>
-hermes skills install <LINK-DA-RELEASE>
+hermes skills inspect https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.1.0/skills/google-oauth-onboarding/SKILL.md
+hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.1.0/skills/google-oauth-onboarding/SKILL.md
 ```
 
 Use um link de release ou commit, nunca `main`, para que a instalação seja reproduzível.
