@@ -1,0 +1,12 @@
+{
+  "name": "Hermes Skills Community",
+  "version": "0.1.0",
+  "skills": [
+    {
+      "name": "google-oauth-onboarding",
+      "version": "0.1.0",
+      "path": "skills/google-oauth-onboarding/SKILL.md",
+      "description": "Guide Google Cloud setup and OAuth consent safely."
+    }
+  ]
+}
