@@ -8,3 +8,6 @@ __pycache__/
 *.py[cod]
 .DS_Store
 dist/
+
+# link local da Vercel (site/)
+site/.vercel/

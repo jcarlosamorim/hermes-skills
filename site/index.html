@@ -1,0 +1,677 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AgentFlix</title>
+<meta name="description" content="AgentFlix: hub de skills para Hermes, Claude, ChatGPT, Codex e outros agentes. Instale um método, não um prompt.">
+<meta property="og:title" content="AgentFlix">
+<meta property="og:description" content="Instale um método, não um prompt. Skills de copy, tráfego, operação, Hybrid Workspace e SOP para o seu agente.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://agentflix.nexialismo.ai/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23141414'/%3E%3Ctext x='32' y='46' font-family='Archivo,Helvetica,Arial,sans-serif' font-weight='900' font-size='40' text-anchor='middle' fill='%23e50914'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  /* ---------- base (fiel ao design "Hermes Skills.dc.html") ---------- */
+  html, body { margin: 0; padding: 0; background: #1a1a1a; }
+  body { font-family: Archivo, Helvetica, Arial, sans-serif; color: #fff; -webkit-font-smoothing: antialiased; }
+  a { color: #fff; text-decoration: none; }
+  a:hover { color: #e50914; }
+  button { font-family: inherit; }
+  [hidden] { display: none !important; }
+  .mono { font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; }
+  .row-scroll::-webkit-scrollbar { display: none; }
+
+  @keyframes hFade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+  @keyframes hPop { from { opacity: 0; transform: scale(0.96) translateY(10px); } to { opacity: 1; transform: none; } }
+  @keyframes hBar { 0% { transform: scaleY(0); opacity: 0; } 14% { transform: scaleY(1); opacity: 1; } 46% { transform: scaleY(1); opacity: 1; } 62% { transform: scaleY(1); opacity: 0.3; } 100% { transform: scaleY(0); opacity: 0; } }
+  @keyframes hMark { 0% { opacity: 0; transform: scale(1.28); filter: blur(10px); } 20% { opacity: 1; transform: scale(1); filter: blur(0); } 68% { opacity: 1; transform: scale(1); } 100% { opacity: 0; transform: scale(1.14); filter: blur(3px); } }
+  @keyframes hSweep { 0% { transform: translateX(-115%); } 100% { transform: translateX(115%); } }
+  @keyframes hCurtain { 0% { opacity: 1; } 100% { opacity: 0; } }
+  @keyframes hSub { 0%, 30% { opacity: 0; letter-spacing: 0.5em; } 55% { opacity: 1; letter-spacing: 0.28em; } 80% { opacity: 1; } 100% { opacity: 0; } }
+
+  /* ---------- abertura ---------- */
+  #intro { position: fixed; inset: 0; z-index: 200; background: #0a0a0a; overflow: hidden; animation: hCurtain 600ms cubic-bezier(0.4,0,0.68,0.06) 2500ms both; }
+  #intro .bars { position: absolute; inset: 0; display: flex; gap: 2px; }
+  #intro .bar { flex: 1; background: linear-gradient(180deg, #e50914 0%, #7a0a11 55%, #2a0206 100%); animation: hBar 2400ms cubic-bezier(0.4,0,0.68,0.06) both; }
+  #intro .glow { position: absolute; inset: 0; background: radial-gradient(60% 60% at 50% 50%, rgba(229,9,20,0.16) 0%, rgba(0,0,0,0) 70%); }
+  #intro .center { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; }
+  #intro .mark { animation: hMark 2000ms cubic-bezier(0.4,0,0.68,0.06) 700ms both; display: flex; align-items: baseline; }
+  #intro .mark span { font-size: clamp(48px, 10vw, 86px); font-weight: 900; letter-spacing: -0.05em; color: #fff; }
+  #intro .mark span.red { color: #e50914; text-shadow: 0 0 60px rgba(229,9,20,0.55); }
+  #intro .sub { font-size: 12px; color: #c9c9c9; animation: hSub 2000ms linear 700ms both; text-align: center; }
+  #intro .sweep { position: absolute; top: 0; bottom: 0; left: 0; width: 40%; background: linear-gradient(90deg, rgba(229,9,20,0) 0%, rgba(255,255,255,0.14) 50%, rgba(229,9,20,0) 100%); animation: hSweep 900ms cubic-bezier(0.4,0,0.68,0.06) 1000ms both; }
+  #intro .skip { position: absolute; bottom: 36px; right: 44px; padding: 10px 18px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.24); border-radius: 4px; color: #fff; font-size: 11px; letter-spacing: 0.12em; cursor: pointer; }
+  #intro .skip:hover { background: rgba(255,255,255,0.18); }
+
+  /* ---------- página ---------- */
+  .page { min-height: 100vh; background: #232323; padding-bottom: 96px; }
+
+  header.top { position: sticky; top: 0; z-index: 60; display: flex; align-items: center; gap: 24px; padding: 16px 40px; overflow: hidden; background: linear-gradient(180deg, #161616 0%, rgba(22,22,22,0.92) 70%, rgba(22,22,22,0) 100%); backdrop-filter: blur(6px); }
+  .brand { display: flex; align-items: baseline; gap: 8px; flex: 0 0 auto; }
+  .brand .w { font-size: 26px; font-weight: 900; letter-spacing: -0.04em; color: #fff; }
+  .brand .r { font-size: 26px; font-weight: 900; letter-spacing: -0.04em; color: #e50914; margin-left: -8px; }
+  .brand .tag { font-size: 11px; font-weight: 500; color: #9a9a9a; letter-spacing: 0.14em; }
+  nav.main { display: flex; gap: 14px; flex: 0 0 auto; white-space: nowrap; font-size: 14px; font-weight: 600; color: #d6d6d6; }
+  .spacer { flex: 1 1 12px; min-width: 12px; }
+  .search { display: flex; align-items: center; gap: 10px; padding: 9px 14px; background: #2d2d2d; border: 1px solid #4a4a4a; border-radius: 4px; flex: 1 1 120px; min-width: 0; max-width: 320px; }
+  .search:focus-within { border-color: #e50914; }
+  .search .slash { font-size: 12px; color: #e50914; }
+  .search input { flex: 1; min-width: 0; background: transparent; border: 0; outline: 0; color: #fff; font-size: 13px; }
+  .search input::placeholder { color: #7d7d7d; }
+  .count { display: flex; align-items: center; gap: 8px; flex: 0 0 auto; white-space: nowrap; font-size: 11px; color: #9a9a9a; }
+  .count .dot { width: 7px; height: 7px; border-radius: 50%; background: #e50914; box-shadow: 0 0 8px #e50914; }
+
+  /* destaque */
+  .hero { position: relative; margin-top: -72px; padding: 180px 40px 64px; overflow: hidden; }
+  .hero .bg { position: absolute; inset: 0; background: radial-gradient(90% 120% at 78% 15%, #3a1116 0%, #232323 62%); }
+  .hero .lines { position: absolute; inset: 0; background: repeating-linear-gradient(112deg, rgba(255,255,255,0.035) 0 1px, rgba(0,0,0,0) 1px 9px); }
+  .hero .hero-cover { position: absolute; top: 0; right: 0; height: 100%; width: 72%; object-fit: cover; object-position: right center; opacity: 0.85; -webkit-mask-image: linear-gradient(90deg, rgba(0,0,0,0) 0%, #000 45%); mask-image: linear-gradient(90deg, rgba(0,0,0,0) 0%, #000 45%); }
+  .hero.has-cover .lines { display: none; }
+  .hero .bign { position: absolute; right: 40px; bottom: -70px; font-size: 340px; font-weight: 900; letter-spacing: -0.06em; color: rgba(255,255,255,0.05); line-height: 0.8; pointer-events: none; }
+  .hero.has-cover .bign { display: none; }
+  .hero .inner { position: relative; max-width: 700px; animation: hFade 500ms cubic-bezier(0.4,0,0.68,0.06) both; }
+  .hero .kicker { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; flex-wrap: wrap; }
+  .pill { padding: 5px 10px; background: #e50914; border-radius: 2px; font-size: 10px; font-weight: 700; letter-spacing: 0.16em; }
+  .hero .meta { font-size: 11px; color: #b5b5b5; letter-spacing: 0.1em; }
+  .hero h1 { margin: 0 0 10px; font-size: clamp(40px, 7vw, 72px); font-weight: 900; letter-spacing: -0.045em; line-height: 0.94; text-wrap: balance; }
+  .hero .name { margin: 0 0 18px; font-size: 20px; font-weight: 700; }
+  .hero .sub { margin: 0 0 14px; font-size: 15px; font-weight: 600; color: #e8e8e8; }
+  .hero .syn { margin: 0 0 26px; font-size: 15px; line-height: 1.7; color: #b5b5b5; max-width: 620px; text-wrap: pretty; }
+  .hero .actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .btn-red { display: flex; align-items: center; gap: 10px; height: 50px; padding: 0 26px; background: #e50914; border: 0; border-radius: 4px; color: #fff; font-size: 15px; font-weight: 800; cursor: pointer; transition: transform 200ms cubic-bezier(0.4,0,0.68,0.06); }
+  .btn-red:hover { transform: translateY(-2px); }
+  .btn-red.on { background: transparent; border: 1px solid #e50914; color: #e50914; }
+  .btn-ghost { height: 50px; padding: 0 26px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.28); border-radius: 4px; color: #fff; font-size: 15px; font-weight: 700; cursor: pointer; transition: background 200ms; }
+  .btn-ghost:hover { background: rgba(255,255,255,0.2); }
+  .btn-cli { height: 50px; padding: 0 16px; display: flex; align-items: center; gap: 10px; background: #1a1a1a; border: 1px dashed #4a4a4a; border-radius: 4px; color: #9a9a9a; font-size: 12px; cursor: pointer; }
+  .btn-cli:hover { border-color: #e50914; color: #fff; }
+  .btn-cli .lbl { color: #e50914; letter-spacing: 0.1em; }
+
+  /* chips */
+  .chips { display: flex; gap: 8px; padding: 0 40px 26px; flex-wrap: wrap; }
+  .chip { padding: 9px 16px; border-radius: 2px; cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; transition: all 200ms; border: 1px solid #4a4a4a; background: transparent; color: #b5b5b5; }
+  .chip.on { border-color: #e50914; background: #e50914; color: #fff; }
+
+  /* resultados */
+  .results { padding: 0 40px; }
+  .results .head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
+  .results h2 { margin: 0; font-size: 24px; font-weight: 800; letter-spacing: -0.02em; }
+  .results .n { font-size: 12px; color: #9a9a9a; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(178px, 1fr)); gap: 18px; }
+  .empty { padding: 40px 0; color: #9a9a9a; font-size: 14px; }
+
+  /* cards */
+  .card { cursor: pointer; transition: transform 200ms cubic-bezier(0.4,0,0.68,0.06); }
+  .card:hover { transform: scale(1.04); }
+  .row-scroll .card { flex: 0 0 auto; width: 180px; }
+  .row-scroll .card:hover { transform: scale(1.06); }
+  .art { position: relative; aspect-ratio: 2/3; border-radius: 4px; overflow: hidden; background: #2d2d2d; }
+  .grid .art { box-shadow: rgb(128,128,128) 0 0 5px 0; }
+  .art .tint { position: absolute; inset: 0; }
+  .art .lines { position: absolute; inset: 0; background: repeating-linear-gradient(112deg, rgba(255,255,255,0.04) 0 1px, rgba(0,0,0,0) 1px 8px); }
+  .art .num { position: absolute; top: 12px; left: 14px; font-size: 52px; font-weight: 900; letter-spacing: -0.05em; color: rgba(255,255,255,0.15); line-height: 1; }
+  .art .cover { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .art .foot { position: absolute; left: 0; right: 0; bottom: 0; padding: 14px; background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.88) 52%); }
+  .art .badge { font-size: 9px; letter-spacing: 0.14em; color: #e50914; margin-bottom: 6px; }
+  .art .ttl { font-size: 15px; font-weight: 900; line-height: 1.1; letter-spacing: -0.015em; }
+  .art .nm { font-size: 11px; color: #b5b5b5; margin-top: 5px; line-height: 1.3; }
+  .art .ldot { position: absolute; top: 12px; right: 12px; width: 8px; height: 8px; border-radius: 50%; background: #e50914; box-shadow: 0 0 10px #e50914; }
+  /* capa real: o título já vem na arte; o texto só aparece no hover */
+  .art.has-cover .num, .art.has-cover .lines, .art.has-cover .tint { display: none; }
+  .art.has-cover .foot { opacity: 0; transition: opacity 200ms; }
+  .card:hover .art.has-cover .foot { opacity: 1; }
+
+  /* linhas */
+  .rowsec { padding: 0 0 44px; }
+  .rowsec .head { display: flex; align-items: baseline; gap: 14px; padding: 0 40px 16px; }
+  .rowsec h2 { margin: 0; font-size: 23px; font-weight: 800; letter-spacing: -0.02em; }
+  .rowsec .note { font-size: 11px; color: #8f8f8f; letter-spacing: 0.06em; }
+  .rowsec .arrows { display: flex; gap: 8px; margin-left: auto; }
+  .arrow { width: 34px; height: 34px; border-radius: 4px; background: #2d2d2d; border: 1px solid #4a4a4a; color: #fff; font-size: 14px; cursor: pointer; }
+  .arrow:hover { background: #3d3d3d; }
+  .row-scroll { display: flex; gap: 14px; overflow-x: auto; scrollbar-width: none; padding: 6px 40px 10px; }
+
+  /* modal */
+  .overlay { position: fixed; inset: 0; z-index: 90; background: rgba(0,0,0,0.72); display: flex; align-items: flex-start; justify-content: center; padding: 40px; overflow-y: auto; }
+  .panel { width: 100%; max-width: 880px; background: #2d2d2d; border-radius: 8px; overflow: hidden; box-shadow: rgb(128,128,128) 0 0 5px 0; animation: hPop 300ms cubic-bezier(0.4,0,0.68,0.06) both; }
+  .panel .top { position: relative; padding: 40px 40px 30px; overflow: hidden; min-height: 120px; }
+  .panel .top .tint { position: absolute; inset: 0; }
+  .panel .top .lines { position: absolute; inset: 0; background: repeating-linear-gradient(112deg, rgba(255,255,255,0.03) 0 1px, rgba(0,0,0,0) 1px 9px); }
+  .panel .top .pcover { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; opacity: 0.55; -webkit-mask-image: linear-gradient(180deg, #000 30%, rgba(0,0,0,0) 100%); mask-image: linear-gradient(180deg, #000 30%, rgba(0,0,0,0) 100%); }
+  .panel .top.has-cover { padding-top: 150px; }
+  .panel .top.has-cover .lines, .panel .top.has-cover .bign { display: none; }
+  .panel .bign { position: absolute; right: 32px; bottom: -40px; font-size: 180px; font-weight: 900; color: rgba(255,255,255,0.06); line-height: 0.8; letter-spacing: -0.06em; pointer-events: none; }
+  .panel .close { position: absolute; top: 20px; right: 20px; width: 34px; height: 34px; border-radius: 50%; background: rgba(0,0,0,0.55); border: 1px solid rgba(255,255,255,0.2); color: #fff; font-size: 15px; cursor: pointer; z-index: 2; }
+  .panel .tinfo { position: relative; }
+  .panel .kick { font-size: 10px; letter-spacing: 0.16em; color: #e50914; margin-bottom: 10px; }
+  .panel h3 { margin: 0 0 10px; font-size: clamp(30px, 5vw, 46px); font-weight: 900; letter-spacing: -0.04em; line-height: 1; max-width: 560px; text-wrap: balance; }
+  .panel .name { margin: 0 0 4px; font-size: 18px; font-weight: 800; }
+  .panel .sub { margin: 0; font-size: 15px; font-weight: 600; color: #d6d6d6; }
+  .panel .body { padding: 0 40px 36px; display: grid; grid-template-columns: 1.5fr 1fr; gap: 36px; }
+  .panel .syn { margin: 0 0 24px; font-size: 14px; line-height: 1.75; color: #c9c9c9; text-wrap: pretty; }
+  .lbl { font-size: 11px; letter-spacing: 0.12em; color: #8f8f8f; margin-bottom: 8px; }
+  .panel .how { margin: 0 0 20px; font-size: 13px; line-height: 1.7; color: #d6d6d6; padding-left: 14px; border-left: 2px solid #e50914; text-wrap: pretty; }
+  .install { margin-bottom: 24px; display: flex; flex-direction: column; gap: 14px; }
+  .targets { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+  .tgt { padding: 7px 11px; border-radius: 2px; cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.06em; transition: all 160ms; border: 1px solid #4a4a4a; background: transparent; color: #9a9a9a; }
+  .tgt.on { border-color: #e50914; background: #e50914; color: #fff; }
+  .cmdhead { display: flex; align-items: baseline; gap: 10px; margin-bottom: 8px; }
+  .copybtn { background: transparent; border: 0; padding: 0; color: #e50914; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; cursor: pointer; }
+  code.cmd { display: block; padding: 13px 15px; background: #1a1a1a; border: 1px solid #4a4a4a; border-radius: 4px; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; line-height: 1.6; color: #fff; word-break: break-all; white-space: pre-wrap; }
+  .note { margin: 8px 0 0; font-size: 10.5px; line-height: 1.5; color: #e50914; }
+  .hint { margin: 8px 0 0; font-size: 10.5px; line-height: 1.5; color: #9a9a9a; }
+  .links { display: flex; gap: 16px; flex-wrap: wrap; font-size: 11px; }
+  .links a { color: #b5b5b5; border-bottom: 1px solid #4a4a4a; }
+  .tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+  .cast { padding: 6px 11px; background: rgba(255,255,255,0.08); border-radius: 2px; font-size: 12px; font-weight: 600; color: #e8e8e8; }
+  .gen { padding: 6px 11px; border: 1px solid #4a4a4a; border-radius: 2px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #b5b5b5; }
+  .side { display: flex; flex-direction: column; gap: 14px; }
+  .btn-list { height: 48px; padding: 0 20px; background: #e50914; border: 0; border-radius: 4px; color: #fff; font-size: 14px; font-weight: 800; cursor: pointer; }
+  .btn-list.on { background: transparent; border: 1px solid #e50914; color: #e50914; }
+  .box { padding: 16px; background: rgba(0,0,0,0.28); border-radius: 4px; }
+  .box .lbl { font-size: 10px; letter-spacing: 0.14em; margin-bottom: 12px; }
+  .traits { display: flex; flex-direction: column; gap: 8px; }
+  .trait { display: flex; align-items: center; gap: 9px; font-size: 13px; font-weight: 700; }
+  .trait i { width: 5px; height: 5px; background: #e50914; border-radius: 50%; }
+  .facts { display: flex; flex-direction: column; gap: 12px; }
+  .fact { display: flex; justify-content: space-between; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #9a9a9a; }
+  .fact b { color: #fff; font-weight: 400; text-align: right; }
+
+  /* rodapé */
+  footer.foot { padding: 12px 40px; display: flex; gap: 18px; align-items: center; flex-wrap: wrap; font-size: 11px; color: #7d7d7d; border-top: 1px solid #3a3a3a; margin: 0 40px; }
+  footer.foot a { color: #b5b5b5; border-bottom: 1px solid #4a4a4a; }
+  .tapbtn { display: flex; align-items: center; gap: 10px; padding: 8px 14px; background: #1a1a1a; border: 1px solid #4a4a4a; border-radius: 4px; color: #b5b5b5; font-family: 'JetBrains Mono', monospace; font-size: 10px; cursor: pointer; margin-left: auto; }
+  .tapbtn:hover, .replay:hover { border-color: #e50914; color: #fff; }
+  .tapbtn .lbl { color: #e50914; letter-spacing: 0.1em; margin: 0; font-size: 10px; }
+  .replay { padding: 8px 14px; background: transparent; border: 1px solid #4a4a4a; border-radius: 4px; color: #b5b5b5; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; cursor: pointer; }
+
+  .loading { padding: 60px 40px; color: #9a9a9a; font-size: 13px; }
+  .loading a { color: #e50914; }
+
+  /* ---------- mobile ---------- */
+  @media (max-width: 860px) {
+    header.top { padding: 12px 20px; gap: 14px; flex-wrap: wrap; }
+    nav.main { order: 3; width: 100%; overflow-x: auto; gap: 18px; }
+    .search { max-width: none; }
+    .count { display: none; }
+    .hero { padding: 120px 20px 44px; margin-top: -60px; }
+    .hero .bign { right: 12px; font-size: 200px; }
+    .hero .hero-cover { width: 100%; opacity: 0.45; -webkit-mask-image: linear-gradient(180deg, #000 20%, rgba(0,0,0,0) 100%); mask-image: linear-gradient(180deg, #000 20%, rgba(0,0,0,0) 100%); }
+    .chips { padding: 0 20px 22px; }
+    .results { padding: 0 20px; }
+    .grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+    .rowsec .head { padding: 0 20px 12px; }
+    .rowsec .arrows { display: none; }
+    .row-scroll { padding: 6px 20px 10px; }
+    .row-scroll .card { width: 140px; }
+    .overlay { padding: 12px; }
+    .panel .top { padding: 28px 22px 22px; }
+    .panel .body { grid-template-columns: 1fr; gap: 24px; padding: 0 22px 28px; }
+    .panel .bign { font-size: 110px; }
+    footer.foot { margin: 0 20px; padding: 12px 0; }
+    .tapbtn { margin-left: 0; }
+    #intro .skip { bottom: 20px; right: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div id="intro" hidden></div>
+
+<div class="page">
+  <header class="top">
+    <a class="brand" href="#" data-act="home" aria-label="AgentFlix">
+      <span class="w">AGENT</span><span class="r">FLIX</span>
+      <span class="tag mono">/SKILLS</span>
+    </a>
+    <nav class="main">
+      <a href="#novas">Novas</a>
+      <a href="#copy">Copy</a>
+      <a href="#hybrid">Hybrid</a>
+      <a href="#sop">SOP</a>
+    </nav>
+    <div class="spacer"></div>
+    <label class="search">
+      <span class="slash mono">/</span>
+      <input id="q" class="mono" type="search" placeholder="buscar skill, lenda ou gênero" autocomplete="off">
+    </label>
+    <div class="count mono"><span class="dot"></span><span id="listCount">0 na lista</span></div>
+  </header>
+
+  <section class="hero" id="hero"><div class="loading">Carregando o catálogo…</div></section>
+  <div class="chips" id="chips"></div>
+  <section class="results" id="results" hidden></section>
+  <div id="rows"></div>
+
+  <footer class="foot mono">
+    <span>AGENTFLIX · SKILLS PARA AGENTES</span>
+    <span>·</span>
+    <span id="footTotal">…</span>
+    <span>·</span>
+    <a id="repoLink" href="https://github.com/jcarlosamorim/hermes-skills" target="_blank" rel="noopener">repositório ↗</a>
+    <button class="tapbtn" data-act="copy" data-key="tap" data-text="" id="tapBtn"><span id="tapText">hermes skills tap add …</span><span class="lbl" id="tapLbl">COPIAR</span></button>
+    <button class="replay" data-act="replay">REVER ABERTURA</button>
+  </footer>
+</div>
+
+<div id="modal" hidden></div>
+
+<script>
+(() => {
+  "use strict";
+
+  // ---------- fontes de dados ----------
+  // Relativo primeiro (a Vercel reescreve /catalog.json para o Pages, sempre na tag mais recente);
+  // o endereço absoluto do Pages fica de reserva.
+  const CATALOG_URLS = ["catalog.json", "https://jcarlosamorim.github.io/hermes-skills/catalog.json"];
+  const COVERS = "covers/";
+  const FEATURED_DEFAULT = "copy-oferta";
+
+  const TARGETS = ["Hermes CLI", "Hermes chat", "Claude.ai", "Claude Code", "ChatGPT", "ChatGPT Project", "Codex", "Outros agentes"];
+
+  // linha do catálogo -> selo e paleta (as tintas vêm do design)
+  const CATS = {
+    objetivo: { badge: "COPY",             tints: ["#4a1218", "#5a1420", "#3d1a2e", "#4a2340"] },
+    operacao: { badge: "OPERAÇÃO",         tints: ["#123d47", "#1c3a45", "#1f3d33", "#153a2c"] },
+    trafego:  { badge: "TRÁFEGO PAGO",     tints: ["#4d3a10", "#5a2a12", "#3d3312"] },
+    lendas:   { badge: "LENDA",            tints: ["#2a1c4d", "#2f2a52", "#1b3350", "#3a1030"] },
+    hybrid:   { badge: "HYBRID WORKSPACE", tints: ["#14384a", "#1a3f3a", "#213a52", "#173344"] },
+    sop:      { badge: "PROCESSOS",        tints: ["#3d3312", "#42280f", "#3a3618"] },
+    base:     { badge: "BASE",             tints: ["#2b2f3a", "#33323a"] }
+  };
+  const CHIP_TO_CAT = { "Copy": "objetivo", "Operação": "operacao", "Tráfego pago": "trafego", "Lendas": "lendas", "Hybrid": "hybrid", "Processos": "sop" };
+  const CHIPS = ["Tudo", "Novas", "Copy", "Hybrid", "Processos", "Operação", "Tráfego pago", "Lendas", "Minha lista"];
+
+  const ROW_DEFS = [
+    { id: "novas",  title: (v) => "Novidades da v" + v, note: "RECÉM-CHEGADAS", pick: (s) => s.nova },
+    { id: "lista",  title: () => "Minha lista", note: "SALVA NESTE NAVEGADOR", pick: (s) => s.inList },
+    { id: "alta",   title: () => "Em alta no hub", note: "DESTAQUES DA CURADORIA",
+      ids: ["copy-headlines", "copy-lancamento", "copy-oferta", "copy-metodo-hormozi", "hybrid-diagnostico", "copy-anuncios", "copy-sales-page", "copy-metodo-schwartz"] },
+    { id: "comecar", title: () => "Para começar", note: "UM CAMINHO SUGERIDO",
+      ids: ["copy-pesquisa-avatar", "hybrid-icp", "copy-big-idea-lead-magnet", "copy-metodo-bencivenga", "hybrid-proxima-acao", "sop-criar", "copy-email", "ops-rotear-tarefa"] },
+    { id: "copy",   title: () => "Copy: da pesquisa à peça", note: "SKILLS", cat: "objetivo" },
+    { id: "hybrid", title: () => "Hybrid Workspace", note: "O NEGÓCIO DOCUMENTADO", cat: "hybrid" },
+    { id: "sop",    title: () => "Processos e SOP", note: "EXTRAIR, ESCREVER, CERTIFICAR", cat: "sop" },
+    { id: "op",     title: () => "Operação e time", note: "GENIUS ZONE E KOLBE", cat: "operacao" },
+    { id: "ads",    title: () => "Tráfego pago", note: "META ADS, DO PLANO AO PIXEL", cat: "trafego" },
+    { id: "lenda",  title: () => "As lendas do copy", note: "MÉTODOS COMO PROCEDIMENTO", cat: "lendas" },
+    { id: "base",   title: () => "Base", note: "INFRAESTRUTURA DO HUB", cat: "base" }
+  ];
+
+  const CUES = [
+    { at: 0,    src: "audio/faisca.mp3" },
+    { at: 150,  src: "audio/colunas.mp3" },
+    { at: 900,  src: "audio/varredura.mp3" },
+    { at: 1450, src: "audio/colapso.mp3" },
+    { at: 2000, src: "audio/assinatura.mp3" }
+  ];
+
+  // ---------- estado ----------
+  const store = {
+    get(k, d) { try { const v = localStorage.getItem(k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } },
+    set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+  };
+  const state = {
+    q: "", filter: "Tudo", open: null, copied: null,
+    target: TARGETS.includes(store.get("agentflix-target", "")) ? store.get("agentflix-target", "") : "Hermes CLI",
+    list: store.get("agentflix-list", [])
+  };
+  let CAT = null;      // catálogo cru
+  let ALL = [];        // obras decoradas, na ordem das linhas
+  let BY = {};         // slug -> obra
+  let latestSince = "";
+  let copyTimer = null;
+
+  const $ = (id) => document.getElementById(id);
+  const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const slugOf = (s) => s.name || (s.path || "").split("/")[1] || "";
+  const cmpVer = (a, b) => { const x = a.split(".").map(Number), y = b.split(".").map(Number); for (let i = 0; i < 3; i++) { if ((x[i] || 0) !== (y[i] || 0)) return (x[i] || 0) - (y[i] || 0); } return 0; };
+
+  // ---------- decoração de uma obra ----------
+  function decorate(s, i) {
+    const slug = slugOf(s);
+    const c = CATS[s.row] || CATS.base;
+    const p = s.painel || {};
+    const nova = s.since === latestSince;
+    const runtimeOnly = !!s.runtime_only;
+    const cmdFor = {
+      "Hermes CLI": s.install_cmd || "",
+      "Hermes chat": s.chat_cmd || "",
+      "Claude.ai": s.zip_url || "",
+      "Claude Code": s.npx_claude_code || "",
+      "ChatGPT": s.zip_url || "",
+      "ChatGPT Project": s.prompt_url || "",
+      "Codex": s.npx_codex || "",
+      "Outros agentes": s.npx_any || ""
+    };
+    const noteFor = {
+      "Claude.ai": runtimeOnly ? "Só no Claude Code: exige terminal e rede." : "",
+      "ChatGPT": runtimeOnly ? "Só no Codex: exige terminal e rede." : ""
+    };
+    const hintFor = {
+      "Hermes CLI": "No terminal da máquina onde o Hermes roda. A skill entra em ~/.hermes/skills.",
+      "Hermes chat": "Cole na conversa com o Hermes (Telegram, WhatsApp, web). Ele inspeciona e instala.",
+      "Claude.ai": "Baixe o .zip e envie em Configurações → Capabilities → Skills. Exige execução de código ligada.",
+      "Claude Code": "No terminal. Instala para todos os projetos; tire o -g para instalar só no atual.",
+      "ChatGPT": "Baixe o .zip e envie em Configurações → Skills (Business, Enterprise, Edu; no Plus/Pro fica em Work).",
+      "ChatGPT Project": "Abra o link, copie tudo e cole nas instruções de um Projeto (funciona no plano Free).",
+      "Codex": "No terminal. A skill vai para ~/.agents/skills.",
+      "Outros agentes": "77 agentes suportados pelo skills CLI (Cursor, Gemini CLI, Copilot, Windsurf…)."
+    };
+    return {
+      id: slug, slug, n: String(i + 1).padStart(2, "0"), cat: s.row || "base",
+      title: s.title_netflix || String(s.title || slug).toUpperCase(),
+      name: s.title || slug, sub: s.subtitle || s.description || "",
+      proc: p.tamanho || "", req: p.requer || "nenhuma", ano: p.ano || "",
+      syn: p.sinopse || s.description || "", how: p.como_usar || "",
+      cast: p.elenco || [], gen: p.generos || [], traits: p.esta_skill_e || [],
+      nova, runtimeOnly, activation: s.activation_prompt || "",
+      badge: nova ? c.badge + " · NOVA" : c.badge,
+      tint: c.tints[i % c.tints.length],
+      meta: (p.tamanho || "").toUpperCase() + " · REQUER: " + (p.requer || "nenhuma").toUpperCase(),
+      cmdFor, noteFor, hintFor,
+      cardUrl: location.origin + location.pathname + "#" + slug,
+      mdUrl: s.github_url || "", zipUrl: s.zip_url || "", promptUrl: s.prompt_url || "",
+      get inList() { return state.list.includes(slug); }
+    };
+  }
+
+  function loadCatalog(cat) {
+    CAT = cat;
+    const order = cat.row_order || Object.keys(CATS);
+    const idx = (r) => { const k = order.indexOf(r); return k < 0 ? 99 : k; };
+    latestSince = (cat.skills || []).map((s) => s.since || "0.0.0").sort(cmpVer).pop() || "";
+    const sorted = (cat.skills || []).map((s, i) => ({ s, i })).sort((a, b) => idx(a.s.row) - idx(b.s.row) || a.i - b.i);
+    ALL = sorted.map(({ s }, i) => decorate(s, i));
+    BY = {}; ALL.forEach((s) => { BY[s.slug] = s; });
+    $("footTotal").textContent = ALL.length + " obras · v" + (cat.version || "");
+    const tap = cat.tap || "hermes skills tap add jcarlosamorim/hermes-skills";
+    $("tapText").textContent = tap; $("tapBtn").dataset.text = tap;
+    if (cat.repo) $("repoLink").href = cat.repo;
+    render(true);
+    const h = decodeURIComponent(location.hash.slice(1));
+    if (h && BY[h]) openModal(h);
+  }
+
+  // ---------- pedaços de HTML ----------
+  const coverImg = (s, cls, kind) =>
+    `<img class="${cls}" alt="" loading="lazy" src="${COVERS}${esc(s.slug)}-${kind}.jpg" onload="this.parentNode.classList.add('has-cover')" onerror="this.remove()">`;
+
+  const cardHtml = (s) => `
+    <div class="card" data-act="open" data-slug="${esc(s.slug)}" role="button" tabindex="0" aria-label="${esc(s.name)}">
+      <div class="art">
+        <div class="tint" style="background:radial-gradient(120% 90% at 50% 0%, ${s.tint} 0%, rgba(0,0,0,0) 68%)"></div>
+        <div class="lines"></div>
+        <div class="num">${s.n}</div>
+        ${coverImg(s, "cover", "mobile")}
+        <div class="foot">
+          <div class="badge mono">${esc(s.badge)}</div>
+          <div class="ttl">${esc(s.title)}</div>
+          <div class="nm">${esc(s.name)}</div>
+        </div>
+        ${s.inList ? '<div class="ldot"></div>' : ""}
+      </div>
+    </div>`;
+
+  function renderHero() {
+    const want = new URLSearchParams(location.search).get("destaque");
+    const s = BY[want] || BY[FEATURED_DEFAULT] || ALL[0];
+    if (!s) return;
+    const cli = s.cmdFor[state.target] || s.cmdFor["Hermes CLI"];
+    $("hero").className = "hero";
+    $("hero").innerHTML = `
+      <div class="bg"></div><div class="lines"></div>
+      ${coverImg(s, "hero-cover", "desktop")}
+      <div class="bign">${s.n}</div>
+      <div class="inner">
+        <div class="kicker"><span class="pill mono">EM DESTAQUE</span><span class="meta mono">${esc(s.badge)} · ${esc(s.meta)}</span></div>
+        <h1>${esc(s.title)}</h1>
+        <p class="name">${esc(s.name)}</p>
+        <p class="sub">${esc(s.sub)}</p>
+        <p class="syn">${esc(s.syn)}</p>
+        <div class="actions">
+          <button class="btn-red ${s.inList ? "on" : ""}" data-act="toggle" data-slug="${esc(s.slug)}">${s.inList ? "Na minha lista ✓" : "+ Minha lista"}</button>
+          <button class="btn-ghost" data-act="open" data-slug="${esc(s.slug)}">Ver detalhes</button>
+          <button class="btn-cli mono" data-act="copy" data-key="hero" data-text="${esc(cli)}"><span>instalar ${esc(s.slug)}</span><span class="lbl">${state.copied === "hero" ? "COPIADO ✓" : "COPIAR"}</span></button>
+        </div>
+      </div>`;
+  }
+
+  function renderChips() {
+    $("chips").innerHTML = CHIPS.map((c) => `<button class="chip ${state.filter === c ? "on" : ""}" data-act="chip" data-filter="${esc(c)}">${esc(c.toUpperCase())}</button>`).join("");
+  }
+
+  function filtered() {
+    const q = state.q.trim().toLowerCase();
+    let r = ALL;
+    const cat = CHIP_TO_CAT[state.filter];
+    if (cat) r = r.filter((s) => s.cat === cat);
+    if (state.filter === "Minha lista") r = r.filter((s) => s.inList);
+    if (state.filter === "Novas") r = r.filter((s) => s.nova);
+    if (q) r = r.filter((s) => [s.n, s.slug, s.title, s.name, s.sub, s.syn, s.cast.join(" "), s.gen.join(" "), s.traits.join(" ")].join(" ").toLowerCase().includes(q));
+    return r;
+  }
+
+  function renderCatalog() {
+    const q = state.q.trim();
+    const searching = q.length > 0 || state.filter !== "Tudo";
+    $("results").hidden = !searching;
+    $("rows").hidden = searching;
+    if (searching) {
+      const r = filtered();
+      $("results").innerHTML = `
+        <div class="head"><h2>${q ? '"' + esc(q) + '"' : esc(state.filter)}</h2><span class="n mono">${r.length} ${r.length === 1 ? "skill" : "skills"}</span></div>
+        ${r.length ? '<div class="grid">' + r.map(cardHtml).join("") + "</div>"
+                   : '<div class="empty">' + (state.filter === "Minha lista" ? "Sua lista está vazia. Abra uma obra e toque em “+ Minha lista”." : "Nada com esse nome. Tente pelo gênero: copy, oferta, e-mail, SOP, ICP…") + "</div>"}`;
+      return;
+    }
+    const v = latestSince.split(".").slice(0, 2).join(".");
+    $("rows").innerHTML = ROW_DEFS.map((r) => {
+      let items;
+      if (r.ids) items = r.ids.map((i) => BY[i]).filter(Boolean);
+      else if (r.cat) items = ALL.filter((s) => s.cat === r.cat);
+      else items = ALL.filter(r.pick);
+      if (!items.length) return "";
+      return `
+        <section class="rowsec" id="${r.id}">
+          <div class="head">
+            <h2>${esc(r.title(v))}</h2>
+            <span class="note mono">${esc(r.note)} · ${items.length}</span>
+            <div class="arrows"><button class="arrow" data-act="prev" data-row="${r.id}" aria-label="anterior">‹</button><button class="arrow" data-act="next" data-row="${r.id}" aria-label="próximo">›</button></div>
+          </div>
+          <div class="row-scroll" data-row="${r.id}">${items.map(cardHtml).join("")}</div>
+        </section>`;
+    }).join("");
+  }
+
+  function renderModal() {
+    const s = state.open ? BY[state.open] : null;
+    const m = $("modal");
+    if (!s) { m.hidden = true; m.innerHTML = ""; document.body.style.overflow = ""; return; }
+    const t = state.target;
+    const cli = s.cmdFor[t] || s.cmdFor["Hermes CLI"];
+    const note = s.noteFor[t] || "";
+    const hint = s.hintFor[t] || "";
+    const isChatTarget = t === "Claude.ai" || t === "ChatGPT" || t === "ChatGPT Project";
+    const extra = (t === "Claude.ai" || t === "ChatGPT") && s.zipUrl ? `<a href="${esc(s.zipUrl)}">Baixar .zip ↓</a>`
+                : t === "ChatGPT Project" && s.promptUrl ? `<a href="${esc(s.promptUrl)}" target="_blank" rel="noopener">Abrir colável ↗</a>` : "";
+    m.innerHTML = `
+      <div class="overlay" data-act="close">
+        <div class="panel" data-act="stop" role="dialog" aria-modal="true" aria-label="${esc(s.name)}">
+          <div class="top">
+            <div class="tint" style="background:radial-gradient(100% 130% at 80% 0%, ${s.tint} 0%, rgba(0,0,0,0) 70%)"></div>
+            <div class="lines"></div>
+            ${coverImg(s, "pcover", "desktop")}
+            <div class="bign">${s.n}</div>
+            <button class="close" data-act="close" aria-label="fechar">✕</button>
+            <div class="tinfo">
+              <div class="kick mono">${esc(s.badge)} · ${esc(s.meta)}</div>
+              <h3>${esc(s.title)}</h3>
+              <p class="name">${esc(s.name)}</p>
+              <p class="sub">${esc(s.sub)}</p>
+            </div>
+          </div>
+          <div class="body">
+            <div>
+              <p class="syn">${esc(s.syn)}</p>
+              <div class="lbl mono">COMO USAR</div>
+              <p class="how">${esc(s.how)}</p>
+              <div class="install">
+                <div>
+                  <div class="lbl mono" style="margin-bottom:9px">INSTALAR EM</div>
+                  <div class="targets">${TARGETS.map((x) => `<button class="tgt ${x === t ? "on" : ""}" data-act="target" data-target="${esc(x)}">${esc(x)}</button>`).join("")}</div>
+                  <div class="cmdhead"><span class="lbl mono" style="margin:0">${isChatTarget && t !== "ChatGPT Project" ? "ARQUIVO" : t === "ChatGPT Project" ? "LINK" : "COMANDO"}</span><button class="copybtn" data-act="copy" data-key="${esc(s.slug)}-cli" data-text="${esc(cli)}">${state.copied === s.slug + "-cli" ? "COPIADO ✓" : "COPIAR"}</button></div>
+                  <code class="cmd">${esc(cli)}</code>
+                  ${note ? `<p class="note mono">${esc(note)}</p>` : ""}
+                  ${hint ? `<p class="hint mono">${esc(hint)}</p>` : ""}
+                  ${isChatTarget && s.activation ? `<div class="lbl mono" style="margin-top:14px">DEPOIS DE INSTALAR, DIGA</div><code class="cmd">${esc(s.activation)}</code>` : ""}
+                </div>
+                <div class="links mono">
+                  ${extra}
+                  <a href="${esc(s.cardUrl)}" data-act="copy" data-key="${esc(s.slug)}-url" data-text="${esc(s.cardUrl)}">${state.copied === s.slug + "-url" ? "Link copiado ✓" : "Copiar link do card"}</a>
+                  ${s.mdUrl ? `<a href="${esc(s.mdUrl)}" target="_blank" rel="noopener">SKILL.md ↗</a>` : ""}
+                </div>
+              </div>
+              ${s.cast.length ? `<div class="lbl mono" style="margin-bottom:10px">ELENCO</div><div class="tags">${s.cast.map((c) => `<span class="cast">${esc(c)}</span>`).join("")}</div>` : ""}
+              ${s.gen.length ? `<div class="lbl mono" style="margin-bottom:10px">GÊNEROS</div><div class="tags" style="margin-bottom:0">${s.gen.map((g) => `<span class="gen">${esc(g)}</span>`).join("")}</div>` : ""}
+            </div>
+            <div class="side">
+              <button class="btn-list ${s.inList ? "on" : ""}" data-act="toggle" data-slug="${esc(s.slug)}">${s.inList ? "Na minha lista ✓" : "+ Minha lista"}</button>
+              ${s.traits.length ? `<div class="box"><div class="lbl mono">ESTA SKILL É</div><div class="traits">${s.traits.map((x) => `<div class="trait"><i></i><span>${esc(x)}</span></div>`).join("")}</div></div>` : ""}
+              <div class="box facts">
+                <div class="fact"><span>PROCEDIMENTOS</span><b>${esc(s.proc)}</b></div>
+                <div class="fact"><span>REQUER</span><b>${esc(s.req)}</b></div>
+                <div class="fact"><span>ANO</span><b>${esc(s.ano || "2026")}</b></div>
+                <div class="fact"><span>DESDE</span><b>v${esc((CAT && CAT.skills.find((x) => slugOf(x) === s.slug) || {}).since || "")}</b></div>
+                <div class="fact"><span>ESTADO</span><b>${s.inList ? "na lista" : "disponível"}</b></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>`;
+    m.hidden = false;
+    document.body.style.overflow = "hidden";
+  }
+
+  function renderHeader() { $("listCount").textContent = state.list.length + " na lista"; }
+
+  function render(all) {
+    renderHeader();
+    renderHero();
+    if (all) { renderChips(); renderCatalog(); }
+    renderModal();
+  }
+
+  // ---------- ações ----------
+  function openModal(slug) {
+    state.open = slug; state.copied = null;
+    if (location.hash !== "#" + slug) history.replaceState(null, "", "#" + slug);
+    renderModal();
+  }
+  function closeModal() {
+    if (!state.open) return;
+    state.open = null;
+    history.replaceState(null, "", location.pathname + location.search);
+    renderModal();
+  }
+  function toggleList(slug) {
+    state.list = state.list.includes(slug) ? state.list.filter((x) => x !== slug) : state.list.concat(slug);
+    store.set("agentflix-list", state.list);
+    render(true);
+    if (state.filter === "Minha lista" || !$("results").hidden) renderCatalog();
+  }
+  function copyText(key, text) {
+    const done = () => {
+      clearTimeout(copyTimer);
+      state.copied = key;
+      render(false);
+      if (key === "tap") $("tapLbl").textContent = "COPIADO ✓";
+      copyTimer = setTimeout(() => { state.copied = null; render(false); $("tapLbl").textContent = "COPIAR"; }, 1600);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, done);
+    else { const ta = document.createElement("textarea"); ta.value = text; document.body.appendChild(ta); ta.select(); try { document.execCommand("copy"); } catch (e) {} ta.remove(); done(); }
+  }
+  function scrollRow(id, dir) {
+    const el = document.querySelector('.row-scroll[data-row="' + id + '"]');
+    if (el) el.scrollBy({ left: dir * el.clientWidth * 0.82, behavior: "smooth" });
+  }
+
+  document.addEventListener("click", (e) => {
+    const el = e.target.closest("[data-act]");
+    if (!el) return;
+    const act = el.dataset.act;
+    if (act === "stop") { e.stopPropagation(); return; }
+    if (act === "open") { e.preventDefault(); openModal(el.dataset.slug); }
+    else if (act === "close") closeModal();
+    else if (act === "toggle") toggleList(el.dataset.slug);
+    else if (act === "target") { state.target = el.dataset.target; state.copied = null; store.set("agentflix-target", state.target); renderModal(); renderHero(); }
+    else if (act === "copy") { e.preventDefault(); copyText(el.dataset.key, el.dataset.text); }
+    else if (act === "chip") { state.filter = el.dataset.filter; render(true); window.scrollTo({ top: $("chips").offsetTop - 80, behavior: "smooth" }); }
+    else if (act === "prev") scrollRow(el.dataset.row, -1);
+    else if (act === "next") scrollRow(el.dataset.row, 1);
+    else if (act === "replay") playIntro();
+    else if (act === "skip") stopIntro();
+    else if (act === "home") { e.preventDefault(); state.q = ""; state.filter = "Tudo"; $("q").value = ""; closeModal(); render(true); window.scrollTo({ top: 0, behavior: "smooth" }); }
+  });
+  // o clique no painel do modal não fecha (o stop acima), mas o Escape sim
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") { stopIntro(); closeModal(); }
+    if (e.key === "/" && document.activeElement !== $("q")) { e.preventDefault(); $("q").focus(); }
+    if ((e.key === "Enter" || e.key === " ") && e.target.matches && e.target.matches('.card[data-act="open"]')) { e.preventDefault(); openModal(e.target.dataset.slug); }
+  });
+  $("q").addEventListener("input", (e) => { state.q = e.target.value; renderCatalog(); });
+  window.addEventListener("hashchange", () => { const h = decodeURIComponent(location.hash.slice(1)); if (h && BY[h]) openModal(h); else if (!h) closeModal(); });
+
+  // ---------- abertura ----------
+  const audio = {}; let cueTimers = []; let introTimer = null;
+  function stopCues() { cueTimers.forEach(clearTimeout); cueTimers = []; Object.values(audio).forEach((a) => { try { a.pause(); a.currentTime = 0; } catch (e) {} }); }
+  function playCues() {
+    stopCues();
+    CUES.forEach((c) => {
+      if (!audio[c.src]) { const a = new Audio(c.src); a.preload = "auto"; audio[c.src] = a; }
+      cueTimers.push(setTimeout(() => { const a = audio[c.src]; try { a.currentTime = 0; } catch (e) {} const p = a.play(); if (p && p.catch) p.catch(() => {}); }, c.at));
+    });
+  }
+  function playIntro() {
+    clearTimeout(introTimer);
+    const bars = Array.from({ length: 15 }, (_, i) => `<div class="bar" style="transform-origin:${i % 2 ? "top" : "bottom"};animation-delay:${i * 45}ms"></div>`).join("");
+    const el = $("intro");
+    el.innerHTML = `
+      <div class="bars">${bars}</div>
+      <div class="glow"></div>
+      <div class="center">
+        <div class="mark"><span>AGENT</span><span class="red">FLIX</span></div>
+        <div class="sub mono">HUB DE SKILLS PARA AGENTES</div>
+      </div>
+      <div class="sweep"></div>
+      <button class="skip mono" data-act="skip">PULAR ›</button>`;
+    el.hidden = false;
+    playCues();
+    introTimer = setTimeout(stopIntro, 3100);
+  }
+  function stopIntro() { clearTimeout(introTimer); stopCues(); const el = $("intro"); if (!el.hidden) { el.hidden = true; el.innerHTML = ""; } }
+
+  // ---------- boot ----------
+  (async () => {
+    let seen = false;
+    try { seen = !!sessionStorage.getItem("agentflix-intro-seen"); sessionStorage.setItem("agentflix-intro-seen", "1"); } catch (e) {}
+    if (!seen && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) playIntro();
+    let cat = null, lastErr = null;
+    for (const url of CATALOG_URLS) {
+      try { const r = await fetch(url, { cache: "no-cache" }); if (!r.ok) throw new Error("HTTP " + r.status); cat = await r.json(); if (cat && Array.isArray(cat.skills)) break; cat = null; }
+      catch (e) { lastErr = e; }
+    }
+    if (!cat) {
+      $("hero").innerHTML = `<div class="loading">Não consegui carregar o catálogo agora (${esc(lastErr && lastErr.message || "sem rede")}). Tente recarregar ou abra o <a href="https://github.com/jcarlosamorim/hermes-skills">repositório no GitHub</a>.</div>`;
+      $("footTotal").textContent = "catálogo indisponível";
+      return;
+    }
+    loadCatalog(cat);
+  })();
+})();
+</script>
+</body>
+</html>
