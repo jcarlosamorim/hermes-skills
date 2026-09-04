@@ -1,4 +1,4 @@
-# Hermes Flix · Hub de Skills para Hermes
+# AgentFlix · Hub de Skills para agentes
 
 Skills instaláveis por comando no [Hermes Agent](https://github.com/NousResearch/hermes-agent): copy,
 lançamento, processos (SOP), o **Hybrid Workspace** do seu negócio, operação de time e tráfego pago. Cada skill é um procedimento com verificação, não um prompt.
@@ -81,7 +81,7 @@ scripts/build_docs.py           regenera docs/ a partir de skills/ e catalog.jso
 ## Origem
 
 As skills de copy nasceram do squad `copywriter-os` e as de operação do `nucleo-ops-ia`, do
-[Synkra AIOS](https://github.com/SynkraAI/aios-core); o motor de tráfego é o `outputs/meta-ads`. Na v0.3
+[Synkra AIOS](https://github.com/SynkraAI/aios-core); o motor de tráfego é o `outputs/meta-ads`. A página do catálogo se chama AgentFlix: marca própria, para não depender do nome de um produto de terceiro. Na v0.3
 entraram os squads da imersão (`aiox-copy`, `aiox-sop`, `aiox-workspace`, rebatizado Hybrid Workspace, e
 a parte de leitura do `aiox-ads`). Os arquivos de agente e task foram levados para `references/` como
 conhecimento, não como persona; caminhos do filesystem de origem viraram uma pasta configurável
