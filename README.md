@@ -8,26 +8,20 @@ Código aberto, licença MIT, escaneado pelo mesmo scanner que o Hermes roda na 
 
 ## Instalar
 
-Dois caminhos, do mesmo repositório:
+Cada skill existe em três formas, geradas da mesma fonte. Na página, cada card tem um seletor
+**Hermes · Claude · ChatGPT · Outros agentes** com o caminho certo. Em resumo:
 
-```bash
-# 1) o hub inteiro como fonte: descobre, busca e atualiza. Lê o branch main.
-hermes skills tap add jcarlosamorim/hermes-skills
-hermes skills search copy
-hermes skills install jcarlosamorim/hermes-skills/skills/copy-headlines
+| agente | como | observação |
+|---|---|---|
+| **Hermes** | `hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/<slug>/SKILL.md` ou `hermes skills tap add jcarlosamorim/hermes-skills` | tag = aula reproduzível; tap = descoberta e `update` |
+| **Claude.ai** (site/app, Free a Enterprise) | baixe `<slug>.zip` na [release](https://github.com/jcarlosamorim/hermes-skills/releases) e envie em *Customize › Skills › + › Upload* | exige "Code execution and file creation" ligado |
+| **Claude Code** | `npx skills add https://jcarlosamorim.github.io/hermes-skills --skill <slug> -a claude-code -g` | exige Node |
+| **ChatGPT com Skills** (Business, Enterprise, Edu; Plus/Pro em Work) | baixe o zip e envie em *Plugins › Skills › Create › Upload*; invoque com `@<slug>` | o ChatGPT escaneia o arquivo antes de liberar |
+| **ChatGPT desktop / Codex** | `npx skills add https://jcarlosamorim.github.io/hermes-skills --skill <slug> -a codex -g` | ou pasta em `~/.agents/skills/` |
+| **ChatGPT sem Skills** (qualquer plano) | crie um *Project*, envie `https://jcarlosamorim.github.io/hermes-skills/prompt/<slug>.md` em Files e cole o texto de ativação (está no topo do arquivo) nas instruções | versão colável: SKILL.md + referências num arquivo só |
+| **Cursor, Copilot, Gemini CLI, Kiro e mais 70** | `npx skills add https://jcarlosamorim.github.io/hermes-skills --skill <slug> -g` | o instalador escolhe a pasta de cada agente |
 
-# 2) uma skill presa numa tag: é o que dá aula reproduzível, todo mundo instala o mesmo arquivo.
-hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.2.0/skills/copy-headlines/SKILL.md
-```
-
-Ou cole no chat do seu Hermes:
-
-```text
-Inspecione e instale esta skill:
-https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.2.0/skills/copy-headlines/SKILL.md
-Antes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio.
-Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.
-```
+`ads-otimizar` e `hybrid-etl` rodam script e precisam de rede: só Hermes, Claude Code e Codex.
 
 Depois de instalar, abra uma nova sessão.
 
@@ -59,24 +53,33 @@ Não ensine `--force` a ninguém. Se uma skill foi bloqueada, o problema é dela
 ## Estrutura
 
 ```text
-skills/<nome>/SKILL.md          procedimento; único arquivo que o loader lê de início
+skills/<nome>/SKILL.md          fonte; frontmatter do Hermes (metadata.hermes, required_environment_variables)
 skills/<nome>/references/       fórmulas, métodos, checklists (carregados sob demanda)
 skills/<nome>/templates/        modelos que a skill preenche
 skills/<nome>/scripts/          código determinístico (só no ads-otimizar)
-catalog.json                    o catálogo que a página lê: título, sinopse, comando, gênero
-docs/                           a página (GitHub Pages) e o .well-known/skills para busca por domínio
-scripts/validate_skills.py      forma do SKILL.md
+catalog.json                    o catálogo que a página lê: título, sinopse, comandos por agente, gênero
+docs/                           a página (GitHub Pages), docs/prompt/<nome>.md (versão colável) e
+                                docs/.well-known/skills/ (a versão PORTABLE, spec estrito: é o que
+                                `npx skills add <url>` e `hermes skills search <url>` leem)
+dist/portable/                  gerado, fora do git: pasta e zip estritos por skill; a release da tag recebe os zips
+scripts/build_docs.py           gera portable, zips, well-known, coláveis e copia o catálogo
+scripts/validate_skills.py      forma do SKILL.md (fonte) e do portable (chaves do spec, description ≤200)
 scripts/scan_skills.py          scanner do Hermes contra cada skill
-scripts/build_docs.py           regenera docs/ a partir de skills/ e catalog.json
+.github/workflows/release.yml   em push de tag v*, anexa os zips portable à release
 ```
+
+O que muda da fonte para o portable: só o frontmatter (name, description ≤200, license, compatibility,
+metadata string→string) e três frases do corpo que só fazem sentido no Hermes (`[Skill directory]`, config
+injetada, variável de ambiente). O procedimento é o mesmo.
 
 ## Publicar uma mudança
 
 1. Branch. Edite ou crie `skills/<nome>/`.
 2. `python3 scripts/validate_skills.py && python3 scripts/scan_skills.py` (Python 3.10+).
-3. `python3 scripts/build_docs.py` e confira o diff em `docs/`.
-4. PR. O CI repete os dois primeiros passos.
-5. Merge em `main` (o tap passa a ver) e **tag** (`vX.Y.Z`): os comandos da página apontam para a tag.
+3. `python3 scripts/build_docs.py` e confira o diff em `docs/` (portable, coláveis, well-known).
+4. PR. O CI repete os dois primeiros passos, inclusive a validação do portable.
+5. Merge em `main` (o tap passa a ver) e **tag** (`vX.Y.Z`): os comandos da página apontam para a tag, e o
+   workflow de release anexa os zips portable a ela.
 
 ## Origem
 
