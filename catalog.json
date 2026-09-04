@@ -1,5 +1,5 @@
 {
-  "name": "Hermes Flix",
+  "name": "AgentFlix",
   "version": "0.3.0",
   "skills": [
     {
@@ -2138,7 +2138,7 @@
     "sop": "Processos",
     "base": "Base"
   },
-  "brand": "HERMES FLIX",
+  "brand": "AGENTFLIX",
   "tagline": "Instale um método, não um prompt.",
   "row_order": [
     "objetivo",
