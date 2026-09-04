@@ -1,7 +1,7 @@
 ---
 name: copy-vendas-por-chamada
 description: "Script de ligação, script de fechamento e os algoritmos de objeção: para cada \"vou pensar\", o que perguntar e o que dizer. Use quando o pedido envolver script de call, ligação de vendas, fechamento, o"
-version: 0.3.0
+version: 0.4.0
 author: "José Carlos Amorim"
 license: MIT
 platforms: [linux, macos, windows]

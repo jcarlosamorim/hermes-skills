@@ -1,14 +1,15 @@
 ---
 name: copy-anuncios
-description: "O anúncio tem três segundos para parar o dedo. Use quando o pedido envolver anúncio, ad copy, criativo, roteiro de anúncio, nativo, YouTube ads."
-version: 0.3.0
-author: "José Carlos Amorim"
+description: O anúncio tem três segundos para parar o dedo. Use quando o pedido envolver anúncio, ad copy, criativo, roteiro de anúncio, nativo, YouTube ads.
 license: MIT
-platforms: [linux, macos, windows]
+compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
-  hermes:
-    tags: [copy, copywriting, copy, anúncios]
-    related_skills: [copy-pipeline, copy-auditoria]
+  author: José Carlos Amorim
+  version: 0.4.0
+  hub: https://agentflix.nexialismo.ai
+  source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/copy-anuncios
+  tags: copy, copywriting, copy, anúncios
+  related: copy-pipeline, copy-auditoria
 ---
 
 # PAROU PRA VER · Ad copy, roteiro, nativo, YouTube

@@ -1,14 +1,15 @@
 ---
 name: copy-big-idea-lead-magnet
-description: "Uma campanha inteira cabe em uma ideia. Use quando o pedido envolver big idea, ideia central, mecanismo único, RMBC, brief de campanha, lead magnet."
-version: 0.3.0
-author: "José Carlos Amorim"
+description: Uma campanha inteira cabe em uma ideia. Use quando o pedido envolver big idea, ideia central, mecanismo único, RMBC, brief de campanha, lead magnet.
 license: MIT
-platforms: [linux, macos, windows]
+compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
-  hermes:
-    tags: [copy, copywriting, estratégia, big-idea]
-    related_skills: [copy-pipeline, copy-auditoria]
+  author: José Carlos Amorim
+  version: 0.4.0
+  hub: https://agentflix.nexialismo.ai
+  source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/copy-big-idea-lead-magnet
+  tags: copy, copywriting, estratégia, big-idea
+  related: copy-pipeline, copy-auditoria
 ---
 
 # UMA SÓ IDEIA · Ideia central e ímã de leads

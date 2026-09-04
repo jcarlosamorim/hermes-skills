@@ -1,14 +1,15 @@
 ---
 name: copy-lancamento
-description: "Um lançamento é uma sequência com data, não um post com link. Use quando o pedido envolver lançamento, PLF, carrinho aberto, pré-lançamento, PLC, soap opera, funil de livro, seed launch, evergreen."
-version: 0.3.0
-author: "José Carlos Amorim"
+description: Um lançamento é uma sequência com data, não um post com link. Use quando o pedido envolver lançamento, PLF, carrinho aberto, pré-lançamento, PLC, soap opera, funil de livro, seed launch, evergreen.
 license: MIT
-platforms: [linux, macos, windows]
+compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
-  hermes:
-    tags: [copy, copywriting, copy, lançamento]
-    related_skills: [copy-pipeline, copy-auditoria]
+  author: José Carlos Amorim
+  version: 0.4.0
+  hub: https://agentflix.nexialismo.ai
+  source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/copy-lancamento
+  tags: copy, copywriting, copy, lançamento
+  related: copy-pipeline, copy-auditoria
 ---
 
 # CARRINHO ABERTO · PLF, Brunson, soap opera e a sequência inteira

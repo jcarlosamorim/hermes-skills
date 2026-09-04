@@ -1,7 +1,7 @@
 ---
 name: hybrid-perfil
 description: "O perfil completo da empresa em YAML: quem é, para quem existe, o que promete, que credenciais sustentam a promessa. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando: \"monta o perfil d"
-version: 0.3.0
+version: 0.4.0
 author: "José Carlos Amorim"
 license: MIT
 platforms: [linux, macos, windows]

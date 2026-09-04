@@ -1,13 +1,14 @@
 ---
 name: google-oauth-onboarding
 description: Guide Google Cloud setup and OAuth consent safely.
-version: 0.1.0
-author: José Carlos Amorim, Hermes Agent
 license: MIT
-platforms: [linux, macos, windows]
+compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
-  hermes:
-    tags: [Google, OAuth, Gmail, Workspace, onboarding]
+  author: José Carlos Amorim, Hermes Agent
+  version: 0.4.0
+  hub: https://agentflix.nexialismo.ai
+  source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/google-oauth-onboarding
+  tags: Google, OAuth, Gmail, Workspace, onboarding
 ---
 
 # Google OAuth onboarding

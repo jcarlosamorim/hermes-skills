@@ -1,14 +1,15 @@
 ---
 name: sop-criar
-description: "Escreve o procedimento duas vezes, de propósito: uma versão para pessoa, no padrão FDA/GMP, e uma para agente, em YAML ou JSON com estados, decisões e ferramentas. Use quando: \"escreve o SOP de [proce"
-version: 0.3.0
-author: "José Carlos Amorim"
+description: 'Escreve o procedimento duas vezes, de propósito: uma versão para pessoa, no padrão FDA/GMP, e uma para agente, em YAML ou JSON com estados, decisões e ferramentas. Use quando: "escreve o SOP de [proce'
 license: MIT
-platforms: [linux, macos, windows]
+compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
-  hermes:
-    tags: [processos, sop, qualidade, operacao]
-    related_skills: [sop-extrair, sop-auditar]
+  author: José Carlos Amorim
+  version: 0.4.0
+  hub: https://agentflix.nexialismo.ai
+  source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/sop-criar
+  tags: processos, sop, qualidade, operacao
+  related: sop-extrair, sop-auditar
 ---
 
 # POR ESCRITO · SOP para humano, SOP para agente, checklist, conversão de formato

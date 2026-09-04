@@ -1,7 +1,7 @@
 ---
 name: copy-metodo-hopkins
 description: "Escreve copy pelo método de Claude Hopkins: Publicidade científica, Reason why, Teste com cupom, Alegação preemptiva, Amostra grátis. Use quando pedirem 'como Hopkins', publicidade científica e o test"
-version: 0.3.0
+version: 0.4.0
 author: "José Carlos Amorim"
 license: MIT
 platforms: [linux, macos, windows]

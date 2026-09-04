@@ -1,14 +1,15 @@
 ---
 name: copy-metodo-sethi
-description: "Escreve copy pelo método de Ramit Sethi: Psicologia do comprador, E-mail como relação, Preço premium, I Will Teach You To Be Rich. Use quando pedirem 'como Sethi', psicologia, e-mail e premium, ou uma"
-version: 0.3.0
-author: "José Carlos Amorim"
+description: 'Escreve copy pelo método de Ramit Sethi: Psicologia do comprador, E-mail como relação, Preço premium, I Will Teach You To Be Rich. Use quando pedirem ''como Sethi'', psicologia, e-mail e premium, ou uma'
 license: MIT
-platforms: [linux, macos, windows]
+compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
-  hermes:
-    tags: [copy, copywriting, sethi, metodo, resposta-direta]
-    related_skills: [copy-headlines, copy-sales-page, copy-pipeline]
+  author: José Carlos Amorim
+  version: 0.4.0
+  hub: https://agentflix.nexialismo.ai
+  source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/copy-metodo-sethi
+  tags: copy, copywriting, sethi, metodo, resposta-direta
+  related: copy-headlines, copy-sales-page, copy-pipeline
 ---
 
 # SETHI · Psicologia, e-mail e premium

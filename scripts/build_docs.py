@@ -1,39 +1,151 @@
 #!/usr/bin/env python3
-"""Gera a superfície publicada em docs/ a partir de skills/ e catalog.json.
+"""Gera as três distribuições e a superfície publicada, a partir de skills/ e catalog.json.
 
-- docs/catalog.json               cópia do catálogo (a página lê daqui)
-- docs/.well-known/skills/        índice e cópia de cada skill no formato que o Hermes lê com
-                                  `hermes skills search https://<dominio>` (WellKnownSkillSource)
-Rode depois de mudar qualquer skill ou o catálogo. Idempotente.
+  skills/<slug>/                         fonte, frontmatter do Hermes (não é tocada)
+  dist/portable/<slug>/ + <slug>.zip     frontmatter ESTRITO ao spec agentskills.io: Claude.ai, ChatGPT, npx skills add
+  docs/.well-known/skills/               a versão portable (é o que `npx skills add <url>` e outros agentes leem)
+  docs/prompt/<slug>.md                  versão COLÁVEL: SKILL.md + referências podadas num arquivo só
+  docs/catalog.json                      cópia do catálogo
+
+Só stdlib + PyYAML. Idempotente. Rode depois de mudar qualquer skill.
 """
 from __future__ import annotations
 
-import json
-import shutil
+import io, json, re, shutil, zipfile
 from pathlib import Path
 
+import yaml
+
 ROOT = Path(__file__).resolve().parents[1]
-SKILLS, DOCS = ROOT / "skills", ROOT / "docs"
-WK = DOCS / ".well-known" / "skills"
+SKILLS, DOCS, DIST = ROOT / "skills", ROOT / "docs", ROOT / "dist" / "portable"
+WK, PROMPT = DOCS / ".well-known" / "skills", DOCS / "prompt"
+SPEC_KEYS = ("name", "description", "license", "compatibility", "metadata", "allowed-tools")
+PROMPT_CAP = 250_000  # chars; acima disso a versão colável para e aponta para o zip
 
+# ───────────── frontmatter estrito ─────────────
+def strict_frontmatter(fm: dict, slug: str, version: str) -> dict:
+    h = (fm.get("metadata") or {}).get("hermes") or {}
+    desc = fm["description"].strip()
+    if len(desc) > 200:
+        desc = desc[:200].rsplit(" ", 1)[0].rstrip(",;:") + "…"
+    compat = []
+    if h.get("requires_toolsets"): compat.append("Requer: " + ", ".join(h["requires_toolsets"]) + ".")
+    if fm.get("required_environment_variables"):
+        compat.append("Antes de usar, defina no ambiente: " + ", ".join(e["name"] for e in fm["required_environment_variables"]) + ".")
+    if h.get("blueprint"): compat.append("No Hermes roda agendada; em outros agentes, sob demanda.")
+    compat.append("Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.")
+    meta = {"author": str(fm.get("author", "")), "version": version, "hub": "https://agentflix.nexialismo.ai",
+            "source": f"https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/{slug}",
+            "tags": ", ".join(h.get("tags", [])), "related": ", ".join(h.get("related_skills", []))}
+    if h.get("config"):
+        meta["config"] = "; ".join(f"{c['key']}: {c['description']}" for c in h["config"])
+    return {"name": fm["name"], "description": desc, "license": fm.get("license", "MIT"),
+            "compatibility": " ".join(compat)[:500], "metadata": {k: v for k, v in meta.items() if v}}
 
+def dump_fm(d: dict) -> str:
+    return "---\n" + yaml.safe_dump(d, allow_unicode=True, sort_keys=False, width=1000).strip() + "\n---\n"
+
+# ───────────── adaptação do corpo para fora do Hermes ─────────────
+BODY_FIX = [
+    (re.compile(r"\[Skill directory\]/"), ""),
+    (re.compile(r"\s*\(o valor já está no seu contexto\)"), " (pergunte ao usuário, se ainda não souber)"),
+    (re.compile(r"\s*\(valor já no seu contexto\)"), " (pergunte ao usuário, se ainda não souber)"),
+    (re.compile(r"\(config injetada\)"), "(pergunte ao usuário)"),
+    (re.compile(r"Configure-a pelo Hermes \(required_environment_variables\) e abra nova sessão"), "Defina-a no ambiente onde o script roda"),
+    (re.compile(r"pelo Hermes e abrir nova sessão"), "no ambiente onde o script roda"),
+    (re.compile(r"que o Hermes preenche a partir de `required_environment_variables` e nunca mostra ao modelo"), "definida no ambiente onde o script roda, nunca no chat"),
+    (re.compile(r"\(required_environment_variables\)"), "(variável de ambiente)"),
+]
+def adapt_body(body: str) -> str:
+    for rx, rep in BODY_FIX: body = rx.sub(rep, body)
+    return body
+
+def split(md: str):
+    parts = md.split("---\n", 2)
+    return yaml.safe_load(parts[1]), parts[2]
+
+# ───────────── poda das referências para a versão colável ─────────────
+YAML_DROP = ("activation-instructions", "commands", "IDE-FILE-RESOLUTION", "REQUEST-RESOLUTION")
+def prune(text: str, path: str) -> str:
+    if path.endswith(".py") or path.endswith(".json"): return text
+    lines = text.splitlines(); out = []; skip = False
+    for ln in lines:
+        top = re.match(r"^([A-Za-z_-]+):", ln)
+        if top and top.group(1) in YAML_DROP: skip = True; continue
+        if top and skip: skip = False
+        if skip: continue
+        if ln.startswith("ACTIVATION-NOTICE") or ln.startswith("CRITICAL: Read the full YAML BLOCK") or ln.startswith("## COMPLETE AGENT DEFINITION FOLLOWS"): continue
+        if ln.startswith("## MMOS Integration Note"): break
+        out.append(ln)
+    return "\n".join(out).strip() + "\n"
+
+def referenced_files(body: str) -> list[str]:
+    m = re.search(r"## Arquivos desta skill\n\n((?:- `[^`]+`\n?)+)", body)
+    return re.findall(r"- `([^`]+)`", m.group(1)) if m else []
+
+ACTIVATION = ("Você tem no arquivo `{slug}.md` uma skill chamada {name}. Quando eu pedir {trig}, siga o `## Procedure` desse arquivo à risca, "
+              "use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.")
+
+def build_prompt(slug: str, fm: dict, body: str, files: list[str], version: str, act: str = "") -> tuple[str, str]:
+    if not act:
+        desc = fm["description"]; trig = desc.split("Use quando")[-1].strip(": .…") if "Use quando" in desc else "isso"
+        act = ACTIVATION.format(slug=slug, name=fm["name"], trig=trig)
+    head = f"""# {fm['name']} · versão para colar
+
+> Esta é a mesma skill de https://agentflix.nexialismo.ai, num arquivo só, para quem não instala skill:
+> ChatGPT sem Skills no plano, Claude sem upload, ou qualquer chat. Onde o texto disser `references/arquivo.md`
+> ou `templates/arquivo`, o conteúdo está na seção **Referência:** correspondente, mais abaixo.
+>
+> **Como usar.** ChatGPT: crie um Project, envie este arquivo em Files e cole nas instruções do projeto o texto
+> de ativação abaixo. Claude: envie como conhecimento do Project, ou cole tudo no chat. Qualquer chat: cole tudo.
+> Versão {version}. Instalável como skill de verdade (Hermes, Claude.ai, Claude Code, ChatGPT Skills, Codex) na página.
+>
+> **Texto de ativação (cole nas instruções):** {act}
+
+---
+"""
+    doc = head + adapt_body(body).replace("## Arquivos desta skill", "## Arquivos desta skill (incluídos abaixo)")
+    left = []
+    for rel in files:
+        p = SKILLS / slug / rel
+        if not p.exists(): continue
+        if rel.endswith((".py", ".zip", ".png", ".jpg")): left.append(rel + " (script: só no zip)"); continue
+        chunk = f"\n\n---\n\n## Referência: {rel}\n\n" + prune(p.read_text(encoding="utf-8", errors="replace"), rel)
+        if len(doc) + len(chunk) > PROMPT_CAP: left.append(rel); continue
+        doc += chunk
+    if left:
+        doc += "\n\n---\n\n## Não incluído neste arquivo (está no zip da skill)\n\n" + "\n".join(f"- `{r}`" for r in left) + "\n"
+    return doc, act
+
+# ───────────── principal ─────────────
 def main() -> None:
-    cat = json.loads((ROOT / "catalog.json").read_text(encoding="utf-8"))
-    DOCS.mkdir(exist_ok=True)
-    (DOCS / ".nojekyll").touch()  # GitHub Pages serve .well-known só sem Jekyll
+    cat = json.loads((ROOT / "catalog.json").read_text(encoding="utf-8")); version = cat["version"]
+    for d in (DIST, WK, PROMPT):
+        if d.exists(): shutil.rmtree(d)
+        d.mkdir(parents=True)
+    DOCS.mkdir(exist_ok=True); (DOCS / ".nojekyll").touch()
     shutil.copyfile(ROOT / "catalog.json", DOCS / "catalog.json")
-    if WK.exists():
-        shutil.rmtree(WK)
-    WK.mkdir(parents=True)
-    index = []
+    index, n = [], 0
     for d in sorted(p for p in SKILLS.iterdir() if (p / "SKILL.md").exists()):
-        files = sorted(str(f.relative_to(d)) for f in d.rglob("*") if f.is_file() and not f.name.startswith("."))
-        shutil.copytree(d, WK / d.name, ignore=shutil.ignore_patterns(".*", "__pycache__"))
-        meta = next((s for s in cat["skills"] if s["name"] == d.name), {})
-        index.append({"name": d.name, "description": meta.get("description", ""), "files": files})
+        slug = d.name; fm, body = split((d / "SKILL.md").read_text(encoding="utf-8"))
+        files = referenced_files(body)
+        # portable: cópia da pasta com SKILL.md reescrito
+        pd = DIST / slug; shutil.copytree(d, pd, ignore=shutil.ignore_patterns(".*", "__pycache__"))
+        (pd / "SKILL.md").write_text(dump_fm(strict_frontmatter(fm, slug, version)) + adapt_body(body), encoding="utf-8")
+        with zipfile.ZipFile(DIST / f"{slug}.zip", "w", zipfile.ZIP_DEFLATED) as z:
+            for f in sorted(pd.rglob("*")):
+                if f.is_file(): z.write(f, f"{slug}/{f.relative_to(pd)}")
+        # well-known serve a portable
+        shutil.copytree(pd, WK / slug)
+        index.append({"name": slug, "description": strict_frontmatter(fm, slug, version)["description"],
+                      "files": sorted(str(f.relative_to(pd)) for f in pd.rglob("*") if f.is_file())})
+        # colável
+        entry = next((s for s in cat["skills"] if s["name"] == slug), {})
+        doc, act = build_prompt(slug, fm, body, files, version, act=entry.get("activation_prompt", ""))
+        (PROMPT / f"{slug}.md").write_text(doc, encoding="utf-8")
+        n += 1
     (WK / "index.json").write_text(json.dumps({"skills": index}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"docs: catalog.json + .well-known/skills ({len(index)} skills)")
-
+    print(f"dist: {n} portable + {n} zips em dist/portable · well-known (portable) · {n} coláveis em docs/prompt · catálogo copiado")
 
 if __name__ == "__main__":
     main()

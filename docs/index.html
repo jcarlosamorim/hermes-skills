@@ -56,6 +56,13 @@ button:active{transform:translateY(1px)}
 .k{color:var(--dim);font-size:13px}.k b{color:var(--fg);font-weight:500}
 .side p{margin:0 0 12px}
 .small{color:var(--dim);font-size:12px}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0 10px}
+.tabs button{background:#2a2a2a;color:#ddd;border:1px solid #3a3a3a}
+.tabs button[aria-selected=true]{background:#fff;color:#000;border-color:#fff}
+.pane{display:none}.pane[data-active]{display:block}
+.step{color:var(--muted);font-size:13px;margin:10px 0 4px}
+.dl{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;padding:8px 12px;border-radius:4px;font-size:13px;margin:4px 8px 8px 0}
+.note{background:#1f1f1f;border-left:3px solid #e87c03;padding:8px 12px;border-radius:4px;color:#ddd;font-size:13px;margin:8px 0}
 footer{padding:40px 4vw 60px;color:var(--dim);font-size:13px;line-height:1.7}
 footer code{background:#000;padding:2px 6px;border-radius:3px}
 </style>
@@ -71,7 +78,7 @@ footer code{background:#000;padding:2px 6px;border-radius:3px}
 
 <section class="hero">
   <h1>Instale um método,<br>não um prompt.</h1>
-  <p>Cada obra deste catálogo é uma skill do Hermes Agent: um procedimento com verificação, escrito para ser instalado por um comando. Copy, lançamento, processos, o Hybrid Workspace do seu negócio, tráfego. Clique, copie, cole no seu Hermes. Código aberto, licença MIT, escaneado pelo mesmo scanner que o Hermes usa.</p>
+  <p>Cada obra deste catálogo é uma skill no padrão aberto Agent Skills: um procedimento com verificação, instalável por comando no <b>Hermes</b>, no <b>Claude</b>, no <b>ChatGPT</b>, no Codex, no Cursor e em mais de 40 agentes. Copy, lançamento, processos, o Hybrid Workspace do seu negócio, tráfego. Clique, escolha o seu agente, copie. Código aberto, licença MIT, escaneado antes de subir.</p>
   <div class="search"><input id="q" type="search" placeholder="buscar por título, método, gênero…" aria-label="buscar"><span class="small" id="count"></span></div>
 </section>
 
@@ -130,10 +137,40 @@ function openModal(sk){
       <div class="req"><span>requer</span>${esc(p.requer||"nenhuma")}</div>
       <p class="sin">${esc(p.sinopse||sk.description||"")}</p>
       <div class="how"><b>Como usar.</b> ${esc(p.como_usar||"")}</div>
-      <div class="k">Instalar (versão presa na tag ${esc(CAT.version)}):</div>
-      <div class="cmd" id="c1">${esc(sk.install_cmd||"")}<button data-copy="#c1">copiar</button></div>
-      <div class="k">Ou cole isto no chat do seu Hermes:</div>
-      <div class="cmd" id="c2">${esc(sk.chat_cmd||"")}<button data-copy="#c2">copiar</button></div>
+      <div class="tabs" role="tablist">
+        <button role="tab" data-tab="hermes" aria-selected="true">Hermes</button>
+        <button role="tab" data-tab="claude">Claude</button>
+        <button role="tab" data-tab="chatgpt">ChatGPT</button>
+        <button role="tab" data-tab="outros">Outros agentes</button>
+      </div>
+      <div class="pane" data-tab="hermes" data-active>
+        <div class="step">Instalar (versão presa na tag ${esc(CAT.version)}):</div>
+        <div class="cmd" id="c1">${esc(sk.install_cmd||"")}<button data-copy="#c1">copiar</button></div>
+        <div class="step">Ou cole isto no chat do seu Hermes:</div>
+        <div class="cmd" id="c2">${esc(sk.chat_cmd||"")}<button data-copy="#c2">copiar</button></div>
+      </div>
+      <div class="pane" data-tab="claude">
+        ${sk.runtime_only ? `<div class="note">Esta skill roda script e precisa de rede: use o <b>Claude Code</b>. No Claude.ai (site) ela não tem onde rodar.</div>` : `
+        <div class="step"><b>Claude.ai</b> (site ou app, Free a Enterprise): baixe o zip e envie em <i>Customize › Skills › + › Upload a skill</i>. Exige "Code execution and file creation" ligado em Settings › Capabilities.</div>
+        <a class="dl" href="${esc(sk.zip_url||"#")}">baixar ${esc(sk.name)}.zip</a>`}
+        <div class="step"><b>Claude Code</b> (terminal): um comando, exige Node.</div>
+        <div class="cmd" id="c3">${esc(sk.npx_claude_code||"")}<button data-copy="#c3">copiar</button></div>
+      </div>
+      <div class="pane" data-tab="chatgpt">
+        ${sk.runtime_only ? `<div class="note">Esta skill roda script e precisa de rede: use o <b>Codex</b> (app desktop do ChatGPT ou CLI). No chat do site ela não tem onde rodar.</div>` : `
+        <div class="step"><b>ChatGPT com Skills</b> (Business, Enterprise, Edu; Plus e Pro em Work): baixe o zip e envie em <i>Plugins › Skills › Create › Upload</i>. Depois invoque com <code>@${esc(sk.name)}</code>. O ChatGPT escaneia o arquivo antes de liberar.</div>
+        <a class="dl" href="${esc(sk.zip_url||"#")}">baixar ${esc(sk.name)}.zip</a>
+        <div class="step"><b>Sem Skills no seu plano?</b> Crie um <i>Project</i>, envie este arquivo em Files e cole o texto de ativação nas instruções do projeto. Funciona no Free.</div>
+        <a class="dl" href="${esc(sk.prompt_url||"#")}" target="_blank" rel="noopener">abrir ${esc(sk.name)}.md (versão para colar)</a>
+        <div class="cmd" id="c5">${esc(sk.activation_prompt||"")}<button data-copy="#c5">copiar</button></div>`}
+        <div class="step"><b>ChatGPT desktop / Codex</b> (terminal): um comando, exige Node.</div>
+        <div class="cmd" id="c4">${esc(sk.npx_codex||"")}<button data-copy="#c4">copiar</button></div>
+      </div>
+      <div class="pane" data-tab="outros">
+        <div class="step">Cursor, Copilot, Gemini CLI, Kiro, Goose, OpenCode e mais 70: o instalador universal escolhe a pasta certa de cada agente instalado.</div>
+        <div class="cmd" id="c6">${esc(sk.npx_any||"")}<button data-copy="#c6">copiar</button></div>
+        <div class="step">Ou o hub inteiro como fonte: <code>npx skills add ${esc(CAT.wellknown||"")}</code></div>
+      </div>
       <p class="small">Depois de instalar, abra uma nova sessão. Fonte: <a href="${esc(sk.github_url||"#")}" target="_blank" rel="noopener">SKILL.md no GitHub</a></p>
     </div>
     <div class="side">
@@ -144,10 +181,12 @@ function openModal(sk){
     </div>
   </div>`;
   $("#modal").setAttribute("open","");document.body.style.overflow="hidden";
+  try{const pref=localStorage.getItem("agentflix-tab");const b=pref&&$("#sheet").querySelector(`[role=tab][data-tab="${pref}"]`);if(b)b.click()}catch(_){}
   history.replaceState(null,"","#"+sk.name);
 }
 function closeModal(){$("#modal").removeAttribute("open");document.body.style.overflow="";history.replaceState(null,"",location.pathname)}
 document.addEventListener("click",e=>{
+  const t=e.target.closest("[role=tab]");if(t){const s=t.closest(".sheet");s.querySelectorAll("[role=tab]").forEach(b=>b.setAttribute("aria-selected",b===t));s.querySelectorAll(".pane").forEach(p=>p.toggleAttribute("data-active",p.dataset.tab===t.dataset.tab));try{localStorage.setItem("agentflix-tab",t.dataset.tab)}catch(_){}return}
   const c=e.target.closest("[data-copy]");if(c){const el=$(c.dataset.copy);const t=(el.textContent||"").replace(/copiar$/,"").trim();navigator.clipboard.writeText(t).then(()=>{c.textContent="copiado";setTimeout(()=>c.textContent="copiar",1200)});return}
   if(e.target.closest("[data-close]")||e.target.id==="modal")closeModal();
 });

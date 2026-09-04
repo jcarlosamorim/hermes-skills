@@ -1,26 +1,23 @@
 ---
 name: hybrid-cultura
-description: "Cultura é o que a empresa faz quando o dono não está olhando. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando: \"documenta a cultura de [empresa]\"."
-version: 0.3.0
-author: "José Carlos Amorim"
+description: 'Cultura é o que a empresa faz quando o dono não está olhando. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando: "documenta a cultura de [empresa]".'
 license: MIT
-platforms: [linux, macos, windows]
+compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
-  hermes:
-    tags: [hybrid-workspace, negocio, elicitacao, yaml]
-    related_skills: [hybrid-diagnostico, hybrid-proxima-acao, hybrid-perfil, hybrid-fundador]
-    config:
-      - key: hybrid.pasta
-        description: "Pasta do negócio no seu computador: é onde os YAML do Hybrid Workspace vivem (perfil, ICP, marca, oferta, diagnósticos). Um negócio por pasta."
-        default: "~/hybrid/meu-negocio"
-        prompt: "Em que pasta ficam os arquivos deste negócio? (uma pasta por negócio)"
+  author: José Carlos Amorim
+  version: 0.4.0
+  hub: https://agentflix.nexialismo.ai
+  source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/hybrid-cultura
+  tags: hybrid-workspace, negocio, elicitacao, yaml
+  related: hybrid-diagnostico, hybrid-proxima-acao, hybrid-perfil, hybrid-fundador
+  config: 'hybrid.pasta: Pasta do negócio no seu computador: é onde os YAML do Hybrid Workspace vivem (perfil, ICP, marca, oferta, diagnósticos). Um negócio por pasta.'
 ---
 
 # OS MANDAMENTOS · Valores, mandamentos, mantras, manifesto e critérios de contratação
 
 Cultura é o que a empresa faz quando o dono não está olhando. Esta skill escreve isso: valores com comportamento observável, mandamentos, mantras, manifesto, história da empresa, perfil de liderança e critérios de contratação. Onze arquivos que fazem o time decidir igual sem perguntar.
 
-Parte do **Hybrid Workspace**: um conjunto de YAMLs que descrevem o negócio e que as outras skills leem. Tudo vive na pasta configurada em `hybrid.pasta` (valor já no seu contexto), um negócio por pasta. Nada é enviado para fora.
+Parte do **Hybrid Workspace**: um conjunto de YAMLs que descrevem o negócio e que as outras skills leem. Tudo vive na pasta configurada em `hybrid.pasta` (pergunte ao usuário, se ainda não souber), um negócio por pasta. Nada é enviado para fora.
 
 ## When to Use
 

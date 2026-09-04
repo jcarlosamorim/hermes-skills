@@ -1,7 +1,7 @@
 ---
 name: ads-otimizar
-description: "Lê 7 dias da Graph API, calcula o CAC real por campanha e classifica: escalar, duplicar, manter, matar. Só leitura; a mutação é sua. Use quando: otimizar campanhas, o que pausar, leitura diária, CAC real."
-version: 0.3.0
+description: "Lê 7 dias da Graph API, calcula o CAC real por campanha e classifica: escalar, duplicar, manter, matar. Só leitura; a mutação é sua. Use quando: otimizar campanhas, o que pausar, leitura diária, CAC…"
+version: 0.4.0
 author: "José Carlos Amorim"
 license: MIT
 platforms: [linux, macos, windows]

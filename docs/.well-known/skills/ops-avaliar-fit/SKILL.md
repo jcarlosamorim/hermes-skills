@@ -1,19 +1,16 @@
 ---
 name: ops-avaliar-fit
-description: "Um projeto novo bate na porta. Usa o perfil do SEU time (zona de genialidade, Kolbe) como entrada. Use quando: \"avalia o fit deste projeto."
-version: 0.3.0
-author: "José Carlos Amorim"
+description: 'Um projeto novo bate na porta. Usa o perfil do SEU time (zona de genialidade, Kolbe) como entrada. Use quando: "avalia o fit deste projeto.'
 license: MIT
-platforms: [linux, macos, windows]
+compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
-  hermes:
-    tags: [operacao, time, genius-zone, kolbe, gestao]
-    related_skills: [ops-rotear-tarefa, ops-briefing, ops-revisao-semanal]
-    config:
-      - key: ops.perfis_do_time
-        description: "Caminho do YAML com o perfil do time (zona de genialidade, Kolbe, formato de briefing). Modelo em templates/perfil-do-time.yaml"
-        default: "~/ops/perfil-do-time.yaml"
-        prompt: "Onde está o perfil do seu time? (copie templates/perfil-do-time.yaml para lá e preencha)"
+  author: José Carlos Amorim
+  version: 0.4.0
+  hub: https://agentflix.nexialismo.ai
+  source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/ops-avaliar-fit
+  tags: operacao, time, genius-zone, kolbe, gestao
+  related: ops-rotear-tarefa, ops-briefing, ops-revisao-semanal
+  config: 'ops.perfis_do_time: Caminho do YAML com o perfil do time (zona de genialidade, Kolbe, formato de briefing). Modelo em templates/perfil-do-time.yaml'
 ---
 
 # CABE OU NÃO CABE · Cabe neste time ou não
@@ -32,7 +29,7 @@ O time é o seu: a skill lê um arquivo de perfil (modelo em `templates/perfil-d
 
 | entrada | de onde vem |
 |---|---|
-| perfil do time | `ops.perfis_do_time` (config injetada) → arquivo YAML no modelo de `templates/perfil-do-time.yaml` |
+| perfil do time | `ops.perfis_do_time` (pergunte ao usuário) → arquivo YAML no modelo de `templates/perfil-do-time.yaml` |
 | método | `references/metodo-avaliar-fit.md` |
 
 ## Procedure

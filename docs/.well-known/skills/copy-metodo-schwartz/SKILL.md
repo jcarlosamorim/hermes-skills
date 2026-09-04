@@ -1,14 +1,15 @@
 ---
 name: copy-metodo-schwartz
-description: "Escreve copy pelo método de Eugene Schwartz: Desejo de massa, 5 níveis de consciência, 5 estágios de sofisticação, Breakthrough Adverti. Use quando pedirem 'como Schwartz', desejo de massa e breakthro"
-version: 0.3.0
-author: "José Carlos Amorim"
+description: 'Escreve copy pelo método de Eugene Schwartz: Desejo de massa, 5 níveis de consciência, 5 estágios de sofisticação, Breakthrough Adverti. Use quando pedirem ''como Schwartz'', desejo de massa e breakthro'
 license: MIT
-platforms: [linux, macos, windows]
+compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
-  hermes:
-    tags: [copy, copywriting, schwartz, metodo, resposta-direta]
-    related_skills: [copy-headlines, copy-sales-page, copy-pipeline]
+  author: José Carlos Amorim
+  version: 0.4.0
+  hub: https://agentflix.nexialismo.ai
+  source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/copy-metodo-schwartz
+  tags: copy, copywriting, schwartz, metodo, resposta-direta
+  related: copy-headlines, copy-sales-page, copy-pipeline
 ---
 
 # SCHWARTZ · Desejo de massa e Breakthrough Advertising

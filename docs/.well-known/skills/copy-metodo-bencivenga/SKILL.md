@@ -1,14 +1,15 @@
 ---
 name: copy-metodo-bencivenga
-description: "Escreve copy pelo método de Gary Bencivenga: Bullets e fascinações, Prova acima de promessa, Credibilidade, Curiosidade específica. Use quando pedirem 'como Bencivenga', bullets e fascinações, ou uma "
-version: 0.3.0
-author: "José Carlos Amorim"
+description: 'Escreve copy pelo método de Gary Bencivenga: Bullets e fascinações, Prova acima de promessa, Credibilidade, Curiosidade específica. Use quando pedirem ''como Bencivenga'', bullets e fascinações, ou uma'
 license: MIT
-platforms: [linux, macos, windows]
+compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
-  hermes:
-    tags: [copy, copywriting, bencivenga, metodo, resposta-direta]
-    related_skills: [copy-headlines, copy-sales-page, copy-pipeline]
+  author: José Carlos Amorim
+  version: 0.4.0
+  hub: https://agentflix.nexialismo.ai
+  source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/copy-metodo-bencivenga
+  tags: copy, copywriting, bencivenga, metodo, resposta-direta
+  related: copy-headlines, copy-sales-page, copy-pipeline
 ---
 
 # BENCIVENGA · Bullets e fascinações

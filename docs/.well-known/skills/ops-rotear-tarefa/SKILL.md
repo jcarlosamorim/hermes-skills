@@ -1,19 +1,16 @@
 ---
 name: ops-rotear-tarefa
-description: "Toda tarefa que chega tem alguém do time para quem ela é natural e alguém para quem ela é tortura. Usa o perfil do SEU time (zona de genialidade, Kolbe) como entrada. Use quando: \"roteia esta tarefa."
-version: 0.3.0
-author: "José Carlos Amorim"
+description: 'Toda tarefa que chega tem alguém do time para quem ela é natural e alguém para quem ela é tortura. Usa o perfil do SEU time (zona de genialidade, Kolbe) como entrada. Use quando: "roteia esta tarefa.'
 license: MIT
-platforms: [linux, macos, windows]
+compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
-  hermes:
-    tags: [operacao, time, genius-zone, kolbe, gestao]
-    related_skills: [ops-briefing, ops-revisao-semanal, ops-avaliar-fit]
-    config:
-      - key: ops.perfis_do_time
-        description: "Caminho do YAML com o perfil do time (zona de genialidade, Kolbe, formato de briefing). Modelo em templates/perfil-do-time.yaml"
-        default: "~/ops/perfil-do-time.yaml"
-        prompt: "Onde está o perfil do seu time? (copie templates/perfil-do-time.yaml para lá e preencha)"
+  author: José Carlos Amorim
+  version: 0.4.0
+  hub: https://agentflix.nexialismo.ai
+  source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/ops-rotear-tarefa
+  tags: operacao, time, genius-zone, kolbe, gestao
+  related: ops-briefing, ops-revisao-semanal, ops-avaliar-fit
+  config: 'ops.perfis_do_time: Caminho do YAML com o perfil do time (zona de genialidade, Kolbe, formato de briefing). Modelo em templates/perfil-do-time.yaml'
 ---
 
 # A PESSOA CERTA · A tarefa certa para a pessoa certa
@@ -32,12 +29,12 @@ O time é o seu: a skill lê um arquivo de perfil (modelo em `templates/perfil-d
 
 | entrada | de onde vem |
 |---|---|
-| perfil do time | `ops.perfis_do_time` (config injetada) → arquivo YAML no modelo de `templates/perfil-do-time.yaml` |
+| perfil do time | `ops.perfis_do_time` (pergunte ao usuário) → arquivo YAML no modelo de `templates/perfil-do-time.yaml` |
 | método | `references/metodo-rotear.md` |
 
 ## Procedure
 
-1. Leia o perfil do time no caminho configurado em `ops.perfis_do_time` (o valor já está no seu contexto). Se o arquivo não existir ou estiver vazio, entregue `templates/perfil-do-time.yaml` ao usuário, peça para preencher e pare.
+1. Leia o perfil do time no caminho configurado em `ops.perfis_do_time` (pergunte ao usuário, se ainda não souber). Se o arquivo não existir ou estiver vazio, entregue `templates/perfil-do-time.yaml` ao usuário, peça para preencher e pare.
 2. Colete a tarefa: descrição, urgência, contexto. Sem descrição, pergunte.
 3. Aplique `references/metodo-rotear.md` na ordem: classificar em 4 dimensões → casar com o time → checar vetos → se dois, definir handoff → briefing no formato da pessoa.
 4. Entregue no formato de saída da referência. Se a resposta for "ninguém do time", diga isso e sugira terceirizar ou automatizar; não force um encaixe.

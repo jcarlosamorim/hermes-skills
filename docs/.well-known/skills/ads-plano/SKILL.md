@@ -1,14 +1,15 @@
 ---
 name: ads-plano
-description: "Calcula CAC-alvo, CAC-teto, CPL e orçamento por fase antes do primeiro real, e entrega o briefing do produto para o motor. Use quando: plano de tráfego, quanto gastar, unit economics, vale anunciar."
-version: 0.3.0
-author: "José Carlos Amorim"
+description: 'Calcula CAC-alvo, CAC-teto, CPL e orçamento por fase antes do primeiro real, e entrega o briefing do produto para o motor. Use quando: plano de tráfego, quanto gastar, unit economics, vale anunciar.'
 license: MIT
-platforms: [linux, macos, windows]
+compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
-  hermes:
-    tags: [trafego-pago, meta-ads, unit-economics, planejamento]
-    related_skills: [ads-gate-compliance, ads-otimizar]
+  author: José Carlos Amorim
+  version: 0.4.0
+  hub: https://agentflix.nexialismo.ai
+  source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/ads-plano
+  tags: trafego-pago, meta-ads, unit-economics, planejamento
+  related: ads-gate-compliance, ads-otimizar
 ---
 
 # ANTES DO PRIMEIRO REAL · CAC, margem e orçamento antes do primeiro real

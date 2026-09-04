@@ -1,14 +1,15 @@
 ---
 name: copy-metodo-halbert
-description: "Escreve copy pelo método de Gary Halbert: Pilha A / Pilha B, Multidão faminta, Carta pessoal, Coat of Arms, Boron Letters. Use quando pedirem 'como Halbert', cartas que fazem sacar a carteira, ou uma "
-version: 0.3.0
-author: "José Carlos Amorim"
+description: 'Escreve copy pelo método de Gary Halbert: Pilha A / Pilha B, Multidão faminta, Carta pessoal, Coat of Arms, Boron Letters. Use quando pedirem ''como Halbert'', cartas que fazem sacar a carteira, ou uma'
 license: MIT
-platforms: [linux, macos, windows]
+compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
-  hermes:
-    tags: [copy, copywriting, halbert, metodo, resposta-direta]
-    related_skills: [copy-headlines, copy-sales-page, copy-pipeline]
+  author: José Carlos Amorim
+  version: 0.4.0
+  hub: https://agentflix.nexialismo.ai
+  source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/copy-metodo-halbert
+  tags: copy, copywriting, halbert, metodo, resposta-direta
+  related: copy-headlines, copy-sales-page, copy-pipeline
 ---
 
 # HALBERT · Cartas que fazem sacar a carteira

@@ -1,14 +1,15 @@
 ---
 name: copy-sales-page
-description: "Uma página de vendas longa não é um texto grande, é uma sequência de decisões pequenas até o botão. Use quando o pedido envolver página de vendas, sales page, landing page, carta de vendas longa, maga"
-version: 0.3.0
-author: "José Carlos Amorim"
+description: Uma página de vendas longa não é um texto grande, é uma sequência de decisões pequenas até o botão. Use quando o pedido envolver página de vendas, sales page, landing page, carta de vendas longa, maga
 license: MIT
-platforms: [linux, macos, windows]
+compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
-  hermes:
-    tags: [copy, copywriting, copy, página-de-vendas]
-    related_skills: [copy-pipeline, copy-auditoria]
+  author: José Carlos Amorim
+  version: 0.4.0
+  hub: https://agentflix.nexialismo.ai
+  source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/copy-sales-page
+  tags: copy, copywriting, copy, página-de-vendas
+  related: copy-pipeline, copy-auditoria
 ---
 
 # ATÉ O BOTÃO · Página de vendas longa e landing premium

@@ -38,6 +38,21 @@ for path in files:
     if "[REDACTED]" not in text and re.search(r"(?<![A-Za-z0-9])(?:AIza[0-9A-Za-z_-]{20,}|ghp_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|sk-[A-Za-z0-9_-]{20,}|ntn_[A-Za-z0-9]{20,}|secret_[A-Za-z0-9]{20,})", text):
         errors.append(f"{path}: possible secret-like string")
 
+# distribuição portable (docs/.well-known): frontmatter estrito ao spec agentskills.io e ao upload do Claude.ai
+SPEC = {"name", "description", "license", "compatibility", "metadata", "allowed-tools"}
+for path in sorted((ROOT / "docs" / ".well-known" / "skills").glob("*/SKILL.md")):
+    text = path.read_text(encoding="utf-8")
+    try:
+        import yaml
+        fm = yaml.safe_load(text.split("---\n", 2)[1])
+    except Exception as exc:
+        errors.append(f"{path}: portable frontmatter inválido: {exc}"); continue
+    extra = set(fm) - SPEC
+    if extra: errors.append(f"{path}: portable com chave fora do spec: {sorted(extra)}")
+    if len(fm.get("description", "")) > 200: errors.append(f"{path}: portable description > 200 (Claude.ai rejeita)")
+    if any(not isinstance(x, str) for x in (fm.get("metadata") or {}).values()): errors.append(f"{path}: portable metadata precisa ser string->string")
+    if fm.get("name") != path.parent.name: errors.append(f"{path}: portable name != pasta")
+
 if errors:
     print("validation=failed")
     print("\n".join(errors))

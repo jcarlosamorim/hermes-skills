@@ -1,14 +1,15 @@
 ---
 name: copy-metodo-benson
-description: "Escreve copy pelo método de Jon Benson: Video Sales Letter, Persuasão ética, Ritmo controlado, Conexão emocional. Use quando pedirem 'como Benson', a vsl e a persuasão ética, ou uma peça nesse estilo."
-version: 0.3.0
-author: "José Carlos Amorim"
+description: 'Escreve copy pelo método de Jon Benson: Video Sales Letter, Persuasão ética, Ritmo controlado, Conexão emocional. Use quando pedirem ''como Benson'', a vsl e a persuasão ética, ou uma peça nesse estilo.'
 license: MIT
-platforms: [linux, macos, windows]
+compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
-  hermes:
-    tags: [copy, copywriting, benson, metodo, resposta-direta]
-    related_skills: [copy-headlines, copy-sales-page, copy-pipeline]
+  author: José Carlos Amorim
+  version: 0.4.0
+  hub: https://agentflix.nexialismo.ai
+  source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/copy-metodo-benson
+  tags: copy, copywriting, benson, metodo, resposta-direta
+  related: copy-headlines, copy-sales-page, copy-pipeline
 ---
 
 # BENSON · A VSL e a persuasão ética

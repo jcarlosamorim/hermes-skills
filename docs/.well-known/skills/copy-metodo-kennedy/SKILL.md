@@ -1,14 +1,15 @@
 ---
 name: copy-metodo-kennedy
-description: "Escreve copy pelo método de Dan Kennedy: Urgência com prazo, No B.S., Magnetic Marketing, Oferta irresistível, Fechamento direto. Use quando pedirem 'como Kennedy', urgência e resposta direta, ou uma "
-version: 0.3.0
-author: "José Carlos Amorim"
+description: 'Escreve copy pelo método de Dan Kennedy: Urgência com prazo, No B.S., Magnetic Marketing, Oferta irresistível, Fechamento direto. Use quando pedirem ''como Kennedy'', urgência e resposta direta, ou uma'
 license: MIT
-platforms: [linux, macos, windows]
+compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
-  hermes:
-    tags: [copy, copywriting, kennedy, metodo, resposta-direta]
-    related_skills: [copy-headlines, copy-sales-page, copy-pipeline]
+  author: José Carlos Amorim
+  version: 0.4.0
+  hub: https://agentflix.nexialismo.ai
+  source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/copy-metodo-kennedy
+  tags: copy, copywriting, kennedy, metodo, resposta-direta
+  related: copy-headlines, copy-sales-page, copy-pipeline
 ---
 
 # KENNEDY · Urgência e resposta direta

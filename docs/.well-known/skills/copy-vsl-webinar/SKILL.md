@@ -1,14 +1,15 @@
 ---
 name: copy-vsl-webinar
-description: "Roteiro de VSL e de webinar, do gancho de abertura ao fechamento, com os pontos de tensão marcados no tempo. Use quando o pedido envolver VSL, roteiro de vídeo de vendas, webinar frio ou quente, apres"
-version: 0.3.0
-author: "José Carlos Amorim"
+description: Roteiro de VSL e de webinar, do gancho de abertura ao fechamento, com os pontos de tensão marcados no tempo. Use quando o pedido envolver VSL, roteiro de vídeo de vendas, webinar frio ou quente, apres
 license: MIT
-platforms: [linux, macos, windows]
+compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
-  hermes:
-    tags: [copy, copywriting, copy, vídeo]
-    related_skills: [copy-pipeline, copy-auditoria]
+  author: José Carlos Amorim
+  version: 0.4.0
+  hub: https://agentflix.nexialismo.ai
+  source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/copy-vsl-webinar
+  tags: copy, copywriting, copy, vídeo
+  related: copy-pipeline, copy-auditoria
 ---
 
 # APERTE O PLAY · Roteiro de vídeo e apresentação

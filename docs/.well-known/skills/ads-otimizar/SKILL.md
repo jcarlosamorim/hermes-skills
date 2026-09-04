@@ -1,34 +1,16 @@
 ---
 name: ads-otimizar
-description: "Lê 7 dias da Graph API, calcula o CAC real por campanha e classifica: escalar, duplicar, manter, matar. Só leitura; a mutação é sua. Use quando: otimizar campanhas, o que pausar, leitura diária, CAC real."
-version: 0.3.0
-author: "José Carlos Amorim"
+description: 'Lê 7 dias da Graph API, calcula o CAC real por campanha e classifica: escalar, duplicar, manter, matar. Só leitura; a mutação é sua. Use quando: otimizar campanhas, o que pausar, leitura diária, CAC…'
 license: MIT
-platforms: [linux, macos, windows]
+compatibility: 'Requer: terminal. Antes de usar, defina no ambiente: META_AUTH. No Hermes roda agendada; em outros agentes, sob demanda. Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.'
 metadata:
-  hermes:
-    tags: [trafego-pago, meta-ads, otimizacao, graph-api, blueprint]
-    related_skills: [ads-gate-compliance, ads-plano]
-    requires_toolsets: [terminal]
-    config:
-      - key: ads.briefing
-        description: "Caminho do briefing.yaml do produto (modelo em templates/briefing.yaml, preenchido pelo ads-plano)"
-        default: "~/ads/briefing.yaml"
-        prompt: "Onde está o briefing.yaml do produto?"
-      - key: ads.estado
-        description: "Pasta onde o motor grava o snapshot diário e o CSV de decisões"
-        default: "~/ads/estado"
-        prompt: "Onde gravar o estado do motor?"
-    blueprint:
-      schedule: "0 8 * * *"
-      deliver: origin
-      prompt: "Rode a leitura diária do portfólio de anúncios (skill ads-otimizar) e me diga o que pausar, escalar e manter, em reais. Não execute nenhuma alteração na conta."
-      no_agent: false
-required_environment_variables:
-  - name: META_AUTH
-    prompt: "Token de acesso da Marketing API da Meta (permissão ads_read basta: o motor só lê)"
-    help: "Gere em https://developers.facebook.com/tools/explorer/ ou pelo System User do Business Manager. Só leitura: ads_read."
-    required_for: "ler campanhas e insights na Graph API"
+  author: José Carlos Amorim
+  version: 0.4.0
+  hub: https://agentflix.nexialismo.ai
+  source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/ads-otimizar
+  tags: trafego-pago, meta-ads, otimizacao, graph-api, blueprint
+  related: ads-gate-compliance, ads-plano
+  config: 'ads.briefing: Caminho do briefing.yaml do produto (modelo em templates/briefing.yaml, preenchido pelo ads-plano); ads.estado: Pasta onde o motor grava o snapshot diário e o CSV de decisões'
 ---
 
 # TODO DIA ÀS OITO · Leitura das 8h: o que pausar, escalar, manter
@@ -50,9 +32,9 @@ Todo dia às oito, o motor lê sete dias da Graph API, calcula o CAC real por co
 
 ## Procedure
 
-1. Confirme que `META_AUTH` está configurada: rode `python3 [Skill directory]/scripts/meta_api.py testar`. Se falhar, pare e diga ao usuário para configurar a variável pelo Hermes e abrir nova sessão. Nunca peça o token no chat.
-2. Confirme que o briefing existe no caminho `ads.briefing` (valor já no seu contexto). Se `ratificado: false`, avise antes de qualquer recomendação: os números não foram conferidos pelo dono.
-3. Rode `python3 [Skill directory]/scripts/otimizar.py --briefing <ads.briefing> --estado <ads.estado>`. O motor coleta 7 dias fechados, descarta o que não pode ser julgado (learning phase, poucas impressões, gasto abaixo de 1× CAC-alvo sem venda) e classifica cada campanha: ESCALAR · DUPLICAR · MANTER · MATAR · SEM DADO.
+1. Confirme que `META_AUTH` está configurada: rode `python3 scripts/meta_api.py testar`. Se falhar, pare e diga ao usuário para configurar a variável no ambiente onde o script roda. Nunca peça o token no chat.
+2. Confirme que o briefing existe no caminho `ads.briefing` (pergunte ao usuário, se ainda não souber). Se `ratificado: false`, avise antes de qualquer recomendação: os números não foram conferidos pelo dono.
+3. Rode `python3 scripts/otimizar.py --briefing <ads.briefing> --estado <ads.estado>`. O motor coleta 7 dias fechados, descarta o que não pode ser julgado (learning phase, poucas impressões, gasto abaixo de 1× CAC-alvo sem venda) e classifica cada campanha: ESCALAR · DUPLICAR · MANTER · MATAR · SEM DADO.
 4. Não recalcule nada de cabeça. Leia o snapshot e traduza cada veredito em reais e em decisão: "cada real está voltando R$X; para empatar precisa R$Y".
 5. Junte numa recomendação curta, ordenada por dinheiro em jogo. Se um veredito é MATAR por CAC acima do teto, diga que o problema é a **oferta**, não o anúncio.
 6. Peça o OK do usuário. **Esta skill não altera a conta**: pausar, escalar ou mudar orçamento é ação dele, no Gerenciador de Anúncios, depois de decidir. Registre a decisão dele no CSV de decisões (o motor já criou o arquivo) para calibrar os thresholds.
