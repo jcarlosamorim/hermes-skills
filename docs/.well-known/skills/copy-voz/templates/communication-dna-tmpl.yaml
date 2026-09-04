@@ -1,0 +1,578 @@
+# Communication DNA Template
+# CopywriterOS - Template for communication DNA extraction output
+#
+# USAGE:
+# 1. Execute tasks/extract-communication-dna.md with source materials
+# 2. Fill this template with extracted data
+# 3. Save to outputs/minds/{slug}/analysis/communication-dna.yaml
+#
+# REFERENCE:
+# - tasks/extract-communication-dna.md (extraction process)
+# - agents/david-ogilvy.md communication_dna section (structure example)
+
+template:
+  id: communication-dna-template-v1
+  name: "Communication DNA Extraction Template"
+  version: "1.0.0"
+  output:
+    format: yaml
+    filename: "communication-dna.yaml"
+    location: "outputs/minds/{slug}/analysis/"
+
+# =============================================================================
+# TEMPLATE OUTPUT STRUCTURE
+# Fill all fields below during extraction
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# HEADER - Required metadata about the extraction
+# -----------------------------------------------------------------------------
+metadata:
+  copywriter: "{{copywriter_name}}"          # Full name (e.g., "Dan Koe")
+  copywriter_slug: "{{copywriter_slug}}"     # snake_case identifier (e.g., "dan_koe")
+  extraction_date: "{{YYYY-MM-DD}}"          # Date of extraction
+  source_files_count: "{{count}}"            # Total number of source files analyzed
+  source_directory: "{{path}}"               # Path to source materials
+  psychometric_profile: "{{true/false}}"     # Whether psychometric data was used
+  psychometric_path: "{{path_or_null}}"      # Path to psychometric JSON if exists
+  extractor: "{{agent_or_human}}"            # Who performed the extraction
+
+# =============================================================================
+# VOCABULARY SECTION
+# =============================================================================
+vocabulary:
+
+  # ---------------------------------------------------------------------------
+  # MANDATORY WORDS (15+ Required)
+  # Words the copywriter uses constantly - must appear in authentic recreation
+  # ---------------------------------------------------------------------------
+  mandatory_words:
+    minimum_required: 15
+    extraction_criteria: "Words appearing in 30%+ of source files"
+
+    # Categories to ensure diversity:
+    # - core_concepts: Main ideas they return to
+    # - action_verbs: How they describe doing things
+    # - identity_terms: How they describe people/roles
+    # - value_words: What they emphasize as important
+
+    entries:
+      - word: "{{term_1}}"
+        frequency: "{{X}}% of files"
+        category: "{{core_concepts|action_verbs|identity_terms|value_words}}"
+        context: "{{How they use this word}}"
+        example: "{{Direct quote showing usage}}"
+        source: "{{Source file}}"
+
+      - word: "{{term_2}}"
+        frequency: "{{X}}% of files"
+        category: "{{category}}"
+        context: "{{context}}"
+        example: "{{quote}}"
+        source: "{{source}}"
+
+      # Template entry for remaining words (copy and fill)
+      # Minimum 15 entries required
+      #
+      # - word: "{{term}}"
+      #   frequency: "{{X}}% of files"
+      #   category: "{{category}}"
+      #   context: "{{context}}"
+      #   example: "{{quote}}"
+      #   source: "{{source}}"
+
+  # ---------------------------------------------------------------------------
+  # FORBIDDEN WORDS (10+ Required)
+  # Words the copywriter avoids or actively rejects
+  # ---------------------------------------------------------------------------
+  forbidden_words:
+    minimum_required: 10
+    extraction_criteria: "Common terms missing from their vocabulary + explicit rejections"
+
+    # Categories to identify:
+    # - industry_jargon: Technical terms they reject
+    # - buzzwords: Trendy words they avoid
+    # - tone_mismatches: Words too casual/formal for their style
+    # - conceptual_rejections: Ideas they disagree with
+
+    entries:
+      - word: "{{forbidden_term_1}}"
+        alternative: "{{What they use instead}}"
+        reason: "{{Why they avoid this}}"
+        category: "{{industry_jargon|buzzwords|tone_mismatches|conceptual_rejections}}"
+        evidence: "{{Source showing avoidance or explicit rejection}}"
+
+      - word: "{{forbidden_term_2}}"
+        alternative: "{{alternative}}"
+        reason: "{{reason}}"
+        category: "{{category}}"
+        evidence: "{{evidence}}"
+
+      # Template entry for remaining forbidden words (copy and fill)
+      # Minimum 10 entries required
+      #
+      # - word: "{{term}}"
+      #   alternative: "{{alternative}}"
+      #   reason: "{{reason}}"
+      #   category: "{{category}}"
+      #   evidence: "{{evidence}}"
+
+  # ---------------------------------------------------------------------------
+  # SIGNATURE VOCABULARY (10+ Required)
+  # Unique terms with specific meanings in their system
+  # ---------------------------------------------------------------------------
+  signature_vocabulary:
+    minimum_required: 10
+    extraction_criteria: "Coined terms, redefined words, or distinctive usage"
+
+    entries:
+      term_1:
+        term: "{{unique_term}}"
+        definition: "{{Their specific definition}}"
+        context: "{{When and how to use}}"
+        origin: "{{Where this term comes from in their work}}"
+        example: "{{Quote demonstrating usage}}"
+        source: "{{Source file}}"
+
+      term_2:
+        term: "{{unique_term}}"
+        definition: "{{definition}}"
+        context: "{{context}}"
+        origin: "{{origin}}"
+        example: "{{example}}"
+        source: "{{source}}"
+
+      # Template entry for remaining signature vocabulary (copy and fill)
+      # Minimum 10 entries required
+      #
+      # term_N:
+      #   term: "{{term}}"
+      #   definition: "{{definition}}"
+      #   context: "{{context}}"
+      #   origin: "{{origin}}"
+      #   example: "{{example}}"
+      #   source: "{{source}}"
+
+# =============================================================================
+# TRIGRAMS SECTION (20+ Required)
+# Three-word combinations that appear frequently and are distinctive
+# =============================================================================
+trigrams:
+  minimum_required: 20
+  frequency_guidance: "every_3_paragraphs"  # How often to use in generated content
+
+  # Categories to identify:
+  # - openers: How they start pieces/paragraphs
+  # - transitions: How they move between ideas
+  # - emphasis: How they highlight important points
+  # - closers: How they end sections/pieces
+  # - signature: Unique expressions only they use
+
+  entries:
+    - trigram: "{{three word phrase 1}}"
+      frequency: "{{X occurrences across files}}"
+      category: "{{openers|transitions|emphasis|closers|signature}}"
+      context: "{{When this appears}}"
+      example: "{{Full sentence showing usage}}"
+      source: "{{Source file}}"
+
+    - trigram: "{{three word phrase 2}}"
+      frequency: "{{frequency}}"
+      category: "{{category}}"
+      context: "{{context}}"
+      example: "{{example}}"
+      source: "{{source}}"
+
+    # Template entry for remaining trigrams (copy and fill)
+    # Minimum 20 entries required
+    #
+    # - trigram: "{{phrase}}"
+    #   frequency: "{{frequency}}"
+    #   category: "{{category}}"
+    #   context: "{{context}}"
+    #   example: "{{example}}"
+    #   source: "{{source}}"
+
+  # Summary by category for easy reference
+  category_summary:
+    openers:
+      count: "{{X}}"
+      examples: ["{{phrase_1}}", "{{phrase_2}}", "{{phrase_3}}"]
+    transitions:
+      count: "{{X}}"
+      examples: ["{{phrase_1}}", "{{phrase_2}}", "{{phrase_3}}"]
+    emphasis:
+      count: "{{X}}"
+      examples: ["{{phrase_1}}", "{{phrase_2}}", "{{phrase_3}}"]
+    closers:
+      count: "{{X}}"
+      examples: ["{{phrase_1}}", "{{phrase_2}}", "{{phrase_3}}"]
+    signature:
+      count: "{{X}}"
+      examples: ["{{phrase_1}}", "{{phrase_2}}", "{{phrase_3}}"]
+
+# =============================================================================
+# RHETORICAL DEVICES SECTION (5+ Required)
+# Argumentation and persuasion patterns they use
+# =============================================================================
+rhetorical_devices:
+  minimum_required: 5
+
+  # Common devices to look for:
+  # - reframing: Taking common belief, presenting differently
+  # - juxtaposition: Contrasting two ideas
+  # - rule_of_three: Presenting in threes
+  # - stacking: Building argument layer by layer
+  # - socratic_questioning: Leading with questions
+  # - storytelling_arc: Using narrative structure
+  # - direct_challenge: Confronting the reader
+  # - authority_proof: Backing with credentials
+  # - future_pacing: Painting future outcome
+  # - contrast_bridge: From negative to positive state
+
+  entries:
+    device_1:
+      name: "{{Device Name}}"
+      type: "{{reframing|juxtaposition|rule_of_three|stacking|socratic|storytelling|challenge|authority|future_pacing|contrast}}"
+      description: "{{What this device accomplishes}}"
+      structure: |
+        {{Step-by-step pattern/template}}
+        1. {{step_1}}
+        2. {{step_2}}
+        3. {{step_3}}
+      example: |
+        {{Direct quote from sources demonstrating the device}}
+      usage: "{{When and how to apply this device}}"
+      source: "{{Source file}}"
+
+    device_2:
+      name: "{{Device Name}}"
+      type: "{{type}}"
+      description: "{{description}}"
+      structure: |
+        {{structure}}
+      example: |
+        {{example}}"
+      usage: "{{usage}}"
+      source: "{{source}}"
+
+    # Template entry for remaining devices (copy and fill)
+    # Minimum 5 entries required
+    #
+    # device_N:
+    #   name: "{{name}}"
+    #   type: "{{type}}"
+    #   description: "{{description}}"
+    #   structure: |
+    #     {{structure}}
+    #   example: |
+    #     {{example}}
+    #   usage: "{{usage}}"
+    #   source: "{{source}}"
+
+# =============================================================================
+# QUICK FORMULAS SECTION (5+ Required)
+# Fill-in-the-blank templates for different copy types
+# =============================================================================
+quick_formulas:
+  minimum_required: 5
+
+  # Formula types to create:
+  # - hook_formula: How they open content
+  # - headline_formula: How they write headlines
+  # - cta_formula: How they write calls to action
+  # - transition_formula: How they move between ideas
+  # - close_formula: How they end pieces
+  # - proof_formula: How they present evidence
+  # - reframe_formula: How they shift perspective
+
+  entries:
+    hook_formula:
+      name: "{{Formula Name}}"
+      type: "hook"
+      template: "{{Template with [VARIABLE] placeholders}}"
+      variables:
+        - name: "{{variable_1}}"
+          description: "{{What goes here}}"
+        - name: "{{variable_2}}"
+          description: "{{What goes here}}"
+      example:
+        filled: "{{Actual example from sources with variables filled}}"
+        source: "{{Source file}}"
+      usage: "{{When to use this formula}}"
+
+    headline_formula:
+      name: "{{Formula Name}}"
+      type: "headline"
+      template: "{{template}}"
+      variables:
+        - name: "{{variable}}"
+          description: "{{description}}"
+      example:
+        filled: "{{example}}"
+        source: "{{source}}"
+      usage: "{{usage}}"
+
+    cta_formula:
+      name: "{{Formula Name}}"
+      type: "cta"
+      template: "{{template}}"
+      variables:
+        - name: "{{variable}}"
+          description: "{{description}}"
+      example:
+        filled: "{{example}}"
+        source: "{{source}}"
+      usage: "{{usage}}"
+
+    transition_formula:
+      name: "{{Formula Name}}"
+      type: "transition"
+      template: "{{template}}"
+      variables:
+        - name: "{{variable}}"
+          description: "{{description}}"
+      example:
+        filled: "{{example}}"
+        source: "{{source}}"
+      usage: "{{usage}}"
+
+    close_formula:
+      name: "{{Formula Name}}"
+      type: "close"
+      template: "{{template}}"
+      variables:
+        - name: "{{variable}}"
+          description: "{{description}}"
+      example:
+        filled: "{{example}}"
+        source: "{{source}}"
+      usage: "{{usage}}"
+
+    # Additional formulas (optional but recommended)
+    #
+    # proof_formula:
+    #   name: "{{name}}"
+    #   type: "proof"
+    #   template: "{{template}}"
+    #   ...
+    #
+    # reframe_formula:
+    #   name: "{{name}}"
+    #   type: "reframe"
+    #   template: "{{template}}"
+    #   ...
+
+# =============================================================================
+# PSYCHOMETRIC INFLUENCE SECTION (If profile available)
+# How psychometrics affect communication style
+# =============================================================================
+psychometric_influence:
+  available: "{{true/false}}"
+
+  # If psychometric profile exists, fill the following:
+  profile_summary:
+    disc:
+      type: "{{D/I/S/C or combination}}"
+      description: "{{Brief description of DISC profile}}"
+    mbti:
+      type: "{{4-letter type}}"
+      description: "{{Brief description of MBTI profile}}"
+    enneagram:
+      type: "{{number}}"
+      wing: "{{wing number if applicable}}"
+      description: "{{Brief description of Enneagram profile}}"
+
+  # How psychometrics influence communication
+  communication_impact:
+    tone:
+      description: "{{How psychometrics affect overall tone}}"
+      characteristics:
+        - "{{characteristic_1}}"
+        - "{{characteristic_2}}"
+        - "{{characteristic_3}}"
+
+    structure:
+      description: "{{How psychometrics affect content structure}}"
+      characteristics:
+        - "{{characteristic_1}}"
+        - "{{characteristic_2}}"
+
+    persuasion:
+      description: "{{How psychometrics affect persuasion style}}"
+      characteristics:
+        - "{{characteristic_1}}"
+        - "{{characteristic_2}}"
+
+    emotional_triggers:
+      description: "{{What emotions they appeal to}}"
+      primary_emotions:
+        - "{{emotion_1}}"
+        - "{{emotion_2}}"
+        - "{{emotion_3}}"
+
+  # Authenticity markers based on psychometrics
+  authentic_markers:
+    must_include:
+      description: "Characteristics that must be present for authentic voice"
+      markers:
+        - "{{marker_1}}"
+        - "{{marker_2}}"
+        - "{{marker_3}}"
+
+    must_avoid:
+      description: "Characteristics that would feel inauthentic"
+      markers:
+        - "{{marker_1}}"
+        - "{{marker_2}}"
+        - "{{marker_3}}"
+
+# =============================================================================
+# EXTRACTION VALIDATION
+# Checklist to verify extraction completeness
+# =============================================================================
+validation:
+  vocabulary:
+    mandatory_words_count: "{{count}}"        # Target: 15+
+    mandatory_words_pass: "{{true/false}}"
+    forbidden_words_count: "{{count}}"        # Target: 10+
+    forbidden_words_pass: "{{true/false}}"
+    signature_vocabulary_count: "{{count}}"   # Target: 10+
+    signature_vocabulary_pass: "{{true/false}}"
+
+  trigrams:
+    trigrams_count: "{{count}}"               # Target: 20+
+    trigrams_pass: "{{true/false}}"
+    all_have_frequency: "{{true/false}}"
+    all_have_context: "{{true/false}}"
+    categorized_by_function: "{{true/false}}"
+    no_generic_phrases: "{{true/false}}"
+
+  rhetorical_devices:
+    devices_count: "{{count}}"                # Target: 5+
+    devices_pass: "{{true/false}}"
+    all_have_description: "{{true/false}}"
+    all_have_example: "{{true/false}}"
+    all_have_usage: "{{true/false}}"
+    examples_from_sources: "{{true/false}}"
+
+  quick_formulas:
+    formulas_count: "{{count}}"               # Target: 5+
+    formulas_pass: "{{true/false}}"
+    cover_different_types: "{{true/false}}"
+    all_have_templates: "{{true/false}}"
+    all_have_examples: "{{true/false}}"
+    derived_from_sources: "{{true/false}}"
+
+  psychometric:
+    profile_analyzed: "{{true/false/na}}"
+    impacts_documented: "{{true/false/na}}"
+    markers_defined: "{{true/false/na}}"
+
+  technical:
+    yaml_syntax_valid: "{{true/false}}"
+    all_english: "{{true/false}}"
+    no_placeholders: "{{true/false}}"
+
+  overall:
+    total_items_extracted: "{{count}}"
+    all_minimums_met: "{{true/false}}"
+    extraction_quality: "{{excellent|good|needs_revision}}"
+
+# =============================================================================
+# EXTRACTION NOTES
+# Optional section for extraction observations
+# =============================================================================
+extraction_notes:
+  observations: |
+    {{Any important observations during extraction}}
+
+  distinctive_patterns: |
+    {{Notable patterns unique to this copywriter}}
+
+  challenges: |
+    {{Any challenges encountered during extraction}}
+
+  recommendations: |
+    {{Recommendations for using this communication DNA}}
+
+# =============================================================================
+# EXAMPLE ENTRY (For Reference)
+# Delete this section after extraction is complete
+# =============================================================================
+example_filled_entry:
+  note: "This is an example of a properly filled mandatory word entry"
+
+  example_mandatory_word:
+    word: "leverage"
+    frequency: "67% of files"
+    category: "action_verbs"
+    context: "Dan Koe uses 'leverage' to describe maximizing return on effort - turning one piece of work into multiple outcomes"
+    example: "You need to leverage your expertise into products that sell while you sleep."
+    source: "25 - How I Built A $2.6 Million One-Person Business.md"
+
+  example_forbidden_word:
+    word: "hustle"
+    alternative: "focused work, deep work, intensity"
+    reason: "Dan Koe explicitly rejects 'hustle culture' - associates it with busywork rather than strategic effort"
+    category: "tone_mismatches"
+    evidence: "Multiple articles criticize 'hustle porn' and advocate for strategic rather than chaotic work"
+
+  example_trigram:
+    trigram: "most people think"
+    frequency: "23 occurrences"
+    category: "openers"
+    context: "Used to set up a reframe - introduces conventional wisdom before challenging it"
+    example: "Most people think you need years of experience to start a business."
+    source: "12 - The Value Ladder Model.md"
+
+  example_rhetorical_device:
+    name: "The Reframe Opener"
+    type: "reframing"
+    description: "Opens with common belief, then immediately challenges it with a counter-intuitive truth"
+    structure: |
+      1. State the common belief ("Most people think...")
+      2. Acknowledge why they believe it ("Because...")
+      3. Introduce the counter-truth ("But the truth is...")
+      4. Provide evidence or logic for the new frame
+      5. State the implication for the reader
+    example: |
+      "Most people think they need a massive audience to make money online.
+      They see influencers with millions of followers and assume that's the path.
+      But the truth is, you only need 1,000 true fans - people who will buy anything you create.
+      I made my first $100K with fewer than 5,000 followers.
+      The lesson? Depth beats breadth. Always."
+    usage: "Use at the start of threads, articles, or sales pages to capture attention and establish authority"
+    source: "36 - How I Made $3000 Per Month With 300 Followers.md"
+
+  example_quick_formula:
+    name: "The Contrarian Hook"
+    type: "hook"
+    template: "[COMMON BELIEF] is a lie. Here's what [SUCCESSFUL GROUP] actually do:"
+    variables:
+      - name: "COMMON_BELIEF"
+        description: "The conventional wisdom your audience believes"
+      - name: "SUCCESSFUL_GROUP"
+        description: "Group that has achieved what your audience wants"
+    example:
+      filled: "'Work hard, play hard' is a lie. Here's what millionaires actually do:"
+      source: "08 - Productivity Is A Scam.md"
+    usage: "Use for Twitter threads, email subject lines, or article openings when challenging mainstream advice"
+
+# =============================================================================
+# END OF TEMPLATE
+# =============================================================================
+
+# Quality Standards:
+# - All {{placeholder}} markers must be replaced with real data
+# - Minimum quantities must be met for each section
+# - All examples must come from actual source materials
+# - YAML syntax must be valid (test before saving)
+# - All content must be in English
+# - No generic phrases - everything must be distinctive to this copywriter
+#
+# After completing extraction:
+# 1. Remove the example_filled_entry section
+# 2. Run YAML validation
+# 3. Save to outputs/minds/{slug}/analysis/communication-dna.yaml
+# 4. Continue to next phase of agent creation pipeline

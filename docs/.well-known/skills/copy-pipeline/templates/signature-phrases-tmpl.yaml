@@ -1,0 +1,322 @@
+# ==============================================================================
+# SIGNATURE PHRASES EXTRACTION TEMPLATE
+# CopywriterOS - AIOS Expansion Pack
+# ==============================================================================
+#
+# PURPOSE:
+# Output template for the extract-signature-phrases task. Documents 42+ memorable,
+# quotable phrases organized into a 7-tier system based on usage frequency.
+#
+# USAGE:
+# 1. Run extract-signature-phrases task
+# 2. Fill in all sections following the structure below
+# 3. Ensure minimum requirements are met before saving
+#
+# MINIMUM REQUIREMENTS:
+# - Total phrases: 42+
+# - All 7 tiers populated
+# - Each phrase has all 4 required fields
+# - No duplicate phrases
+# - YAML syntax validated
+#
+# ==============================================================================
+
+signature_phrases:
+
+  # ============================================================================
+  # METADATA - HEADER SECTION
+  # ============================================================================
+  # Document key information about this extraction
+
+  metadata:
+    copywriter: "[COPYWRITER_NAME]"          # Full name of the copywriter
+    extraction_date: "YYYY-MM-DD"            # Date of extraction
+    total_phrases: 0                          # Total count (must be 42+)
+    source_files_processed: 0                 # Number of source files analyzed
+    primary_theme: "[PRIMARY_THEME]"          # Main topic domain (Tier 3)
+    secondary_theme: "[SECONDARY_THEME]"      # Second topic domain (Tier 4)
+    tertiary_theme: "[TERTIARY_THEME]"        # Third topic domain (Tier 5)
+    version: "1.0"
+    task_reference: "tasks/extract-signature-phrases.md"
+    template_version: "1.0.0"
+
+  # ============================================================================
+  # TIER 1: CORE MANTRAS (5-7 phrases)
+  # ============================================================================
+  # The copywriter's most iconic, repeated beliefs
+  # These phrases appear constantly and would be recognized as "their thing"
+  #
+  # USAGE FREQUENCY: Use in every piece (1-2x daily)
+  # SELECTION CRITERIA:
+  #   - Highest frequency across sources
+  #   - Foundation of their worldview
+  #   - Would be recognized as their signature statement
+
+  tier_1_core_mantras:
+    frequency: "use_every_piece"
+    description: "The copywriter's most iconic, repeated beliefs - foundation of their philosophy"
+    minimum_count: 5
+    maximum_count: 7
+    phrases:
+      # --- EXAMPLE PHRASE (replace with actual content) ---
+      - phrase: "The exact phrase in English as spoken/written by the copywriter"
+        portuguese: "Translation to Portuguese (or original if source is Portuguese)"
+        context: "When and how to use this phrase - specific guidance on application"
+        source: "Source file or content piece where this was found"
+
+      # --- Add 4-6 more phrases following the same structure ---
+      # - phrase: ""
+      #   portuguese: ""
+      #   context: ""
+      #   source: ""
+
+  # ============================================================================
+  # TIER 2: METHODOLOGY PILLARS (5-7 phrases)
+  # ============================================================================
+  # Key phrases about their process and approach
+  # How they work, what makes their methodology distinctive
+  #
+  # USAGE FREQUENCY: Weekly
+  # SELECTION CRITERIA:
+  #   - Explains how they achieve results
+  #   - Process-oriented language
+  #   - "My approach is..." type statements
+
+  tier_2_methodology_pillars:
+    frequency: "weekly"
+    description: "Key phrases about their process and approach - methodology markers"
+    minimum_count: 5
+    maximum_count: 7
+    phrases:
+      # --- EXAMPLE PHRASE (replace with actual content) ---
+      - phrase: "A phrase that captures their unique methodology or process"
+        portuguese: "Translation to Portuguese"
+        context: "Use when explaining how they approach problems or create results"
+        source: "Source attribution"
+
+      # --- Add 4-6 more phrases following the same structure ---
+
+  # ============================================================================
+  # TIER 3: [PRIMARY_THEME] (6-8 phrases)
+  # ============================================================================
+  # Domain-specific wisdom about their main expertise area
+  # Replace [PRIMARY_THEME] with actual theme (e.g., Writing, Copywriting, Content)
+  #
+  # USAGE FREQUENCY: Per topic context
+  # SELECTION CRITERIA:
+  #   - Directly about the primary theme
+  #   - Shows expertise depth
+  #   - Actionable within the domain
+
+  tier_3_primary_theme:
+    theme_name: "[PRIMARY_THEME]"            # e.g., "Writing", "Copywriting", "Content"
+    frequency: "per_topic_context"
+    description: "Domain-specific wisdom about [PRIMARY_THEME]"
+    minimum_count: 6
+    maximum_count: 8
+    phrases:
+      # --- EXAMPLE PHRASE (replace with actual content) ---
+      - phrase: "A phrase specifically about their primary expertise domain"
+        portuguese: "Translation to Portuguese"
+        context: "Use when discussing [PRIMARY_THEME] topics - specific application guidance"
+        source: "Source attribution"
+
+      # --- Add 5-7 more phrases following the same structure ---
+
+  # ============================================================================
+  # TIER 4: [SECONDARY_THEME] (6-8 phrases)
+  # ============================================================================
+  # Domain-specific wisdom about their secondary expertise area
+  # Replace [SECONDARY_THEME] with actual theme (e.g., Marketing, Business, Offers)
+  #
+  # USAGE FREQUENCY: Per topic context
+  # SELECTION CRITERIA:
+  #   - Directly about the secondary theme
+  #   - Complements primary theme
+  #   - Actionable wisdom
+
+  tier_4_secondary_theme:
+    theme_name: "[SECONDARY_THEME]"          # e.g., "Marketing", "Business", "Offers"
+    frequency: "per_topic_context"
+    description: "Domain-specific wisdom about [SECONDARY_THEME]"
+    minimum_count: 6
+    maximum_count: 8
+    phrases:
+      # --- EXAMPLE PHRASE (replace with actual content) ---
+      - phrase: "A phrase specifically about their secondary expertise domain"
+        portuguese: "Translation to Portuguese"
+        context: "Use when discussing [SECONDARY_THEME] topics - specific application guidance"
+        source: "Source attribution"
+
+      # --- Add 5-7 more phrases following the same structure ---
+
+  # ============================================================================
+  # TIER 5: [TERTIARY_THEME] (6-8 phrases)
+  # ============================================================================
+  # Domain-specific wisdom about their tertiary expertise area
+  # Replace [TERTIARY_THEME] with actual theme (e.g., Mindset, Productivity, Life Design)
+  #
+  # USAGE FREQUENCY: Per topic context
+  # SELECTION CRITERIA:
+  #   - Directly about the tertiary theme
+  #   - Rounds out their expertise areas
+  #   - Practical application
+
+  tier_5_tertiary_theme:
+    theme_name: "[TERTIARY_THEME]"           # e.g., "Mindset", "Productivity", "Life Design"
+    frequency: "per_topic_context"
+    description: "Domain-specific wisdom about [TERTIARY_THEME]"
+    minimum_count: 6
+    maximum_count: 8
+    phrases:
+      # --- EXAMPLE PHRASE (replace with actual content) ---
+      - phrase: "A phrase specifically about their tertiary expertise domain"
+        portuguese: "Translation to Portuguese"
+        context: "Use when discussing [TERTIARY_THEME] topics - specific application guidance"
+        source: "Source attribution"
+
+      # --- Add 5-7 more phrases following the same structure ---
+
+  # ============================================================================
+  # TIER 6: PHILOSOPHY & MINDSET (5-7 phrases)
+  # ============================================================================
+  # Deeper wisdom about life, success, and thinking
+  # Transcends tactical advice - reveals their worldview
+  #
+  # USAGE FREQUENCY: Monthly
+  # SELECTION CRITERIA:
+  #   - About success/life, not just the craft
+  #   - Often inspirational or contrarian
+  #   - Shows depth beyond tactical advice
+
+  tier_6_philosophy_mindset:
+    frequency: "monthly"
+    description: "Deeper wisdom about life, success, and thinking - the wisdom layer"
+    minimum_count: 5
+    maximum_count: 7
+    phrases:
+      # --- EXAMPLE PHRASE (replace with actual content) ---
+      - phrase: "A phrase about success, life philosophy, or mindset principles"
+        portuguese: "Translation to Portuguese"
+        context: "Use for inspiration or when addressing deeper life/success topics"
+        source: "Source attribution"
+
+      # --- Add 4-6 more phrases following the same structure ---
+
+  # ============================================================================
+  # TIER 7: TACTICAL & SITUATIONAL (5-7 phrases)
+  # ============================================================================
+  # Specific advice for specific situations
+  # "When X happens, do Y" type statements
+  #
+  # USAGE FREQUENCY: As needed
+  # SELECTION CRITERIA:
+  #   - Addresses common scenarios
+  #   - Practical and actionable
+  #   - Can be applied immediately
+
+  tier_7_tactical_situational:
+    frequency: "as_needed"
+    description: "Specific advice for specific situations - practical application"
+    minimum_count: 5
+    maximum_count: 7
+    phrases:
+      # --- EXAMPLE PHRASE (replace with actual content) ---
+      - phrase: "Specific tactical advice for a common situation"
+        portuguese: "Translation to Portuguese"
+        context: "Use when [specific situation] - this phrase addresses [specific problem/scenario]"
+        source: "Source attribution"
+
+      # --- Add 4-6 more phrases following the same structure ---
+
+# ==============================================================================
+# VALIDATION CHECKLIST
+# ==============================================================================
+# Before saving, verify:
+#
+# QUANTITY CHECKS:
+# [ ] Tier 1 has 5-7 phrases
+# [ ] Tier 2 has 5-7 phrases
+# [ ] Tier 3 has 6-8 phrases
+# [ ] Tier 4 has 6-8 phrases
+# [ ] Tier 5 has 6-8 phrases
+# [ ] Tier 6 has 5-7 phrases
+# [ ] Tier 7 has 5-7 phrases
+# [ ] Total is 42+ phrases
+#
+# QUALITY CHECKS:
+# [ ] Each phrase is standalone (makes sense without context)
+# [ ] Each phrase is memorable (sticks in your mind)
+# [ ] Each phrase is original (distinctly theirs, not generic)
+# [ ] Each phrase is quotable (something you'd cite or share)
+# [ ] No duplicate phrases across tiers
+# [ ] No semantic duplicates (same idea worded differently)
+#
+# FIELD CHECKS:
+# [ ] All 'phrase' fields are populated with exact quotes
+# [ ] All 'portuguese' fields have accurate translations
+# [ ] All 'context' fields are specific (not vague like "business advice")
+# [ ] All 'source' fields identify the origin
+#
+# METADATA CHECKS:
+# [ ] Copywriter name is correct
+# [ ] Extraction date is current
+# [ ] Total phrases count is accurate
+# [ ] Source files count is accurate
+# [ ] Theme names are descriptive
+#
+# YAML VALIDATION:
+# [ ] Valid YAML syntax (no parsing errors)
+# [ ] Proper indentation (2 spaces)
+# [ ] All required fields present
+# [ ] No empty values
+#
+# ==============================================================================
+# PHRASE STRUCTURE REFERENCE
+# ==============================================================================
+#
+# Each phrase entry must have exactly these 4 fields:
+#
+# - phrase: "The exact phrase in English"
+#   portuguese: "Portuguese translation"
+#   context: "When and how to use this phrase"
+#   source: "Where this phrase was found"
+#
+# CONTEXT FIELD BEST PRACTICES:
+#
+# GOOD:
+# context: "Use when explaining why short-term thinking fails. Works well in
+#          sales pages when addressing instant gratification objections."
+#
+# BAD:
+# context: "Business advice"  # Too vague - doesn't help with application
+#
+# SOURCE FIELD OPTIONS:
+# - Specific file name: "MM Dan/03 - Twitter Agency Breakdown.md"
+# - Content piece: "How I Made $3000 With 300 Followers (article)"
+# - Multiple sources: "Multiple sources" (for high-frequency phrases)
+# - Book/Course: "Modern Mastery Course, Module 3"
+#
+# ==============================================================================
+# TIER FREQUENCY GUIDE
+# ==============================================================================
+#
+# | Tier | Name                    | Frequency          | Use Case                    |
+# |------|-------------------------|--------------------|-----------------------------|
+# | 1    | Core Mantras            | use_every_piece    | Every content piece         |
+# | 2    | Methodology Pillars     | weekly             | Process-focused content     |
+# | 3    | Primary Theme           | per_topic_context  | When topic matches theme    |
+# | 4    | Secondary Theme         | per_topic_context  | When topic matches theme    |
+# | 5    | Tertiary Theme          | per_topic_context  | When topic matches theme    |
+# | 6    | Philosophy & Mindset    | monthly            | Deep/inspirational content  |
+# | 7    | Tactical & Situational  | as_needed          | Specific scenarios          |
+#
+# ==============================================================================
+# VERSION HISTORY
+# ==============================================================================
+# v1.0.0 - Initial template creation
+#
+# ==============================================================================
+# CopywriterOS Template v1.0.0
+# Part of the AIOS Expansion Pack System
+# ==============================================================================

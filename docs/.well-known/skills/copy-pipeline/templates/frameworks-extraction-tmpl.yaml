@@ -1,0 +1,456 @@
+# Copywriter Operational Frameworks Extraction Template
+# Version: 1.0.0
+# Task Reference: tasks/extract-frameworks.md
+# Purpose: Output template for the extract-frameworks task
+#
+# INSTRUCTIONS:
+# 1. Replace all [PLACEHOLDER] values with actual data
+# 2. Remove comments starting with # GUIDE: after filling
+# 3. Validate YAML syntax before saving
+# 4. Ensure exactly 10 frameworks are documented
+# 5. All content must be in English
+
+# ==============================================================================
+# METADATA SECTION
+# ==============================================================================
+
+metadata:
+  copywriter_name: "[FULL NAME]"  # e.g., "Dan Koe", "David Ogilvy"
+  extraction_date: "[YYYY-MM-DD]"  # Date of extraction
+  total_frameworks: 10  # Must be exactly 10
+  source_files_count: "[XX]"  # Number of source files processed
+  source_directory: "[PATH]"  # e.g., "outputs/minds/dan_koe/sources/MM Dan/"
+  extractor: "AIOS extract-frameworks task v1.0"
+
+# Category coverage summary - update counts after extraction
+categories_covered:
+  copywriting: 0      # Target: 2-3
+  offer_creation: 0   # Target: 1-2
+  marketing_strategy: 0  # Target: 1-2
+  sales: 0            # Target: 1-2
+  content: 0          # Target: 1-2
+  audience: 0         # Target: 0-1
+  product: 0          # Target: 0-1
+  mindset: 0          # Target: 0-1
+
+# ==============================================================================
+# CATEGORY ENUM REFERENCE
+# ==============================================================================
+#
+# Use ONLY these categories:
+#   - copywriting: Writing techniques, formulas, structures (PASTOR, PAS, AIDA)
+#   - offer_creation: Building offers, pricing, bundling (Godfather Offer, Value Stack)
+#   - marketing_strategy: Overall approach, positioning (Content Pyramid, Category Design)
+#   - sales: Sales processes, objection handling (Risk Reversal, Closing Scripts)
+#   - content: Content creation, distribution (Newsletter Formula, Social Strategy)
+#   - audience: Avatar, targeting, segmentation (Dream 100, Audience Research)
+#   - product: Product development (Minimum Viable Offer, Product Market Fit)
+#   - mindset: Beliefs, psychology, personal development (Identity Shift)
+#
+# ==============================================================================
+
+# ==============================================================================
+# OPERATIONAL FRAMEWORKS (10 REQUIRED)
+# ==============================================================================
+
+operational_frameworks:
+
+  # ---------------------------------------------------------------------------
+  # FRAMEWORK 1
+  # ---------------------------------------------------------------------------
+  - name: "[FRAMEWORK NAME]"
+    # GUIDE: Clear, recognizable name. Use copywriter's own naming if available.
+
+    category: "[CATEGORY]"
+    # GUIDE: One of: copywriting | offer_creation | marketing_strategy | sales | content | audience | product | mindset
+
+    origin: "[SOURCE REFERENCE]"
+    # GUIDE: Where first documented - book, course, article, interview
+    # Example: "Modern Mastery newsletter, Issue #23"
+
+    definition: >
+      [2-4 sentences explaining what this framework does and when to use it.
+      Use the copywriter's language where possible. This should clearly explain
+      the purpose and primary application of the framework.]
+    # GUIDE: Be specific about WHAT it does and WHEN to use it
+
+    principle: "[ONE SENTENCE CORE PRINCIPLE]"
+    # GUIDE: The underlying truth or belief that makes this framework work
+    # Example: "People don't buy products; they buy better versions of themselves."
+
+    # Core Structure
+    components:
+      description: "[Overview of the framework's building blocks]"
+      # GUIDE: Explain how the parts work together
+
+      parts:
+        - name: "[COMPONENT 1 NAME]"
+          description: "[What this component does and why it matters]"
+          # GUIDE: Each part should be distinct and essential
+
+        - name: "[COMPONENT 2 NAME]"
+          description: "[What this component does and why it matters]"
+
+        - name: "[COMPONENT 3 NAME]"
+          description: "[What this component does and why it matters]"
+
+        # Add more components as needed (typically 3-7)
+        # Remove GUIDE comments in final output
+
+    # Process/Steps
+    process:
+      description: "[How to execute this framework from start to finish]"
+
+      steps:
+        - step: 1
+          name: "[STEP NAME]"
+          action: "[Specific action to take]"
+          # GUIDE: Each step should be concrete and actionable
+
+        - step: 2
+          name: "[STEP NAME]"
+          action: "[Specific action to take]"
+
+        - step: 3
+          name: "[STEP NAME]"
+          action: "[Specific action to take]"
+
+        # Add more steps as needed (typically 3-7)
+
+    # Application Guide
+    application:
+      when: "[Specific situations, triggers, or contexts where this framework applies]"
+      # GUIDE: Be specific - not "when writing copy" but "when writing sales page headlines"
+
+      process:
+        - "[How to start applying the framework]"
+        - "[Key decision points during application]"
+        - "[How to know you've completed it correctly]"
+
+      expected_outcome: "[What success looks like when applied correctly]"
+      # GUIDE: Measurable or observable result
+
+    # Warnings
+    common_mistakes:
+      - "[MISTAKE 1: What people do wrong and why it fails]"
+      - "[MISTAKE 2: What people do wrong and why it fails]"
+      - "[MISTAKE 3: What people do wrong and why it fails]"
+      # GUIDE: At least 3 mistakes, based on copywriter's warnings in source materials
+
+    # Evidence/Examples
+    examples:
+      - context: "[Situation or problem being solved]"
+        application: "[How the framework was applied]"
+        result: "[Outcome or impact achieved]"
+        # GUIDE: Use real examples from source materials when possible
+
+  # ---------------------------------------------------------------------------
+  # FRAMEWORK 2
+  # ---------------------------------------------------------------------------
+  - name: "[FRAMEWORK NAME]"
+    category: "[CATEGORY]"
+    origin: "[SOURCE REFERENCE]"
+
+    definition: >
+      [2-4 sentences explaining what this framework does and when to use it.]
+
+    principle: "[ONE SENTENCE CORE PRINCIPLE]"
+
+    components:
+      description: "[Overview of the framework's building blocks]"
+      parts:
+        - name: "[COMPONENT 1 NAME]"
+          description: "[What this component does]"
+        - name: "[COMPONENT 2 NAME]"
+          description: "[What this component does]"
+        - name: "[COMPONENT 3 NAME]"
+          description: "[What this component does]"
+
+    process:
+      description: "[How to execute this framework]"
+      steps:
+        - step: 1
+          name: "[STEP NAME]"
+          action: "[Specific action]"
+        - step: 2
+          name: "[STEP NAME]"
+          action: "[Specific action]"
+        - step: 3
+          name: "[STEP NAME]"
+          action: "[Specific action]"
+
+    application:
+      when: "[When to use this framework]"
+      process:
+        - "[Application step 1]"
+        - "[Application step 2]"
+        - "[Application step 3]"
+      expected_outcome: "[What success looks like]"
+
+    common_mistakes:
+      - "[Mistake 1]"
+      - "[Mistake 2]"
+      - "[Mistake 3]"
+
+    examples:
+      - context: "[Situation]"
+        application: "[How applied]"
+        result: "[Outcome]"
+
+  # ---------------------------------------------------------------------------
+  # FRAMEWORKS 3-10: Repeat the structure above
+  # ---------------------------------------------------------------------------
+  # Copy the Framework 2 structure and fill for each additional framework.
+  # Ensure you have exactly 10 frameworks total.
+  # Remove this comment block in the final output.
+  # ---------------------------------------------------------------------------
+
+  - name: "[FRAMEWORK 3 NAME]"
+    category: "[CATEGORY]"
+    origin: "[SOURCE]"
+    definition: "[DEFINITION]"
+    principle: "[PRINCIPLE]"
+    components:
+      description: "[DESCRIPTION]"
+      parts: []
+    process:
+      description: "[DESCRIPTION]"
+      steps: []
+    application:
+      when: "[WHEN]"
+      process: []
+      expected_outcome: "[OUTCOME]"
+    common_mistakes: []
+    examples: []
+
+  - name: "[FRAMEWORK 4 NAME]"
+    category: "[CATEGORY]"
+    origin: "[SOURCE]"
+    definition: "[DEFINITION]"
+    principle: "[PRINCIPLE]"
+    components:
+      description: "[DESCRIPTION]"
+      parts: []
+    process:
+      description: "[DESCRIPTION]"
+      steps: []
+    application:
+      when: "[WHEN]"
+      process: []
+      expected_outcome: "[OUTCOME]"
+    common_mistakes: []
+    examples: []
+
+  - name: "[FRAMEWORK 5 NAME]"
+    category: "[CATEGORY]"
+    origin: "[SOURCE]"
+    definition: "[DEFINITION]"
+    principle: "[PRINCIPLE]"
+    components:
+      description: "[DESCRIPTION]"
+      parts: []
+    process:
+      description: "[DESCRIPTION]"
+      steps: []
+    application:
+      when: "[WHEN]"
+      process: []
+      expected_outcome: "[OUTCOME]"
+    common_mistakes: []
+    examples: []
+
+  - name: "[FRAMEWORK 6 NAME]"
+    category: "[CATEGORY]"
+    origin: "[SOURCE]"
+    definition: "[DEFINITION]"
+    principle: "[PRINCIPLE]"
+    components:
+      description: "[DESCRIPTION]"
+      parts: []
+    process:
+      description: "[DESCRIPTION]"
+      steps: []
+    application:
+      when: "[WHEN]"
+      process: []
+      expected_outcome: "[OUTCOME]"
+    common_mistakes: []
+    examples: []
+
+  - name: "[FRAMEWORK 7 NAME]"
+    category: "[CATEGORY]"
+    origin: "[SOURCE]"
+    definition: "[DEFINITION]"
+    principle: "[PRINCIPLE]"
+    components:
+      description: "[DESCRIPTION]"
+      parts: []
+    process:
+      description: "[DESCRIPTION]"
+      steps: []
+    application:
+      when: "[WHEN]"
+      process: []
+      expected_outcome: "[OUTCOME]"
+    common_mistakes: []
+    examples: []
+
+  - name: "[FRAMEWORK 8 NAME]"
+    category: "[CATEGORY]"
+    origin: "[SOURCE]"
+    definition: "[DEFINITION]"
+    principle: "[PRINCIPLE]"
+    components:
+      description: "[DESCRIPTION]"
+      parts: []
+    process:
+      description: "[DESCRIPTION]"
+      steps: []
+    application:
+      when: "[WHEN]"
+      process: []
+      expected_outcome: "[OUTCOME]"
+    common_mistakes: []
+    examples: []
+
+  - name: "[FRAMEWORK 9 NAME]"
+    category: "[CATEGORY]"
+    origin: "[SOURCE]"
+    definition: "[DEFINITION]"
+    principle: "[PRINCIPLE]"
+    components:
+      description: "[DESCRIPTION]"
+      parts: []
+    process:
+      description: "[DESCRIPTION]"
+      steps: []
+    application:
+      when: "[WHEN]"
+      process: []
+      expected_outcome: "[OUTCOME]"
+    common_mistakes: []
+    examples: []
+
+  - name: "[FRAMEWORK 10 NAME]"
+    category: "[CATEGORY]"
+    origin: "[SOURCE]"
+    definition: "[DEFINITION]"
+    principle: "[PRINCIPLE]"
+    components:
+      description: "[DESCRIPTION]"
+      parts: []
+    process:
+      description: "[DESCRIPTION]"
+      steps: []
+    application:
+      when: "[WHEN]"
+      process: []
+      expected_outcome: "[OUTCOME]"
+    common_mistakes: []
+    examples: []
+
+# ==============================================================================
+# EXAMPLE: FULLY FILLED FRAMEWORK (for reference)
+# ==============================================================================
+#
+# This example shows how a completed framework should look.
+# Use this as a reference when filling the template above.
+# DELETE this entire section after extraction is complete.
+#
+# example_framework:
+#   - name: "The Big Idea Framework"
+#     category: marketing_strategy
+#     origin: "Ogilvy on Advertising, Confessions of an Advertising Man"
+#
+#     definition: >
+#       The central, powerful concept that captures imagination and differentiates
+#       your campaign. Without a Big Idea, your advertising passes like a ship in
+#       the night. Big Ideas come from the unconscious, informed by research.
+#
+#     principle: "Unless your advertising is built on a Big Idea, it will pass like a ship in the night."
+#
+#     components:
+#       description: "5 parameters to recognize a Big Idea"
+#       parts:
+#         - name: "Gasp Test"
+#           description: "Did it make you GASP when you first saw it? A Big Idea causes visceral impact."
+#         - name: "Envy Test"
+#           description: "Do you wish YOU had thought of it yourself? Creative envy signals originality."
+#         - name: "Uniqueness Test"
+#           description: "Is it truly UNIQUE? Never been done before."
+#         - name: "Strategy Fit Test"
+#           description: "Does it fit the STRATEGY to perfection? Not loose creativity."
+#         - name: "Longevity Test"
+#           description: "Could it be used for 30 YEARS? Not a trend, a foundation."
+#
+#     process:
+#       description: "How Big Ideas emerge from research and unconscious processing"
+#       steps:
+#         - step: 1
+#           name: "STUFF your mind"
+#           action: "Fill your conscious mind with information about the product and market"
+#         - step: 2
+#           name: "UNHOOK rational thinking"
+#           action: "Stop forcing ideas, let your unconscious process"
+#         - step: 3
+#           name: "Let unconscious work"
+#           action: "Give it time - ideas emerge when you're not trying"
+#         - step: 4
+#           name: "Test with humor"
+#           action: "The best ideas come as jokes - make thinking funny"
+#         - step: 5
+#           name: "Validate against 5 tests"
+#           action: "Apply all 5 parameters before committing"
+#
+#     application:
+#       when: "Before ANY creative work begins - Big Idea comes FIRST"
+#       process:
+#         - "Research deeply - spend weeks understanding product"
+#         - "Understand the positioning first"
+#         - "Let unconscious process the information"
+#         - "Test against 5 parameters"
+#         - "If it doesn't pass all 5, keep searching"
+#       expected_outcome: "A single powerful concept that can drive a campaign for decades"
+#
+#     common_mistakes:
+#       - "Creating advertising without a Big Idea (most common failure)"
+#       - "Confusing executional gimmick with Big Idea"
+#       - "Changing Big Ideas too frequently"
+#       - "Not testing Big Idea against all 5 parameters"
+#       - "Letting committees dilute the Big Idea"
+#
+#     examples:
+#       - context: "Rolls-Royce needed to communicate luxury and engineering excellence"
+#         application: "Found key fact during research: electric clock was loudest sound at 60mph"
+#         result: "Headline became most famous in advertising history, doubled American sales in one year"
+#       - context: "Dove needed differentiation in crowded soap market"
+#         application: "Found key fact: one-quarter moisturizing cream"
+#         result: "Campaign ran 50+ years with same Big Idea"
+#
+# ==============================================================================
+
+# ==============================================================================
+# VALIDATION CHECKLIST (Run before saving)
+# ==============================================================================
+#
+# [ ] Exactly 10 frameworks documented
+# [ ] All [PLACEHOLDER] values replaced with actual data
+# [ ] All GUIDE comments removed
+# [ ] Category diversity: at least 4 different categories used
+# [ ] No single category has more than 3 frameworks
+# [ ] All frameworks have:
+#     [ ] Clear name
+#     [ ] Valid category from enum
+#     [ ] Documented origin/source
+#     [ ] 2-4 sentence definition
+#     [ ] One-sentence principle
+#     [ ] At least 3 components
+#     [ ] At least 3 process steps
+#     [ ] Specific application guidance
+#     [ ] At least 3 common mistakes
+#     [ ] At least 1 example
+# [ ] YAML syntax is valid (no special characters breaking structure)
+# [ ] Language is consistent with copywriter's voice
+# [ ] All content is in English
+#
+# ==============================================================================

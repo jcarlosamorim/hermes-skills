@@ -14,3 +14,4 @@ jobs:
         with:
           python-version: '3.13'
       - run: python3 scripts/validate_skills.py
+      - run: python3 scripts/scan_skills.py
