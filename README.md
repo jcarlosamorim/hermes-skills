@@ -4,7 +4,9 @@ Skills instaláveis por comando no [Hermes Agent](https://github.com/NousResearc
 lançamento, processos (SOP), o **Hybrid Workspace** do seu negócio, operação de time e tráfego pago. Cada skill é um procedimento com verificação, não um prompt.
 Código aberto, licença MIT, escaneado pelo mesmo scanner que o Hermes roda na instalação.
 
-**Página do catálogo:** https://jcarlosamorim.github.io/hermes-skills/ (clique num card, copie o comando)
+**Página do catálogo:** https://agentflix.nexialismo.ai (clique num card, escolha o agente, copie o comando).
+O GitHub Pages do repo (https://jcarlosamorim.github.io/hermes-skills/) segue como host técnico: catálogo,
+`.well-known` e coláveis. A página lê tudo de lá, então uma release nova aparece nela sem deploy.
 
 ## Instalar
 
@@ -58,9 +60,13 @@ skills/<nome>/references/       fórmulas, métodos, checklists (carregados sob 
 skills/<nome>/templates/        modelos que a skill preenche
 skills/<nome>/scripts/          código determinístico (só no ads-otimizar)
 catalog.json                    o catálogo que a página lê: título, sinopse, comandos por agente, gênero
-docs/                           a página (GitHub Pages), docs/prompt/<nome>.md (versão colável) e
+docs/                           host técnico (GitHub Pages): catálogo, docs/prompt/<nome>.md (versão colável) e
                                 docs/.well-known/skills/ (a versão PORTABLE, spec estrito: é o que
-                                `npx skills add <url>` e `hermes skills search <url>` leem)
+                                `npx skills add <url>` e `hermes skills search <url>` leem);
+                                docs/index.html só redireciona para a página
+site/                           a página AgentFlix (Vercel, agentflix.nexialismo.ai): um HTML sem framework que
+                                lê catalog.json; site/vercel.json reescreve /catalog.json, /.well-known, /prompt
+                                e /covers para o Pages, então o domínio da marca também serve o well-known
 dist/portable/                  gerado, fora do git: pasta e zip estritos por skill; a release da tag recebe os zips
 scripts/build_docs.py           gera portable, zips, well-known, coláveis e copia o catálogo
 scripts/validate_skills.py      forma do SKILL.md (fonte) e do portable (chaves do spec, description ≤200)
@@ -80,6 +86,8 @@ injetada, variável de ambiente). O procedimento é o mesmo.
 4. PR. O CI repete os dois primeiros passos, inclusive a validação do portable.
 5. Merge em `main` (o tap passa a ver) e **tag** (`vX.Y.Z`): os comandos da página apontam para a tag, e o
    workflow de release anexa os zips portable a ela.
+6. A página não precisa de deploy por release (lê o catálogo do Pages). Só quando `site/` mudar:
+   `cd site && vercel deploy --prod` (projeto `agentflix`).
 
 ## Origem
 
