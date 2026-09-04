@@ -1,13 +1,13 @@
 ---
 name: copy-auditoria
-description: "A copy já existe e não está vendendo. Use quando o pedido envolver auditar copy, otimizar texto, comparar versões, por que não vende."
-version: 0.2.0
+description: "A copy já existe e não está vendendo. Use quando o pedido envolver auditar copy, otimizar texto, comparar versões, split test, por que não vende."
+version: 0.3.0
 author: "José Carlos Amorim"
 license: MIT
 platforms: [linux, macos, windows]
 metadata:
   hermes:
-    tags: [copy, copywriting, Auditoria, Otimização]
+    tags: [copy, copywriting, auditoria, otimização]
     related_skills: [copy-pipeline, copy-auditoria]
 ---
 
@@ -17,7 +17,7 @@ A copy já existe e não está vendendo. O agente audita pelo método de Hopkins
 
 ## When to Use
 
-- O pedido envolve: auditar copy, otimizar texto, comparar versões, por que não vende.
+- O pedido envolve: auditar copy, otimizar texto, comparar versões, split test, por que não vende.
 - Diga: "audita esta copy: [texto]" ou "compara estas duas versões".
 - NÃO use quando o pedido é uma peça em um método específico de copywriter ("como Halbert"): isso é `copy-metodo-<nome>`.
 
@@ -31,6 +31,10 @@ Cada sub-tarefa é uma referência com `Inputs`, fórmulas, `Output Format` e `Q
 | optimize copy | `references/optimize-copy.md` |
 | copy debate | `references/copy-debate.md` |
 | blend | `references/blend.md` |
+| review copy | `references/review-copy.md` |
+| simple writing audit | `references/simple-writing-audit.md` |
+| setup split test | `references/setup-split-test.md` |
+| qa gate | `references/qa-gate.md` |
 
 ## Procedure
 
@@ -66,3 +70,7 @@ Validada contra Hermes Agent 0.20.6 (tag v2026.8.27) em 2026-09-04.
 - `references/blend.md`
 - `references/copy-debate.md`
 - `references/optimize-copy.md`
+- `references/qa-gate.md`
+- `references/review-copy.md`
+- `references/setup-split-test.md`
+- `references/simple-writing-audit.md`

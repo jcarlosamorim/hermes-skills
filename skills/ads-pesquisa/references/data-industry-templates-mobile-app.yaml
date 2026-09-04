@@ -1,0 +1,79 @@
+# Industry Template: Mobile App
+# Source: squads/ads-audit/templates/mobile-app.md + references/benchmarks.yaml
+# Last Updated: 2026-03-17
+
+industry: mobile-app
+
+benchmarks:
+  cpa: "$15-$50"
+  roas: "3:1 LTV:CPI"
+  ctr: "7.45%"
+  cpm: "$6.00-$10.00"
+  cvr: "50-60%"
+
+recommended_funnels:
+  - type: app-install-volume
+    description: "Meta Advantage+ App Campaigns and Google UAC for maximum install volume at lowest CPI"
+    primary_platforms: [meta, google_uac]
+  - type: apple-search-high-intent
+    description: "Apple Search Ads exact match on category keywords and competitor names for highest CVR installs"
+    primary_platforms: [apple_search_ads]
+  - type: value-optimization
+    description: "Meta and Google UAC optimizing for post-install events (subscription, purchase) not just installs"
+    primary_platforms: [meta, google_uac]
+  - type: re-engagement
+    description: "Deep-linked campaigns targeting lapsed users (30-60d inactive), trial non-converters, free-to-premium upsell"
+    primary_platforms: [meta, tiktok]
+
+typical_audiences:
+  - name: high-ltv-lookalikes
+    description: "1% lookalike of highest-LTV users, subscribers, power users"
+    platforms: [meta]
+  - name: category-searchers
+    description: "Users searching '[category] app', 'best [category] app', competitor app names"
+    platforms: [apple_search_ads, google_uac]
+  - name: broad-aac
+    description: "Broad targeting via Advantage+ App Campaigns, algorithm-optimized at scale"
+    platforms: [meta]
+  - name: lapsed-users
+    description: "Users inactive 30-60 days, trial users who did not subscribe"
+    platforms: [meta, tiktok]
+  - name: tiktok-discovery
+    description: "Young demographics, in-feed Spark Ads and Smart+ campaigns for viral discovery"
+    platforms: [tiktok]
+
+creative_patterns:
+  - format: app-demo-video
+    description: "15-30s showing core functionality with actual screen recordings and finger taps/swipes"
+    best_for: [consideration]
+  - format: ugc-reactions
+    description: "Users discovering the app for the first time, authentic reaction content"
+    best_for: [awareness]
+  - format: problem-solution
+    description: "'Tired of [problem]? This app fixes it in 10 seconds' with before/after"
+    best_for: [awareness, consideration]
+  - format: social-proof-stats
+    description: "'10M+ downloads', '4.8 on App Store', app store badges"
+    best_for: [consideration, decision]
+  - format: platform-native
+    description: "TikTok native-looking (not polished), Meta multi-aspect-ratio (9:16 + 1:1)"
+    best_for: [awareness]
+
+compliance_notes:
+  - "No Special Ad Category required for general mobile apps"
+  - "MMP (AppsFlyer, Adjust, Branch, Singular) required for cross-platform attribution"
+  - "SKAdNetwork (iOS) limits to 63 conversion values with 24-48h delay"
+  - "Google UAC minimum $50/day budget for algorithm learning"
+  - "Custom Product Pages (Apple) and Custom Store Listings (Google Play) strongly recommended"
+  - "Deep linking (Universal Links iOS, App Links Android) must be configured before launch"
+
+budget_guidelines:
+  min_daily: 165
+  recommended_daily: 330
+  min_test_duration_days: 14
+
+kpi_targets:
+  primary: ltv_to_cpi_ratio
+  secondary: day_7_retention
+
+special_ad_category: false

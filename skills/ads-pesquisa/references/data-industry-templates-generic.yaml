@@ -1,0 +1,76 @@
+# Industry Template: Generic (Fallback)
+# Source: squads/ads-audit/templates/generic.md + references/benchmarks.yaml
+# Last Updated: 2026-03-17
+
+industry: generic
+
+benchmarks:
+  cpa: "$70"
+  roas: "3.0"
+  ctr: "6.66%"
+  cpm: "$12.79"
+  cvr: "7.52%"
+
+recommended_funnels:
+  - type: search-capture
+    description: "Google Search for high-intent commercial queries with brand defense and competitor campaigns"
+    primary_platforms: [google_search]
+  - type: prospecting-retargeting
+    description: "Meta prospecting with interest/lookalike audiences, retargeting website visitors and engagers"
+    primary_platforms: [meta]
+  - type: platform-questionnaire
+    description: "Use platform selection questionnaire to determine optimal mix based on product type, audience, and budget"
+    primary_platforms: [varies]
+
+typical_audiences:
+  - name: high-intent-searchers
+    description: "Users searching '[product/service] + commercial intent', '[category] + buying keywords'"
+    platforms: [google_search]
+  - name: interest-based-prospecting
+    description: "Interest and behavior targeting on Meta based on product category relevance"
+    platforms: [meta]
+  - name: retargeting-cascade
+    description: "Website visitors (7-30 days), engaged users (video viewers, social engagers), form starters"
+    platforms: [meta, google_search]
+  - name: b2b-professional
+    description: "Job title and company targeting on LinkedIn if audience is B2B professionals"
+    platforms: [linkedin]
+  - name: young-demographic
+    description: "TikTok for 18-34 demographic with native-feeling content"
+    platforms: [tiktok]
+
+creative_patterns:
+  - format: short-video
+    description: "15-30s video with hook (0-3s), benefit, proof, and clear CTA for Meta/TikTok/YouTube Shorts"
+    best_for: [awareness, consideration]
+  - format: static-with-copy
+    description: "High-quality static images with benefit-driven copy for Google, Meta, LinkedIn"
+    best_for: [consideration]
+  - format: long-form-video
+    description: "60-180s detailed content for YouTube and Meta Feed placements"
+    best_for: [consideration, decision]
+  - format: carousel-collection
+    description: "Multi-image carousel for product showcase or step-by-step value communication"
+    best_for: [consideration]
+  - format: rsa-text-ads
+    description: "Google/Microsoft responsive search ads with 15 headlines, 4 descriptions, all extensions"
+    best_for: [decision]
+
+compliance_notes:
+  - "No Special Ad Category required for generic businesses"
+  - "If business involves housing, credit, employment, healthcare, or finance -- use the specific industry template"
+  - "Universal negative keywords should be added: jobs, salary, free, DIY, Wikipedia, assignment"
+  - "All platforms require landing page privacy policy"
+  - "Server-side tracking recommended for GDPR/CCPA compliance"
+  - "Avoid superlative claims without evidence across all platforms"
+
+budget_guidelines:
+  min_daily: 35
+  recommended_daily: 100
+  min_test_duration_days: 14
+
+kpi_targets:
+  primary: cpa
+  secondary: cvr
+
+special_ad_category: false

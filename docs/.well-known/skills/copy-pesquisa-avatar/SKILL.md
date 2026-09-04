@@ -1,13 +1,13 @@
 ---
 name: copy-pesquisa-avatar
-description: "Antes de escrever, saber o que a pessoa já diz para si mesma. Use quando o pedido envolver avatar, público, conversa mental, motivos, sofisticação do mercado, pesquisa de copy."
-version: 0.2.0
+description: "Antes de escrever, saber o que a pessoa já diz para si mesma. Use quando o pedido envolver avatar, público, conversa mental, motivos, nível de consciência, sofisticação do mercado."
+version: 0.3.0
 author: "José Carlos Amorim"
 license: MIT
 platforms: [linux, macos, windows]
 metadata:
   hermes:
-    tags: [copy, copywriting, Pesquisa, Avatar]
+    tags: [copy, copywriting, pesquisa, avatar]
     related_skills: [copy-pipeline, copy-auditoria]
 ---
 
@@ -17,7 +17,7 @@ Antes de escrever, saber o que a pessoa já diz para si mesma. O agente pesquisa
 
 ## When to Use
 
-- O pedido envolve: avatar, público, conversa mental, motivos, sofisticação do mercado, pesquisa de copy.
+- O pedido envolve: avatar, público, conversa mental, motivos, nível de consciência, sofisticação do mercado.
 - Diga: "pesquisa o avatar de [produto] em [mercado]".
 - NÃO use quando o pedido é uma peça em um método específico de copywriter ("como Halbert"): isso é `copy-metodo-<nome>`.
 
@@ -32,6 +32,7 @@ Cada sub-tarefa é uma referência com `Inputs`, fórmulas, `Output Format` e `Q
 | map 6 primary motives | `references/map-6-primary-motives.md` |
 | diagnose market sophistication | `references/diagnose-market-sophistication.md` |
 | copysearch | `references/copysearch.md` |
+| diagnose awareness level | `references/diagnose-awareness-level.md` |
 
 ## Procedure
 
@@ -68,6 +69,7 @@ Validada contra Hermes Agent 0.20.6 (tag v2026.8.27) em 2026-09-04.
 - `references/checklist-avatar-research-checklist.md`
 - `references/checklist-copysearch-checklist.md`
 - `references/copysearch.md`
+- `references/diagnose-awareness-level.md`
 - `references/diagnose-market-sophistication.md`
 - `references/map-6-primary-motives.md`
 - `templates/avatar-research-template.md`

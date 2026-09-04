@@ -1,13 +1,13 @@
 ---
 name: copy-sales-page
-description: "Uma página de vendas longa não é um texto grande, é uma sequência de decisões pequenas até o botão. Use quando o pedido envolver página de vendas, sales page, landing page, carta de vendas longa, auditar landing."
-version: 0.2.0
+description: "Uma página de vendas longa não é um texto grande, é uma sequência de decisões pequenas até o botão. Use quando o pedido envolver página de vendas, sales page, landing page, carta de vendas longa, maga"
+version: 0.3.0
 author: "José Carlos Amorim"
 license: MIT
 platforms: [linux, macos, windows]
 metadata:
   hermes:
-    tags: [copy, copywriting, Copy, Página de vendas]
+    tags: [copy, copywriting, copy, página-de-vendas]
     related_skills: [copy-pipeline, copy-auditoria]
 ---
 
@@ -17,7 +17,7 @@ Uma página de vendas longa não é um texto grande, é uma sequência de decis�
 
 ## When to Use
 
-- O pedido envolve: página de vendas, sales page, landing page, carta de vendas longa, auditar landing.
+- O pedido envolve: página de vendas, sales page, landing page, carta de vendas longa, magalog, auditar landing.
 - Diga: "escreve a sales page de [oferta]" ou "audita esta landing: [link ou texto]".
 - NÃO use quando o pedido é uma peça em um método específico de copywriter ("como Halbert"): isso é `copy-metodo-<nome>`.
 
@@ -31,6 +31,8 @@ Cada sub-tarefa é uma referência com `Inputs`, fórmulas, `Output Format` e `Q
 | create premium lp copy | `references/create-premium-lp-copy.md` |
 | create landing page | `references/create-landing-page.md` |
 | audit landing page | `references/audit-landing-page.md` |
+| create magalog | `references/create-magalog.md` |
+| create artifact from kb | `references/create-artifact-from-kb.md` |
 
 ## Procedure
 
@@ -63,6 +65,8 @@ Validada contra Hermes Agent 0.20.6 (tag v2026.8.27) em 2026-09-04.
 ## Arquivos desta skill
 
 - `references/audit-landing-page.md`
+- `references/create-artifact-from-kb.md`
 - `references/create-landing-page.md`
+- `references/create-magalog.md`
 - `references/create-premium-lp-copy.md`
 - `references/create-sales-page.md`

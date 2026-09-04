@@ -1,0 +1,78 @@
+# Industry Template: B2B Enterprise
+# Source: squads/ads-audit/templates/b2b-enterprise.md + references/benchmarks.yaml
+# Last Updated: 2026-03-17
+
+industry: b2b-enterprise
+
+benchmarks:
+  cpa: "$200-$1000"
+  roas: "5-10x pipeline"
+  ctr: "0.44-0.65%"
+  cpm: "$31-$38"
+  cvr: "2.35%"
+
+recommended_funnels:
+  - type: abm-tiered
+    description: "LinkedIn ABM with 3-tier account targeting (Tier 1 named accounts, Tier 2 ICP match, Tier 3 broader ICP)"
+    primary_platforms: [linkedin]
+  - type: thought-leadership
+    description: "LinkedIn TLA with exec-authored content (CPC $2.29-$4.14 vs $13.23 standard) feeding demand gen"
+    primary_platforms: [linkedin]
+  - type: high-intent-search
+    description: "Google Search for enterprise solution queries with RLSA bid adjustments for past visitors"
+    primary_platforms: [google_search]
+  - type: content-gated
+    description: "Whitepaper, webinar, and industry report offers to capture MQLs for sales pipeline"
+    primary_platforms: [linkedin, google_search]
+
+typical_audiences:
+  - name: decision-makers
+    description: "VP, Director, C-suite of target function at companies 500-5000+ employees"
+    platforms: [linkedin]
+  - name: abm-account-list
+    description: "CRM-uploaded target account lists matched to LinkedIn company audiences"
+    platforms: [linkedin]
+  - name: enterprise-searchers
+    description: "Users searching 'enterprise [solution]', '[solution] for [industry]', '[competitor] alternative'"
+    platforms: [google_search]
+  - name: content-engagers
+    description: "Video viewers, lead form openers, document ad readers for sequential retargeting"
+    platforms: [linkedin, meta]
+  - name: rlsa-category
+    description: "Past website visitors searching category terms, bid up 50-100%"
+    platforms: [google_search]
+
+creative_patterns:
+  - format: thought-leader-ads
+    description: "CEO/founder/SME authentic LinkedIn content driving engagement at 3-5x lower CPC than standard"
+    best_for: [awareness, consideration]
+  - format: customer-case-study
+    description: "Specific enterprise metrics: ROI, time saved, revenue impact, deal size"
+    best_for: [consideration, decision]
+  - format: industry-research
+    description: "Original data and insights gated as lead magnets (LinkedIn Document Ads)"
+    best_for: [awareness, consideration]
+  - format: product-demo-video
+    description: "60-90s focused on enterprise-grade capabilities, security, integrations"
+    best_for: [consideration]
+  - format: webinar-promotion
+    description: "Live events with industry experts, registration-gated"
+    best_for: [consideration]
+
+compliance_notes:
+  - "No Special Ad Category required for general B2B enterprise"
+  - "LinkedIn audience minimum ~50K for algorithm optimization -- avoid overly narrow targeting"
+  - "90-day click attribution window recommended due to long sales cycles (3-12+ months)"
+  - "CRM integration mandatory for measuring true pipeline impact (MQL -> SQL -> closed-won)"
+  - "ABM requires sales alignment plan -- marketing generating leads sales ignores wastes budget"
+
+budget_guidelines:
+  min_daily: 330
+  recommended_daily: 660
+  min_test_duration_days: 21
+
+kpi_targets:
+  primary: pipeline_generated
+  secondary: mql_to_sql_rate
+
+special_ad_category: false

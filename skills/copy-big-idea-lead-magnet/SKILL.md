@@ -1,13 +1,13 @@
 ---
 name: copy-big-idea-lead-magnet
-description: "Uma campanha inteira cabe em uma ideia. Use quando o pedido envolver big idea, ideia central, lead magnet, isca, arsenal de autoridade."
-version: 0.2.0
+description: "Uma campanha inteira cabe em uma ideia. Use quando o pedido envolver big idea, ideia central, mecanismo único, RMBC, brief de campanha, lead magnet."
+version: 0.3.0
 author: "José Carlos Amorim"
 license: MIT
 platforms: [linux, macos, windows]
 metadata:
   hermes:
-    tags: [copy, copywriting, Estratégia, Big Idea]
+    tags: [copy, copywriting, estratégia, big-idea]
     related_skills: [copy-pipeline, copy-auditoria]
 ---
 
@@ -17,7 +17,7 @@ Uma campanha inteira cabe em uma ideia. O agente extrai a Big Idea, monta o arse
 
 ## When to Use
 
-- O pedido envolve: big idea, ideia central, lead magnet, isca, arsenal de autoridade.
+- O pedido envolve: big idea, ideia central, mecanismo único, RMBC, brief de campanha, lead magnet.
 - Diga: "big idea para [produto e mercado]" ou "lead magnet para [público]".
 - NÃO use quando o pedido é uma peça em um método específico de copywriter ("como Halbert"): isso é `copy-metodo-<nome>`.
 
@@ -30,6 +30,10 @@ Cada sub-tarefa é uma referência com `Inputs`, fórmulas, `Output Format` e `Q
 | create big idea | `references/create-big-idea.md` |
 | build authority arsenal | `references/build-authority-arsenal.md` |
 | create lead magnet | `references/create-lead-magnet.md` |
+| rmbc method | `references/rmbc-method.md` |
+| create unique mechanism | `references/create-unique-mechanism.md` |
+| create campaign brief | `references/create-campaign-brief.md` |
+| campaign planning pack | `references/campaign-planning-pack.md` |
 
 ## Procedure
 
@@ -62,6 +66,10 @@ Validada contra Hermes Agent 0.20.6 (tag v2026.8.27) em 2026-09-04.
 ## Arquivos desta skill
 
 - `references/build-authority-arsenal.md`
+- `references/campaign-planning-pack.md`
 - `references/create-big-idea.md`
+- `references/create-campaign-brief.md`
 - `references/create-lead-magnet.md`
+- `references/create-unique-mechanism.md`
+- `references/rmbc-method.md`
 - `templates/authority-arsenal-tmpl.yaml`

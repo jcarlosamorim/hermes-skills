@@ -1,0 +1,71 @@
+# Product Card Template — Hybrid Ads Squad
+# Product/service card. One card per advertised product.
+# Saved to: {pasta}/ads/products/{product_slug}.yaml
+#
+# Story: SAIOX-ADS-V5-2.4 (AC2)
+# Created: 2026-03-17
+# Updated: 2026-03-19 (taxonomy: PT → EN)
+# Sources:
+#   - Roundtable P0 #3: Conversational setup (elicit: true)
+#   - Creative brief existing template (templates/creative-brief.md)
+
+version: "1.0.0"
+template: product-card
+filled_by: "@ad-midas"  # Concierge collects during onboarding or briefing
+used_by: ["@ad-midas", "@creative-analyst", "@performance-analyst"]
+
+# ═══════════════════════════════════════════════════════════════
+# PRODUCT
+# ═══════════════════════════════════════════════════════════════
+
+product:
+  name: ""                      # required
+  slug: ""                      # required — unique key (e.g., "meta-ads-pro-course")
+  short_description: ""         # required — 1-2 sentences, used in ads
+  price: ""                     # required — e.g., "R$497", "R$97/month"
+  gross_margin: ""              # required — e.g., "70%", "R$350" (informs target CPA)
+  sales_url: ""                 # required — sales/checkout page URL
+
+# ═══════════════════════════════════════════════════════════════
+# BENEFITS (top 3)
+# ═══════════════════════════════════════════════════════════════
+
+benefits:                       # required — exactly 3, used in copy and hooks
+  - ""  # Benefit #1 — strongest, appears in headlines
+  - ""  # Benefit #2
+  - ""  # Benefit #3
+
+# ═══════════════════════════════════════════════════════════════
+# COMMON OBJECTIONS (top 3)
+# ═══════════════════════════════════════════════════════════════
+
+common_objections:              # required — exactly 3, used for objection copy
+  - ""  # Objection #1 — most frequent
+  - ""  # Objection #2
+  - ""  # Objection #3
+
+# ═══════════════════════════════════════════════════════════════
+# SOCIAL PROOF
+# ═══════════════════════════════════════════════════════════════
+
+social_proof:
+  ratings: ""                   # optional — e.g., "4.8/5 on Google", "4.9 on Trustpilot"
+  total_sales: ""               # optional — e.g., "+5,000 students", "+1,200 clients"
+  testimonials_available: 0     # optional — number of testimonials ready for ads
+
+# ═══════════════════════════════════════════════════════════════
+# MARKET PRICE RANGE
+# ═══════════════════════════════════════════════════════════════
+
+market_price_range:
+  min: ""                       # optional — lowest market price for similar product
+  max: ""                       # optional — highest market price
+
+# ═══════════════════════════════════════════════════════════════
+# FIELD REQUIREMENTS SUMMARY
+# ═══════════════════════════════════════════════════════════════
+# REQUIRED: product.name, product.slug, product.short_description, product.price,
+#           product.gross_margin, product.sales_url,
+#           benefits (3 items), common_objections (3 items)
+#
+# OPTIONAL: social_proof.*, market_price_range.*

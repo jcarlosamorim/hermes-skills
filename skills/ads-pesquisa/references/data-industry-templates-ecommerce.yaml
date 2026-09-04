@@ -1,0 +1,78 @@
+# Industry Template: E-commerce
+# Source: squads/ads-audit/templates/ecommerce.md + references/benchmarks.yaml
+# Last Updated: 2026-03-17
+
+industry: ecommerce
+
+benchmarks:
+  cpa: "$23.74"
+  roas: "3.68"
+  ctr: "4.13%"
+  cpm: "$12.79"
+  cvr: "2.81%"
+
+recommended_funnels:
+  - type: advantage-plus-shopping
+    description: "Meta ASC with 150+ creatives for automated prospecting and retargeting at scale"
+    primary_platforms: [meta]
+  - type: product-feed-shopping
+    description: "Google PMax and Standard Shopping driven by optimized product catalog"
+    primary_platforms: [google_shopping, google_pmax]
+  - type: ugc-discovery
+    description: "TikTok Spark Ads and UGC-style content for product discovery among younger demographics"
+    primary_platforms: [tiktok]
+  - type: retargeting-cascade
+    description: "View Content (7d) -> Add to Cart (14d) -> Past Purchasers (180d) multi-window retargeting"
+    primary_platforms: [meta, google_search]
+
+typical_audiences:
+  - name: product-searchers
+    description: "Users searching 'buy [product]', '[product] reviews', '[brand] [product]'"
+    platforms: [google_search, google_shopping]
+  - name: advantage-plus-broad
+    description: "Broad Meta targeting with strong creative, let algorithm optimize"
+    platforms: [meta]
+  - name: purchaser-lookalikes
+    description: "1% lookalike of top 5% purchasers and high AOV customers"
+    platforms: [meta]
+  - name: cart-abandoners
+    description: "Add-to-cart users who did not complete purchase within 14 days"
+    platforms: [meta, google_search]
+  - name: tiktok-shop-audiences
+    description: "In-app shopping audiences, product interaction retargeting"
+    platforms: [tiktok]
+
+creative_patterns:
+  - format: ugc-unboxing
+    description: "Authentic customer unboxing and review videos, Spark Ads (~3% CTR vs ~2% standard)"
+    best_for: [awareness, consideration]
+  - format: product-demo
+    description: "Product in use with feature close-ups and lifestyle context"
+    best_for: [consideration]
+  - format: price-anchoring
+    description: "Was/now pricing, bundle savings, 'best seller' badges"
+    best_for: [decision]
+  - format: social-proof-carousel
+    description: "Review count, star ratings, and transformation before/after content"
+    best_for: [consideration, decision]
+  - format: seasonal-promotion
+    description: "Q4 holiday, Black Friday, seasonal event creative with urgency CTAs"
+    best_for: [decision]
+
+compliance_notes:
+  - "No Special Ad Category required for general e-commerce"
+  - "TikTok Shop only available in 11 countries (US, UK, Southeast Asia, select EU)"
+  - "Product feed must have accurate pricing and availability -- stale data causes disapprovals"
+  - "Avoid misleading discount claims; original prices must be verifiable"
+  - "Q4 CPMs rise 30-50% -- factor into budget planning"
+
+budget_guidelines:
+  min_daily: 100
+  recommended_daily: 250
+  min_test_duration_days: 14
+
+kpi_targets:
+  primary: roas
+  secondary: new_customer_percentage
+
+special_ad_category: false

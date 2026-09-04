@@ -1,7 +1,7 @@
-# Hub de Skills para Hermes
+# Hermes Flix · Hub de Skills para Hermes
 
 Skills instaláveis por comando no [Hermes Agent](https://github.com/NousResearch/hermes-agent): copy,
-operação de time e tráfego pago. Cada skill é um procedimento com verificação, não um prompt.
+lançamento, processos (SOP), o **Hybrid Workspace** do seu negócio, operação de time e tráfego pago. Cada skill é um procedimento com verificação, não um prompt.
 Código aberto, licença MIT, escaneado pelo mesmo scanner que o Hermes roda na instalação.
 
 **Página do catálogo:** https://jcarlosamorim.github.io/hermes-skills/ (clique num card, copie o comando)
@@ -35,10 +35,12 @@ Depois de instalar, abra uma nova sessão.
 
 | linha | skills | o que instala |
 |---|---|---|
-| **Por objetivo** | `copy-headlines`, `copy-sales-page`, `copy-oferta`, `copy-email`, `copy-anuncios`, `copy-vsl-webinar`, `copy-vendas-por-chamada`, `copy-pesquisa-avatar`, `copy-big-idea-lead-magnet`, `copy-voz`, `copy-auditoria`, `copy-pipeline` | a peça que você precisa, com as fórmulas dos copywriters por trás em `references/` |
+| **Por objetivo** | `copy-headlines`, `copy-sales-page`, `copy-oferta`, `copy-email`, `copy-anuncios`, `copy-vsl-webinar`, `copy-vendas-por-chamada`, `copy-pesquisa-avatar`, `copy-big-idea-lead-magnet`, `copy-voz`, `copy-auditoria`, `copy-pipeline`, `copy-lancamento` | a peça que você precisa, com as fórmulas dos copywriters por trás em `references/`; `copy-lancamento` traz PLF, Brunson e soap opera |
 | **Lendas do copy** | `copy-metodo-halbert`, `-ogilvy`, `-schwartz`, `-hopkins`, `-kennedy`, `-bencivenga`, `-sugarman`, `-kern`, `-benson`, `-sethi`, `-hormozi`, `-koe`, `-khayat`, `-brown` | o método de um copywriter, com frameworks e voz documentados |
+| **Hybrid Workspace** | `hybrid-diagnostico`, `hybrid-proxima-acao`, `hybrid-perfil`, `hybrid-fundador`, `hybrid-icp`, `hybrid-marca`, `hybrid-oferta`, `hybrid-cultura`, `hybrid-time`, `hybrid-tech`, `hybrid-etl` | o negócio descrito em YAML, numa pasta sua: elicitação com gate de 85%, sete diagnósticos e a próxima melhor ação |
+| **Processos** | `sop-extrair`, `sop-criar`, `sop-auditar` | SOP da cabeça de quem faz para o papel, para o agente, e pela auditoria (Gawande, Toyota, ISO 9001) |
 | **Operação** | `ops-rotear-tarefa`, `ops-briefing`, `ops-revisao-semanal`, `ops-avaliar-fit` | gestão de time por zona de genialidade e Kolbe; o perfil do SEU time é a entrada |
-| **Tráfego** | `ads-gate-compliance`, `ads-plano`, `ads-otimizar` | régua de compliance, unit economics e o motor diário que lê a Graph API e classifica |
+| **Tráfego** | `ads-gate-compliance`, `ads-plano`, `ads-otimizar`, `ads-pesquisa`, `ads-criativos`, `ads-tracking` | régua de compliance, unit economics, o motor diário que lê a Graph API, pesquisa em 5 fases, análise de criativos e auditoria de tracking. Nada aqui escreve na plataforma |
 | **Base** | `google-oauth-onboarding` | autorização OAuth do Google com escopo mínimo |
 
 Cada skill segue o formato do Hermes: frontmatter, `When to Use`, `Quick Reference`, `Procedure`,
@@ -78,9 +80,12 @@ scripts/build_docs.py           regenera docs/ a partir de skills/ e catalog.jso
 
 ## Origem
 
-As skills de copy nasceram do squad `copywriter-os` e as de operação do `nucleo-ops-ia`, ambos do
-[Synkra AIOS](https://github.com/SynkraAI/aios-core); o motor de tráfego é o `outputs/meta-ads`. Os
-arquivos de agente e task foram levados para `references/` como conhecimento, não como persona. As
+As skills de copy nasceram do squad `copywriter-os` e as de operação do `nucleo-ops-ia`, do
+[Synkra AIOS](https://github.com/SynkraAI/aios-core); o motor de tráfego é o `outputs/meta-ads`. Na v0.3
+entraram os squads da imersão (`aiox-copy`, `aiox-sop`, `aiox-workspace`, rebatizado Hybrid Workspace, e
+a parte de leitura do `aiox-ads`). Os arquivos de agente e task foram levados para `references/` como
+conhecimento, não como persona; caminhos do filesystem de origem viraram uma pasta configurável
+(`hybrid.pasta`, `ops.perfis_do_time`); dados de participantes e o que muta plataforma ficaram fora. As
 capas da página seguem o padrão de key art da Netflix e são geradas a partir de prompts versionados.
 
 Licença MIT. Autor: José Carlos Amorim.

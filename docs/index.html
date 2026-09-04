@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hub de Skills para Hermes</title>
-<meta name="description" content="Skills instaláveis por comando no Hermes Agent: copy, operação e tráfego. Clique num card, copie o comando, cole no seu Hermes.">
+<title>Hermes Flix</title>
+<meta name="description" content="Hermes Flix: skills instaláveis por comando no Hermes Agent. Copy, lançamento, processos, Hybrid Workspace e tráfego. Clique num card, copie o comando, cole no seu Hermes.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -34,7 +34,7 @@ button:active{transform:translateY(1px)}
 .card .ph{position:absolute;inset:0;display:flex;align-items:flex-end;padding:12px;background:linear-gradient(135deg,var(--c1),var(--c2))}
 .card .ph b{font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(22px,2.4vw,34px);line-height:.95;letter-spacing:.02em;text-shadow:0 2px 12px rgba(0,0,0,.6)}
 .card .badge{position:absolute;left:0;bottom:0;background:var(--accent);color:#fff;font-size:11px;font-weight:700;padding:3px 8px;border-radius:0 4px 0 0}
-.card .badge.ok{background:#1a7f37}
+.card .badge.ok{background:#1a7f37}.card .badge.up{background:#e87c03;color:#000}
 /* modal */
 .modal{position:fixed;inset:0;background:rgba(0,0,0,.72);display:none;align-items:flex-start;justify-content:center;overflow:auto;padding:4vh 3vw;z-index:10}
 .modal[open]{display:flex}
@@ -62,7 +62,7 @@ footer code{background:#000;padding:2px 6px;border-radius:3px}
 </head>
 <body>
 <header>
-  <a class="brand" href="#">HUB DE SKILLS · HERMES</a>
+  <a class="brand" href="#">HERMES FLIX</a>
   <div class="tap" title="Adicione o hub inteiro como fonte: depois, `hermes skills search copy` encontra tudo daqui">
     <span id="tapcmd">hermes skills tap add jcarlosamorim/hermes-skills</span>
     <button data-copy="#tapcmd">copiar</button>
@@ -71,7 +71,7 @@ footer code{background:#000;padding:2px 6px;border-radius:3px}
 
 <section class="hero">
   <h1>Instale um método,<br>não um prompt.</h1>
-  <p>Cada card é uma skill do Hermes Agent: um procedimento com verificação, escrito para ser instalado por um comando. Clique, copie, cole no seu Hermes. Código aberto, licença MIT, escaneado pelo mesmo scanner que o Hermes usa.</p>
+  <p>Cada obra deste catálogo é uma skill do Hermes Agent: um procedimento com verificação, escrito para ser instalado por um comando. Copy, lançamento, processos, o Hybrid Workspace do seu negócio, tráfego. Clique, copie, cole no seu Hermes. Código aberto, licença MIT, escaneado pelo mesmo scanner que o Hermes usa.</p>
   <div class="search"><input id="q" type="search" placeholder="buscar por título, método, gênero…" aria-label="buscar"><span class="small" id="count"></span></div>
 </section>
 
@@ -87,7 +87,7 @@ footer code{background:#000;padding:2px 6px;border-radius:3px}
 </footer>
 
 <script>
-const ROW_ORDER = ["objetivo","operacao","trafego","lendas","base"];
+const ROW_ORDER_FALLBACK = ["objetivo","operacao","trafego","lendas","hybrid","sop","base"];
 const PAL = {"thriller-noir":["#0b1f26","#1b3a45"],"prestige-drama":["#3a2412","#7a4a1e"],"documentary":["#2a2a26","#4a4a40"],"period-piece":["#3b2a1a","#6b4a2a"],"comedy-bright":["#7a4a00","#c98a00"],"tech-cool":["#0d1a33","#1c3a70"],"action-heat":["#4a0d0d","#a3210f"],"indie-warm":["#5a3a1a","#b07030"],"graphic-poster":["#1e1a3a","#4a2a8a"],"base":["#1f2a1f","#2f5a2f"]};
 let CAT=null;
 const $=s=>document.querySelector(s);
@@ -101,12 +101,12 @@ function cardEl(sk){
   const ph=document.createElement("div");ph.className="ph";ph.innerHTML=`<b>${esc(sk.title_netflix||sk.name)}</b>`;
   img.onerror=()=>{img.remove()};img.onload=()=>{ph.remove()};
   b.append(img,ph);
-  if(sk.badge){const s=document.createElement("span");s.className="badge"+(sk.badge==="Nova"?" ok":"");s.textContent=sk.badge;b.append(s)}
+  if(sk.badge){const s=document.createElement("span");s.className="badge"+(sk.badge==="Nova"?" ok":sk.badge==="Atualizada"?" up":"");s.textContent=sk.badge;b.append(s)}
   b.onclick=()=>openModal(sk);return b;
 }
 function render(filter=""){
   const root=$("#rows");root.innerHTML="";const f=filter.trim().toLowerCase();let n=0;
-  for(const rid of ROW_ORDER){
+  for(const rid of (CAT.row_order||ROW_ORDER_FALLBACK)){
     const items=CAT.skills.filter(s=>(s.row||"base")===rid).filter(s=>!f||JSON.stringify([s.title_netflix,s.title,s.subtitle,s.genre,s.painel]).toLowerCase().includes(f));
     if(!items.length)continue;n+=items.length;
     const sec=document.createElement("section");sec.className="row";

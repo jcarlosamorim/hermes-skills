@@ -1,13 +1,13 @@
 ---
 name: copy-vsl-webinar
-description: "Roteiro de VSL e de webinar, do gancho de abertura ao fechamento, com os pontos de tensão marcados no tempo. Use quando o pedido envolver VSL, roteiro de vídeo de vendas, webinar, apresentação de vendas."
-version: 0.2.0
+description: "Roteiro de VSL e de webinar, do gancho de abertura ao fechamento, com os pontos de tensão marcados no tempo. Use quando o pedido envolver VSL, roteiro de vídeo de vendas, webinar frio ou quente, apres"
+version: 0.3.0
 author: "José Carlos Amorim"
 license: MIT
 platforms: [linux, macos, windows]
 metadata:
   hermes:
-    tags: [copy, copywriting, Copy, Vídeo]
+    tags: [copy, copywriting, copy, vídeo]
     related_skills: [copy-pipeline, copy-auditoria]
 ---
 
@@ -17,7 +17,7 @@ Roteiro de VSL e de webinar, do gancho de abertura ao fechamento, com os pontos 
 
 ## When to Use
 
-- O pedido envolve: VSL, roteiro de vídeo de vendas, webinar, apresentação de vendas.
+- O pedido envolve: VSL, roteiro de vídeo de vendas, webinar frio ou quente, apresentação de vendas.
 - Diga: "roteiro de VSL para [oferta], [duração]" ou "webinar de [tema] com oferta de [produto]".
 - NÃO use quando o pedido é uma peça em um método específico de copywriter ("como Halbert"): isso é `copy-metodo-<nome>`.
 
@@ -29,6 +29,8 @@ Cada sub-tarefa é uma referência com `Inputs`, fórmulas, `Output Format` e `Q
 |---|---|
 | vsl script | `references/vsl-script.md` |
 | create webinar script | `references/create-webinar-script.md` |
+| create cold webinar script | `references/create-cold-webinar-script.md` |
+| create warm webinar script | `references/create-warm-webinar-script.md` |
 
 ## Procedure
 
@@ -60,5 +62,7 @@ Validada contra Hermes Agent 0.20.6 (tag v2026.8.27) em 2026-09-04.
 
 ## Arquivos desta skill
 
+- `references/create-cold-webinar-script.md`
+- `references/create-warm-webinar-script.md`
 - `references/create-webinar-script.md`
 - `references/vsl-script.md`

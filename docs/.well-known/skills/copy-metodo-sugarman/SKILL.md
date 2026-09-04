@@ -1,7 +1,7 @@
 ---
 name: copy-metodo-sugarman
-description: "Escreve copy pelo método de Joe Sugarman: Escorregador, Gatilhos psicológicos, Storytelling, BluBlocker. Use quando pedirem 'como Sugarman', storytelling e gatilhos psicológicos, ou uma peça nesse estilo."
-version: 0.2.0
+description: "Escreve copy pelo método de Joe Sugarman: Escorregador, Gatilhos psicológicos, Storytelling, BluBlocker. Use quando pedirem 'como Sugarman', storytelling e gatilhos psicológicos, ou uma peça nesse est"
+version: 0.3.0
 author: "José Carlos Amorim"
 license: MIT
 platforms: [linux, macos, windows]
@@ -29,6 +29,8 @@ Vendeu milhões de óculos com palavras. O método é o escorregador: a primeira
 | "escreve como Sugarman: …" | Procedure completo | `references/metodo-sugarman.md` → `core_principles`, `operational_frameworks` |
 | "revisa isto como Sugarman" | Procedure 4 e 5 sobre o texto dado | `references/metodo-sugarman.md` → checklists e `quality_standards` |
 | "explica o método" | resumir `core_principles` em 5 linhas | `references/metodo-sugarman.md` |
+
+Procedimentos adicionais do método, em `references/`: `references/apply-sugarman-triggers.md`
 
 ## Procedure
 
@@ -60,4 +62,6 @@ Validada contra Hermes Agent 0.20.6 (tag v2026.8.27) em 2026-09-04.
 
 ## Arquivos desta skill
 
+- `references/apply-sugarman-triggers.md`
+- `references/checklist-sugarman-30-triggers.md`
 - `references/metodo-sugarman.md`

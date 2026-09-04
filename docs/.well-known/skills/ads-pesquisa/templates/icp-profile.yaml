@@ -1,0 +1,77 @@
+# ICP Profile Template — Hybrid Ads Squad
+# Ideal Customer Profile. One profile per audience segment.
+# Saved to: {pasta}/ads/icps/{icp_slug}.yaml
+#
+# Story: SAIOX-ADS-V5-2.4 (AC3)
+# Created: 2026-03-17
+# Updated: 2026-03-19 (taxonomy: PT → EN)
+# Sources:
+#   - Roundtable P0 #3: Conversational setup (elicit: true)
+#   - Creative brief existing template (Section 2: Target Audience)
+
+version: "1.0.0"
+template: icp-profile
+filled_by: "@ad-midas"  # Concierge collects during onboarding
+used_by: ["@ad-midas", "@creative-analyst", "@performance-analyst", "@campaign-manager"]
+
+# ═══════════════════════════════════════════════════════════════
+# IDENTIFICATION
+# ═══════════════════════════════════════════════════════════════
+
+name: ""                        # required — descriptive ICP name (e.g., "Beginner e-commerce owner")
+slug: ""                        # required — unique key (e.g., "ecom-beginner")
+
+# ═══════════════════════════════════════════════════════════════
+# DEMOGRAPHICS
+# ═══════════════════════════════════════════════════════════════
+
+demographics:
+  gender: ""                    # required — e.g., "Male", "Female", "All"
+  age_range: ""                 # required — e.g., "25-45"
+  social_class: ""              # required — e.g., "B1-B2", "A-B", "C1-C2"
+  location: ""                  # required — e.g., "Brazil - major cities", "SP + RJ", "National"
+
+# ═══════════════════════════════════════════════════════════════
+# PSYCHOGRAPHICS
+# ═══════════════════════════════════════════════════════════════
+
+psychographics:
+  interests: []                 # required (min 3) — used for targeting
+  # Example:
+  # interests:
+  #   - "Digital marketing"
+  #   - "Entrepreneurship"
+  #   - "E-commerce"
+  #   - "Shopify"
+
+  digital_behavior:
+    platforms: []               # required (min 1) — where the ICP spends time
+    # Example: ["Instagram", "YouTube", "LinkedIn"]
+
+    content_consumption: ""     # required — type of content consumed
+    # Example: "Short tip videos, business podcasts, educational carousels"
+
+# ═══════════════════════════════════════════════════════════════
+# PAIN, DESIRE & TICKET
+# ═══════════════════════════════════════════════════════════════
+
+primary_pain: ""                # required — the #1 pain the product solves
+# Example: "Spends on ads but has no measurable return"
+
+desired_outcome: ""             # required — what the ICP wants to achieve
+# Example: "Have a predictable client acquisition system via ads"
+
+market_average_ticket: ""       # required — how much the ICP spends on similar solutions
+# Example: "R$200-500/month"
+
+# ═══════════════════════════════════════════════════════════════
+# FIELD REQUIREMENTS SUMMARY
+# ═══════════════════════════════════════════════════════════════
+# REQUIRED: name, slug,
+#           demographics.gender, demographics.age_range, demographics.social_class, demographics.location,
+#           psychographics.interests (min 3),
+#           psychographics.digital_behavior.platforms (min 1),
+#           psychographics.digital_behavior.content_consumption,
+#           primary_pain, desired_outcome, market_average_ticket
+#
+# OPTIONAL: (none — all fields are required for a functional ICP)

@@ -1,13 +1,13 @@
 ---
 name: copy-headlines
 description: "Você entrega o produto, o benefício principal e para quem é. Use quando o pedido envolver headline, título, gancho, hook, bullets, chamada de abertura."
-version: 0.2.0
+version: 0.3.0
 author: "José Carlos Amorim"
 license: MIT
 platforms: [linux, macos, windows]
 metadata:
   hermes:
-    tags: [copy, copywriting, Copy, Headlines]
+    tags: [copy, copywriting, copy, headlines]
     related_skills: [copy-pipeline, copy-auditoria]
 ---
 

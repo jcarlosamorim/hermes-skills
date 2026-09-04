@@ -1,13 +1,13 @@
 ---
 name: copy-voz
-description: "Extrai o DNA de comunicação de uma pessoa: vocabulário, frases-assinatura, frameworks que ela repete, o jeito de abrir e fechar. Use quando o pedido envolver voz da marca, DNA de comunicação, frases-assinatura, extrair"
-version: 0.2.0
+description: "Extrai o DNA de comunicação de uma pessoa: vocabulário, frases-assinatura, frameworks que ela repete, o jeito de abrir e fechar. Use quando o pedido envolver voz da marca, DNA de comunicação, frases-a"
+version: 0.3.0
 author: "José Carlos Amorim"
 license: MIT
 platforms: [linux, macos, windows]
 metadata:
   hermes:
-    tags: [copy, copywriting, Voz, Marca pessoal]
+    tags: [copy, copywriting, voz, marca-pessoal]
     related_skills: [copy-pipeline, copy-auditoria]
 ---
 

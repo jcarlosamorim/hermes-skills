@@ -1,0 +1,83 @@
+# Industry Template: Healthcare
+# Source: squads/ads-audit/templates/healthcare.md + references/benchmarks.yaml
+# Last Updated: 2026-03-17
+
+industry: healthcare
+
+benchmarks:
+  cpa: "$100-$500"
+  roas: "N/A"
+  ctr: "4.90%"
+  cpm: "$28-$36.82"
+  cvr: "3.10%"
+
+recommended_funnels:
+  - type: patient-acquisition-search
+    description: "Google Search for high-intent '[specialty] doctor near me' and '[condition] treatment [city]' queries"
+    primary_platforms: [google_search]
+  - type: provider-trust-building
+    description: "Meta and YouTube doctor-to-camera videos, facility tours, and patient education content"
+    primary_platforms: [meta, youtube]
+  - type: new-patient-lead-gen
+    description: "Meta lead forms for new patient appointment requests and free health screening offers"
+    primary_platforms: [meta]
+  - type: urgent-care-local
+    description: "Google Search for 'urgent care near me', 'walk in clinic [city]' with call extensions"
+    primary_platforms: [google_search]
+
+typical_audiences:
+  - name: condition-searchers
+    description: "Users searching '[condition] treatment [city]', '[specialty] doctor near me', '[procedure] cost'"
+    platforms: [google_search]
+  - name: local-radius-patients
+    description: "5-20 mile radius around practice locations, general wellness interests"
+    platforms: [meta]
+  - name: retargeting-visitors
+    description: "Service page viewers, video viewers of doctor introductions and facility tours"
+    platforms: [meta]
+  - name: microsoft-older-demo
+    description: "Microsoft/Bing audience skews 45-64 (38% of Bing users) -- aligns with healthcare demographics"
+    platforms: [microsoft]
+  - name: referring-professionals
+    description: "LinkedIn targeting for B2B healthcare marketing, professional referral networks"
+    platforms: [linkedin]
+
+creative_patterns:
+  - format: doctor-to-camera
+    description: "Provider introduction videos showing bedside manner and expertise, builds patient trust"
+    best_for: [awareness, consideration]
+  - format: facility-tour
+    description: "Clean, modern environment walkthrough with equipment and staff, reassures patients"
+    best_for: [consideration]
+  - format: patient-testimonial
+    description: "Consenting patient stories with specific outcomes within HIPAA compliance boundaries"
+    best_for: [consideration, decision]
+  - format: educational-content
+    description: "'5 signs you need to see a [specialist]' educational approach with soft CTA"
+    best_for: [awareness]
+  - format: insurance-transparency
+    description: "'We accept [insurance]', 'Affordable payment plans', cost transparency messaging"
+    best_for: [decision]
+
+compliance_notes:
+  - "SPECIAL AD CATEGORY: Health conditions targeting restricted on Meta and Google"
+  - "HIPAA: never use patient data for ad targeting without explicit written authorization"
+  - "HIPAA: retargeting pixels cannot be combined with health condition data"
+  - "HIPAA: landing pages must have privacy policy, cannot collect PHI in ad forms"
+  - "HIPAA: Meta CAPI and Google Enhanced Conversions must ensure no PHI is transmitted"
+  - "LegitScript certification REQUIRED for addiction treatment, online pharmacy, telehealth prescribing (4-8 weeks, $1K-$2K/year)"
+  - "Cannot guarantee specific medical outcomes in ad copy -- policy and legal risk"
+  - "Patient testimonials require proper HIPAA authorization (legal liability)"
+  - "Call recording requires state consent law compliance (one-party vs two-party)"
+
+budget_guidelines:
+  min_daily: 130
+  recommended_daily: 330
+  min_test_duration_days: 21
+
+kpi_targets:
+  primary: cost_per_new_patient
+  secondary: appointment_show_rate
+
+special_ad_category: true
+special_ad_category_type: health

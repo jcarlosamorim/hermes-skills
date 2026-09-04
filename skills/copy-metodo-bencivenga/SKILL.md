@@ -1,7 +1,7 @@
 ---
 name: copy-metodo-bencivenga
-description: "Escreve copy pelo método de Gary Bencivenga: Bullets e fascinações, Prova acima de promessa, Credibilidade, Curiosidade específica. Use quando pedirem 'como Bencivenga', bullets e fascinações, ou uma peça nesse estilo."
-version: 0.2.0
+description: "Escreve copy pelo método de Gary Bencivenga: Bullets e fascinações, Prova acima de promessa, Credibilidade, Curiosidade específica. Use quando pedirem 'como Bencivenga', bullets e fascinações, ou uma "
+version: 0.3.0
 author: "José Carlos Amorim"
 license: MIT
 platforms: [linux, macos, windows]
