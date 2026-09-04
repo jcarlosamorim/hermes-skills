@@ -1,0 +1,605 @@
+# Authority Arsenal Extraction Template
+# CopywriterOS - Output template for build-authority-arsenal task
+#
+# PURPOSE:
+# This template defines the structure for extracted authority proof elements
+# including crucible story, statistics, notable work, and proof stack templates.
+#
+# USAGE:
+# 1. Execute tasks/build-authority-arsenal.md
+# 2. Fill this template with extracted data from source materials
+# 3. Save to outputs/minds/{slug}/analysis/authority-arsenal.yaml
+#
+# REFERENCE:
+# - agents/david-ogilvy.md authority_proof_arsenal section (structure model)
+# - tasks/build-authority-arsenal.md (extraction process)
+
+template:
+  id: authority-arsenal-template-v1
+  name: "Authority Arsenal Extraction Template"
+  version: "1.0.0"
+  output:
+    format: yaml
+    filename: "authority-arsenal.yaml"
+    location: "outputs/minds/{slug}/analysis/"
+
+# =============================================================================
+# HEADER METADATA
+# =============================================================================
+
+header:
+  copywriter: "{{copywriter_name}}"
+  slug: "{{copywriter_slug}}"
+  extraction_date: "{{YYYY-MM-DD}}"
+  source_files_analyzed: "{{count}}"
+  extractor: "CopywriterOS Authority Arsenal Task v1.0"
+
+# =============================================================================
+# CRUCIBLE STORY - 4 Acts Structure
+# =============================================================================
+# The copywriter's transformation narrative: Origin → Struggle → Breakthrough → Mastery
+# This provides the emotional foundation for all authority claims.
+
+crucible_story:
+  title: "{{one_line_story_title}}"
+  # Example: "From Door-to-Door Salesman to Father of Advertising"
+
+  transformation_arc: "{{from_X_to_Y_summary}}"
+  # Example: "From failed Oxford student → Father of Modern Advertising"
+
+  # -------------------------------------------------------------------------
+  # ACT 1: ORIGIN - Where they started
+  # -------------------------------------------------------------------------
+  act_1_origin:
+    year: "{{YYYY or YYYY-YYYY range}}"
+    # Example: "2015-2017"
+
+    location: "{{location_if_relevant}}"
+    # Example: "California, USA"
+
+    context: |
+      {{starting_situation_description}}
+    # What was their life like before the transformation?
+    # What was their first job/career/situation?
+    # Example: "Working as a freelance web designer, struggling to find clients..."
+
+    key_event: "{{inciting_incident}}"
+    # What made them start down this path?
+    # Example: "Discovered direct response copywriting after a failed product launch"
+
+    mindset: "{{how_they_thought_at_this_stage}}"
+    # What did they believe at this stage?
+    # Example: "Believed success came from working harder, not smarter"
+
+    challenges:
+      - "{{initial_challenge_1}}"
+      - "{{initial_challenge_2}}"
+      - "{{initial_challenge_3}}"
+    # Example:
+    # - "No marketing knowledge"
+    # - "Limited budget for advertising"
+    # - "Trading time for money"
+
+    lesson: "{{key_learning_from_this_period}}"
+    # Example: "Hard work alone doesn't guarantee success"
+
+    sources:
+      - "{{source_file_1}}"
+      - "{{source_file_2}}"
+
+  # -------------------------------------------------------------------------
+  # ACT 2: STRUGGLE - The challenges and failures
+  # -------------------------------------------------------------------------
+  act_2_struggle:
+    period: "{{YYYY-YYYY or duration}}"
+    # Example: "2017-2019" or "18 months"
+
+    context: |
+      {{struggle_situation_description}}
+    # What was happening during this period?
+    # Example: "Tried multiple business models, each one failing..."
+
+    challenges:
+      - challenge: "{{challenge_1_description}}"
+        impact: "{{how_it_affected_them}}"
+        lesson: "{{what_they_learned}}"
+      - challenge: "{{challenge_2_description}}"
+        impact: "{{how_it_affected_them}}"
+        lesson: "{{what_they_learned}}"
+      - challenge: "{{challenge_3_description}}"
+        impact: "{{how_it_affected_them}}"
+        lesson: "{{what_they_learned}}"
+    # Example:
+    # - challenge: "First product launch failed completely"
+    #   impact: "Lost $5,000 in savings"
+    #   lesson: "Product-market fit matters more than features"
+
+    failures:
+      - failure: "{{specific_failure_1}}"
+        impact: "{{consequence}}"
+      - failure: "{{specific_failure_2}}"
+        impact: "{{consequence}}"
+    # Example:
+    # - failure: "Agency went bankrupt after 6 months"
+    #   impact: "Had to move back with parents"
+
+    dark_moment: |
+      {{the_lowest_point_description}}
+    # The darkest moment in their journey
+    # Example: "Bank account at $0, considering giving up on entrepreneurship..."
+
+    pivotal_lesson: "{{key_insight_from_struggle_period}}"
+    # The key insight that emerged from this period
+    # Example: "Realized that audience comes before product"
+
+    sources:
+      - "{{source_file_1}}"
+      - "{{source_file_2}}"
+
+  # -------------------------------------------------------------------------
+  # ACT 3: BREAKTHROUGH - The turning point
+  # -------------------------------------------------------------------------
+  act_3_breakthrough:
+    year: "{{YYYY}}"
+    # Example: "2020"
+
+    catalyst: |
+      {{what_triggered_the_breakthrough}}
+    # What changed everything?
+    # Example: "Started writing daily on Twitter, audience began growing..."
+
+    realization: "{{the_key_insight_or_shift}}"
+    # What did they figure out that others hadn't?
+    # Example: "Content is the new sales - build audience first, sell later"
+
+    first_success: "{{first_significant_win}}"
+    # The first major success that validated the approach
+    # Example: "First $10K month from a 300-follower account"
+
+    validation: "{{how_they_knew_it_was_working}}"
+    # How they knew the approach worked
+    # Example: "Organic inbound leads replaced cold outreach entirely"
+
+    result: "{{immediate_outcome}}"
+    # What happened immediately after
+    # Example: "Revenue doubled within 3 months"
+
+    lesson: "{{what_they_learned_from_breakthrough}}"
+    # Example: "Consistency + value compounds over time"
+
+    sources:
+      - "{{source_file_1}}"
+      - "{{source_file_2}}"
+
+  # -------------------------------------------------------------------------
+  # ACT 4: MASTERY - Current state and authority
+  # -------------------------------------------------------------------------
+  act_4_mastery:
+    year: "{{YYYY-present}}"
+    # Example: "2021-present"
+
+    current_state: |
+      {{where_they_are_now_description}}
+    # Where they are now in their career
+    # Example: "Running a $2.6M/year one-person business with 2M+ followers..."
+
+    signature_achievement: "{{defining_accomplishment}}"
+    # The defining accomplishment
+    # Example: "Built largest one-person business education brand on Twitter"
+
+    impact: "{{reach_and_influence}}"
+    # How they've helped others
+    # Example: "Taught 50,000+ students how to build one-person businesses"
+
+    philosophy: "{{core_belief_emerged_from_journey}}"
+    # The philosophy that emerged from their journey
+    # Example: "Everyone can build a one-person business doing what they love"
+
+    mission: "{{current_mission}}"
+    # What they're working toward now
+    # Example: "Help 1 million people escape the 9-to-5"
+
+    sources:
+      - "{{source_file_1}}"
+      - "{{source_file_2}}"
+
+  # -------------------------------------------------------------------------
+  # STORY SUMMARY ELEMENTS
+  # -------------------------------------------------------------------------
+  pivotal_quote: "{{their_most_powerful_quote_about_their_journey}}"
+  # The most powerful quote about their journey
+  # Example: "I failed 7 times before I figured out what worked."
+
+  story_in_one_sentence: "{{one_sentence_transformation_summary}}"
+  # Example: "From broke freelancer to $2.6M/year teaching others to escape the 9-to-5."
+
+# =============================================================================
+# AUTHORITY STATISTICS
+# =============================================================================
+# Verifiable statistics that demonstrate expertise and results.
+# All statistics must have source citations.
+
+authority_statistics:
+
+  # -------------------------------------------------------------------------
+  # CAREER STATISTICS
+  # -------------------------------------------------------------------------
+  career:
+    - metric: "{{career_metric_1_name}}"
+      value: "{{specific_number_or_range}}"
+      context: "{{what_this_means}}"
+      source: "{{source_file}}"
+      date_verified: "{{when_claimed}}"
+    - metric: "{{career_metric_2_name}}"
+      value: "{{specific_number_or_range}}"
+      context: "{{what_this_means}}"
+      source: "{{source_file}}"
+      date_verified: "{{when_claimed}}"
+    - metric: "{{career_metric_3_name}}"
+      value: "{{specific_number_or_range}}"
+      context: "{{what_this_means}}"
+      source: "{{source_file}}"
+      date_verified: "{{when_claimed}}"
+  # Examples:
+  # - metric: "Years building online businesses"
+  #   value: "7+"
+  #   context: "Started in 2017, full-time since 2019"
+  #   source: "03 - A Breakdown Of My Previous Twitter Agency.md"
+  #   date_verified: "2024"
+
+  # -------------------------------------------------------------------------
+  # RESULTS STATISTICS
+  # -------------------------------------------------------------------------
+  results:
+    - metric: "{{results_metric_1_name}}"
+      value: "{{specific_number_or_range}}"
+      context: "{{what_this_means}}"
+      source: "{{source_file}}"
+      date_verified: "{{when_claimed}}"
+    - metric: "{{results_metric_2_name}}"
+      value: "{{specific_number_or_range}}"
+      context: "{{what_this_means}}"
+      source: "{{source_file}}"
+      date_verified: "{{when_claimed}}"
+    - metric: "{{results_metric_3_name}}"
+      value: "{{specific_number_or_range}}"
+      context: "{{what_this_means}}"
+      source: "{{source_file}}"
+      date_verified: "{{when_claimed}}"
+  # Examples:
+  # - metric: "Annual revenue"
+  #   value: "$2.6M+"
+  #   context: "From digital products and education"
+  #   source: "dan koe.json"
+  #   date_verified: "2024"
+
+  # -------------------------------------------------------------------------
+  # RECOGNITION STATISTICS
+  # -------------------------------------------------------------------------
+  recognition:
+    - metric: "{{recognition_metric_1_name}}"
+      value: "{{specific_credential_or_award}}"
+      context: "{{what_this_means}}"
+      source: "{{source_file}}"
+      date_verified: "{{when_claimed}}"
+    - metric: "{{recognition_metric_2_name}}"
+      value: "{{specific_credential_or_award}}"
+      context: "{{what_this_means}}"
+      source: "{{source_file}}"
+      date_verified: "{{when_claimed}}"
+  # Examples:
+  # - metric: "Industry recognition"
+  #   value: "Featured in Forbes 30 Under 30"
+  #   context: "Recognized for entrepreneurship"
+  #   source: "about-page.md"
+  #   date_verified: "2023"
+
+  # -------------------------------------------------------------------------
+  # REACH STATISTICS
+  # -------------------------------------------------------------------------
+  reach:
+    - metric: "{{reach_metric_1_name}}"
+      value: "{{specific_number_or_range}}"
+      context: "{{what_this_means}}"
+      source: "{{source_file}}"
+      date_verified: "{{when_claimed}}"
+    - metric: "{{reach_metric_2_name}}"
+      value: "{{specific_number_or_range}}"
+      context: "{{what_this_means}}"
+      source: "{{source_file}}"
+      date_verified: "{{when_claimed}}"
+    - metric: "{{reach_metric_3_name}}"
+      value: "{{specific_number_or_range}}"
+      context: "{{what_this_means}}"
+      source: "{{source_file}}"
+      date_verified: "{{when_claimed}}"
+  # Examples:
+  # - metric: "Twitter followers"
+  #   value: "2M+"
+  #   context: "Largest one-person business account"
+  #   source: "dan koe.json"
+  #   date_verified: "2024"
+
+# =============================================================================
+# NOTABLE PRODUCTS
+# =============================================================================
+# The copywriter's signature products, services, courses, etc.
+
+notable_products:
+  - name: "{{product_1_name}}"
+    type: "course|book|software|service|community|template|membership"
+    description: "{{one_line_description}}"
+    result_claim: "{{what_it_helps_people_achieve}}"
+    price_point: "{{price_if_known}}"
+    sales_volume: "{{units_sold_if_known}}"
+    source: "{{source_file}}"
+  - name: "{{product_2_name}}"
+    type: "course|book|software|service|community|template|membership"
+    description: "{{one_line_description}}"
+    result_claim: "{{what_it_helps_people_achieve}}"
+    price_point: "{{price_if_known}}"
+    sales_volume: "{{units_sold_if_known}}"
+    source: "{{source_file}}"
+  - name: "{{product_3_name}}"
+    type: "course|book|software|service|community|template|membership"
+    description: "{{one_line_description}}"
+    result_claim: "{{what_it_helps_people_achieve}}"
+    price_point: "{{price_if_known}}"
+    sales_volume: "{{units_sold_if_known}}"
+    source: "{{source_file}}"
+# Minimum 3 products required
+# Examples:
+# - name: "Digital Economics"
+#   type: "course"
+#   description: "Complete system for building a one-person business"
+#   result_claim: "Build a $1M+ business working 4 hours/day"
+#   price_point: "$997"
+#   sales_volume: "10,000+ students"
+#   source: "product-page.md"
+
+# =============================================================================
+# NOTABLE CLIENTS/STUDENTS
+# =============================================================================
+# Client results, student success stories, or notable followers.
+# If specific names aren't available, use categories.
+
+notable_clients:
+  - name: "{{client_name_or_category}}"
+    result: "{{what_they_achieved}}"
+    quote: "{{direct_quote_if_available}}"
+    source: "{{source_file}}"
+  - name: "{{client_name_or_category}}"
+    result: "{{what_they_achieved}}"
+    quote: "{{direct_quote_if_available}}"
+    source: "{{source_file}}"
+# Minimum 2 client entries required
+# Examples:
+# - name: "6-figure entrepreneurs"
+#   result: "Scaled to 7 figures using content strategy"
+#   quote: "Dan's system helped me 10x my business in 18 months"
+#   source: "testimonials.md"
+# - name: "Corporate escapees"
+#   result: "Built full-time income from side projects"
+#   quote: null
+#   source: "community-wins.md"
+
+# =============================================================================
+# PROOF STACK TEMPLATES
+# =============================================================================
+# Reusable templates for inserting authority proof into copy.
+# These templates should be customized with the copywriter's actual data.
+
+proof_stack_templates:
+
+  # -------------------------------------------------------------------------
+  # TRANSFORMATION PROOF TEMPLATE
+  # -------------------------------------------------------------------------
+  transformation_proof:
+    name: "Transformation Proof"
+    purpose: "Establish relatability through personal journey"
+
+    template: |
+      [BEFORE STATE]: {{act_1_context}}
+      [STRUGGLE]: {{act_2_dark_moment}}
+      [TURNING POINT]: {{act_3_catalyst}}
+      [AFTER STATE]: {{act_4_current_state}}
+
+    usage_guidance:
+      - "Use in opening hooks to establish relatability"
+      - "Use in about sections to build connection"
+      - "Abbreviate for social media bios"
+      - "Full version for sales pages and long-form content"
+
+    example_application: |
+      {{copywriter_name}} went from {{origin_state}} to {{mastery_state}}
+      after discovering {{breakthrough_insight}}.
+    # Example:
+    # "Dan Koe went from broke freelancer working 12-hour days to running a
+    # $2.6M/year business working 4 hours a day after discovering how to
+    # monetize his curiosity through content."
+
+    variables_required:
+      - "act_1_context"
+      - "act_2_dark_moment"
+      - "act_3_catalyst"
+      - "act_4_current_state"
+      - "origin_state"
+      - "mastery_state"
+      - "breakthrough_insight"
+
+  # -------------------------------------------------------------------------
+  # RESULTS PROOF TEMPLATE
+  # -------------------------------------------------------------------------
+  results_proof:
+    name: "Results Proof"
+    purpose: "Demonstrate capability through specific numbers"
+
+    template: |
+      [METRIC]: {{statistic_value}}
+      [CONTEXT]: {{what_it_means}}
+      [TIMEFRAME]: {{when_achieved}}
+
+    usage_guidance:
+      - "Use after making claims to substantiate"
+      - "Use in headlines for specific hooks"
+      - "Stack multiple statistics for compound proof"
+      - "Always cite source when possible"
+
+    example_application: |
+      With {{years}} years of experience and {{revenue_stat}} in results,
+      {{copywriter_name}} has {{achievement_description}}.
+    # Example:
+    # "With 7 years of experience and $2.6M in annual revenue, Dan Koe
+    # has helped 50,000+ students build profitable one-person businesses."
+
+    variables_required:
+      - "statistic_value"
+      - "what_it_means"
+      - "when_achieved"
+      - "years"
+      - "revenue_stat"
+      - "achievement_description"
+
+  # -------------------------------------------------------------------------
+  # CREDIBILITY PROOF TEMPLATE
+  # -------------------------------------------------------------------------
+  credibility_proof:
+    name: "Credibility Proof"
+    purpose: "Position as authority in the field"
+
+    template: |
+      [CREDENTIALS]: {{recognition_stats}}
+      [EXPERIENCE]: {{career_stats}}
+      [NOTABLE WORK]: {{products_or_clients}}
+
+    usage_guidance:
+      - "Use in author bios and introductions"
+      - "Use when presenting frameworks or methods"
+      - "Use to counter 'who are you?' objection"
+      - "Adapt length based on context (short for bios, long for sales pages)"
+
+    example_application: |
+      {{copywriter_name}}, creator of {{notable_product}}, has helped
+      {{client_types}} achieve {{result_description}}.
+    # Example:
+    # "Dan Koe, creator of Digital Economics and The 2 Hour Writer, has helped
+    # over 50,000 entrepreneurs build profitable one-person businesses through
+    # content and product creation."
+
+    variables_required:
+      - "recognition_stats"
+      - "career_stats"
+      - "products_or_clients"
+      - "notable_product"
+      - "client_types"
+      - "result_description"
+
+  # -------------------------------------------------------------------------
+  # SOCIAL PROOF TEMPLATE
+  # -------------------------------------------------------------------------
+  social_proof:
+    name: "Social Proof"
+    purpose: "Leverage audience and client validation"
+
+    template: |
+      [AUDIENCE SIZE]: {{reach_stats}}
+      [CLIENT RESULTS]: {{client_achievements}}
+      [ENDORSEMENTS]: {{notable_mentions}}
+
+    usage_guidance:
+      - "Use in testimonial sections"
+      - "Use to validate claims with third-party evidence"
+      - "Use to show community/following"
+      - "Combine with specific testimonial quotes when available"
+
+    example_application: |
+      Join {{audience_size}} others who have {{transformation_achieved}}
+      using {{copywriter_name}}'s methods.
+    # Example:
+    # "Join 2 million others who have discovered how to build a profitable
+    # one-person business using Dan Koe's methods."
+
+    variables_required:
+      - "reach_stats"
+      - "client_achievements"
+      - "notable_mentions"
+      - "audience_size"
+      - "transformation_achieved"
+
+# =============================================================================
+# QUALITY VALIDATION
+# =============================================================================
+
+quality_checklist:
+  crucible_story:
+    - "All 4 acts populated with content"
+    - "Each act has verifiable sources cited"
+    - "Timeline is coherent (years make sense)"
+    - "Story has clear transformation arc"
+    - "Dark moment and breakthrough are specific, not generic"
+    - "Current state reflects authority position"
+
+  statistics:
+    - "Minimum 5 statistics extracted across categories"
+    - "At least 2 different categories covered"
+    - "All statistics have source citations"
+    - "Numbers are specific (not vague like 'many')"
+    - "Statistics are impressive enough to establish authority"
+
+  products_clients:
+    - "At least 3 notable products listed"
+    - "At least 2 client types or names listed"
+    - "Each entry has clear result/benefit"
+    - "Sources are cited"
+
+  proof_templates:
+    - "All 4 proof template types created"
+    - "Each template has clear structure"
+    - "Usage guidance provided for each"
+    - "Example applications included"
+    - "Templates reference actual extracted data"
+
+scoring:
+  sections:
+    crucible_story: "30%"
+    statistics: "25%"
+    products_clients: "15%"
+    proof_templates: "20%"
+    technical: "10%"
+
+  thresholds:
+    excellent: "90-100%"
+    good: "70-89%"
+    needs_revision: "<70%"
+
+  target: "90%+"
+
+# =============================================================================
+# EXAMPLE: FILLED TEMPLATE REFERENCE
+# =============================================================================
+# See agents/david-ogilvy.md authority_proof_arsenal section for a complete
+# example of this template filled in for David Ogilvy.
+#
+# Key patterns from the reference:
+# - Crucible story has 6 acts (we use 4 simplified)
+# - Statistics include specific numbers with $ values
+# - Notable clients are listed by name
+# - Proof stack templates include setup phrases
+# =============================================================================
+
+# =============================================================================
+# USAGE INSTRUCTIONS
+# =============================================================================
+#
+# 1. Execute tasks/build-authority-arsenal.md with source materials
+# 2. Copy this template to outputs/minds/{slug}/analysis/authority-arsenal.yaml
+# 3. Replace all {{placeholder}} markers with extracted data
+# 4. Ensure all sources are cited
+# 5. Run quality checklist before finalizing
+# 6. This output feeds into templates/copywriter-agent-tmpl.yaml
+#
+# =============================================================================
+
+# =============================================================================
+# END OF TEMPLATE
+# =============================================================================

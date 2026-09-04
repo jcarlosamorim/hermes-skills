@@ -1,71 +1,86 @@
-# Hermes Skills Community
+# Hub de Skills para Hermes
 
-Biblioteca de skills para alunos da comunidade Hermes Agent.
+Skills instaláveis por comando no [Hermes Agent](https://github.com/NousResearch/hermes-agent): copy,
+operação de time e tráfego pago. Cada skill é um procedimento com verificação, não um prompt.
+Código aberto, licença MIT, escaneado pelo mesmo scanner que o Hermes roda na instalação.
 
-Cada pacote ensina o Hermes do aluno a executar um fluxo específico com segurança, prova operacional e escopo mínimo.
+**Página do catálogo:** https://jcarlosamorim.github.io/hermes-skills/ (clique num card, copie o comando)
 
-## Para o Hermes do aluno
+## Instalar
 
-Antes de instalar qualquer skill deste repositório:
+Dois caminhos, do mesmo repositório:
 
-```text
-1. Inspecione a skill, a licença e os arquivos de apoio.
-2. Não execute scripts ou comandos de uma skill antes de explicar o que eles fazem.
-3. Não copie tokens, senhas, client secrets, códigos OAuth ou arquivos .env para chats, documentos ou memória.
-4. Depois da instalação, abra uma nova sessão do Hermes antes de usar a skill.
+```bash
+# 1) o hub inteiro como fonte: descobre, busca e atualiza. Lê o branch main.
+hermes skills tap add jcarlosamorim/hermes-skills
+hermes skills search copy
+hermes skills install jcarlosamorim/hermes-skills/skills/copy-headlines
+
+# 2) uma skill presa numa tag: é o que dá aula reproduzível, todo mundo instala o mesmo arquivo.
+hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.2.0/skills/copy-headlines/SKILL.md
 ```
 
-## Instalação
-
-Cada release publica links imutáveis para os arquivos `SKILL.md`.
-
-Primeira release disponível:
-
-```text
-https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.1.0/skills/google-oauth-onboarding/SKILL.md
-```
-
-No Hermes, peça:
+Ou cole no chat do seu Hermes:
 
 ```text
 Inspecione e instale esta skill:
-https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.1.0/skills/google-oauth-onboarding/SKILL.md
+https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.2.0/skills/copy-headlines/SKILL.md
+Antes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio.
+Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.
 ```
 
-Ou use a CLI:
+Depois de instalar, abra uma nova sessão.
 
-```bash
-hermes skills inspect https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.1.0/skills/google-oauth-onboarding/SKILL.md
-hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.1.0/skills/google-oauth-onboarding/SKILL.md
-```
+## O que tem aqui
 
-Use um link de release ou commit, nunca `main`, para que a instalação seja reproduzível.
+| linha | skills | o que instala |
+|---|---|---|
+| **Por objetivo** | `copy-headlines`, `copy-sales-page`, `copy-oferta`, `copy-email`, `copy-anuncios`, `copy-vsl-webinar`, `copy-vendas-por-chamada`, `copy-pesquisa-avatar`, `copy-big-idea-lead-magnet`, `copy-voz`, `copy-auditoria`, `copy-pipeline` | a peça que você precisa, com as fórmulas dos copywriters por trás em `references/` |
+| **Lendas do copy** | `copy-metodo-halbert`, `-ogilvy`, `-schwartz`, `-hopkins`, `-kennedy`, `-bencivenga`, `-sugarman`, `-kern`, `-benson`, `-sethi`, `-hormozi`, `-koe`, `-khayat`, `-brown` | o método de um copywriter, com frameworks e voz documentados |
+| **Operação** | `ops-rotear-tarefa`, `ops-briefing`, `ops-revisao-semanal`, `ops-avaliar-fit` | gestão de time por zona de genialidade e Kolbe; o perfil do SEU time é a entrada |
+| **Tráfego** | `ads-gate-compliance`, `ads-plano`, `ads-otimizar` | régua de compliance, unit economics e o motor diário que lê a Graph API e classifica |
+| **Base** | `google-oauth-onboarding` | autorização OAuth do Google com escopo mínimo |
 
-## Skills
+Cada skill segue o formato do Hermes: frontmatter, `When to Use`, `Quick Reference`, `Procedure`,
+`Pitfalls`, `Verification` com critério binário, e `references/` para o que é longo. Segredo vai em
+`required_environment_variables` (`.env`), nunca no corpo.
 
-| Skill | Para quê |
-| --- | --- |
-| [google-oauth-onboarding](skills/google-oauth-onboarding/SKILL.md) | Guia OAuth do Google, do primeiro projeto até a reautorização. |
+## Segurança
+
+Este repositório é `community` para o Hermes, por definição (só quatro organizações são `trusted`).
+Em `community`, qualquer achado `high` ou `critical` do scanner bloqueia a instalação, e `critical`
+não aceita `--force`. O CI roda o scanner real do Hermes (`tools/skills_guard.py`, tag pinada) em
+todo PR e reprova o build antes de chegar em alguém. Leia [SECURITY.md](SECURITY.md).
+
+Não ensine `--force` a ninguém. Se uma skill foi bloqueada, o problema é dela.
 
 ## Estrutura
 
 ```text
-skills/<nome>/SKILL.md
-skills/<nome>/references/
-skills/<nome>/templates/
-skills/<nome>/scripts/
+skills/<nome>/SKILL.md          procedimento; único arquivo que o loader lê de início
+skills/<nome>/references/       fórmulas, métodos, checklists (carregados sob demanda)
+skills/<nome>/templates/        modelos que a skill preenche
+skills/<nome>/scripts/          código determinístico (só no ads-otimizar)
+catalog.json                    o catálogo que a página lê: título, sinopse, comando, gênero
+docs/                           a página (GitHub Pages) e o .well-known/skills para busca por domínio
+scripts/validate_skills.py      forma do SKILL.md
+scripts/scan_skills.py          scanner do Hermes contra cada skill
+scripts/build_docs.py           regenera docs/ a partir de skills/ e catalog.json
 ```
 
-Uma skill deve conter só o necessário para ser instalada, revisada e usada. Credenciais, dados de clientes, listas de contatos e ativos proprietários ficam fora deste repositório.
+## Publicar uma mudança
 
-## Publicação
+1. Branch. Edite ou crie `skills/<nome>/`.
+2. `python3 scripts/validate_skills.py && python3 scripts/scan_skills.py` (Python 3.10+).
+3. `python3 scripts/build_docs.py` e confira o diff em `docs/`.
+4. PR. O CI repete os dois primeiros passos.
+5. Merge em `main` (o tap passa a ver) e **tag** (`vX.Y.Z`): os comandos da página apontam para a tag.
 
-1. Crie ou atualize uma skill em branch.
-2. Rode `python3 scripts/validate_skills.py`.
-3. Revise o diff para segredos e dados de clientes.
-4. Abra PR, faça merge e publique uma tag de versão.
-5. Compartilhe o link `raw.githubusercontent.com` preso na tag ou commit.
+## Origem
 
-## Segurança
+As skills de copy nasceram do squad `copywriter-os` e as de operação do `nucleo-ops-ia`, ambos do
+[Synkra AIOS](https://github.com/SynkraAI/aios-core); o motor de tráfego é o `outputs/meta-ads`. Os
+arquivos de agente e task foram levados para `references/` como conhecimento, não como persona. As
+capas da página seguem o padrão de key art da Netflix e são geradas a partir de prompts versionados.
 
-Leia [SECURITY.md](SECURITY.md) antes de instalar ou publicar uma skill.
+Licença MIT. Autor: José Carlos Amorim.

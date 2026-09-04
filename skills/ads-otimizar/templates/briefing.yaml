@@ -1,0 +1,27 @@
+# Briefing do produto para ads-plano e ads-otimizar. Preencha e aponte o caminho em `ads.briefing`.
+# Nada aqui é segredo: credencial vai em variável de ambiente (META_AUTH), nunca neste arquivo.
+produto: ""                 # nome curto, vira prefixo dos arquivos de estado
+descricao: ""
+ratificado: false           # true quando o dono conferiu os números abaixo
+tipo_conversao: venda       # venda | lead
+ticket: 0                   # em reais
+aov_dia_zero: 0
+ltv_12m: 0
+cac_alvo: 0
+cac_teto: 0
+cpl_alvo: 0.0
+cpl_teto: 0.0
+taxa_lead_venda_pct: 0
+taxa_plataforma_pct: 0.0
+matriz:                     # thresholds do motor (ads-otimizar). Comece pelos derivados do plano e calibre com o CSV de decisões
+  escalar_cac_max: 0        # CAC até aqui: ESCALAR
+  manter_cac_max: 0         # até aqui: MANTER (faixa de validação)
+  matar_cac_min: 0          # acima disso: MATAR (o problema é a oferta)
+  matar_gasto_sem_venda: 0  # gastou isso sem conversão: MATAR
+  impressoes_minimas: 500   # abaixo disso: SEM DADO
+  fadiga_freq: 3.0          # frequência a partir da qual, com CTR caindo, o veredito vira DUPLICAR
+conta_anuncios: "act_0000000000"   # id da conta de anúncios (não é segredo)
+landing_principal: ""
+categoria_sensivel: ""      # ex.: saúde, finanças; muda a régua do gate
+icp: ""
+restricoes: ""
