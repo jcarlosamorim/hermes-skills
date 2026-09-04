@@ -1,15 +1,15 @@
 ---
 name: ads-pesquisa
-description: "Campanha sem pesquisa é orçamento em teste cego. Só leitura e julgamento: não toca na conta de anúncios. Use quando: \"pesquisa para a campanha de [produto]\"."
-version: 0.3.0
-author: "José Carlos Amorim"
+description: 'Campanha sem pesquisa é orçamento em teste cego. Só leitura e julgamento: não toca na conta de anúncios. Use quando: "pesquisa para a campanha de [produto]".'
 license: MIT
-platforms: [linux, macos, windows]
+compatibility: 'Requer: web. Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.'
 metadata:
-  hermes:
-    tags: [trafego-pago, meta-ads, pesquisa]
-    related_skills: [ads-gate-compliance, ads-plano, ads-otimizar]
-    requires_toolsets: [web]
+  author: José Carlos Amorim
+  version: 0.4.0
+  hub: https://agentflix.nexialismo.ai
+  source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/ads-pesquisa
+  tags: trafego-pago, meta-ads, pesquisa
+  related: ads-gate-compliance, ads-plano, ads-otimizar
 ---
 
 # CINCO FASES · Do perfil do negócio ao brief de campanha, sem improviso

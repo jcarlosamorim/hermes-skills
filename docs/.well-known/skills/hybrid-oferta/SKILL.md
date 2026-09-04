@@ -1,26 +1,23 @@
 ---
 name: hybrid-oferta
-description: "O offerbook é o documento da oferta: o que entra, o que custa, por que vale mais que custa, quais objeções ela já responde. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando: \"monta o o"
-version: 0.3.0
-author: "José Carlos Amorim"
+description: 'O offerbook é o documento da oferta: o que entra, o que custa, por que vale mais que custa, quais objeções ela já responde. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando: "monta o o'
 license: MIT
-platforms: [linux, macos, windows]
+compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
-  hermes:
-    tags: [hybrid-workspace, negocio, diagnostico, yaml]
-    related_skills: [hybrid-diagnostico, hybrid-proxima-acao, hybrid-perfil, hybrid-fundador]
-    config:
-      - key: hybrid.pasta
-        description: "Pasta do negócio no seu computador: é onde os YAML do Hybrid Workspace vivem (perfil, ICP, marca, oferta, diagnósticos). Um negócio por pasta."
-        default: "~/hybrid/meu-negocio"
-        prompt: "Em que pasta ficam os arquivos deste negócio? (uma pasta por negócio)"
+  author: José Carlos Amorim
+  version: 0.4.0
+  hub: https://agentflix.nexialismo.ai
+  source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/hybrid-oferta
+  tags: hybrid-workspace, negocio, diagnostico, yaml
+  related: hybrid-diagnostico, hybrid-proxima-acao, hybrid-perfil, hybrid-fundador
+  config: 'hybrid.pasta: Pasta do negócio no seu computador: é onde os YAML do Hybrid Workspace vivem (perfil, ICP, marca, oferta, diagnósticos). Um negócio por pasta.'
 ---
 
 # PREÇO E PROMESSA · Offerbook do produto, estratégia de preço e o diagnóstico da oferta
 
 O offerbook é o documento da oferta: o que entra, o que custa, por que vale mais que custa, quais objeções ela já responde. Esta skill preenche o offerbook e a estratégia de preço, e roda o diagnóstico vertical de força da oferta (38 variáveis) para dizer onde ela está fraca antes de o mercado dizer.
 
-Parte do **Hybrid Workspace**: um conjunto de YAMLs que descrevem o negócio e que as outras skills leem. Tudo vive na pasta configurada em `hybrid.pasta` (valor já no seu contexto), um negócio por pasta. Nada é enviado para fora.
+Parte do **Hybrid Workspace**: um conjunto de YAMLs que descrevem o negócio e que as outras skills leem. Tudo vive na pasta configurada em `hybrid.pasta` (pergunte ao usuário, se ainda não souber), um negócio por pasta. Nada é enviado para fora.
 
 ## When to Use
 

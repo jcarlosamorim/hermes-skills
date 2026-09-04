@@ -2,7 +2,7 @@
 """Conector de LEITURA da Marketing API da Meta.
 
 Versão para o Hub de Skills do Hermes: credencial SÓ por variável de ambiente (META_AUTH),
-que o Hermes preenche a partir de `required_environment_variables` e nunca mostra ao modelo.
+definida no ambiente onde o script roda (no Hermes, pela configuração da skill) e nunca mostrada ao modelo.
 
 Garantias:
   - so faz GET. Nao cria, nao edita, nao ativa, nao gasta.
@@ -32,7 +32,7 @@ def credencial() -> str:
     """Lê a credencial da variável de ambiente META_AUTH. Nunca a devolve para o stdout."""
     valor = os.environ.get("META_AUTH")
     if not valor:
-        sys.exit("META_AUTH ausente no ambiente. Configure-a pelo Hermes (required_environment_variables) e abra nova sessão.")
+        sys.exit("META_AUTH ausente no ambiente. Defina-a onde o script roda (no Hermes, pela configuração da skill) e abra nova sessão.")
     return valor.strip()
 
 

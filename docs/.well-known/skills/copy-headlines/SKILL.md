@@ -1,14 +1,15 @@
 ---
 name: copy-headlines
-description: "Você entrega o produto, o benefício principal e para quem é. Use quando o pedido envolver headline, título, gancho, hook, bullets, chamada de abertura."
-version: 0.3.0
-author: "José Carlos Amorim"
+description: Você entrega o produto, o benefício principal e para quem é. Use quando o pedido envolver headline, título, gancho, hook, bullets, chamada de abertura.
 license: MIT
-platforms: [linux, macos, windows]
+compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
-  hermes:
-    tags: [copy, copywriting, copy, headlines]
-    related_skills: [copy-pipeline, copy-auditoria]
+  author: José Carlos Amorim
+  version: 0.4.0
+  hub: https://agentflix.nexialismo.ai
+  source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/copy-headlines
+  tags: copy, copywriting, copy, headlines
+  related: copy-pipeline, copy-auditoria
 ---
 
 # A PRIMEIRA LINHA · Títulos, ganchos e bullets

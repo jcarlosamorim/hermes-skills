@@ -1,14 +1,15 @@
 ---
 name: sop-extrair
-description: "O processo existe na cabeça de quem faz. Use quando: \"extrai o SOP de [processo]\" e aponte a fonte (texto, arquivo, transcrição) ou peça a entrevista."
-version: 0.3.0
-author: "José Carlos Amorim"
+description: 'O processo existe na cabeça de quem faz. Use quando: "extrai o SOP de [processo]" e aponte a fonte (texto, arquivo, transcrição) ou peça a entrevista.'
 license: MIT
-platforms: [linux, macos, windows]
+compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
-  hermes:
-    tags: [processos, sop, qualidade, operacao]
-    related_skills: [sop-criar, sop-auditar]
+  author: José Carlos Amorim
+  version: 0.4.0
+  hub: https://agentflix.nexialismo.ai
+  source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/sop-extrair
+  tags: processos, sop, qualidade, operacao
+  related: sop-criar, sop-auditar
 ---
 
 # O PROCESSO · De descrição, documento, vídeo ou entrevista para um SOP rascunho

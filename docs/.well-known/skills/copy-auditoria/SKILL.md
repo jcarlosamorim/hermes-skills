@@ -1,14 +1,15 @@
 ---
 name: copy-auditoria
-description: "A copy já existe e não está vendendo. Use quando o pedido envolver auditar copy, otimizar texto, comparar versões, split test, por que não vende."
-version: 0.3.0
-author: "José Carlos Amorim"
+description: A copy já existe e não está vendendo. Use quando o pedido envolver auditar copy, otimizar texto, comparar versões, split test, por que não vende.
 license: MIT
-platforms: [linux, macos, windows]
+compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
-  hermes:
-    tags: [copy, copywriting, auditoria, otimização]
-    related_skills: [copy-pipeline, copy-auditoria]
+  author: José Carlos Amorim
+  version: 0.4.0
+  hub: https://agentflix.nexialismo.ai
+  source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/copy-auditoria
+  tags: copy, copywriting, auditoria, otimização
+  related: copy-pipeline, copy-auditoria
 ---
 
 # SOB A LUPA · Hopkins, otimização, debate e blend

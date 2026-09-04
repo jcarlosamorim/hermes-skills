@@ -1,26 +1,23 @@
 ---
 name: hybrid-tech
-description: "O que roda hoje, o que deveria rodar, e onde a IA entra de verdade. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando: \"mapeia a stack de [empresa]\" ou \"estratégia de IA para [empresa]\""
-version: 0.3.0
-author: "José Carlos Amorim"
+description: 'O que roda hoje, o que deveria rodar, e onde a IA entra de verdade. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando: "mapeia a stack de [empresa]" ou "estratégia de IA para [empresa]"'
 license: MIT
-platforms: [linux, macos, windows]
+compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
-  hermes:
-    tags: [hybrid-workspace, negocio, elicitacao, yaml]
-    related_skills: [hybrid-diagnostico, hybrid-proxima-acao, hybrid-perfil, hybrid-fundador]
-    config:
-      - key: hybrid.pasta
-        description: "Pasta do negócio no seu computador: é onde os YAML do Hybrid Workspace vivem (perfil, ICP, marca, oferta, diagnósticos). Um negócio por pasta."
-        default: "~/hybrid/meu-negocio"
-        prompt: "Em que pasta ficam os arquivos deste negócio? (uma pasta por negócio)"
+  author: José Carlos Amorim
+  version: 0.4.0
+  hub: https://agentflix.nexialismo.ai
+  source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/hybrid-tech
+  tags: hybrid-workspace, negocio, elicitacao, yaml
+  related: hybrid-diagnostico, hybrid-proxima-acao, hybrid-perfil, hybrid-fundador
+  config: 'hybrid.pasta: Pasta do negócio no seu computador: é onde os YAML do Hybrid Workspace vivem (perfil, ICP, marca, oferta, diagnósticos). Um negócio por pasta.'
 ---
 
 # A STACK · Stack, estratégia tecnológica e estratégia de IA
 
 O que roda hoje, o que deveria rodar, e onde a IA entra de verdade. Três elicitações curtas, conduzidas pelo método do CTO, do CIO e do CAIO: stack atual, estratégia de tecnologia e estratégia de IA, com modelos, orquestração e o que não automatizar.
 
-Parte do **Hybrid Workspace**: um conjunto de YAMLs que descrevem o negócio e que as outras skills leem. Tudo vive na pasta configurada em `hybrid.pasta` (valor já no seu contexto), um negócio por pasta. Nada é enviado para fora.
+Parte do **Hybrid Workspace**: um conjunto de YAMLs que descrevem o negócio e que as outras skills leem. Tudo vive na pasta configurada em `hybrid.pasta` (pergunte ao usuário, se ainda não souber), um negócio por pasta. Nada é enviado para fora.
 
 ## When to Use
 

@@ -1,14 +1,15 @@
 ---
 name: sop-auditar
-description: "Um SOP pode existir e não servir. Use quando: \"audita este SOP\" (ou uma pasta inteira)."
-version: 0.3.0
-author: "José Carlos Amorim"
+description: 'Um SOP pode existir e não servir. Use quando: "audita este SOP" (ou uma pasta inteira).'
 license: MIT
-platforms: [linux, macos, windows]
+compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
-  hermes:
-    tags: [processos, sop, qualidade, operacao]
-    related_skills: [sop-extrair, sop-criar]
+  author: José Carlos Amorim
+  version: 0.4.0
+  hub: https://agentflix.nexialismo.ai
+  source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/sop-auditar
+  tags: processos, sop, qualidade, operacao
+  related: sop-extrair, sop-criar
 ---
 
 # PASSA OU NÃO PASSA · Dez dimensões, benchmark, conformidade e certificação

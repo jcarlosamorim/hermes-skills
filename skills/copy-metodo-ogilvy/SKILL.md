@@ -1,7 +1,7 @@
 ---
 name: copy-metodo-ogilvy
 description: "Escreve copy pelo método de David Ogilvy: Big Idea, Pesquisa primeiro, Copy longa, Imagem de marca, Headline factual. Use quando pedirem 'como Ogilvy', big idea, pesquisa e elegância, ou uma peça ness"
-version: 0.3.0
+version: 0.4.0
 author: "José Carlos Amorim"
 license: MIT
 platforms: [linux, macos, windows]

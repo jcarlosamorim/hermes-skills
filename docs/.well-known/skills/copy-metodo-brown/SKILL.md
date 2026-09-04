@@ -1,14 +1,15 @@
 ---
 name: copy-metodo-brown
-description: "Escreve copy pelo método de Todd Brown: E5 Method, Big Idea, Unique Mechanism. Use quando pedirem 'como Brown', big idea e mecanismo único, ou uma peça nesse estilo."
-version: 0.3.0
-author: "José Carlos Amorim"
+description: 'Escreve copy pelo método de Todd Brown: E5 Method, Big Idea, Unique Mechanism. Use quando pedirem ''como Brown'', big idea e mecanismo único, ou uma peça nesse estilo.'
 license: MIT
-platforms: [linux, macos, windows]
+compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
-  hermes:
-    tags: [copy, copywriting, brown, metodo, resposta-direta]
-    related_skills: [copy-headlines, copy-sales-page, copy-pipeline]
+  author: José Carlos Amorim
+  version: 0.4.0
+  hub: https://agentflix.nexialismo.ai
+  source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/copy-metodo-brown
+  tags: copy, copywriting, brown, metodo, resposta-direta
+  related: copy-headlines, copy-sales-page, copy-pipeline
 ---
 
 # BROWN · Big Idea e mecanismo único

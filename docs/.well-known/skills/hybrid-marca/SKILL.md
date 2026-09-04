@@ -1,26 +1,23 @@
 ---
 name: hybrid-marca
-description: "A marca escrita antes de virar logo: o núcleo, as promessas que faz e as que não faz, a personalidade, o DNA de voz e os valores. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando: \"doc"
-version: 0.3.0
-author: "José Carlos Amorim"
+description: 'A marca escrita antes de virar logo: o núcleo, as promessas que faz e as que não faz, a personalidade, o DNA de voz e os valores. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando: "doc'
 license: MIT
-platforms: [linux, macos, windows]
+compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
-  hermes:
-    tags: [hybrid-workspace, negocio, elicitacao, yaml]
-    related_skills: [hybrid-diagnostico, hybrid-proxima-acao, hybrid-perfil, hybrid-fundador]
-    config:
-      - key: hybrid.pasta
-        description: "Pasta do negócio no seu computador: é onde os YAML do Hybrid Workspace vivem (perfil, ICP, marca, oferta, diagnósticos). Um negócio por pasta."
-        default: "~/hybrid/meu-negocio"
-        prompt: "Em que pasta ficam os arquivos deste negócio? (uma pasta por negócio)"
+  author: José Carlos Amorim
+  version: 0.4.0
+  hub: https://agentflix.nexialismo.ai
+  source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/hybrid-marca
+  tags: hybrid-workspace, negocio, elicitacao, yaml
+  related: hybrid-diagnostico, hybrid-proxima-acao, hybrid-perfil, hybrid-fundador
+  config: 'hybrid.pasta: Pasta do negócio no seu computador: é onde os YAML do Hybrid Workspace vivem (perfil, ICP, marca, oferta, diagnósticos). Um negócio por pasta.'
 ---
 
 # A MARCA · Núcleo, promessas, personalidade, voz e valores
 
 A marca escrita antes de virar logo: o núcleo, as promessas que faz e as que não faz, a personalidade, o DNA de voz e os valores. O agente elicita e grava no brandbook, e as skills de copy passam a respeitar esse arquivo. Marca sem documento é gosto do dia.
 
-Parte do **Hybrid Workspace**: um conjunto de YAMLs que descrevem o negócio e que as outras skills leem. Tudo vive na pasta configurada em `hybrid.pasta` (valor já no seu contexto), um negócio por pasta. Nada é enviado para fora.
+Parte do **Hybrid Workspace**: um conjunto de YAMLs que descrevem o negócio e que as outras skills leem. Tudo vive na pasta configurada em `hybrid.pasta` (pergunte ao usuário, se ainda não souber), um negócio por pasta. Nada é enviado para fora.
 
 ## When to Use
 

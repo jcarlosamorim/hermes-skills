@@ -1,27 +1,23 @@
 ---
 name: hybrid-etl
-description: "A empresa já escreveu sobre si mesma: site, PDFs, apresentações, posts. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando: \"extrai tudo sobre [empresa] de [pasta ou site]\"."
-version: 0.3.0
-author: "José Carlos Amorim"
+description: 'A empresa já escreveu sobre si mesma: site, PDFs, apresentações, posts. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando: "extrai tudo sobre [empresa] de [pasta ou site]".'
 license: MIT
-platforms: [linux, macos, windows]
+compatibility: 'Requer: web, terminal. Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.'
 metadata:
-  hermes:
-    tags: [hybrid-workspace, negocio, elicitacao, yaml]
-    related_skills: [hybrid-diagnostico, hybrid-proxima-acao, hybrid-perfil, hybrid-fundador]
-    requires_toolsets: [web, terminal]
-    config:
-      - key: hybrid.pasta
-        description: "Pasta do negócio no seu computador: é onde os YAML do Hybrid Workspace vivem (perfil, ICP, marca, oferta, diagnósticos). Um negócio por pasta."
-        default: "~/hybrid/meu-negocio"
-        prompt: "Em que pasta ficam os arquivos deste negócio? (uma pasta por negócio)"
+  author: José Carlos Amorim
+  version: 0.4.0
+  hub: https://agentflix.nexialismo.ai
+  source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/hybrid-etl
+  tags: hybrid-workspace, negocio, elicitacao, yaml
+  related: hybrid-diagnostico, hybrid-proxima-acao, hybrid-perfil, hybrid-fundador
+  config: 'hybrid.pasta: Pasta do negócio no seu computador: é onde os YAML do Hybrid Workspace vivem (perfil, ICP, marca, oferta, diagnósticos). Um negócio por pasta.'
 ---
 
 # TUDO QUE JÁ EXISTE · Do disco e da web para o workspace, em cinco camadas
 
 A empresa já escreveu sobre si mesma: site, PDFs, apresentações, posts. Esta skill percorre o que existe local e na web em cinco camadas, extrai, pesquisa o que falta e gera os artefatos do workspace com nível de confiança por campo. Elicitação depois, só para o que a extração não achou.
 
-Parte do **Hybrid Workspace**: um conjunto de YAMLs que descrevem o negócio e que as outras skills leem. Tudo vive na pasta configurada em `hybrid.pasta` (valor já no seu contexto), um negócio por pasta. Nada é enviado para fora.
+Parte do **Hybrid Workspace**: um conjunto de YAMLs que descrevem o negócio e que as outras skills leem. Tudo vive na pasta configurada em `hybrid.pasta` (pergunte ao usuário, se ainda não souber), um negócio por pasta. Nada é enviado para fora.
 
 ## When to Use
 

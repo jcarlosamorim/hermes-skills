@@ -1,14 +1,15 @@
 ---
 name: copy-metodo-ogilvy
-description: "Escreve copy pelo método de David Ogilvy: Big Idea, Pesquisa primeiro, Copy longa, Imagem de marca, Headline factual. Use quando pedirem 'como Ogilvy', big idea, pesquisa e elegância, ou uma peça ness"
-version: 0.3.0
-author: "José Carlos Amorim"
+description: 'Escreve copy pelo método de David Ogilvy: Big Idea, Pesquisa primeiro, Copy longa, Imagem de marca, Headline factual. Use quando pedirem ''como Ogilvy'', big idea, pesquisa e elegância, ou uma peça ness'
 license: MIT
-platforms: [linux, macos, windows]
+compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
-  hermes:
-    tags: [copy, copywriting, ogilvy, metodo, resposta-direta]
-    related_skills: [copy-headlines, copy-sales-page, copy-pipeline]
+  author: José Carlos Amorim
+  version: 0.4.0
+  hub: https://agentflix.nexialismo.ai
+  source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/copy-metodo-ogilvy
+  tags: copy, copywriting, ogilvy, metodo, resposta-direta
+  related: copy-headlines, copy-sales-page, copy-pipeline
 ---
 
 # OGILVY · Big Idea, pesquisa e elegância

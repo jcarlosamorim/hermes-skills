@@ -1,26 +1,23 @@
 ---
 name: hybrid-diagnostico
-description: "Antes de decidir o que fazer, saber onde o negócio dói. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando: \"diagnostica o negócio [nome]\" ou \"diagnostica a oferta de [produto]\"."
-version: 0.3.0
-author: "José Carlos Amorim"
+description: 'Antes de decidir o que fazer, saber onde o negócio dói. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando: "diagnostica o negócio [nome]" ou "diagnostica a oferta de [produto]".'
 license: MIT
-platforms: [linux, macos, windows]
+compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
-  hermes:
-    tags: [hybrid-workspace, negocio, diagnostico, yaml]
-    related_skills: [hybrid-proxima-acao, hybrid-perfil, hybrid-fundador, hybrid-icp]
-    config:
-      - key: hybrid.pasta
-        description: "Pasta do negócio no seu computador: é onde os YAML do Hybrid Workspace vivem (perfil, ICP, marca, oferta, diagnósticos). Um negócio por pasta."
-        default: "~/hybrid/meu-negocio"
-        prompt: "Em que pasta ficam os arquivos deste negócio? (uma pasta por negócio)"
+  author: José Carlos Amorim
+  version: 0.4.0
+  hub: https://agentflix.nexialismo.ai
+  source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/hybrid-diagnostico
+  tags: hybrid-workspace, negocio, diagnostico, yaml
+  related: hybrid-proxima-acao, hybrid-perfil, hybrid-fundador, hybrid-icp
+  config: 'hybrid.pasta: Pasta do negócio no seu computador: é onde os YAML do Hybrid Workspace vivem (perfil, ICP, marca, oferta, diagnósticos). Um negócio por pasta.'
 ---
 
 # O RAIO-X · Dez dimensões, um score, as alavancas
 
 Antes de decidir o que fazer, saber onde o negócio dói. O agente lê os arquivos do seu workspace, pontua dez dimensões (cliente, marca, oferta, narrativa, tráfego, operação, sucesso, evidência, movimento, cultura), cruza consistência entre elas e devolve um score de 0 a 100 com as alavancas de crescimento em ordem. Sete diagnósticos verticais aprofundam qualquer dimensão.
 
-Parte do **Hybrid Workspace**: um conjunto de YAMLs que descrevem o negócio e que as outras skills leem. Tudo vive na pasta configurada em `hybrid.pasta` (valor já no seu contexto), um negócio por pasta. Nada é enviado para fora.
+Parte do **Hybrid Workspace**: um conjunto de YAMLs que descrevem o negócio e que as outras skills leem. Tudo vive na pasta configurada em `hybrid.pasta` (pergunte ao usuário, se ainda não souber), um negócio por pasta. Nada é enviado para fora.
 
 ## When to Use
 

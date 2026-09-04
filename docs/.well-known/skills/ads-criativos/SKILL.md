@@ -1,14 +1,15 @@
 ---
 name: ads-criativos
-description: "Com as métricas por criativo na mão, o agente separa o que venceu do que cansou: analisa os primeiros três segundos, encontra padrões entre os vencedores, detecta fadiga e propõe os próximos testes. S"
-version: 0.3.0
-author: "José Carlos Amorim"
+description: 'Com as métricas por criativo na mão, o agente separa o que venceu do que cansou: analisa os primeiros três segundos, encontra padrões entre os vencedores, detecta fadiga e propõe os próximos testes. S'
 license: MIT
-platforms: [linux, macos, windows]
+compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
-  hermes:
-    tags: [trafego-pago, meta-ads, criativos]
-    related_skills: [ads-gate-compliance, ads-plano, ads-otimizar]
+  author: José Carlos Amorim
+  version: 0.4.0
+  hub: https://agentflix.nexialismo.ai
+  source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/ads-criativos
+  tags: trafego-pago, meta-ads, criativos
+  related: ads-gate-compliance, ads-plano, ads-otimizar
 ---
 
 # O QUE VENCEU · Hooks, padrões vencedores e fadiga, criativo por criativo

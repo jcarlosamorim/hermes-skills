@@ -1,14 +1,15 @@
 ---
 name: ads-gate-compliance
-description: "Confere um criativo de anúncio contra a régua de compliance da Meta antes de subir e devolve APROVADO ou REPROVADO com o ajuste exato. Use quando: gate, revisar criativo, anúncio reprovado, risco de bloqueio."
-version: 0.3.0
-author: "José Carlos Amorim"
+description: 'Confere um criativo de anúncio contra a régua de compliance da Meta antes de subir e devolve APROVADO ou REPROVADO com o ajuste exato. Use quando: gate, revisar criativo, anúncio reprovado, risco de…'
 license: MIT
-platforms: [linux, macos, windows]
+compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
-  hermes:
-    tags: [trafego-pago, meta-ads, compliance, gate]
-    related_skills: [ads-plano, ads-otimizar]
+  author: José Carlos Amorim
+  version: 0.4.0
+  hub: https://agentflix.nexialismo.ai
+  source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/ads-gate-compliance
+  tags: trafego-pago, meta-ads, compliance, gate
+  related: ads-plano, ads-otimizar
 ---
 
 # ANTES DE SUBIR · O criativo passa pela régua da Meta antes de subir

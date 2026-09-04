@@ -1,26 +1,23 @@
 ---
 name: hybrid-proxima-acao
-description: "Empresário para na frente de dez gaps e vinte recomendações. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando: \"qual a próxima ação para [negócio]\"."
-version: 0.3.0
-author: "José Carlos Amorim"
+description: 'Empresário para na frente de dez gaps e vinte recomendações. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando: "qual a próxima ação para [negócio]".'
 license: MIT
-platforms: [linux, macos, windows]
+compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
-  hermes:
-    tags: [hybrid-workspace, negocio, diagnostico, yaml]
-    related_skills: [hybrid-diagnostico, hybrid-perfil, hybrid-fundador, hybrid-icp]
-    config:
-      - key: hybrid.pasta
-        description: "Pasta do negócio no seu computador: é onde os YAML do Hybrid Workspace vivem (perfil, ICP, marca, oferta, diagnósticos). Um negócio por pasta."
-        default: "~/hybrid/meu-negocio"
-        prompt: "Em que pasta ficam os arquivos deste negócio? (uma pasta por negócio)"
+  author: José Carlos Amorim
+  version: 0.4.0
+  hub: https://agentflix.nexialismo.ai
+  source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/hybrid-proxima-acao
+  tags: hybrid-workspace, negocio, diagnostico, yaml
+  related: hybrid-diagnostico, hybrid-perfil, hybrid-fundador, hybrid-icp
+  config: 'hybrid.pasta: Pasta do negócio no seu computador: é onde os YAML do Hybrid Workspace vivem (perfil, ICP, marca, oferta, diagnósticos). Um negócio por pasta.'
 ---
 
 # A PRÓXIMA AÇÃO · Uma ação, um comando, nada mais
 
 Empresário para na frente de dez gaps e vinte recomendações. Esta skill pega o diagnóstico e devolve uma única ação, a de maior alavanca, traduzida em comando executável. Se nada está abaixo do limiar, ela diz isso e recomenda um diagnóstico vertical. Uma ação por semana, e a semana anda.
 
-Parte do **Hybrid Workspace**: um conjunto de YAMLs que descrevem o negócio e que as outras skills leem. Tudo vive na pasta configurada em `hybrid.pasta` (valor já no seu contexto), um negócio por pasta. Nada é enviado para fora.
+Parte do **Hybrid Workspace**: um conjunto de YAMLs que descrevem o negócio e que as outras skills leem. Tudo vive na pasta configurada em `hybrid.pasta` (pergunte ao usuário, se ainda não souber), um negócio por pasta. Nada é enviado para fora.
 
 ## When to Use
 

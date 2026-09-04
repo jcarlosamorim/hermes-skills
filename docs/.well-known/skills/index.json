@@ -14,7 +14,7 @@
     },
     {
       "name": "ads-gate-compliance",
-      "description": "Confere um criativo de anúncio contra a régua de compliance da Meta antes de subir e devolve APROVADO ou REPROVADO com o ajuste exato. Use quando: gate, revisar criativo, anúncio reprovado, risco de bloqueio.",
+      "description": "Confere um criativo de anúncio contra a régua de compliance da Meta antes de subir e devolve APROVADO ou REPROVADO com o ajuste exato. Use quando: gate, revisar criativo, anúncio reprovado, risco de…",
       "files": [
         "SKILL.md",
         "references/regras-da-meta.md"
@@ -22,7 +22,7 @@
     },
     {
       "name": "ads-otimizar",
-      "description": "Lê 7 dias da Graph API, calcula o CAC real por campanha e classifica: escalar, duplicar, manter, matar. Só leitura; a mutação é sua. Use quando: otimizar campanhas, o que pausar, leitura diária, CAC real.",
+      "description": "Lê 7 dias da Graph API, calcula o CAC real por campanha e classifica: escalar, duplicar, manter, matar. Só leitura; a mutação é sua. Use quando: otimizar campanhas, o que pausar, leitura diária, CAC…",
       "files": [
         "SKILL.md",
         "scripts/meta_api.py",
@@ -195,7 +195,7 @@
     },
     {
       "name": "copy-metodo-bencivenga",
-      "description": "Escreve copy pelo método de Gary Bencivenga: Bullets e fascinações, Prova acima de promessa, Credibilidade, Curiosidade específica. Use quando pedirem 'como Bencivenga', bullets e fascinações, ou uma ",
+      "description": "Escreve copy pelo método de Gary Bencivenga: Bullets e fascinações, Prova acima de promessa, Credibilidade, Curiosidade específica. Use quando pedirem 'como Bencivenga', bullets e fascinações, ou uma",
       "files": [
         "SKILL.md",
         "references/metodo-bencivenga.md"
@@ -219,7 +219,7 @@
     },
     {
       "name": "copy-metodo-halbert",
-      "description": "Escreve copy pelo método de Gary Halbert: Pilha A / Pilha B, Multidão faminta, Carta pessoal, Coat of Arms, Boron Letters. Use quando pedirem 'como Halbert', cartas que fazem sacar a carteira, ou uma ",
+      "description": "Escreve copy pelo método de Gary Halbert: Pilha A / Pilha B, Multidão faminta, Carta pessoal, Coat of Arms, Boron Letters. Use quando pedirem 'como Halbert', cartas que fazem sacar a carteira, ou uma",
       "files": [
         "SKILL.md",
         "references/metodo-halbert.md",
@@ -244,7 +244,7 @@
     },
     {
       "name": "copy-metodo-kennedy",
-      "description": "Escreve copy pelo método de Dan Kennedy: Urgência com prazo, No B.S., Magnetic Marketing, Oferta irresistível, Fechamento direto. Use quando pedirem 'como Kennedy', urgência e resposta direta, ou uma ",
+      "description": "Escreve copy pelo método de Dan Kennedy: Urgência com prazo, No B.S., Magnetic Marketing, Oferta irresistível, Fechamento direto. Use quando pedirem 'como Kennedy', urgência e resposta direta, ou uma",
       "files": [
         "SKILL.md",
         "references/metodo-kennedy.md"
@@ -342,7 +342,7 @@
     },
     {
       "name": "copy-pipeline",
-      "description": "Da estratégia à peça pronta, em uma esteira só: define o ângulo, escolhe o formato, escreve e revisa, chamando as outras skills de copy na ordem certa. Use quando o pedido envolver campanha completa, ",
+      "description": "Da estratégia à peça pronta, em uma esteira só: define o ângulo, escolhe o formato, escreve e revisa, chamando as outras skills de copy na ordem certa. Use quando o pedido envolver campanha completa,",
       "files": [
         "SKILL.md",
         "references/checklist-copywriter-agent-creation-checklist.md",

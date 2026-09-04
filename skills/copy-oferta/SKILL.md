@@ -1,7 +1,7 @@
 ---
 name: copy-oferta
 description: "Antes do texto vem a oferta, e a maioria das páginas fracas tem uma oferta fraca por baixo. Use quando o pedido envolver oferta, stack, bônus, bump, upsell, downsell, página de obrigado, prova, garant"
-version: 0.3.0
+version: 0.4.0
 author: "José Carlos Amorim"
 license: MIT
 platforms: [linux, macos, windows]

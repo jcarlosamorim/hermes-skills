@@ -1,19 +1,16 @@
 ---
 name: ops-revisao-semanal
-description: "Toda sexta, quem operou na zona de genialidade e quem passou a semana fora dela. Usa o perfil do SEU time (zona de genialidade, Kolbe) como entrada. Use quando: \"revisão da semana\" e cole ou aponte as"
-version: 0.3.0
-author: "José Carlos Amorim"
+description: 'Toda sexta, quem operou na zona de genialidade e quem passou a semana fora dela. Usa o perfil do SEU time (zona de genialidade, Kolbe) como entrada. Use quando: "revisão da semana" e cole ou aponte as'
 license: MIT
-platforms: [linux, macos, windows]
+compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
-  hermes:
-    tags: [operacao, time, genius-zone, kolbe, gestao]
-    related_skills: [ops-rotear-tarefa, ops-briefing, ops-avaliar-fit]
-    config:
-      - key: ops.perfis_do_time
-        description: "Caminho do YAML com o perfil do time (zona de genialidade, Kolbe, formato de briefing). Modelo em templates/perfil-do-time.yaml"
-        default: "~/ops/perfil-do-time.yaml"
-        prompt: "Onde está o perfil do seu time? (copie templates/perfil-do-time.yaml para lá e preencha)"
+  author: José Carlos Amorim
+  version: 0.4.0
+  hub: https://agentflix.nexialismo.ai
+  source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/ops-revisao-semanal
+  tags: operacao, time, genius-zone, kolbe, gestao
+  related: ops-rotear-tarefa, ops-briefing, ops-avaliar-fit
+  config: 'ops.perfis_do_time: Caminho do YAML com o perfil do time (zona de genialidade, Kolbe, formato de briefing). Modelo em templates/perfil-do-time.yaml'
 ---
 
 # SEXTA-FEIRA · Quem operou na zona, quem saiu dela
@@ -32,7 +29,7 @@ O time é o seu: a skill lê um arquivo de perfil (modelo em `templates/perfil-d
 
 | entrada | de onde vem |
 |---|---|
-| perfil do time | `ops.perfis_do_time` (config injetada) → arquivo YAML no modelo de `templates/perfil-do-time.yaml` |
+| perfil do time | `ops.perfis_do_time` (pergunte ao usuário) → arquivo YAML no modelo de `templates/perfil-do-time.yaml` |
 | método | `references/metodo-revisao-semanal.md` |
 
 ## Procedure
