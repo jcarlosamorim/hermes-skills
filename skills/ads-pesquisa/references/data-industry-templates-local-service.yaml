@@ -1,0 +1,72 @@
+# Industry Template: Local Service
+# Source: squads/ads-audit/templates/local-service.md + references/benchmarks.yaml
+# Last Updated: 2026-03-17
+
+industry: local-service
+
+benchmarks:
+  cpa: "$90.92"
+  roas: "5.0"
+  ctr: "5.50-6.37%"
+  cpm: "$18.00"
+  cvr: "7.33-15.0%"
+
+recommended_funnels:
+  - type: local-services-ads
+    description: "Google LSA (pay-per-lead) with Google Guaranteed badge for top placement at lowest CPL ($25-$75)"
+    primary_platforms: [google_lsa]
+  - type: high-intent-search
+    description: "Google Search PPC for '[service] near me' and emergency queries with call extensions"
+    primary_platforms: [google_search]
+  - type: local-awareness
+    description: "Meta local awareness campaigns within 10-20 mile radius for seasonal promotions and brand building"
+    primary_platforms: [meta]
+
+typical_audiences:
+  - name: emergency-searchers
+    description: "Users searching 'emergency [service]', '[service] near me now', 'same day [service]'"
+    platforms: [google_search, google_lsa]
+  - name: service-plus-city
+    description: "Users searching '[service] [city]', '[service] in [neighborhood]'"
+    platforms: [google_search]
+  - name: local-homeowners
+    description: "10-20 mile radius, age 25-65, homeownership and home improvement interests"
+    platforms: [meta]
+  - name: retargeting-local
+    description: "Website visitors (30 days) and engaged Facebook/Instagram users"
+    platforms: [meta]
+
+creative_patterns:
+  - format: before-after-photos
+    description: "Transformation content for visual services (roofing, landscaping, painting)"
+    best_for: [consideration, decision]
+  - format: team-and-truck
+    description: "Real people, real vehicles, real job sites -- builds local trust"
+    best_for: [awareness]
+  - format: offer-driven
+    description: "'$50 off first service', 'free estimate', seasonal pricing with urgency"
+    best_for: [decision]
+  - format: review-highlights
+    description: "Google review screenshots, star ratings, '4.9 with 200+ reviews'"
+    best_for: [consideration, decision]
+  - format: emergency-messaging
+    description: "'Same-day service', '24/7 available', 'Call now' with call extensions"
+    best_for: [decision]
+
+compliance_notes:
+  - "No Special Ad Category required for general local services"
+  - "Call recording requires state consent law compliance (one-party vs two-party)"
+  - "Google Business Profile must be linked for location extensions and LSA"
+  - "Ad scheduling should match business hours unless 24/7 emergency service is offered"
+  - "License and insurance information should be displayed in ad copy for trust"
+
+budget_guidelines:
+  min_daily: 50
+  recommended_daily: 130
+  min_test_duration_days: 14
+
+kpi_targets:
+  primary: cost_per_booked_job
+  secondary: call_volume
+
+special_ad_category: false

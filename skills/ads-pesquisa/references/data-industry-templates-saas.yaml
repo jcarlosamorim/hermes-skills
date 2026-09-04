@@ -1,0 +1,74 @@
+# Industry Template: SaaS
+# Source: squads/ads-audit/templates/saas.md + references/benchmarks.yaml
+# Last Updated: 2026-03-17
+
+industry: saas
+
+benchmarks:
+  cpa: "$100-$200"
+  roas: "5:1 pipeline"
+  ctr: "4.28%"
+  cpm: "$35.00"
+  cvr: "1.65%"
+
+recommended_funnels:
+  - type: demo-request
+    description: "Google Search captures high-intent 'demo' and 'pricing' queries, LinkedIn ABM nurtures decision makers"
+    primary_platforms: [google_search, linkedin]
+  - type: free-trial
+    description: "Meta prospecting + Google Search retargeting for trial signups, email nurture to paid conversion"
+    primary_platforms: [meta, google_search]
+  - type: content-lead-magnet
+    description: "LinkedIn TLA + YouTube thought leadership drive whitepaper/guide downloads into email nurture"
+    primary_platforms: [linkedin, youtube]
+
+typical_audiences:
+  - name: high-intent-searchers
+    description: "Users searching '[category] software', 'best [category] tool', '[competitor] alternative'"
+    platforms: [google_search]
+  - name: decision-makers-by-title
+    description: "VP/Director/Manager of relevant function at ICP-matching companies"
+    platforms: [linkedin]
+  - name: competitor-users
+    description: "Users searching competitor brand names or 'switch from [competitor]'"
+    platforms: [google_search, linkedin]
+  - name: retargeting-engaged
+    description: "Pricing page visitors (7-day), blog visitors (30-day), trial users not yet converted"
+    platforms: [meta, google_search]
+  - name: lookalike-customers
+    description: "1% lookalike of closed-won customers or high-value trial converters"
+    platforms: [meta]
+
+creative_patterns:
+  - format: product-demo-video
+    description: "30-60s screen recordings showing key workflows and value delivery"
+    best_for: [consideration, decision]
+  - format: customer-testimonial
+    description: "Video case studies with specific ROI metrics (time saved, revenue impact)"
+    best_for: [decision]
+  - format: comparison-content
+    description: "Side-by-side feature comparisons with named competitors"
+    best_for: [consideration]
+  - format: thought-leader-ads
+    description: "Founder/CEO authentic content on LinkedIn TLA (CPC $2.29-$4.14 vs $13.23 standard)"
+    best_for: [awareness, consideration]
+  - format: roi-calculator
+    description: "Interactive tools as lead magnets driving email capture"
+    best_for: [consideration]
+
+compliance_notes:
+  - "No Special Ad Category required for generic SaaS"
+  - "If SaaS involves financial data processing, check finance compliance requirements"
+  - "Competitor keyword bidding is legal but monitor trademark policy per platform"
+  - "Avoid superlative claims ('best', '#1') without verifiable third-party evidence"
+
+budget_guidelines:
+  min_daily: 165
+  recommended_daily: 330
+  min_test_duration_days: 14
+
+kpi_targets:
+  primary: pipeline_generated
+  secondary: mql_to_sql_rate
+
+special_ad_category: false

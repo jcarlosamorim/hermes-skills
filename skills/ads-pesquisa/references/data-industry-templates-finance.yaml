@@ -1,0 +1,84 @@
+# Industry Template: Financial Services
+# Source: squads/ads-audit/templates/finance.md + references/benchmarks.yaml
+# Last Updated: 2026-03-17
+
+industry: finance
+
+benchmarks:
+  cpa: "$50-$200"
+  roas: "3.5"
+  ctr: "4.65-8.33%"
+  cpm: "$50.00"
+  cvr: "2.55-3.50%"
+
+recommended_funnels:
+  - type: product-search-capture
+    description: "Google Search for high-intent '[product] rates', 'best [product] 2026', '[product] calculator' queries"
+    primary_platforms: [google_search]
+  - type: b2b-financial-abm
+    description: "LinkedIn targeting CFO/VP Finance/Treasury at ICP companies for commercial banking and wealth management"
+    primary_platforms: [linkedin]
+  - type: education-to-conversion
+    description: "Financial literacy content on Meta and YouTube builds trust, retargeting converts to applications"
+    primary_platforms: [meta, youtube]
+  - type: rate-comparison-landing
+    description: "Calculator and rate comparison interactive landing pages driven by Google and Meta traffic"
+    primary_platforms: [google_search, meta]
+
+typical_audiences:
+  - name: product-rate-searchers
+    description: "Users searching '[product] rates', 'best [product] 2026', 'compare [products]'"
+    platforms: [google_search]
+  - name: in-market-financial
+    description: "Google in-market audiences for financial services, financial planning, insurance"
+    platforms: [google_search]
+  - name: b2b-decision-makers
+    description: "CFO, VP Finance, Treasury, Risk Management at target company sizes"
+    platforms: [linkedin]
+  - name: application-retargeting
+    description: "Rate checker visitors, application starters who did not complete"
+    platforms: [meta, google_search]
+  - name: broad-special-ad
+    description: "Broad Meta targeting with good creative (Special Ad Category restricts detailed targeting for credit products)"
+    platforms: [meta]
+
+creative_patterns:
+  - format: rate-callout
+    description: "'APY as high as X.XX%' attention-grabbing, verifiable rate promotion"
+    best_for: [consideration, decision]
+  - format: calculator-tool
+    description: "Interactive mortgage, savings, or ROI calculators as landing page experiences"
+    best_for: [consideration]
+  - format: security-messaging
+    description: "'FDIC Insured', 'Bank-level encryption', 'A+ BBB rated', award badges"
+    best_for: [consideration, decision]
+  - format: educational-video
+    description: "'How compound interest works' educational content with subtle product promotion"
+    best_for: [awareness]
+  - format: comparison-content
+    description: "Transparent rate comparisons across products to build trust and authority"
+    best_for: [consideration]
+
+compliance_notes:
+  - "SPECIAL AD CATEGORY: Credit (loans, mortgages, credit cards) on Meta -- must declare"
+  - "Meta restrictions for credit: no age, no gender, no ZIP code targeting, 15-mile minimum radius"
+  - "Meta: Financial Products enforced as Special Category since Jan 2025"
+  - "Google: must display APR, fees, repayment terms for mortgage, loan, and credit ads"
+  - "Google: crypto ads require certification in approved countries"
+  - "Insurance ads require 'not a guarantee' disclaimers and license numbers"
+  - "Investment ads must include 'past performance does not guarantee future results'"
+  - "All ad copy requires legal/compliance team approval (typical 3-7 business day review cycle)"
+  - "Pre-approved ad copy library recommended to reduce compliance bottleneck"
+  - "State-specific licensing requirements must be verified before geo-targeting"
+
+budget_guidelines:
+  min_daily: 265
+  recommended_daily: 500
+  min_test_duration_days: 21
+
+kpi_targets:
+  primary: cost_per_funded_account
+  secondary: application_completion_rate
+
+special_ad_category: true
+special_ad_category_type: credit

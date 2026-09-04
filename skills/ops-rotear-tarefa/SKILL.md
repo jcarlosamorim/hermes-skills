@@ -1,7 +1,7 @@
 ---
 name: ops-rotear-tarefa
 description: "Toda tarefa que chega tem alguém do time para quem ela é natural e alguém para quem ela é tortura. Usa o perfil do SEU time (zona de genialidade, Kolbe) como entrada. Use quando: \"roteia esta tarefa."
-version: 0.2.0
+version: 0.3.0
 author: "José Carlos Amorim"
 license: MIT
 platforms: [linux, macos, windows]

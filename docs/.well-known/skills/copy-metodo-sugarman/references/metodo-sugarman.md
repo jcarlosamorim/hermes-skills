@@ -1,4 +1,4 @@
-> Fonte de conhecimento sobre o método de Joe Sugarman. Este arquivo veio de um agente do Synkra AIOS; as seções `activation-instructions`, `commands` e `IDE-FILE-RESOLUTION` são do formato de origem e não se aplicam no Hermes: não há persona a assumir nem comando `*` a executar. Use `core_principles`, `operational_frameworks`, `persona.style` e os exemplos.
+> Fonte de conhecimento levada do squad `copywriter-os` (Synkra / Hybrid). Blocos `activation-instructions`, `commands` com `*`, `IDE-FILE-RESOLUTION` e chamadas a scripts `.cjs`/`.sh` são do formato de origem e não se aplicam no Hermes: não há persona a assumir nem comando `*` a executar. Caminhos `{pasta}/…` apontam para a pasta configurada da skill.
 
 # joe-sugarman
 

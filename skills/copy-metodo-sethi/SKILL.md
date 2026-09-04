@@ -1,7 +1,7 @@
 ---
 name: copy-metodo-sethi
-description: "Escreve copy pelo método de Ramit Sethi: Psicologia do comprador, E-mail como relação, Preço premium, I Will Teach You To Be Rich. Use quando pedirem 'como Sethi', psicologia, e-mail e premium, ou uma peça nesse estilo"
-version: 0.2.0
+description: "Escreve copy pelo método de Ramit Sethi: Psicologia do comprador, E-mail como relação, Preço premium, I Will Teach You To Be Rich. Use quando pedirem 'como Sethi', psicologia, e-mail e premium, ou uma"
+version: 0.3.0
 author: "José Carlos Amorim"
 license: MIT
 platforms: [linux, macos, windows]

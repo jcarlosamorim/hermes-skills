@@ -1,13 +1,13 @@
 ---
 name: copy-anuncios
 description: "O anúncio tem três segundos para parar o dedo. Use quando o pedido envolver anúncio, ad copy, criativo, roteiro de anúncio, nativo, YouTube ads."
-version: 0.2.0
+version: 0.3.0
 author: "José Carlos Amorim"
 license: MIT
 platforms: [linux, macos, windows]
 metadata:
   hermes:
-    tags: [copy, copywriting, Copy, Anúncios]
+    tags: [copy, copywriting, copy, anúncios]
     related_skills: [copy-pipeline, copy-auditoria]
 ---
 

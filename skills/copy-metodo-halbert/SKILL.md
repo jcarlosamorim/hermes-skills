@@ -1,7 +1,7 @@
 ---
 name: copy-metodo-halbert
-description: "Escreve copy pelo método de Gary Halbert: Pilha A / Pilha B, Multidão faminta, Carta pessoal, Coat of Arms, Boron Letters. Use quando pedirem 'como Halbert', cartas que fazem sacar a carteira, ou uma peça nesse estilo."
-version: 0.2.0
+description: "Escreve copy pelo método de Gary Halbert: Pilha A / Pilha B, Multidão faminta, Carta pessoal, Coat of Arms, Boron Letters. Use quando pedirem 'como Halbert', cartas que fazem sacar a carteira, ou uma "
+version: 0.3.0
 author: "José Carlos Amorim"
 license: MIT
 platforms: [linux, macos, windows]
@@ -29,6 +29,8 @@ O homem que escreveu a carta de vendas mais lucrativa da história e ensinou cop
 | "escreve como Halbert: …" | Procedure completo | `references/metodo-halbert.md` → `core_principles`, `operational_frameworks` |
 | "revisa isto como Halbert" | Procedure 4 e 5 sobre o texto dado | `references/metodo-halbert.md` → checklists e `quality_standards` |
 | "explica o método" | resumir `core_principles` em 5 linhas | `references/metodo-halbert.md` |
+
+Procedimentos adicionais do método, em `references/`: `references/write-visceral-copy.md`
 
 ## Procedure
 
@@ -61,3 +63,4 @@ Validada contra Hermes Agent 0.20.6 (tag v2026.8.27) em 2026-09-04.
 ## Arquivos desta skill
 
 - `references/metodo-halbert.md`
+- `references/write-visceral-copy.md`

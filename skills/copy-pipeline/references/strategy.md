@@ -1,6 +1,6 @@
 # strategy
 
-Task composta. Sub-tarefas, cada uma em seu arquivo:
+Task composta. Sub-tarefas:
 
 - `references/strategy-angle-selection.md`
 - `references/strategy-benefit-ladder.md`

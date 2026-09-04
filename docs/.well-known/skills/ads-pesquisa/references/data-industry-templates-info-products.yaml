@@ -1,0 +1,78 @@
+# Industry Template: Info Products & Courses
+# Source: squads/ads-audit/templates/info-products.md + references/benchmarks.yaml
+# Last Updated: 2026-03-17
+
+industry: info-products
+
+benchmarks:
+  cpa: "$30-$100"
+  roas: "3-5x blended"
+  ctr: "1.71%"
+  cpm: "$12.79"
+  cvr: "7.72%"
+
+recommended_funnels:
+  - type: webinar-funnel
+    description: "Meta/YouTube ads drive registrations for live/evergreen webinar, which sells core offer"
+    primary_platforms: [meta, youtube]
+  - type: lead-magnet-nurture
+    description: "Free guide/checklist capture via Meta ads, email nurture sequence converts to paid product"
+    primary_platforms: [meta]
+  - type: vsl-direct
+    description: "YouTube in-stream 2-5 min VSL-style ads driving directly to sales page for cold traffic"
+    primary_platforms: [youtube]
+  - type: tripwire-ascension
+    description: "Low-ticket ($7-$27) offer acquires customers profitably, upsell sequence drives LTV"
+    primary_platforms: [meta, google_search]
+
+typical_audiences:
+  - name: interest-stacks
+    description: "3-5 related interests (thought leaders, competitors, topics) for prospecting"
+    platforms: [meta]
+  - name: purchaser-lookalikes
+    description: "1% lookalike of purchasers, email list, or webinar attendees"
+    platforms: [meta]
+  - name: custom-intent-youtube
+    description: "Users searching '[topic] course', 'learn [skill]', competitor course names"
+    platforms: [youtube]
+  - name: funnel-retargeting
+    description: "Sales page visitors (3d), webinar attendees who did not buy, video viewers 75%+ (7d)"
+    platforms: [meta, youtube]
+  - name: broad-creative-driven
+    description: "No targeting, let algorithm decide based on strong creative signal (works at scale)"
+    platforms: [meta]
+
+creative_patterns:
+  - format: founder-to-camera
+    description: "Authentic personal video with story-driven hook, problem agitation, and solution framework"
+    best_for: [awareness, consideration]
+  - format: student-testimonial
+    description: "Specific results with numbers ('made $10K in 30 days'), UGC-style casual recording"
+    best_for: [consideration, decision]
+  - format: free-value-content
+    description: "Teach something valuable in the ad itself, then pitch the course or lead magnet"
+    best_for: [awareness]
+  - format: challenge-webinar-ads
+    description: "'Join my free 5-day challenge' or webinar registration with countdown urgency"
+    best_for: [consideration]
+  - format: transformation-carousel
+    description: "Before/after student journey stories, curriculum preview, key takeaway slides"
+    best_for: [consideration, decision]
+
+compliance_notes:
+  - "No Special Ad Category required for general info products"
+  - "Avoid income claims without disclaimers ('results not typical') -- Meta and YouTube enforce"
+  - "Over-promising in ad copy leads to refund requests and potential policy violations"
+  - "TikTok minimum $50/day per campaign for info product ads"
+  - "Broad targeting requires 50+ conversions/week to function well on Meta"
+
+budget_guidelines:
+  min_daily: 65
+  recommended_daily: 165
+  min_test_duration_days: 14
+
+kpi_targets:
+  primary: blended_roas
+  secondary: cpl_lead_magnet
+
+special_ad_category: false

@@ -1,0 +1,65 @@
+# Industry Template: Marketing Agency
+# Source: squads/ads-audit/templates/agency.md + references/benchmarks.yaml
+# Last Updated: 2026-03-17
+
+industry: agency
+
+benchmarks:
+  cpa: "varies by client industry"
+  roas: "varies by client industry"
+  ctr: "varies by client industry"
+  cpm: "varies by client industry"
+  cvr: "varies by client industry"
+
+recommended_funnels:
+  - type: client-industry-template
+    description: "Map each client to their industry template (saas, ecommerce, local-service, etc.) for strategy foundation"
+    primary_platforms: [varies]
+  - type: multi-platform-managed
+    description: "Budget-based platform selection: <$3K Google only, $3-5K Google+Meta, $5-10K add secondary, $10K+ full mix"
+    primary_platforms: [google_search, meta, linkedin, tiktok]
+  - type: standardized-onboarding
+    description: "3-phase client onboarding: Discovery (week 1), Technical Setup (week 2), Campaign Launch (weeks 3-4)"
+    primary_platforms: [varies]
+
+typical_audiences:
+  - name: client-specific
+    description: "Audiences defined per client using their industry template targeting strategy"
+    platforms: [varies]
+  - name: agency-prospecting
+    description: "For agency's own marketing: business owners, marketing managers, CMOs searching for ad management"
+    platforms: [google_search, linkedin]
+  - name: cross-client-learnings
+    description: "Lookalike audiences and interest stacks informed by cross-client performance patterns"
+    platforms: [meta]
+
+creative_patterns:
+  - format: client-industry-creative
+    description: "Creative strategy derived from client's industry template creative patterns section"
+    best_for: [varies]
+  - format: case-study-results
+    description: "Agency's own marketing: client results with specific ROAS/CPA metrics and testimonials"
+    best_for: [consideration, decision]
+  - format: white-label-reports
+    description: "Branded performance reports (weekly internal, monthly client, quarterly QBR)"
+    best_for: [retention]
+
+compliance_notes:
+  - "No Special Ad Category required for agency operations itself"
+  - "Each client's industry compliance rules apply -- check their industry template"
+  - "Standardized naming convention required: [Client]_[Platform]_[Objective]_[Audience]_[Geo]_[Date]"
+  - "QA checklist must be completed before every campaign launch"
+  - "3x Kill Rule applied across all clients: CPA >3x target for 7+ days = pause"
+  - "20% Rule: never increase client budget >20% per week, monitor 3-5 days after each increase"
+  - "Client approval must be documented before launch for liability protection"
+
+budget_guidelines:
+  min_daily: 35
+  recommended_daily: 165
+  min_test_duration_days: 14
+
+kpi_targets:
+  primary: client_roas_or_cpa
+  secondary: client_retention_rate
+
+special_ad_category: false

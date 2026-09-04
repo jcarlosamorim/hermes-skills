@@ -1,7 +1,7 @@
 ---
 name: copy-metodo-koe
-description: "Escreve copy pelo método de Dan Koe: One-person business, Alavancagem, Produto digital, Conteúdo como funil. Use quando pedirem 'como Koe', negócio de uma pessoa e alavancagem, ou uma peça nesse estilo."
-version: 0.2.0
+description: "Escreve copy pelo método de Dan Koe: One-person business, Alavancagem, Produto digital, Conteúdo como funil. Use quando pedirem 'como Koe', negócio de uma pessoa e alavancagem, ou uma peça nesse estil"
+version: 0.3.0
 author: "José Carlos Amorim"
 license: MIT
 platforms: [linux, macos, windows]

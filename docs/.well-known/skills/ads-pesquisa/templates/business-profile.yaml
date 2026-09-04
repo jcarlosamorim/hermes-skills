@@ -1,0 +1,124 @@
+# Business Profile Template — Hybrid Ads Squad
+# Company DNA. Filled during onboarding (setup-business-profile, elicit: true).
+# Saved to: {pasta}/ads/business-profile.yaml
+#
+# Story: SAIOX-ADS-V5-2.4 (AC1)
+# Created: 2026-03-17
+# Updated: 2026-03-19 (taxonomy: PT → EN)
+# Sources:
+#   - Roundtable P0 #3: Conversational setup (elicit: true)
+#   - Roundtable P0 #4: Concierge model (@ad-midas)
+#   - Squad Agnosticism: generic template, data in workspace/
+
+version: "1.0.0"
+template: business-profile
+filled_by: "@ad-midas"  # Concierge collects via conversation during onboarding
+used_by: ["@ad-midas", "@creative-analyst", "@performance-analyst", "@fiscal"]
+
+# ═══════════════════════════════════════════════════════════════
+# COMPANY
+# ═══════════════════════════════════════════════════════════════
+
+company:
+  name: ""                      # required
+  slug: ""                      # required — used as path key (e.g., {pasta}/)
+  segment: ""                   # required — e.g., "SaaS", "E-commerce", "Info Product", "Local Service"
+  sub_segment: ""               # optional — e.g., "CRM for dentists", "Plus-size women fashion"
+  site: ""                      # required — main URL
+  tax_id: ""                    # optional — used for compliance and BM verification
+
+# ═══════════════════════════════════════════════════════════════
+# IDENTITY
+# ═══════════════════════════════════════════════════════════════
+
+identity:
+  manifesto: ""                 # optional — brand purpose statement
+  mission: ""                   # required
+  vision: ""                    # optional
+  value_proposition: ""         # required — core promise in 1-2 sentences
+  differentiator: ""            # required — what separates from competitors
+  tone_of_voice: ""             # required — e.g., "Professional and accessible", "Bold and provocative"
+  keywords: []                  # required — 5-10 keywords that define the brand
+  # Example:
+  # keywords:
+  #   - "automation"
+  #   - "results"
+  #   - "predictability"
+
+# ═══════════════════════════════════════════════════════════════
+# MARKET
+# ═══════════════════════════════════════════════════════════════
+
+market:
+  direct_competitors: []        # required (min 1) — compete for the same audience
+  # Example:
+  # direct_competitors:
+  #   - name: "Competitor A"
+  #     site: "https://competitor-a.com"
+  #     differentiator: "Lower price"
+  #   - name: "Competitor B"
+  #     site: "https://competitor-b.com"
+  #     differentiator: "Stronger brand"
+
+  indirect_competitors: []      # optional — compete for attention/budget of the same ICP
+  # Example:
+  # indirect_competitors:
+  #   - name: "Alternative Y"
+  #     relation: "Solves the same problem with a different approach"
+
+  positioning: ""               # required — how the company positions vs market
+  # Example: "Premium with humanized support" or "Low-cost with automation"
+
+# ═══════════════════════════════════════════════════════════════
+# DIGITAL PRESENCE
+# ═══════════════════════════════════════════════════════════════
+
+digital_presence:
+  instagram: ""                 # optional — URL or @handle
+  facebook: ""                  # optional — page URL
+  youtube: ""                   # optional — channel URL
+  tiktok: ""                    # optional — URL or @handle
+  linkedin: ""                  # optional — company page URL
+  site: ""                      # optional — if different from company.site (e.g., landing page)
+  blog: ""                      # optional — blog URL
+
+# ═══════════════════════════════════════════════════════════════
+# AD HISTORY
+# ═══════════════════════════════════════════════════════════════
+
+ad_history:
+  has_advertised: false         # required — boolean
+  platforms: []                 # required if has_advertised=true — e.g., ["Meta", "Google", "TikTok"]
+  monthly_budget: ""            # optional — e.g., "R$5,000", "R$50,000+"
+  best_campaign: ""             # optional — brief description of what worked
+  worst_campaign: ""            # optional — brief description of what failed and why
+
+# ═══════════════════════════════════════════════════════════════
+# AVAILABLE ASSETS
+# ═══════════════════════════════════════════════════════════════
+
+assets:
+  product_photos: false         # required — has professional photos?
+  videos: false                 # required — has product/testimonial videos?
+  testimonials: false           # required — has customer testimonials?
+  ugc: false                    # optional — has user-generated content?
+  brand_guidelines: false       # optional — has brand manual?
+  logo: false                   # required — has high-resolution logo?
+
+# ═══════════════════════════════════════════════════════════════
+# FIELD REQUIREMENTS SUMMARY
+# ═══════════════════════════════════════════════════════════════
+# REQUIRED: company.name, company.slug, company.segment, company.site,
+#           identity.mission, identity.value_proposition, identity.differentiator,
+#           identity.tone_of_voice, identity.keywords,
+#           market.direct_competitors (min 1), market.positioning,
+#           ad_history.has_advertised,
+#           assets.product_photos, assets.videos, assets.testimonials, assets.logo
+#
+# OPTIONAL: company.sub_segment, company.tax_id,
+#           identity.manifesto, identity.vision,
+#           market.indirect_competitors,
+#           digital_presence.* (all fields),
+#           ad_history.platforms (required if has_advertised=true),
+#           ad_history.monthly_budget, ad_history.best_campaign, ad_history.worst_campaign,
+#           assets.ugc, assets.brand_guidelines

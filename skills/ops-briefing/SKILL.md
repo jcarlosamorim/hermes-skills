@@ -1,7 +1,7 @@
 ---
 name: ops-briefing
-description: "O mesmo briefing, escrito do jeito que cada pessoa lê: texto corrido para quem lê, checklist para quem executa, diagrama para quem enxerga. Usa o perfil do SEU time (zona de genialidade, Kolbe) como entrada. Use quando"
-version: 0.2.0
+description: "O mesmo briefing, escrito do jeito que cada pessoa lê: texto corrido para quem lê, checklist para quem executa, diagrama para quem enxerga. Usa o perfil do SEU time (zona de genialidade, Kolbe) como e"
+version: 0.3.0
 author: "José Carlos Amorim"
 license: MIT
 platforms: [linux, macos, windows]

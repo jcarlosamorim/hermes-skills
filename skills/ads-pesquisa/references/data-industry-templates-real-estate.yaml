@@ -1,0 +1,80 @@
+# Industry Template: Real Estate
+# Source: squads/ads-audit/templates/real-estate.md + references/benchmarks.yaml
+# Last Updated: 2026-03-17
+
+industry: real-estate
+
+benchmarks:
+  cpa: "$50-$150"
+  roas: "N/A"
+  ctr: "8.43%"
+  cpm: "$18.00"
+  cvr: "3.28%"
+
+recommended_funnels:
+  - type: buyer-lead-gen
+    description: "Google Search for high-intent 'homes for sale in [area]' queries plus Meta lead forms with property carousels"
+    primary_platforms: [google_search, meta]
+  - type: seller-lead-gen
+    description: "Meta lead forms with 'free home valuation' offer, Google Search for 'sell my house [city]' queries"
+    primary_platforms: [meta, google_search]
+  - type: listing-promotion
+    description: "Meta carousel and video ads showcasing individual listings with property tours and drone footage"
+    primary_platforms: [meta, youtube]
+  - type: agent-brand-building
+    description: "Market update videos, community content, and testimonials to build agent personal brand"
+    primary_platforms: [meta, youtube]
+
+typical_audiences:
+  - name: buyer-intent-search
+    description: "Users searching 'homes for sale in [city]', '[neighborhood] real estate', 'open houses near me'"
+    platforms: [google_search]
+  - name: seller-intent-search
+    description: "Users searching 'sell my house [city]', 'home value estimate', 'best realtor [city]'"
+    platforms: [google_search]
+  - name: local-radius
+    description: "15+ mile radius around target area (Meta minimum enforced due to Special Ad Category)"
+    platforms: [meta]
+  - name: listing-retargeting
+    description: "Website visitors who viewed specific listing pages, video viewers of property tours"
+    platforms: [meta]
+  - name: investor-targeting
+    description: "LinkedIn targeting for luxury real estate, investor profiles, relocation services"
+    platforms: [linkedin]
+
+creative_patterns:
+  - format: property-tour-video
+    description: "30-60s walkthrough with agent narration plus drone aerial footage of property and neighborhood"
+    best_for: [consideration, decision]
+  - format: listing-carousel
+    description: "Multiple listings or room-by-room tour of a single property in carousel format"
+    best_for: [awareness, consideration]
+  - format: market-update
+    description: "Agent-to-camera with local market data, trends, and insights for credibility"
+    best_for: [awareness]
+  - format: home-valuation-offer
+    description: "'What is your home worth?' offer for seller lead capture via Meta lead forms"
+    best_for: [consideration]
+  - format: just-sold-listed
+    description: "Social proof and urgency via 'Just Sold' and 'Just Listed' announcement posts"
+    best_for: [awareness, decision]
+
+compliance_notes:
+  - "SPECIAL AD CATEGORY: Housing -- must declare Fair Housing on Meta for ALL real estate ads"
+  - "Meta restrictions: no age targeting, no gender targeting, no ZIP code targeting, 15-mile minimum radius"
+  - "Meta: Lookalike Audiences unavailable -- must use Special Ad Audiences instead"
+  - "Google: Fair Housing compliance required -- cannot target based on protected characteristics"
+  - "Cannot exclude based on demographics (race, religion, family status, disability, national origin)"
+  - "Listing data must be current -- advertising properties under contract or sold is misleading"
+
+budget_guidelines:
+  min_daily: 85
+  recommended_daily: 200
+  min_test_duration_days: 14
+
+kpi_targets:
+  primary: cost_per_closing
+  secondary: lead_to_showing_rate
+
+special_ad_category: true
+special_ad_category_type: housing
