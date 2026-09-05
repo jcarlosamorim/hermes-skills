@@ -12,3 +12,4 @@ dist/
 # link local da Vercel (site/)
 site/.vercel/
 site/covers
+site/catalog.json

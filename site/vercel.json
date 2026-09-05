@@ -1,13 +1,45 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "rewrites": [
-    { "source": "/catalog.json", "destination": "https://jcarlosamorim.github.io/hermes-skills/catalog.json" },
-    { "source": "/.well-known/:path*", "destination": "https://jcarlosamorim.github.io/hermes-skills/.well-known/:path*" },
-    { "source": "/prompt/:path*", "destination": "https://jcarlosamorim.github.io/hermes-skills/prompt/:path*" },
-    { "source": "/covers/:path*", "destination": "https://jcarlosamorim.github.io/hermes-skills/covers/:path*" }
+    {
+      "source": "/catalog.json",
+      "destination": "https://jcarlosamorim.github.io/hermes-skills/catalog.json"
+    },
+    {
+      "source": "/.well-known/:path*",
+      "destination": "https://jcarlosamorim.github.io/hermes-skills/.well-known/:path*"
+    },
+    {
+      "source": "/prompt/:path*",
+      "destination": "https://jcarlosamorim.github.io/hermes-skills/prompt/:path*"
+    },
+    {
+      "source": "/covers/:path*",
+      "destination": "https://jcarlosamorim.github.io/hermes-skills/covers/:path*"
+    },
+    {
+      "source": "/download/:tag/:file",
+      "destination": "https://github.com/jcarlosamorim/hermes-skills/releases/download/:tag/:file"
+    }
   ],
   "headers": [
-    { "source": "/audio/(.*)", "headers": [ { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" } ] },
-    { "source": "/(.*)", "headers": [ { "key": "X-Content-Type-Options", "value": "nosniff" } ] }
+    {
+      "source": "/audio/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        }
+      ]
+    }
   ]
 }

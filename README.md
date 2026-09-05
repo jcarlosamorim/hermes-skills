@@ -37,7 +37,6 @@ Depois de instalar, abra uma nova sessão.
 | **Processos** | `sop-extrair`, `sop-criar`, `sop-auditar` | SOP da cabeça de quem faz para o papel, para o agente, e pela auditoria (Gawande, Toyota, ISO 9001) |
 | **Operação** | `ops-rotear-tarefa`, `ops-briefing`, `ops-revisao-semanal`, `ops-avaliar-fit` | gestão de time por zona de genialidade e Kolbe; o perfil do SEU time é a entrada |
 | **Tráfego** | `ads-gate-compliance`, `ads-plano`, `ads-otimizar`, `ads-pesquisa`, `ads-criativos`, `ads-tracking` | régua de compliance, unit economics, o motor diário que lê a Graph API, pesquisa em 5 fases, análise de criativos e auditoria de tracking. Nada aqui escreve na plataforma |
-| **Base** | `google-oauth-onboarding` | autorização OAuth do Google com escopo mínimo |
 
 Cada skill segue o formato do Hermes: frontmatter, `When to Use`, `Quick Reference`, `Procedure`,
 `Pitfalls`, `Verification` com critério binário, e `references/` para o que é longo. Segredo vai em
@@ -55,7 +54,7 @@ Não ensine `--force` a ninguém. Se uma skill foi bloqueada, o problema é dela
 ## Estrutura
 
 ```text
-skills/<nome>/SKILL.md          fonte; frontmatter do Hermes (metadata.hermes, required_environment_variables)
+skills/<nome>/SKILL.md          GERADO por mmos/outputs/hermes-hub/build_hub.py a partir do manifest e das fontes; não edite à mão
 skills/<nome>/references/       fórmulas, métodos, checklists (carregados sob demanda)
 skills/<nome>/templates/        modelos que a skill preenche
 skills/<nome>/scripts/          código determinístico (só no ads-otimizar)
@@ -74,7 +73,7 @@ tests/                          unittest das funções puras (cap200, frontmatte
 scripts/validate_skills.py      forma do SKILL.md (fonte) e do portable (chaves do spec, description ≤200)
 scripts/scan_skills.py          scanner do Hermes contra cada skill (skills_guard.py pinado por commit + sha256)
 .github/workflows/release.yml   em push de tag v*: confere tag = catalog.version, valida, escaneia e anexa os zips
-docs/covers/                    capas <slug>-desktop.jpg (hero/modal), -mobile.jpg (hero no celular), -card.jpg (fileiras);
+docs/covers/                    capas <slug>-desktop.jpg (hero/modal), -wide.jpg (fileiras no desktop), -mobile.jpg (hero no celular), -card.jpg (fileiras no celular);
                                 importadas por mmos/outputs/hermes-hub/capas/importar_capas.py
 site/audio/*.v2.mp3             os cinco cues da abertura; /audio tem cache imutável, então som novo = nome novo
 ```
@@ -85,7 +84,9 @@ injetada, variável de ambiente). O procedimento é o mesmo.
 
 ## Publicar uma mudança
 
-1. Branch. Edite ou crie `skills/<nome>/`.
+1. Branch. `skills/` e `catalog.json` são gerados: edite o manifest ou as fontes em `mmos/outputs/hermes-hub` e rode
+   `python3 build_hub.py` (ele se recusa a rodar com `skills/` sujo, porque apaga e reescreve as pastas). Contribuição
+   externa: abra uma issue ou PR descrevendo a mudança; ela entra pelo gerador.
 2. `python3 -m venv .venv && . .venv/bin/activate && pip install -r requirements.txt` (uma vez; Python 3.10+),
    depois `python3 -m unittest discover -s tests && python3 scripts/validate_skills.py && python3 scripts/scan_skills.py`.
 3. `python3 scripts/build_docs.py` e confira o diff em `docs/` (portable, coláveis, well-known).

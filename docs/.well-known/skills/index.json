@@ -416,13 +416,6 @@
       ]
     },
     {
-      "name": "google-oauth-onboarding",
-      "description": "Guide Google Cloud setup and OAuth consent safely.",
-      "files": [
-        "SKILL.md"
-      ]
-    },
-    {
       "name": "hybrid-cultura",
       "description": "Cultura é o que a empresa faz quando o dono não está olhando. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando: \"documenta a cultura de [empresa]\".",
       "files": [
