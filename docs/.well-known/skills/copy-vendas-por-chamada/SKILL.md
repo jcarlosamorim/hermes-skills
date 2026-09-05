@@ -1,11 +1,11 @@
 ---
 name: copy-vendas-por-chamada
-description: 'Script de ligação, script de fechamento e os algoritmos de objeção: para cada "vou pensar", o que perguntar e o que dizer. Use quando o pedido envolver script de call, ligação de vendas, fechamento, o'
+description: 'Script de ligação, script de fechamento e os algoritmos de objeção: para cada "vou pensar", o que perguntar e o que dizer. Use quando o pedido envolver script de call, ligação de vendas, fechamento…'
 license: MIT
 compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
   author: José Carlos Amorim
-  version: 0.4.0
+  version: 0.4.1
   hub: https://agentflix.nexialismo.ai
   source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/copy-vendas-por-chamada
   tags: copy, copywriting, vendas, script

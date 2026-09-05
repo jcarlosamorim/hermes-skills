@@ -1,11 +1,11 @@
 ---
 name: ads-criativos
-description: 'Com as métricas por criativo na mão, o agente separa o que venceu do que cansou: analisa os primeiros três segundos, encontra padrões entre os vencedores, detecta fadiga e propõe os próximos testes. S'
+description: 'Com as métricas por criativo na mão, o agente separa o que venceu do que cansou: analisa os primeiros três segundos, encontra padrões entre os vencedores, detecta fadiga e propõe os próximos testes.…'
 license: MIT
 compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
   author: José Carlos Amorim
-  version: 0.4.0
+  version: 0.4.1
   hub: https://agentflix.nexialismo.ai
   source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/ads-criativos
   tags: trafego-pago, meta-ads, criativos

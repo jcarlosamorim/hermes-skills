@@ -1,11 +1,11 @@
 ---
 name: copy-pipeline
-description: 'Da estratégia à peça pronta, em uma esteira só: define o ângulo, escolhe o formato, escreve e revisa, chamando as outras skills de copy na ordem certa. Use quando o pedido envolver campanha completa,'
+description: 'Da estratégia à peça pronta, em uma esteira só: define o ângulo, escolhe o formato, escreve e revisa, chamando as outras skills de copy na ordem certa. Use quando o pedido envolver campanha completa…'
 license: MIT
 compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
   author: José Carlos Amorim
-  version: 0.4.0
+  version: 0.4.1
   hub: https://agentflix.nexialismo.ai
   source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/copy-pipeline
   tags: copy, copywriting, pipeline, campanha

@@ -1,11 +1,11 @@
 ---
 name: sop-criar
-description: 'Escreve o procedimento duas vezes, de propósito: uma versão para pessoa, no padrão FDA/GMP, e uma para agente, em YAML ou JSON com estados, decisões e ferramentas. Use quando: "escreve o SOP de [proce'
+description: 'Escreve o procedimento duas vezes, de propósito: uma versão para pessoa, no padrão FDA/GMP, e uma para agente, em YAML ou JSON com estados, decisões e ferramentas. Use quando: "escreve o SOP de…'
 license: MIT
 compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
   author: José Carlos Amorim
-  version: 0.4.0
+  version: 0.4.1
   hub: https://agentflix.nexialismo.ai
   source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/sop-criar
   tags: processos, sop, qualidade, operacao

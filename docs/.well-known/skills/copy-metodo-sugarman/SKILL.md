@@ -1,11 +1,11 @@
 ---
 name: copy-metodo-sugarman
-description: 'Escreve copy pelo método de Joe Sugarman: Escorregador, Gatilhos psicológicos, Storytelling, BluBlocker. Use quando pedirem ''como Sugarman'', storytelling e gatilhos psicológicos, ou uma peça nesse est'
+description: 'Escreve copy pelo método de Joe Sugarman: Escorregador, Gatilhos psicológicos, Storytelling, BluBlocker. Use quando pedirem ''como Sugarman'', storytelling e gatilhos psicológicos, ou uma peça nesse…'
 license: MIT
 compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
   author: José Carlos Amorim
-  version: 0.4.0
+  version: 0.4.1
   hub: https://agentflix.nexialismo.ai
   source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/copy-metodo-sugarman
   tags: copy, copywriting, sugarman, metodo, resposta-direta

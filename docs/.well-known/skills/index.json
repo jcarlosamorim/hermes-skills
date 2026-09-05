@@ -2,7 +2,7 @@
   "skills": [
     {
       "name": "ads-criativos",
-      "description": "Com as métricas por criativo na mão, o agente separa o que venceu do que cansou: analisa os primeiros três segundos, encontra padrões entre os vencedores, detecta fadiga e propõe os próximos testes. S",
+      "description": "Com as métricas por criativo na mão, o agente separa o que venceu do que cansou: analisa os primeiros três segundos, encontra padrões entre os vencedores, detecta fadiga e propõe os próximos testes.…",
       "files": [
         "SKILL.md",
         "references/analyze-creatives.md",
@@ -125,7 +125,7 @@
     },
     {
       "name": "copy-email",
-      "description": "Sequência de boas-vindas, e-mail diário, lançamento, cold e-mail, carrinho abandonado, lead que sumiu, martelo pré-call e newsletter. Use quando o pedido envolver e-mail, sequência, newsletter, cold e",
+      "description": "Sequência de boas-vindas, e-mail diário, lançamento, cold e-mail, carrinho abandonado, lead que sumiu, martelo pré-call e newsletter. Use quando o pedido envolver e-mail, sequência, newsletter, cold…",
       "files": [
         "SKILL.md",
         "references/create-abandoned-cart.md",
@@ -195,7 +195,7 @@
     },
     {
       "name": "copy-metodo-bencivenga",
-      "description": "Escreve copy pelo método de Gary Bencivenga: Bullets e fascinações, Prova acima de promessa, Credibilidade, Curiosidade específica. Use quando pedirem 'como Bencivenga', bullets e fascinações, ou uma",
+      "description": "Escreve copy pelo método de Gary Bencivenga: Bullets e fascinações, Prova acima de promessa, Credibilidade, Curiosidade específica. Use quando pedirem 'como Bencivenga', bullets e fascinações, ou uma…",
       "files": [
         "SKILL.md",
         "references/metodo-bencivenga.md"
@@ -219,7 +219,7 @@
     },
     {
       "name": "copy-metodo-halbert",
-      "description": "Escreve copy pelo método de Gary Halbert: Pilha A / Pilha B, Multidão faminta, Carta pessoal, Coat of Arms, Boron Letters. Use quando pedirem 'como Halbert', cartas que fazem sacar a carteira, ou uma",
+      "description": "Escreve copy pelo método de Gary Halbert: Pilha A / Pilha B, Multidão faminta, Carta pessoal, Coat of Arms, Boron Letters. Use quando pedirem 'como Halbert', cartas que fazem sacar a carteira, ou uma…",
       "files": [
         "SKILL.md",
         "references/metodo-halbert.md",
@@ -228,7 +228,7 @@
     },
     {
       "name": "copy-metodo-hopkins",
-      "description": "Escreve copy pelo método de Claude Hopkins: Publicidade científica, Reason why, Teste com cupom, Alegação preemptiva, Amostra grátis. Use quando pedirem 'como Hopkins', publicidade científica e o test",
+      "description": "Escreve copy pelo método de Claude Hopkins: Publicidade científica, Reason why, Teste com cupom, Alegação preemptiva, Amostra grátis. Use quando pedirem 'como Hopkins', publicidade científica e o…",
       "files": [
         "SKILL.md",
         "references/metodo-hopkins.md"
@@ -244,7 +244,7 @@
     },
     {
       "name": "copy-metodo-kennedy",
-      "description": "Escreve copy pelo método de Dan Kennedy: Urgência com prazo, No B.S., Magnetic Marketing, Oferta irresistível, Fechamento direto. Use quando pedirem 'como Kennedy', urgência e resposta direta, ou uma",
+      "description": "Escreve copy pelo método de Dan Kennedy: Urgência com prazo, No B.S., Magnetic Marketing, Oferta irresistível, Fechamento direto. Use quando pedirem 'como Kennedy', urgência e resposta direta, ou uma…",
       "files": [
         "SKILL.md",
         "references/metodo-kennedy.md"
@@ -268,7 +268,7 @@
     },
     {
       "name": "copy-metodo-koe",
-      "description": "Escreve copy pelo método de Dan Koe: One-person business, Alavancagem, Produto digital, Conteúdo como funil. Use quando pedirem 'como Koe', negócio de uma pessoa e alavancagem, ou uma peça nesse estil",
+      "description": "Escreve copy pelo método de Dan Koe: One-person business, Alavancagem, Produto digital, Conteúdo como funil. Use quando pedirem 'como Koe', negócio de uma pessoa e alavancagem, ou uma peça nesse…",
       "files": [
         "SKILL.md",
         "references/metodo-koe.md"
@@ -276,7 +276,7 @@
     },
     {
       "name": "copy-metodo-ogilvy",
-      "description": "Escreve copy pelo método de David Ogilvy: Big Idea, Pesquisa primeiro, Copy longa, Imagem de marca, Headline factual. Use quando pedirem 'como Ogilvy', big idea, pesquisa e elegância, ou uma peça ness",
+      "description": "Escreve copy pelo método de David Ogilvy: Big Idea, Pesquisa primeiro, Copy longa, Imagem de marca, Headline factual. Use quando pedirem 'como Ogilvy', big idea, pesquisa e elegância, ou uma peça…",
       "files": [
         "SKILL.md",
         "references/metodo-ogilvy.md"
@@ -284,7 +284,7 @@
     },
     {
       "name": "copy-metodo-schwartz",
-      "description": "Escreve copy pelo método de Eugene Schwartz: Desejo de massa, 5 níveis de consciência, 5 estágios de sofisticação, Breakthrough Adverti. Use quando pedirem 'como Schwartz', desejo de massa e breakthro",
+      "description": "Escreve copy pelo método de Eugene Schwartz: Desejo de massa, 5 níveis de consciência, 5 estágios de sofisticação, Breakthrough Adverti. Use quando pedirem 'como Schwartz', desejo de massa e…",
       "files": [
         "SKILL.md",
         "references/metodo-schwartz.md"
@@ -292,7 +292,7 @@
     },
     {
       "name": "copy-metodo-sethi",
-      "description": "Escreve copy pelo método de Ramit Sethi: Psicologia do comprador, E-mail como relação, Preço premium, I Will Teach You To Be Rich. Use quando pedirem 'como Sethi', psicologia, e-mail e premium, ou uma",
+      "description": "Escreve copy pelo método de Ramit Sethi: Psicologia do comprador, E-mail como relação, Preço premium, I Will Teach You To Be Rich. Use quando pedirem 'como Sethi', psicologia, e-mail e premium, ou…",
       "files": [
         "SKILL.md",
         "references/metodo-sethi.md"
@@ -300,7 +300,7 @@
     },
     {
       "name": "copy-metodo-sugarman",
-      "description": "Escreve copy pelo método de Joe Sugarman: Escorregador, Gatilhos psicológicos, Storytelling, BluBlocker. Use quando pedirem 'como Sugarman', storytelling e gatilhos psicológicos, ou uma peça nesse est",
+      "description": "Escreve copy pelo método de Joe Sugarman: Escorregador, Gatilhos psicológicos, Storytelling, BluBlocker. Use quando pedirem 'como Sugarman', storytelling e gatilhos psicológicos, ou uma peça nesse…",
       "files": [
         "SKILL.md",
         "references/apply-sugarman-triggers.md",
@@ -310,7 +310,7 @@
     },
     {
       "name": "copy-oferta",
-      "description": "Antes do texto vem a oferta, e a maioria das páginas fracas tem uma oferta fraca por baixo. Use quando o pedido envolver oferta, stack, bônus, bump, upsell, downsell, página de obrigado, prova, garant",
+      "description": "Antes do texto vem a oferta, e a maioria das páginas fracas tem uma oferta fraca por baixo. Use quando o pedido envolver oferta, stack, bônus, bump, upsell, downsell, página de obrigado, prova…",
       "files": [
         "SKILL.md",
         "references/create-decision-matrix.md",
@@ -342,7 +342,7 @@
     },
     {
       "name": "copy-pipeline",
-      "description": "Da estratégia à peça pronta, em uma esteira só: define o ângulo, escolhe o formato, escreve e revisa, chamando as outras skills de copy na ordem certa. Use quando o pedido envolver campanha completa,",
+      "description": "Da estratégia à peça pronta, em uma esteira só: define o ângulo, escolhe o formato, escreve e revisa, chamando as outras skills de copy na ordem certa. Use quando o pedido envolver campanha completa…",
       "files": [
         "SKILL.md",
         "references/checklist-copywriter-agent-creation-checklist.md",
@@ -367,7 +367,7 @@
     },
     {
       "name": "copy-sales-page",
-      "description": "Uma página de vendas longa não é um texto grande, é uma sequência de decisões pequenas até o botão. Use quando o pedido envolver página de vendas, sales page, landing page, carta de vendas longa, maga",
+      "description": "Uma página de vendas longa não é um texto grande, é uma sequência de decisões pequenas até o botão. Use quando o pedido envolver página de vendas, sales page, landing page, carta de vendas longa…",
       "files": [
         "SKILL.md",
         "references/audit-landing-page.md",
@@ -380,7 +380,7 @@
     },
     {
       "name": "copy-vendas-por-chamada",
-      "description": "Script de ligação, script de fechamento e os algoritmos de objeção: para cada \"vou pensar\", o que perguntar e o que dizer. Use quando o pedido envolver script de call, ligação de vendas, fechamento, o",
+      "description": "Script de ligação, script de fechamento e os algoritmos de objeção: para cada \"vou pensar\", o que perguntar e o que dizer. Use quando o pedido envolver script de call, ligação de vendas, fechamento…",
       "files": [
         "SKILL.md",
         "references/create-call-script.md",
@@ -391,7 +391,7 @@
     },
     {
       "name": "copy-voz",
-      "description": "Extrai o DNA de comunicação de uma pessoa: vocabulário, frases-assinatura, frameworks que ela repete, o jeito de abrir e fechar. Use quando o pedido envolver voz da marca, DNA de comunicação, frases-a",
+      "description": "Extrai o DNA de comunicação de uma pessoa: vocabulário, frases-assinatura, frameworks que ela repete, o jeito de abrir e fechar. Use quando o pedido envolver voz da marca, DNA de comunicação…",
       "files": [
         "SKILL.md",
         "references/checklist-copywriter-agent-creation-checklist.md",
@@ -406,7 +406,7 @@
     },
     {
       "name": "copy-vsl-webinar",
-      "description": "Roteiro de VSL e de webinar, do gancho de abertura ao fechamento, com os pontos de tensão marcados no tempo. Use quando o pedido envolver VSL, roteiro de vídeo de vendas, webinar frio ou quente, apres",
+      "description": "Roteiro de VSL e de webinar, do gancho de abertura ao fechamento, com os pontos de tensão marcados no tempo. Use quando o pedido envolver VSL, roteiro de vídeo de vendas, webinar frio ou quente…",
       "files": [
         "SKILL.md",
         "references/create-cold-webinar-script.md",
@@ -494,7 +494,7 @@
     },
     {
       "name": "hybrid-marca",
-      "description": "A marca escrita antes de virar logo: o núcleo, as promessas que faz e as que não faz, a personalidade, o DNA de voz e os valores. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando: \"doc",
+      "description": "A marca escrita antes de virar logo: o núcleo, as promessas que faz e as que não faz, a personalidade, o DNA de voz e os valores. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando…",
       "files": [
         "SKILL.md",
         "references/elicit-brand-yaml.md",
@@ -505,7 +505,7 @@
     },
     {
       "name": "hybrid-oferta",
-      "description": "O offerbook é o documento da oferta: o que entra, o que custa, por que vale mais que custa, quais objeções ela já responde. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando: \"monta o o",
+      "description": "O offerbook é o documento da oferta: o que entra, o que custa, por que vale mais que custa, quais objeções ela já responde. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando: \"monta o…",
       "files": [
         "SKILL.md",
         "references/contexto-diagnose-offer.md",
@@ -517,7 +517,7 @@
     },
     {
       "name": "hybrid-perfil",
-      "description": "O perfil completo da empresa em YAML: quem é, para quem existe, o que promete, que credenciais sustentam a promessa. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando: \"monta o perfil d",
+      "description": "O perfil completo da empresa em YAML: quem é, para quem existe, o que promete, que credenciais sustentam a promessa. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando: \"monta o perfil…",
       "files": [
         "SKILL.md",
         "references/elicit-company-profile.md",
@@ -540,7 +540,7 @@
     },
     {
       "name": "hybrid-tech",
-      "description": "O que roda hoje, o que deveria rodar, e onde a IA entra de verdade. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando: \"mapeia a stack de [empresa]\" ou \"estratégia de IA para [empresa]\"",
+      "description": "O que roda hoje, o que deveria rodar, e onde a IA entra de verdade. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando: \"mapeia a stack de [empresa]\" ou \"estratégia de IA para…",
       "files": [
         "SKILL.md",
         "references/elicit-ai-strategy.md",
@@ -553,7 +553,7 @@
     },
     {
       "name": "hybrid-time",
-      "description": "Estrutura de time que dá para ler: cada cadeira, o que ela entrega, a quem responde e o KPI que prova que está funcionando. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando: \"estrutura",
+      "description": "Estrutura de time que dá para ler: cada cadeira, o que ela entrega, a quem responde e o KPI que prova que está funcionando. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando…",
       "files": [
         "SKILL.md",
         "references/elicit-operations.md",
@@ -573,7 +573,7 @@
     },
     {
       "name": "ops-briefing",
-      "description": "O mesmo briefing, escrito do jeito que cada pessoa lê: texto corrido para quem lê, checklist para quem executa, diagrama para quem enxerga. Usa o perfil do SEU time (zona de genialidade, Kolbe) como e",
+      "description": "O mesmo briefing, escrito do jeito que cada pessoa lê: texto corrido para quem lê, checklist para quem executa, diagrama para quem enxerga. Usa o perfil do SEU time (zona de genialidade, Kolbe) como…",
       "files": [
         "SKILL.md",
         "references/metodo-rotear.md",
@@ -582,7 +582,7 @@
     },
     {
       "name": "ops-revisao-semanal",
-      "description": "Toda sexta, quem operou na zona de genialidade e quem passou a semana fora dela. Usa o perfil do SEU time (zona de genialidade, Kolbe) como entrada. Use quando: \"revisão da semana\" e cole ou aponte as",
+      "description": "Toda sexta, quem operou na zona de genialidade e quem passou a semana fora dela. Usa o perfil do SEU time (zona de genialidade, Kolbe) como entrada. Use quando: \"revisão da semana\" e cole ou aponte…",
       "files": [
         "SKILL.md",
         "references/metodo-revisao-semanal.md",
@@ -624,7 +624,7 @@
     },
     {
       "name": "sop-criar",
-      "description": "Escreve o procedimento duas vezes, de propósito: uma versão para pessoa, no padrão FDA/GMP, e uma para agente, em YAML ou JSON com estados, decisões e ferramentas. Use quando: \"escreve o SOP de [proce",
+      "description": "Escreve o procedimento duas vezes, de propósito: uma versão para pessoa, no padrão FDA/GMP, e uma para agente, em YAML ou JSON com estados, decisões e ferramentas. Use quando: \"escreve o SOP de…",
       "files": [
         "SKILL.md",
         "references/checklist-sop-completeness-checklist.md",

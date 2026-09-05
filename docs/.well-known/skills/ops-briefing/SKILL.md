@@ -1,11 +1,11 @@
 ---
 name: ops-briefing
-description: 'O mesmo briefing, escrito do jeito que cada pessoa lê: texto corrido para quem lê, checklist para quem executa, diagrama para quem enxerga. Usa o perfil do SEU time (zona de genialidade, Kolbe) como e'
+description: 'O mesmo briefing, escrito do jeito que cada pessoa lê: texto corrido para quem lê, checklist para quem executa, diagrama para quem enxerga. Usa o perfil do SEU time (zona de genialidade, Kolbe) como…'
 license: MIT
 compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
   author: José Carlos Amorim
-  version: 0.4.0
+  version: 0.4.1
   hub: https://agentflix.nexialismo.ai
   source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/ops-briefing
   tags: operacao, time, genius-zone, kolbe, gestao
