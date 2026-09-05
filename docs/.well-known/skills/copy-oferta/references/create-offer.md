@@ -1564,7 +1564,6 @@ $10,000 value → $1,000 price = No-brainer
 # ═══════════════════════════════════════════════════════════════════════════
 # HORMOZI FRAMEWORK - EXTRAÍDO DOS ARTIFACTS MMOS
 # Data: 2026-01-23 | Enrichment Phase ENR-004
-# Fonte: outputs/minds/alex_hormozi/artifacts/
 # ═══════════════════════════════════════════════════════════════════════════
 
 ## Hormozi Value Equation Engine (Completo)

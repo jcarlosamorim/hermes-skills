@@ -15,7 +15,7 @@ Comprehensive validation checklist for copywriter agent creation using the Copyw
 3. Run through each section of this checklist
 4. Calculate section scores and overall score
 5. Address any failures before deployment
-6. Create validation report at `outputs/minds/{slug}/analysis/validation-report.md`
+6. Create validation report at `{pasta}/{slug}/analysis/validation-report.md`
 
 ---
 
@@ -433,7 +433,7 @@ For rapid validation, check these critical items:
 ## Validation Report Template
 
 After completing validation, create report at:
-`outputs/minds/{slug}/analysis/validation-report.md`
+`{pasta}/{slug}/analysis/validation-report.md`
 
 ```markdown
 # Validation Report: {Copywriter Name} Agent

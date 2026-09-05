@@ -6,7 +6,7 @@
 >
 > **Como usar.** ChatGPT: crie um Project, envie este arquivo em Files e cole nas instruções do projeto o texto
 > de ativação abaixo. Claude: envie como conhecimento do Project, ou cole tudo no chat. Qualquer chat: cole tudo.
-> Versão 0.4.2. Instalável como skill de verdade (Hermes, Claude.ai, Claude Code, ChatGPT Skills, Codex) na página.
+> Versão 0.4.3. Instalável como skill de verdade (Hermes, Claude.ai, Claude Code, ChatGPT Skills, Codex) na página.
 >
 > **Texto de ativação (cole nas instruções):** Você tem no arquivo `copy-oferta.md` uma skill chamada copy-oferta. Quando eu pedir algo como "monta a oferta para [produto] a [preço]", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.
 
@@ -2612,7 +2612,6 @@ $10,000 value → $1,000 price = No-brainer
 # ═══════════════════════════════════════════════════════════════════════════
 # HORMOZI FRAMEWORK - EXTRAÍDO DOS ARTIFACTS MMOS
 # Data: 2026-01-23 | Enrichment Phase ENR-004
-# Fonte: outputs/minds/alex_hormozi/artifacts/
 # ═══════════════════════════════════════════════════════════════════════════
 
 ## Hormozi Value Equation Engine (Completo)

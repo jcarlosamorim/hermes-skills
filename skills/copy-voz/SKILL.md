@@ -1,7 +1,7 @@
 ---
 name: copy-voz
 description: "Extrai o DNA de comunicação de uma pessoa: vocabulário, frases-assinatura, frameworks que ela repete, o jeito de abrir e fechar. Use quando o pedido envolver voz da marca, DNA de comunicação…"
-version: 0.4.2
+version: 0.4.3
 author: "José Carlos Amorim"
 license: MIT
 platforms: [linux, macos, windows]
@@ -30,7 +30,6 @@ Cada sub-tarefa é uma referência com `Inputs`, fórmulas, `Output Format` e `Q
 | extract communication dna | `references/extract-communication-dna.md` |
 | extract signature phrases | `references/extract-signature-phrases.md` |
 | extract frameworks | `references/extract-frameworks.md` |
-| load mmos voice | `references/load-mmos-voice.md` |
 
 ## Procedure
 
@@ -66,7 +65,6 @@ Validada contra Hermes Agent 0.20.6 (tag v2026.8.27) em 2026-09-04.
 - `references/extract-communication-dna.md`
 - `references/extract-frameworks.md`
 - `references/extract-signature-phrases.md`
-- `references/load-mmos-voice.md`
 - `templates/communication-dna-tmpl.yaml`
 - `templates/frameworks-extraction-tmpl.yaml`
 - `templates/signature-phrases-tmpl.yaml`

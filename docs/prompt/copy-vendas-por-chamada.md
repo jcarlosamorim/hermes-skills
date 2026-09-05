@@ -6,7 +6,7 @@
 >
 > **Como usar.** ChatGPT: crie um Project, envie este arquivo em Files e cole nas instruções do projeto o texto
 > de ativação abaixo. Claude: envie como conhecimento do Project, ou cole tudo no chat. Qualquer chat: cole tudo.
-> Versão 0.4.2. Instalável como skill de verdade (Hermes, Claude.ai, Claude Code, ChatGPT Skills, Codex) na página.
+> Versão 0.4.3. Instalável como skill de verdade (Hermes, Claude.ai, Claude Code, ChatGPT Skills, Codex) na página.
 >
 > **Texto de ativação (cole nas instruções):** Você tem no arquivo `copy-vendas-por-chamada.md` uma skill chamada copy-vendas-por-chamada. Quando eu pedir algo como "script de call para [oferta]", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.
 
@@ -1348,8 +1348,8 @@ dependencies:
 inputs:
   required:
     - source_directory: "Path to source materials"
-    - frameworks_file: "Previously extracted frameworks (outputs/minds/{slug}/analysis/frameworks.yaml)"
-    - signature_phrases_file: "Previously extracted phrases (outputs/minds/{slug}/analysis/signature-phrases.yaml)"
+    - frameworks_file: "Previously extracted frameworks ({pasta}/{slug}/analysis/frameworks.yaml)"
+    - signature_phrases_file: "Previously extracted phrases ({pasta}/{slug}/analysis/signature-phrases.yaml)"
   optional:
     - communication_dna_file: "Communication DNA for vocabulary reference"
 outputs:
@@ -1377,10 +1377,10 @@ Before starting this task, ensure you have:
 
 | Input | File Location | Required |
 |-------|---------------|----------|
-| Frameworks | `outputs/minds/{slug}/analysis/frameworks.yaml` | Yes |
-| Signature Phrases | `outputs/minds/{slug}/analysis/signature-phrases.yaml` | Yes |
-| Communication DNA | `outputs/minds/{slug}/analysis/communication-dna.yaml` | Recommended |
-| Source Materials | `outputs/minds/{slug}/sources/` | Yes |
+| Frameworks | `{pasta}/{slug}/analysis/frameworks.yaml` | Yes |
+| Signature Phrases | `{pasta}/{slug}/analysis/signature-phrases.yaml` | Yes |
+| Communication DNA | `{pasta}/{slug}/analysis/communication-dna.yaml` | Recommended |
+| Source Materials | `{pasta}/{slug}/sources/` | Yes |
 
 ```
 elicit: true
@@ -1461,7 +1461,7 @@ objection_category:
 
 ### Step 2.1: Load Extracted Frameworks
 
-Read the frameworks file: `outputs/minds/{slug}/analysis/frameworks.yaml`
+Read the frameworks file: `{pasta}/{slug}/analysis/frameworks.yaml`
 
 List all 10 frameworks:
 1. [Framework 1 name]
@@ -1505,7 +1505,7 @@ For each mapped framework, extract:
 
 ### Step 3.1: Load Signature Phrases
 
-Read the phrases file: `outputs/minds/{slug}/analysis/signature-phrases.yaml`
+Read the phrases file: `{pasta}/{slug}/analysis/signature-phrases.yaml`
 
 ### Step 3.2: Select Key Phrases for Each Objection
 
@@ -1795,7 +1795,7 @@ quality_metrics:
 
 ### Step 6.2: Save Output
 
-Save to: `outputs/minds/{slug}/analysis/objection-algorithms.yaml`
+Save to: `{pasta}/{slug}/analysis/objection-algorithms.yaml`
 
 ### Quality Gate: Output
 
@@ -1885,12 +1885,12 @@ These demonstrate the expected depth, structure, and voice consistency.
 # 3. Replace all {{placeholder}} markers with extracted content
 #
 # INPUTS REQUIRED:
-# - outputs/minds/{slug}/analysis/frameworks.yaml (for framework references)
-# - outputs/minds/{slug}/analysis/signature-phrases.yaml (for key phrases)
+# - {pasta}/{slug}/analysis/frameworks.yaml (for framework references)
+# - {pasta}/{slug}/analysis/signature-phrases.yaml (for key phrases)
 # - Source materials for objection mining
 #
 # OUTPUT:
-# - outputs/minds/{slug}/analysis/objection-algorithms.yaml
+# - {pasta}/{slug}/analysis/objection-algorithms.yaml
 
 template:
   id: objection-algorithms-template-v1
@@ -1899,7 +1899,7 @@ template:
   output:
     format: yaml
     filename: "objection-algorithms.yaml"
-    location: "outputs/minds/{{slug}}/analysis/"
+    location: "{pasta}/{{slug}}/analysis/"
 
 # =============================================================================
 # VARIABLES - Input required
@@ -2486,12 +2486,12 @@ algorithm_structure_guide:
 #
 # 1. Run task: tasks/create-objection-algorithms.md
 # 2. Read inputs:
-#    - outputs/minds/{slug}/analysis/frameworks.yaml
-#    - outputs/minds/{slug}/analysis/signature-phrases.yaml
+#    - {pasta}/{slug}/analysis/frameworks.yaml
+#    - {pasta}/{slug}/analysis/signature-phrases.yaml
 #    - Source materials for objection mining
 # 3. Copy the output_template section
 # 4. Replace all {{placeholder}} markers
-# 5. Save to: outputs/minds/{slug}/analysis/objection-algorithms.yaml
+# 5. Save to: {pasta}/{slug}/analysis/objection-algorithms.yaml
 # 6. Validate against quality_requirements
 #
 # =============================================================================

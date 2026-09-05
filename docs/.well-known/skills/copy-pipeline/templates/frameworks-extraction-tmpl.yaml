@@ -19,7 +19,7 @@ metadata:
   extraction_date: "[YYYY-MM-DD]"  # Date of extraction
   total_frameworks: 10  # Must be exactly 10
   source_files_count: "[XX]"  # Number of source files processed
-  source_directory: "[PATH]"  # e.g., "outputs/minds/dan_koe/sources/MM Dan/"
+  source_directory: "[PATH]"  # e.g., "{pasta}/fontes/"
   extractor: "AIOS extract-frameworks task v1.0"
 
 # Category coverage summary - update counts after extraction

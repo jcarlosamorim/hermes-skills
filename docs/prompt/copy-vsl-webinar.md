@@ -6,7 +6,7 @@
 >
 > **Como usar.** ChatGPT: crie um Project, envie este arquivo em Files e cole nas instruções do projeto o texto
 > de ativação abaixo. Claude: envie como conhecimento do Project, ou cole tudo no chat. Qualquer chat: cole tudo.
-> Versão 0.4.2. Instalável como skill de verdade (Hermes, Claude.ai, Claude Code, ChatGPT Skills, Codex) na página.
+> Versão 0.4.3. Instalável como skill de verdade (Hermes, Claude.ai, Claude Code, ChatGPT Skills, Codex) na página.
 >
 > **Texto de ativação (cole nas instruções):** Você tem no arquivo `copy-vsl-webinar.md` uma skill chamada copy-vsl-webinar. Quando eu pedir algo como "roteiro de VSL para [oferta], [duração]", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.
 
@@ -3011,19 +3011,15 @@ changelog:
 Jon Benson inventou o Video Sales Letter em 2006 por pura necessidade. As sales letters tradicionais de texto longo pararam de converter, os custos de tráfego estavam subindo, e ele enfrentava um possível colapso do negócio.
 
 > "I bombed miserably with the first, second, and third versions of my sales letter"
-> [Fonte: outputs/minds/jon_benson/history.yaml - vsl_origin]
 
 > "I made an UGLY video with no pictures - only black letters with red words"
-> [Fonte: outputs/minds/jon_benson/history.yaml - ugly-vsl-invention]
 
 > "I didn't try to start an industry, but that day, that's exactly what happened"
-> [Fonte: outputs/minds/jon_benson/history.yaml - vsl_origin]
 
 A ironia: o design "feio" tornou-se a assinatura do formato - prova de que simplicidade funciona.
 
 **Resultado:** Conversões 3X superiores às sales letters tradicionais.
 
-[Fonte: outputs/minds/jon_benson/history.yaml - event: ugly-vsl-invention, year: 2006]
 
 ---
 
@@ -3032,7 +3028,6 @@ A ironia: o design "feio" tornou-se a assinatura do formato - prova de que simpl
 Sistematizado em 2011 e compartilhado no I Love Marketing Podcast Episode 44. Esta é a metodologia original codificada pelo inventor:
 
 > "VSLs are much easier to create than traditional sales pages because of how our brains process information. You're writing in slide segments - sentence fragments, one sentence at a time - and there's something about the brain that wraps around this much easier with the formula."
-> [Fonte: outputs/minds/jon_benson/sources/sources_master.yaml - source_001, source_010]
 
 #### Os 5 Passos Originais:
 
@@ -3082,7 +3077,6 @@ step_5_ethical_close:
     Clear call to action."
 ```
 
-[Fonte: outputs/minds/jon_benson/sources/sources_master.yaml - framework_coverage.core_frameworks]
 
 ---
 
@@ -3129,7 +3123,6 @@ Desenvolvida em 2013, revelada no I Love Marketing Podcast Episode 122:
     benson_quote: "Make the decision easy and the action clear"
 ```
 
-[Fonte: outputs/minds/jon_benson/sources/sources_master.yaml - source_002: "3X Formula introduced"]
 
 ---
 
@@ -3138,7 +3131,6 @@ Desenvolvida em 2013, revelada no I Love Marketing Podcast Episode 122:
 Método original de Jon Benson baseado em seu treinamento em NLP:
 
 > "A pattern interrupt at the opening of copy that breaks the reader's normal mental processing and forces them to pay attention. It's called 'snap' because it snaps them out of autopilot."
-> [Fonte: outputs/minds/jon_benson - NLP Training certification]
 
 **Tipos de Snap Suggestion do Inventor:**
 
@@ -3150,7 +3142,6 @@ Método original de Jon Benson baseado em seu treinamento em NLP:
 | Pattern Error | "I'm about to tell you NOT to buy my product" | Statement inesperado do vendedor |
 | Time Compression | "In the next 7 minutes, you'll discover..." | Timeframe específico cria compromisso |
 
-[Fonte: outputs/minds/jon_benson/docs/logs/viability/jon_benson.md - NLP certification]
 
 ---
 
@@ -3190,7 +3181,6 @@ five_beats_original:
     instruction: "Connect your mission to helping others like your former self"
 ```
 
-[Fonte: outputs/minds/jon_benson/history.yaml - five_beats structure]
 
 ---
 
@@ -3216,7 +3206,6 @@ five_beats_original:
 | Solution Preview | 8:00-12:00 | Criar desejo |
 | Offer + Close | 12:00-20:00 | Converter |
 
-[Fonte: outputs/minds/jon_benson/sources/sources_master.yaml - timing guidelines]
 
 ---
 
@@ -3238,7 +3227,6 @@ persuasion_quadrant:
     4: "Deliver their NEEDS"
 ```
 
-[Fonte: outputs/minds/jon_benson - NLP Training, Persuasion Quadrant framework]
 
 ---
 
@@ -3257,7 +3245,6 @@ persuasion_quadrant:
 
 **Aplicação:** Abra 2-3 loops no primeiro minuto. Feche gradualmente durante a apresentação. Sempre feche TODOS os loops antes do CTA.
 
-[Fonte: outputs/minds/jon_benson - VSL Psychology framework]
 
 ---
 
@@ -3287,7 +3274,6 @@ Jon combinou seu treinamento em NLP com VSL para criar copy mais efetivo:
 ### Ethical Persuasion Framework - Filosofia Core
 
 > "Ethical Persuasion is a capacity and skill that very few have mastered. It is the polar opposite of manipulation and coercion (which is what the vast majority of copywriters turn to when they try to market). This is why so many people have an aversion to marketing - it can feel slimy."
-> [Fonte: outputs/minds/jon_benson - core philosophy]
 
 **Regras de Aplicação do Inventor:**
 
@@ -3324,7 +3310,6 @@ authority_statistics:
     context: "Industry-wide VSL format impact created in 2006"
 ```
 
-[Fonte: outputs/minds/jon_benson/docs/logs/viability/jon_benson.md - authority_statistics]
 
 ---
 
@@ -3342,7 +3327,6 @@ authority_statistics:
 | 2019-2022 | Attention Framework | Sistema avançado de psicologia da atenção |
 | 2023-2024 | BNSN.AI | Promptless™ technology - AI + copywriting |
 
-[Fonte: outputs/minds/jon_benson/history.yaml - events timeline]
 
 ---
 
@@ -3350,15 +3334,15 @@ authority_statistics:
 
 ```yaml
 sources_read:
-  - path: "outputs/minds/jon_benson/sources/sources_master.yaml"
+  - path: "{pasta}/jon_benson/sources/sources_master.yaml"
     type: "Master compilation of 38 sources"
     frameworks_extracted: ["5-Step VSL Formula", "3X Formula", "NLP techniques"]
 
-  - path: "outputs/minds/jon_benson/history.yaml"
+  - path: "{pasta}/jon_benson/history.yaml"
     type: "Timeline and events"
     data_extracted: ["VSL invention story", "Methodology evolution", "Key milestones"]
 
-  - path: "outputs/minds/jon_benson/docs/logs/viability/jon_benson.md"
+  - path: "{pasta}/jon_benson/docs/logs/viability/jon_benson.md"
     type: "Viability assessment"
     data_extracted: ["APEX score 9.5/10", "Statistics", "Authority proof"]
 

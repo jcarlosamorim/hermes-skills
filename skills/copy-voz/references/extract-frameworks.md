@@ -79,7 +79,7 @@ Each extracted framework must follow this structure (based on david-ogilvy.md):
 elicit: true
 question: "Where are the source materials for this copywriter?"
 options:
-  - Mind directory (outputs/minds/{slug}/sources/)
+  - Mind directory ({pasta}/{slug}/sources/)
   - External folder path
   - Specific file list
 ```
@@ -374,7 +374,7 @@ Run through complete checklist:
 
 ## OUTPUT
 
-**Location:** Save to `outputs/minds/{copywriter_slug}/analysis/frameworks.yaml`
+**Location:** Save to `{pasta}/{slug}/analysis/frameworks.yaml`
 
 **Format:** YAML following `templates/frameworks-extraction-tmpl.yaml`
 

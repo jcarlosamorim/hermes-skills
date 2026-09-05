@@ -41,13 +41,13 @@ dependencies:
 outputs:
   primary: "squads/copy/agents/{slug}.md"
   analysis_files:
-    - "outputs/minds/{slug}/analysis/frameworks.yaml"
-    - "outputs/minds/{slug}/analysis/communication-dna.yaml"
-    - "outputs/minds/{slug}/analysis/signature-phrases.yaml"
-    - "outputs/minds/{slug}/analysis/authority-arsenal.yaml"
-    - "outputs/minds/{slug}/analysis/objection-algorithms.yaml"
-    - "outputs/minds/{slug}/analysis/{slug}-rules.yaml"
-    - "outputs/minds/{slug}/analysis/validation-report.md"
+    - "{pasta}/{slug}/analysis/frameworks.yaml"
+    - "{pasta}/{slug}/analysis/communication-dna.yaml"
+    - "{pasta}/{slug}/analysis/signature-phrases.yaml"
+    - "{pasta}/{slug}/analysis/authority-arsenal.yaml"
+    - "{pasta}/{slug}/analysis/objection-algorithms.yaml"
+    - "{pasta}/{slug}/analysis/{slug}-rules.yaml"
+    - "{pasta}/{slug}/analysis/validation-report.md"
 ```
 
 ---
@@ -176,7 +176,7 @@ MANDATORY CHECKS:
 - [ ] All source files are readable (markdown/text)
 - [ ] Files span 4+ content type categories
 - [ ] Reference agent file(s) identified
-- [ ] Output directory exists: outputs/minds/{slug}/analysis/
+- [ ] Output directory exists: {pasta}/{slug}/analysis/
 - [ ] Each file contains 500+ words of substantive content
 
 QUALITY CHECKS:
@@ -193,8 +193,8 @@ QUALITY CHECKS:
 ### Step 1.1: Create Output Directory Structure
 
 ```bash
-mkdir -p outputs/minds/{slug}/analysis
-mkdir -p outputs/minds/{slug}/docs
+mkdir -p {pasta}/{slug}/analysis
+mkdir -p {pasta}/{slug}/docs
 ```
 
 ### Step 1.2: Inventory Source Materials
@@ -386,7 +386,7 @@ Aim for diversity across categories:
 
 ### Output
 
-- **File:** `outputs/minds/{slug}/analysis/frameworks.yaml`
+- **File:** `{pasta}/{slug}/analysis/frameworks.yaml`
 - **Template:** `templates/frameworks-extraction-tmpl.yaml`
 
 ### Quality Gate: Frameworks
@@ -567,7 +567,7 @@ psychometric_integration:
 
 ### Output
 
-- **File:** `outputs/minds/{slug}/analysis/communication-dna.yaml`
+- **File:** `{pasta}/{slug}/analysis/communication-dna.yaml`
 - **Template:** `templates/communication-dna-tmpl.yaml`
 
 ### Quality Gate: Communication DNA
@@ -661,7 +661,7 @@ signature_phrase_entry:
 
 ### Output
 
-- **File:** `outputs/minds/{slug}/analysis/signature-phrases.yaml`
+- **File:** `{pasta}/{slug}/analysis/signature-phrases.yaml`
 - **Template:** `templates/signature-phrases-tmpl.yaml`
 
 ### Quality Gate: Signature Phrases
@@ -850,7 +850,7 @@ proof_templates:
 
 ### Output
 
-- **File:** `outputs/minds/{slug}/analysis/authority-arsenal.yaml`
+- **File:** `{pasta}/{slug}/analysis/authority-arsenal.yaml`
 - **Template:** `templates/authority-arsenal-tmpl.yaml`
 
 ### Quality Gate: Authority Arsenal
@@ -940,7 +940,7 @@ objection_algorithm_template:
 
 ### Output
 
-- **File:** `outputs/minds/{slug}/analysis/objection-algorithms.yaml`
+- **File:** `{pasta}/{slug}/analysis/objection-algorithms.yaml`
 - **Template:** `templates/objection-algorithms-tmpl.yaml`
 
 ### Quality Gate: Objection Algorithms
@@ -1009,7 +1009,7 @@ copywriter_rules:
 
 ### Output
 
-- **File:** `outputs/minds/{slug}/analysis/{slug}-rules.yaml`
+- **File:** `{pasta}/{slug}/analysis/{slug}-rules.yaml`
 
 ### Quality Gate: Rules
 
@@ -1198,7 +1198,7 @@ validation_process:
 
 ### Output
 
-- **File:** `outputs/minds/{slug}/analysis/validation-report.md`
+- **File:** `{pasta}/{slug}/analysis/validation-report.md`
 
 ### Quality Gate: Validation
 
@@ -1220,13 +1220,13 @@ Upon successful completion:
 
 | File | Location |
 |------|----------|
-| frameworks.yaml | `outputs/minds/{slug}/analysis/` |
-| communication-dna.yaml | `outputs/minds/{slug}/analysis/` |
-| signature-phrases.yaml | `outputs/minds/{slug}/analysis/` |
-| authority-arsenal.yaml | `outputs/minds/{slug}/analysis/` |
-| objection-algorithms.yaml | `outputs/minds/{slug}/analysis/` |
-| {slug}-rules.yaml | `outputs/minds/{slug}/analysis/` |
-| validation-report.md | `outputs/minds/{slug}/analysis/` |
+| frameworks.yaml | `{pasta}/{slug}/analysis/` |
+| communication-dna.yaml | `{pasta}/{slug}/analysis/` |
+| signature-phrases.yaml | `{pasta}/{slug}/analysis/` |
+| authority-arsenal.yaml | `{pasta}/{slug}/analysis/` |
+| objection-algorithms.yaml | `{pasta}/{slug}/analysis/` |
+| {slug}-rules.yaml | `{pasta}/{slug}/analysis/` |
+| validation-report.md | `{pasta}/{slug}/analysis/` |
 
 ### Agent File
 

@@ -25,7 +25,7 @@ import urllib.request
 
 API = os.environ.get("META_API_VERSION", "v23.0")
 BASE = f"https://graph.facebook.com/{API}"
-UA = "hermes-skills-ads-otimizar/0.3 (+https://github.com/AgentsFlix/hermes-skills)"
+UA = "hermes-skills-ads-otimizar/0.3 (+https://github.com/AgentsFlix/skills)"
 
 
 def credencial() -> str:

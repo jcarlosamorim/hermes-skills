@@ -398,7 +398,6 @@
         "references/extract-communication-dna.md",
         "references/extract-frameworks.md",
         "references/extract-signature-phrases.md",
-        "references/load-mmos-voice.md",
         "templates/communication-dna-tmpl.yaml",
         "templates/frameworks-extraction-tmpl.yaml",
         "templates/signature-phrases-tmpl.yaml"

@@ -6,7 +6,7 @@
 >
 > **Como usar.** ChatGPT: crie um Project, envie este arquivo em Files e cole nas instruções do projeto o texto
 > de ativação abaixo. Claude: envie como conhecimento do Project, ou cole tudo no chat. Qualquer chat: cole tudo.
-> Versão 0.4.2. Instalável como skill de verdade (Hermes, Claude.ai, Claude Code, ChatGPT Skills, Codex) na página.
+> Versão 0.4.3. Instalável como skill de verdade (Hermes, Claude.ai, Claude Code, ChatGPT Skills, Codex) na página.
 >
 > **Texto de ativação (cole nas instruções):** Você tem no arquivo `copy-pipeline.md` uma skill chamada copy-pipeline. Quando eu pedir algo como "campanha completa para [oferta]", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.
 
@@ -103,7 +103,7 @@ Comprehensive validation checklist for copywriter agent creation using the Copyw
 3. Run through each section of this checklist
 4. Calculate section scores and overall score
 5. Address any failures before deployment
-6. Create validation report at `outputs/minds/{slug}/analysis/validation-report.md`
+6. Create validation report at `{pasta}/{slug}/analysis/validation-report.md`
 
 ---
 
@@ -521,7 +521,7 @@ For rapid validation, check these critical items:
 ## Validation Report Template
 
 After completing validation, create report at:
-`outputs/minds/{slug}/analysis/validation-report.md`
+`{pasta}/{slug}/analysis/validation-report.md`
 
 ```markdown
 # Validation Report: {Copywriter Name} Agent
@@ -633,13 +633,13 @@ dependencies:
 outputs:
   primary: "squads/copy/agents/{slug}.md"
   analysis_files:
-    - "outputs/minds/{slug}/analysis/frameworks.yaml"
-    - "outputs/minds/{slug}/analysis/communication-dna.yaml"
-    - "outputs/minds/{slug}/analysis/signature-phrases.yaml"
-    - "outputs/minds/{slug}/analysis/authority-arsenal.yaml"
-    - "outputs/minds/{slug}/analysis/objection-algorithms.yaml"
-    - "outputs/minds/{slug}/analysis/{slug}-rules.yaml"
-    - "outputs/minds/{slug}/analysis/validation-report.md"
+    - "{pasta}/{slug}/analysis/frameworks.yaml"
+    - "{pasta}/{slug}/analysis/communication-dna.yaml"
+    - "{pasta}/{slug}/analysis/signature-phrases.yaml"
+    - "{pasta}/{slug}/analysis/authority-arsenal.yaml"
+    - "{pasta}/{slug}/analysis/objection-algorithms.yaml"
+    - "{pasta}/{slug}/analysis/{slug}-rules.yaml"
+    - "{pasta}/{slug}/analysis/validation-report.md"
 ```
 
 ---
@@ -768,7 +768,7 @@ MANDATORY CHECKS:
 - [ ] All source files are readable (markdown/text)
 - [ ] Files span 4+ content type categories
 - [ ] Reference agent file(s) identified
-- [ ] Output directory exists: outputs/minds/{slug}/analysis/
+- [ ] Output directory exists: {pasta}/{slug}/analysis/
 - [ ] Each file contains 500+ words of substantive content
 
 QUALITY CHECKS:
@@ -785,8 +785,8 @@ QUALITY CHECKS:
 ### Step 1.1: Create Output Directory Structure
 
 ```bash
-mkdir -p outputs/minds/{slug}/analysis
-mkdir -p outputs/minds/{slug}/docs
+mkdir -p {pasta}/{slug}/analysis
+mkdir -p {pasta}/{slug}/docs
 ```
 
 ### Step 1.2: Inventory Source Materials
@@ -978,7 +978,7 @@ Aim for diversity across categories:
 
 ### Output
 
-- **File:** `outputs/minds/{slug}/analysis/frameworks.yaml`
+- **File:** `{pasta}/{slug}/analysis/frameworks.yaml`
 - **Template:** `templates/frameworks-extraction-tmpl.yaml`
 
 ### Quality Gate: Frameworks
@@ -1159,7 +1159,7 @@ psychometric_integration:
 
 ### Output
 
-- **File:** `outputs/minds/{slug}/analysis/communication-dna.yaml`
+- **File:** `{pasta}/{slug}/analysis/communication-dna.yaml`
 - **Template:** `templates/communication-dna-tmpl.yaml`
 
 ### Quality Gate: Communication DNA
@@ -1253,7 +1253,7 @@ signature_phrase_entry:
 
 ### Output
 
-- **File:** `outputs/minds/{slug}/analysis/signature-phrases.yaml`
+- **File:** `{pasta}/{slug}/analysis/signature-phrases.yaml`
 - **Template:** `templates/signature-phrases-tmpl.yaml`
 
 ### Quality Gate: Signature Phrases
@@ -1442,7 +1442,7 @@ proof_templates:
 
 ### Output
 
-- **File:** `outputs/minds/{slug}/analysis/authority-arsenal.yaml`
+- **File:** `{pasta}/{slug}/analysis/authority-arsenal.yaml`
 - **Template:** `templates/authority-arsenal-tmpl.yaml`
 
 ### Quality Gate: Authority Arsenal
@@ -1532,7 +1532,7 @@ objection_algorithm_template:
 
 ### Output
 
-- **File:** `outputs/minds/{slug}/analysis/objection-algorithms.yaml`
+- **File:** `{pasta}/{slug}/analysis/objection-algorithms.yaml`
 - **Template:** `templates/objection-algorithms-tmpl.yaml`
 
 ### Quality Gate: Objection Algorithms
@@ -1601,7 +1601,7 @@ copywriter_rules:
 
 ### Output
 
-- **File:** `outputs/minds/{slug}/analysis/{slug}-rules.yaml`
+- **File:** `{pasta}/{slug}/analysis/{slug}-rules.yaml`
 
 ### Quality Gate: Rules
 
@@ -1773,7 +1773,7 @@ validation_process:
 
 ### Output
 
-- **File:** `outputs/minds/{slug}/analysis/validation-report.md`
+- **File:** `{pasta}/{slug}/analysis/validation-report.md`
 
 ### Quality Gate: Validation
 
@@ -1795,13 +1795,13 @@ Upon successful completion:
 
 | File | Location |
 |------|----------|
-| frameworks.yaml | `outputs/minds/{slug}/analysis/` |
-| communication-dna.yaml | `outputs/minds/{slug}/analysis/` |
-| signature-phrases.yaml | `outputs/minds/{slug}/analysis/` |
-| authority-arsenal.yaml | `outputs/minds/{slug}/analysis/` |
-| objection-algorithms.yaml | `outputs/minds/{slug}/analysis/` |
-| {slug}-rules.yaml | `outputs/minds/{slug}/analysis/` |
-| validation-report.md | `outputs/minds/{slug}/analysis/` |
+| frameworks.yaml | `{pasta}/{slug}/analysis/` |
+| communication-dna.yaml | `{pasta}/{slug}/analysis/` |
+| signature-phrases.yaml | `{pasta}/{slug}/analysis/` |
+| authority-arsenal.yaml | `{pasta}/{slug}/analysis/` |
+| objection-algorithms.yaml | `{pasta}/{slug}/analysis/` |
+| {slug}-rules.yaml | `{pasta}/{slug}/analysis/` |
+| validation-report.md | `{pasta}/{slug}/analysis/` |
 
 ### Agent File
 
@@ -5798,7 +5798,7 @@ metadata:
   extraction_date: "[YYYY-MM-DD]"  # Date of extraction
   total_frameworks: 10  # Must be exactly 10
   source_files_count: "[XX]"  # Number of source files processed
-  source_directory: "[PATH]"  # e.g., "outputs/minds/dan_koe/sources/MM Dan/"
+  source_directory: "[PATH]"  # e.g., "{pasta}/fontes/"
   extractor: "AIOS extract-frameworks task v1.0"
 
 # Category coverage summary - update counts after extraction

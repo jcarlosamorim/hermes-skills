@@ -4,7 +4,7 @@
 # USAGE:
 # 1. Execute tasks/extract-communication-dna.md with source materials
 # 2. Fill this template with extracted data
-# 3. Save to outputs/minds/{slug}/analysis/communication-dna.yaml
+# 3. Save to {pasta}/{slug}/analysis/communication-dna.yaml
 #
 # REFERENCE:
 # - tasks/extract-communication-dna.md (extraction process)
@@ -17,7 +17,7 @@ template:
   output:
     format: yaml
     filename: "communication-dna.yaml"
-    location: "outputs/minds/{slug}/analysis/"
+    location: "{pasta}/{slug}/analysis/"
 
 # =============================================================================
 # TEMPLATE OUTPUT STRUCTURE
@@ -574,5 +574,5 @@ example_filled_entry:
 # After completing extraction:
 # 1. Remove the example_filled_entry section
 # 2. Run YAML validation
-# 3. Save to outputs/minds/{slug}/analysis/communication-dna.yaml
+# 3. Save to {pasta}/{slug}/analysis/communication-dna.yaml
 # 4. Continue to next phase of agent creation pipeline

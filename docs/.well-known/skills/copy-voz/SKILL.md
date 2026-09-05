@@ -5,9 +5,9 @@ license: MIT
 compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
   author: José Carlos Amorim
-  version: 0.4.2
+  version: 0.4.3
   hub: https://agentsflix.ai
-  source: https://github.com/AgentsFlix/hermes-skills/tree/main/skills/copy-voz
+  source: https://github.com/AgentsFlix/skills/tree/main/skills/copy-voz
   tags: copy, copywriting, voz, marca-pessoal
   related: copy-pipeline, copy-auditoria
 ---
@@ -31,7 +31,6 @@ Cada sub-tarefa é uma referência com `Inputs`, fórmulas, `Output Format` e `Q
 | extract communication dna | `references/extract-communication-dna.md` |
 | extract signature phrases | `references/extract-signature-phrases.md` |
 | extract frameworks | `references/extract-frameworks.md` |
-| load mmos voice | `references/load-mmos-voice.md` |
 
 ## Procedure
 
@@ -67,7 +66,6 @@ Validada contra Hermes Agent 0.20.6 (tag v2026.8.27) em 2026-09-04.
 - `references/extract-communication-dna.md`
 - `references/extract-frameworks.md`
 - `references/extract-signature-phrases.md`
-- `references/load-mmos-voice.md`
 - `templates/communication-dna-tmpl.yaml`
 - `templates/frameworks-extraction-tmpl.yaml`
 - `templates/signature-phrases-tmpl.yaml`

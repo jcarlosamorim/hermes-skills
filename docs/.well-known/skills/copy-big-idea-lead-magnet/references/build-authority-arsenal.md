@@ -56,7 +56,7 @@ fields:
 - [ ] Source directory exists with autobiographical content
 - [ ] At least 2 files contain personal journey/story details
 - [ ] At least 3 files contain business metrics or achievements
-- [ ] Output directory exists at `outputs/minds/{slug}/analysis/`
+- [ ] Output directory exists at `{pasta}/{slug}/analysis/`
 
 ---
 
@@ -509,7 +509,7 @@ proof_stack_templates:
 
 ### Output Location
 
-Save to: `outputs/minds/{slug}/analysis/authority-arsenal.yaml`
+Save to: `{pasta}/{slug}/analysis/authority-arsenal.yaml`
 
 ---
 
