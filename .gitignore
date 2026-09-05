@@ -13,3 +13,4 @@ dist/
 site/.vercel/
 site/covers
 site/catalog.json
+.vercel/

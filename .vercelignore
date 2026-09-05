@@ -1,0 +1,10 @@
+docs
+skills
+dist
+tests
+scripts
+.github
+catalog.json
+site/covers
+site/catalog.json
+site/.vercel
