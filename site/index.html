@@ -49,6 +49,7 @@
   @keyframes hPop { from { opacity: 0; transform: scale(0.96) translateY(10px); } to { opacity: 1; transform: none; } }
   @keyframes aWipe { from { clip-path: inset(0 0 0 0); } to { clip-path: inset(0 0 0 100%); } }
   @keyframes aSweep { from { transform: translateX(-14vw); } to { transform: translateX(86vw); } }
+  @keyframes aFadeOut { to { opacity: 0; } }
   @keyframes aGrain { 0% { opacity: 0.05; } 50% { opacity: 0.09; } 100% { opacity: 0.05; } }
 
   /* ---------- abertura: 4,4 s, 5 atos (Faísca, Colunas, Varredura, Colapso, Assinatura) ---------- */
@@ -293,6 +294,8 @@
   }
   @media (prefers-reduced-motion: reduce) {
     #intro .enter, #intro .grain { animation: none; }
+    #intro.sweep .veil { animation: aFadeOut 600ms ease both; }
+    #intro.sweep::before { display: none; }
     .card, .btn-red { transition: none; }
   }
 </style>
@@ -913,7 +916,7 @@
     }
     const playTri = ([x, y], a) => { const Rr = a / Math.sqrt(3); return [[x + Rr, y], [x - Rr / 2, y - a / 2], [x - Rr / 2, y + a / 2]]; };
 
-    function render(ctx, W, H, t) {
+    function render(ctx, W, H, t, dpr = 1) {
       const L = layout(W, H), { s, h, AW, AH, CAP, GAP, R } = L;
       ctx.clearRect(0, 0, W, H);
       // composição: A sozinho centrado; com o texto, o conjunto (A + vão + letras) centrado
@@ -940,7 +943,7 @@
         mover.pos = [a[0] + (b[0] - a[0]) * e, a[1] + (b[1] - a[1]) * e];
         if (p >= 1) { if (target && target !== mover) target.alive = false; cells.delete(key(m.from)); mover.cell = m.to; mover.pos = null; cells.set(key(m.to), mover); }
       }
-      ctx.shadowColor = "rgba(0,0,0,0.35)"; ctx.shadowBlur = 0.27 * s; ctx.shadowOffsetY = 0.1 * s;
+      ctx.shadowColor = "rgba(0,0,0,0.35)"; ctx.shadowBlur = 0.27 * s * dpr; ctx.shadowOffsetY = 0.1 * s * dpr;   // sombra não passa pela CTM
       const fade = t < T_FINAL ? 0 : clamp01((t - T_FINAL - 0.12) / 0.2);
       for (const it of cells.values()) {
         if (!it.alive) continue;
@@ -959,25 +962,28 @@
       ctx.shadowColor = "transparent";
     }
 
-    let raf = 0;
-    // desenha em tempo real; chama onHandoff uma vez, no instante da passagem; devolve o instante (ms)
+    let raf = 0, handoffTimer = 0;
+    // desenha em tempo real e agenda onHandoff para o instante da passagem; devolve esse instante (ms).
+    // Um relógio só: t0 é o agora, e a passagem vai por setTimeout, o mesmo relógio dos cues e do fim da
+    // abertura. rAF não roda em aba oculta; se ele atrasar, o desenho pula junto com o som, em vez de
+    // a varredura chegar depois do som e do fim.
     function start(canvas, onHandoff) {
       stop();
       const ctx = canvas.getContext("2d"); if (!ctx) return 0;
-      const dpr = Math.min(2, window.devicePixelRatio || 1); let t0 = 0, handed = false;
+      const t0 = performance.now();
+      handoffTimer = setTimeout(onHandoff, HANDOFF_MS);
       const frame = (now) => {
-        if (!t0) t0 = now;
+        const dpr = Math.min(2, window.devicePixelRatio || 1);   // por frame: a janela pode mudar de monitor no meio
         const W = canvas.clientWidth, H = canvas.clientHeight, bw = Math.round(W * dpr), bh = Math.round(H * dpr);
         if (canvas.width !== bw || canvas.height !== bh) { canvas.width = bw; canvas.height = bh; }
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-        const ms = now - t0; render(ctx, W, H, ms / 1000);
-        if (!handed && ms >= HANDOFF_MS) { handed = true; onHandoff(); }
+        const ms = Math.max(0, now - t0); render(ctx, W, H, ms / 1000, dpr);
         if (ms < END_MS) raf = requestAnimationFrame(frame); else { ctx.clearRect(0, 0, W, H); raf = 0; }
       };
       raf = requestAnimationFrame(frame);
       return HANDOFF_MS;
     }
-    function stop() { if (raf) cancelAnimationFrame(raf); raf = 0; }
+    function stop() { if (raf) cancelAnimationFrame(raf); raf = 0; clearTimeout(handoffTimer); handoffTimer = 0; }
     return { ready, start, stop, render, layout, HANDOFF_MS };
   })();
 
@@ -1039,13 +1045,20 @@
     Promise.all([fromGesture ? Promise.resolve(true) : probeAutoplay(), MOTION.ready(700)]).then(([soundOk, motionOk]) => {
       if (run !== introRun || introPhase !== "playing") return;
       if (!soundOk) return showGate();
-      const canvas = el.querySelector("canvas.motion");
-      const offset = motionOk && canvas ? MOTION.start(canvas, startSweep) : 0;   // sem motion (kit não carregou): só a varredura
-      if (!offset) startSweep();
-      playCues(offset - MOTION.HANDOFF_MS);
-      introTimer = setTimeout(() => stopIntro(false), offset + SWEEP_MS);
+      const go = () => {
+        if (run !== introRun || introPhase !== "playing") return;
+        const canvas = el.querySelector("canvas.motion"), reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const offset = motionOk && canvas && !reduce ? MOTION.start(canvas, startSweep) : 0;   // sem motion (kit não carregou, ou movimento reduzido): só a varredura
+        if (!offset) startSweep();
+        playCues(offset - MOTION.HANDOFF_MS);
+        introTimer = setTimeout(() => stopIntro(false), offset + SWEEP_MS);
+      };
+      // aba de fundo (cmd+clique): espera ficar visível para começar do zero, em vez de tocar para ninguém
+      if (document.hidden) document.addEventListener("visibilitychange", function once() { if (!document.hidden) { document.removeEventListener("visibilitychange", once); go(); } }); else go();
     });
   }
+  // aba escondida no meio da abertura: corta (imagem parada, som sem imagem); REVER continua no rodapé
+  document.addEventListener("visibilitychange", () => { if (document.hidden && introPhase === "playing") stopIntro(true); });
   // cut = interrompida (Pular, Esc): corta o som; no fim natural a cauda da varredura termina sobre a home
   function stopIntro(cut) {
     clearTimeout(introTimer); MOTION.stop(); introPhase = "off"; introRun++;
