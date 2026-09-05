@@ -1154,7 +1154,7 @@
       "genre": "prestige-drama",
       "since": "0.2.0",
       "needs_photo": false,
-      "files": 9,
+      "files": 8,
       "badge": null,
       "install_url": "https://raw.githubusercontent.com/AgentsFlix/skills/v0.4.3/skills/copy-voz/SKILL.md",
       "install_cmd": "hermes skills install https://raw.githubusercontent.com/AgentsFlix/skills/v0.4.3/skills/copy-voz/SKILL.md",

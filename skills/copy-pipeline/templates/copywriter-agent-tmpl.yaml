@@ -3,7 +3,7 @@
 #
 # USAGE:
 # 1. Execute tasks/create-copywriter-agent.md for the full pipeline
-# 2. Use this template with extracted data from outputs/minds/{slug}/analysis/
+# 2. Use this template with extracted data from {pasta}/{slug}/analysis/
 # 3. Replace all {{placeholder}} markers with actual content
 #
 # REFERENCE AGENTS:
@@ -140,7 +140,7 @@ agent_file_template: |
   # ==============================================================================
   # OPERATIONAL FRAMEWORKS (10 Required)
   # Extract using tasks/extract-frameworks.md
-  # Output: outputs/minds/{slug}/analysis/frameworks.yaml
+  # Output: {pasta}/{slug}/analysis/frameworks.yaml
   # ==============================================================================
 
   operational_frameworks:
@@ -207,7 +207,7 @@ agent_file_template: |
   # ==============================================================================
   # COMMUNICATION DNA
   # Extract using tasks/extract-communication-dna.md
-  # Output: outputs/minds/{slug}/analysis/communication-dna.yaml
+  # Output: {pasta}/{slug}/analysis/communication-dna.yaml
   # ==============================================================================
 
   communication_dna:
@@ -363,7 +363,7 @@ agent_file_template: |
   # ==============================================================================
   # SIGNATURE PHRASES (42+ Required in 7 Tiers)
   # Extract using tasks/extract-signature-phrases.md
-  # Output: outputs/minds/{slug}/analysis/signature-phrases.yaml
+  # Output: {pasta}/{slug}/analysis/signature-phrases.yaml
   # ==============================================================================
 
   signature_phrases:
@@ -449,7 +449,7 @@ agent_file_template: |
   # ==============================================================================
   # AUTHORITY PROOF ARSENAL
   # Extract using tasks/build-authority-arsenal.md
-  # Output: outputs/minds/{slug}/analysis/authority-arsenal.yaml
+  # Output: {pasta}/{slug}/analysis/authority-arsenal.yaml
   # ==============================================================================
 
   authority_proof_arsenal:
@@ -573,7 +573,7 @@ agent_file_template: |
   # ==============================================================================
   # OBJECTION ALGORITHMS (5 Required)
   # Extract using tasks/create-objection-algorithms.md
-  # Output: outputs/minds/{slug}/analysis/objection-algorithms.yaml
+  # Output: {pasta}/{slug}/analysis/objection-algorithms.yaml
   # ==============================================================================
 
   objection_algorithms:
@@ -706,7 +706,7 @@ agent_file_template: |
   # ==============================================================================
   # COPYWRITER-SPECIFIC RULES
   # Extract from source materials - explicit rules and advice
-  # Output: outputs/minds/{slug}/analysis/{slug}-rules.yaml
+  # Output: {pasta}/{slug}/analysis/{slug}-rules.yaml
   # ==============================================================================
 
   {{copywriter_slug}}_rules:
@@ -832,12 +832,12 @@ agent_file_template: |
 # 1. Run the full pipeline: `*task create-copywriter-agent`
 # 2. After all phases complete, load this template
 # 3. Replace all {{placeholder}} markers with extracted data from:
-#    - outputs/minds/{slug}/analysis/frameworks.yaml
-#    - outputs/minds/{slug}/analysis/communication-dna.yaml
-#    - outputs/minds/{slug}/analysis/signature-phrases.yaml
-#    - outputs/minds/{slug}/analysis/authority-arsenal.yaml
-#    - outputs/minds/{slug}/analysis/objection-algorithms.yaml
-#    - outputs/minds/{slug}/analysis/{slug}-rules.yaml
+#    - {pasta}/{slug}/analysis/frameworks.yaml
+#    - {pasta}/{slug}/analysis/communication-dna.yaml
+#    - {pasta}/{slug}/analysis/signature-phrases.yaml
+#    - {pasta}/{slug}/analysis/authority-arsenal.yaml
+#    - {pasta}/{slug}/analysis/objection-algorithms.yaml
+#    - {pasta}/{slug}/analysis/{slug}-rules.yaml
 # 4. Save to: .aios-core/expansion-packs/copywriter-os/agents/{slug}.md
 # 5. Validate using: checklists/copywriter-agent-creation-checklist.md
 #

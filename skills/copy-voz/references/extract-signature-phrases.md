@@ -420,7 +420,7 @@ Verify no semantic duplicates:
 
 ### File Location
 ```
-outputs/minds/{slug}/analysis/signature-phrases.yaml
+{pasta}/{slug}/analysis/signature-phrases.yaml
 ```
 
 ### Required Sections

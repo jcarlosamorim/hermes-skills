@@ -31,7 +31,6 @@ Cada sub-tarefa é uma referência com `Inputs`, fórmulas, `Output Format` e `Q
 | extract communication dna | `references/extract-communication-dna.md` |
 | extract signature phrases | `references/extract-signature-phrases.md` |
 | extract frameworks | `references/extract-frameworks.md` |
-| load mmos voice | `references/load-mmos-voice.md` |
 
 ## Procedure
 
@@ -67,7 +66,6 @@ Validada contra Hermes Agent 0.20.6 (tag v2026.8.27) em 2026-09-04.
 - `references/extract-communication-dna.md`
 - `references/extract-frameworks.md`
 - `references/extract-signature-phrases.md`
-- `references/load-mmos-voice.md`
 - `templates/communication-dna-tmpl.yaml`
 - `templates/frameworks-extraction-tmpl.yaml`
 - `templates/signature-phrases-tmpl.yaml`
@@ -94,7 +92,7 @@ Comprehensive validation checklist for copywriter agent creation using the Copyw
 3. Run through each section of this checklist
 4. Calculate section scores and overall score
 5. Address any failures before deployment
-6. Create validation report at `outputs/minds/{slug}/analysis/validation-report.md`
+6. Create validation report at `{pasta}/{slug}/analysis/validation-report.md`
 
 ---
 
@@ -512,7 +510,7 @@ For rapid validation, check these critical items:
 ## Validation Report Template
 
 After completing validation, create report at:
-`outputs/minds/{slug}/analysis/validation-report.md`
+`{pasta}/{slug}/analysis/validation-report.md`
 
 ```markdown
 # Validation Report: {Copywriter Name} Agent
@@ -628,7 +626,7 @@ inputs:
 
 outputs:
   primary:
-    - communication_dna_file: "outputs/minds/{slug}/analysis/communication-dna.yaml"
+    - communication_dna_file: "{pasta}/{slug}/analysis/communication-dna.yaml"
   specifications:
     - 15+ mandatory words with frequency and context
     - 10+ forbidden words with alternatives
@@ -725,9 +723,9 @@ Before starting, ensure you have:
 
 | Input | Location | Minimum | Purpose |
 |-------|----------|---------|---------|
-| Source Materials | `outputs/minds/{slug}/sources/` | 20 files | Pattern extraction |
-| Psychometric Profile | `outputs/minds/{slug}/analysis/psychometrics.json` | Optional | Communication style mapping |
-| Previous Frameworks | `outputs/minds/{slug}/analysis/frameworks.yaml` | Optional | Terminology cross-reference |
+| Source Materials | `{pasta}/{slug}/sources/` | 20 files | Pattern extraction |
+| Psychometric Profile | `{pasta}/{slug}/analysis/psychometrics.json` | Optional | Communication style mapping |
+| Previous Frameworks | `{pasta}/{slug}/analysis/frameworks.yaml` | Optional | Terminology cross-reference |
 
 ### Input Elicitation
 
@@ -739,7 +737,7 @@ fields:
   - slug: "Mind slug (snake_case, e.g., dan_kennedy)"
   - source_directory: "Path to source materials"
   - psychometric_path: "Path to psychometric JSON (optional)"
-  - output_path: "Output path (default: outputs/minds/{slug}/analysis/communication-dna.yaml)"
+  - output_path: "Output path (default: {pasta}/{slug}/analysis/communication-dna.yaml)"
 ```
 
 ### Quality Gate: Prerequisites
@@ -1926,7 +1924,7 @@ validation_checklist:
 
 ### Step 8.3: Save Output
 
-Save to: `outputs/minds/{slug}/analysis/communication-dna.yaml`
+Save to: `{pasta}/{slug}/analysis/communication-dna.yaml`
 
 ### Quality Gate: Final Output
 
@@ -2185,7 +2183,7 @@ Each extracted framework must follow this structure (based on david-ogilvy.md):
 elicit: true
 question: "Where are the source materials for this copywriter?"
 options:
-  - Mind directory (outputs/minds/{slug}/sources/)
+  - Mind directory ({pasta}/{slug}/sources/)
   - External folder path
   - Specific file list
 ```
@@ -2480,7 +2478,7 @@ Run through complete checklist:
 
 ## OUTPUT
 
-**Location:** Save to `outputs/minds/{copywriter_slug}/analysis/frameworks.yaml`
+**Location:** Save to `{pasta}/{slug}/analysis/frameworks.yaml`
 
 **Format:** YAML following `templates/frameworks-extraction-tmpl.yaml`
 
@@ -2962,7 +2960,7 @@ Verify no semantic duplicates:
 
 ### File Location
 ```
-outputs/minds/{slug}/analysis/signature-phrases.yaml
+{pasta}/{slug}/analysis/signature-phrases.yaml
 ```
 
 ### Required Sections
@@ -3095,332 +3093,6 @@ Then provide:
 
 ---
 
-## Referência: references/load-mmos-voice.md
-
-# Load MMOS Voice Clone Task
-
-Task para carregar artefatos de clone cognitivo do sistema MMOS e integrar com produção de copy.
-
-## Metadata
-
-```yaml
-task:
-  name: Load MMOS Voice Clone
-  id: load-mmos-voice
-  version: "1.0"
-  category: voice_integration
-  estimated_output: "Voice context loaded"
-  dependencies:
-    - outputs/minds/{slug}/
-    - squads/copy/data/expert-clone-mapping.yaml
-```
-
----
-
-## PHASE 0: CLONE DETECTION
-
-### 0.1 Auto-Detect Expert from Briefing
-
-```yaml
-auto_detection:
-  triggers:
-    - "Nome do expert mencionado no briefing"
-    - "Curso/produto associado ao expert"
-    - "Domínio específico (ex: cohort-based courses → José Amorim)"
-
-  detection_flow:
-    1. Parse briefing for expert name
-    2. Check expert-clone-mapping.yaml
-    3. If found → auto-load clone
-    4. If not found → ask user which clone to use
-```
-
-### 0.2 Manual Clone Selection
-
-Se expert não for detectado automaticamente:
-
-```
-Perguntar ao usuário:
-- "Qual expert deve ser o autor desta copy?"
-- "Temos clone disponível? [listar disponíveis]"
-- "Deseja usar tom de voz genérico?"
-```
-
----
-
-## PHASE 1: LOAD VOICE ARTIFACTS
-
-### 1.1 Required Artifacts (MUST load)
-
-```yaml
-required_artifacts:
-  voice_guide:
-    path: "outputs/minds/{slug}/artifacts/voice_guide.md"
-    purpose: "Quick reference de voz e estilo"
-    contains:
-      - "Signature phrases"
-      - "Espiral expansiva structure"
-      - "Rhetorical devices"
-      - "Anti-patterns (what NOT to do)"
-      - "Voice checklist"
-
-  writing_style:
-    path: "outputs/minds/{slug}/artifacts/writing_style.yaml"
-    purpose: "Padrões linguísticos detalhados"
-    contains:
-      - "Sentence structure patterns"
-      - "Vocabulary preferences"
-      - "Punctuation style"
-      - "Neurological patterns in speech"
-
-  communication_templates:
-    path: "outputs/minds/{slug}/artifacts/communication_templates.md"
-    purpose: "Templates de comunicação por contexto"
-    contains:
-      - "4 personas situacionais"
-      - "Adaptation by audience"
-      - "Implementation checklist"
-
-  frameworks_synthesized:
-    path: "outputs/minds/{slug}/artifacts/frameworks_synthesized.md"
-    purpose: "Frameworks proprietários do expert"
-    contains:
-      - "Metodologias próprias"
-      - "Decision frameworks"
-      - "Teaching models"
-```
-
-### 1.2 Story Artifacts (SHOULD load)
-
-```yaml
-story_artifacts:
-  mental_archeology:
-    path: "outputs/minds/{slug}/sources/mental_archeology.yaml"
-    purpose: "Timeline de eventos, decisões críticas, frases-chave"
-    contains:
-      - "Life timeline"
-      - "Critical decisions"
-      - "Linguistic artifacts (catchphrases)"
-      - "Patterns (macro, meso, micro)"
-
-  interview_sources:
-    path: "outputs/minds/{slug}/sources/interviews/"
-    purpose: "Entrevistas com histórias pessoais"
-    contains:
-      - "Origin stories"
-      - "Turning points"
-      - "Personal anecdotes"
-
-  general_profile:
-    path: "outputs/minds/{slug}/sources/geral.md"
-    purpose: "Perfil geral com contexto biográfico"
-    contains:
-      - "Background"
-      - "Values"
-      - "Communication style overview"
-```
-
-### 1.3 Optional Artifacts
-
-```yaml
-optional_artifacts:
-  system_prompt:
-    path: "outputs/minds/{slug}/system_prompts/system-prompt-generalista.md"
-    purpose: "System prompt completo (use se precisar de contexto deep)"
-    when_to_load: "Copy muito complexa ou longa"
-
-  language_forensics:
-    path: "outputs/minds/{slug}/sources/language_forensics.md"
-    purpose: "Análise forense de linguagem"
-    when_to_load: "Precisar de voice super-fiel"
-```
-
----
-
-## PHASE 2: EXTRACT USABLE ELEMENTS
-
-### 2.1 Voice DNA Extraction
-
-Após carregar artefatos, extrair:
-
-```yaml
-voice_dna:
-  signature_phrases:
-    - "Frases de abertura (ex: 'Olha só...', 'Vem comigo...')"
-    - "Frases de transição (ex: 'E aí que tá...')"
-    - "Frases de fechamento (ex: 'Simples assim.', 'Ponto.')"
-
-  rhetorical_patterns:
-    - "Metáforas visuais-espaciais"
-    - "Perguntas retóricas antes de responder"
-    - "Antíteses ('Não é X, é Y')"
-    - "Parênteses como pensamento paralelo (TDAH)"
-
-  emotional_markers:
-    - "Intensificadores ('MUDA tudo', 'É TRANSFORMADOR')"
-    - "Validadores empáticos ('Te entendo...', 'Faz todo sentido...')"
-    - "Provocadores intelectuais ('Mas e se...', 'Agora pensa comigo...')"
-
-  structural_patterns:
-    - "Espiral Expansiva (5 camadas)"
-    - "Alternância curtas/longas"
-    - "Confessionalidade estratégica (vulnerabilidade → aprendizado → universalização)"
-```
-
-### 2.2 Story Bank Extraction
-
-```yaml
-story_bank:
-  origin_stories:
-    - "Esquistossomose aos 7 anos (traduzir complexidade)"
-    - "Criado pelos avós (superação, origem humilde)"
-    - "7 cursos abandonados (padrão → força)"
-
-  transformation_stories:
-    - "Saída Rede Amazônica após 10 anos"
-    - "Abandono League of Legends ao descobrir IA"
-    - "De técnico mecatrônica para jornalista"
-
-  vulnerability_stories:
-    - "Reprovação 6ª série por falar muito"
-    - "TDAH como 'defeito' → 'superpoder'"
-    - "Dificuldade com rotinas"
-
-  triumph_stories:
-    - "10+ anos de TV ao vivo"
-    - "Certificações Harvard/IBM/Anthropic"
-    - "Criação de frameworks próprios (OMFA, Linchpin)"
-```
-
----
-
-## PHASE 3: APPLY TO COPY
-
-### 3.1 Copy Rewrite Process
-
-```yaml
-rewrite_process:
-  step_1_structure:
-    action: "Aplicar Espiral Expansiva"
-    layers:
-      - "Gancho emocional"
-      - "Metáfora visual"
-      - "Fundamento conceitual"
-      - "Aplicação prática"
-      - "Expansão filosófica"
-
-  step_2_voice:
-    action: "Aplicar padrões linguísticos"
-    elements:
-      - "Signature phrases"
-      - "Rhetorical patterns"
-      - "Emotional markers"
-      - "Sentence rhythm (alternância)"
-
-  step_3_stories:
-    action: "Inserir histórias pessoais quando apropriado"
-    criteria:
-      - "Relevância para o tema"
-      - "Conexão emocional"
-      - "Lição implícita"
-
-  step_4_persona:
-    action: "Selecionar persona situacional"
-    options:
-      - "Professor Socrático (aulas, didática)"
-      - "Visionário Inquieto (peers, co-criação)"
-      - "Conselheiro Empático (1-on-1, validação)"
-      - "Estrategista Direto (negócios, ROI)"
-```
-
-### 3.2 Quality Checklist
-
-```yaml
-voice_quality_checklist:
-  structure:
-    - [ ] "Usou metáfora visual-espacial?"
-    - [ ] "Alternância curtas/longas?"
-    - [ ] "Parênteses (pensamento paralelo)?"
-
-  tone:
-    - [ ] "2ª pessoa ('você')?"
-    - [ ] "Entusiasmo (não neutro)?"
-    - [ ] "Urgência existencial calibrada?"
-
-  rhetoric:
-    - [ ] "Perguntou antes de responder (quando apropriado)?"
-    - [ ] "Usou antítese 'Não é X, é Y' (se aplicável)?"
-
-  authenticity:
-    - [ ] "Confessaria vulnerabilidade se relevante?"
-    - [ ] "Evitou jargão desnecessário?"
-    - [ ] "Evitou tom corporativo/distante?"
-
-  stories:
-    - [ ] "História pessoal relevante incluída?"
-    - [ ] "Lição implícita clara?"
-    - [ ] "Conexão emocional estabelecida?"
-
-  scoring: "4+ checks = ✅ Sounds like expert | <3 = Revise"
-```
-
----
-
-## PHASE 4: OUTPUT
-
-### 4.1 Deliverables
-
-```yaml
-deliverables:
-  voice_context:
-    description: "Contexto de voz carregado na sessão"
-    includes:
-      - "Voice DNA summary"
-      - "Story bank available"
-      - "Frameworks loaded"
-
-  rewritten_copy:
-    description: "Copy reescrita com voz do expert"
-    includes:
-      - "Original vs Rewritten comparison"
-      - "Voice elements applied"
-      - "Stories integrated"
-```
-
----
-
-## APPENDIX: CLONE AVAILABILITY
-
-### Available MMOS Clones (as of 2026-02)
-
-```yaml
-available_clones:
-  experts:
-    - jose_carlos_amorim  # Cohort-based courses, AI, Nexialismo
-    - alan_nicolas        # AI development, automation
-
-  copywriters:
-    - gary_halbert
-    - dan_kennedy
-    - david_ogilvy
-    - eugene_schwartz
-    - joe_sugarman
-    - ben_settle
-    - andre_chaperon
-    - stefan_georgi
-    - john_carlton
-    # ... (check outputs/minds/ for complete list)
-```
-
----
-
-*Task Version: 1.0*
-*Integration: MMOS + Copy Squad*
-*Created: 2026-02-02*
-
-
----
-
 ## Referência: templates/communication-dna-tmpl.yaml
 
 # Communication DNA Template
@@ -3429,7 +3101,7 @@ available_clones:
 # USAGE:
 # 1. Execute tasks/extract-communication-dna.md with source materials
 # 2. Fill this template with extracted data
-# 3. Save to outputs/minds/{slug}/analysis/communication-dna.yaml
+# 3. Save to {pasta}/{slug}/analysis/communication-dna.yaml
 #
 # REFERENCE:
 # - tasks/extract-communication-dna.md (extraction process)
@@ -3442,7 +3114,7 @@ template:
   output:
     format: yaml
     filename: "communication-dna.yaml"
-    location: "outputs/minds/{slug}/analysis/"
+    location: "{pasta}/{slug}/analysis/"
 
 # =============================================================================
 # TEMPLATE OUTPUT STRUCTURE
@@ -3999,7 +3671,7 @@ example_filled_entry:
 # After completing extraction:
 # 1. Remove the example_filled_entry section
 # 2. Run YAML validation
-# 3. Save to outputs/minds/{slug}/analysis/communication-dna.yaml
+# 3. Save to {pasta}/{slug}/analysis/communication-dna.yaml
 # 4. Continue to next phase of agent creation pipeline
 
 
@@ -4028,7 +3700,7 @@ metadata:
   extraction_date: "[YYYY-MM-DD]"  # Date of extraction
   total_frameworks: 10  # Must be exactly 10
   source_files_count: "[XX]"  # Number of source files processed
-  source_directory: "[PATH]"  # e.g., "outputs/minds/dan_koe/sources/MM Dan/"
+  source_directory: "[PATH]"  # e.g., "{pasta}/fontes/"
   extractor: "AIOS extract-frameworks task v1.0"
 
 # Category coverage summary - update counts after extraction

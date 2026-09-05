@@ -45,7 +45,7 @@ inputs:
 
 outputs:
   primary:
-    - communication_dna_file: "outputs/minds/{slug}/analysis/communication-dna.yaml"
+    - communication_dna_file: "{pasta}/{slug}/analysis/communication-dna.yaml"
   specifications:
     - 15+ mandatory words with frequency and context
     - 10+ forbidden words with alternatives
@@ -142,9 +142,9 @@ Before starting, ensure you have:
 
 | Input | Location | Minimum | Purpose |
 |-------|----------|---------|---------|
-| Source Materials | `outputs/minds/{slug}/sources/` | 20 files | Pattern extraction |
-| Psychometric Profile | `outputs/minds/{slug}/analysis/psychometrics.json` | Optional | Communication style mapping |
-| Previous Frameworks | `outputs/minds/{slug}/analysis/frameworks.yaml` | Optional | Terminology cross-reference |
+| Source Materials | `{pasta}/{slug}/sources/` | 20 files | Pattern extraction |
+| Psychometric Profile | `{pasta}/{slug}/analysis/psychometrics.json` | Optional | Communication style mapping |
+| Previous Frameworks | `{pasta}/{slug}/analysis/frameworks.yaml` | Optional | Terminology cross-reference |
 
 ### Input Elicitation
 
@@ -156,7 +156,7 @@ fields:
   - slug: "Mind slug (snake_case, e.g., dan_kennedy)"
   - source_directory: "Path to source materials"
   - psychometric_path: "Path to psychometric JSON (optional)"
-  - output_path: "Output path (default: outputs/minds/{slug}/analysis/communication-dna.yaml)"
+  - output_path: "Output path (default: {pasta}/{slug}/analysis/communication-dna.yaml)"
 ```
 
 ### Quality Gate: Prerequisites
@@ -1343,7 +1343,7 @@ validation_checklist:
 
 ### Step 8.3: Save Output
 
-Save to: `outputs/minds/{slug}/analysis/communication-dna.yaml`
+Save to: `{pasta}/{slug}/analysis/communication-dna.yaml`
 
 ### Quality Gate: Final Output
 

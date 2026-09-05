@@ -1630,7 +1630,6 @@ O que fazer agora
 # ═══════════════════════════════════════════════════════════════════════════
 # HORMOZI FRAMEWORK - EXTRAÍDO DOS ARTIFACTS MMOS
 # Data: 2026-01-23 | Enrichment Phase ENR-004
-# Fonte: outputs/minds/alex_hormozi/artifacts/
 # ═══════════════════════════════════════════════════════════════════════════
 
 ## Hormozi Hook Patterns

@@ -192,6 +192,7 @@
   .panel .sub { margin: 0; font-size: 15px; font-weight: 600; color: #d6d6d6; }
   .panel .body { padding: 0 40px 36px; display: grid; grid-template-columns: 1.5fr 1fr; gap: 36px; }
   .panel .syn { margin: 0 0 24px; font-size: 14px; line-height: 1.75; color: #c9c9c9; text-wrap: pretty; }
+  .panel .legal { margin: -12px 0 24px; font-size: 12px; line-height: 1.6; color: #8f8f8f; }
   .lbl { font-size: 11px; letter-spacing: 0.12em; color: #8f8f8f; margin-bottom: 8px; }
   .lbl.tight { margin: 0; } .lbl.mt { margin-top: 14px; } .lbl.mb9 { margin-bottom: 9px; } .lbl.mb10 { margin-bottom: 10px; } .tags.last { margin-bottom: 0; }
   .panel .how { margin: 0 0 20px; font-size: 13px; line-height: 1.7; color: #d6d6d6; padding-left: 14px; border-left: 2px solid var(--accent); text-wrap: pretty; }
@@ -406,7 +407,7 @@
   let ROW_DEFS = [...TOP_ROWS, ...CURATED_FALLBACK, ...CAT_ROWS];
   function buildRows(cat) {
     const cur = Array.isArray(cat.curated) && cat.curated.length
-      ? cat.curated.filter((c) => c && c.id && Array.isArray(c.slugs)).map((c) => ({ id: String(c.id), title: () => String(c.title || c.id), note: String(c.note || ""), ids: c.slugs.map(String) }))
+      ? cat.curated.filter((c) => c && /^[a-z0-9-]{1,40}$/.test(String(c.id)) && Array.isArray(c.slugs)).map((c) => ({ id: String(c.id), title: () => String(c.title || c.id), note: String(c.note || ""), ids: c.slugs.map(String) }))   // id vira id/atributo no HTML: só slug seguro
       : CURATED_FALLBACK;
     return [...TOP_ROWS, ...cur, ...CAT_ROWS];
   }
@@ -596,12 +597,12 @@
   }
   function rowHtml(r, items) {
     return `
-        <section class="rowsec" id="${r.id}">
+        <section class="rowsec" id="${esc(r.id)}">
           <div class="head">
             <div><h2>${esc(r.title())}</h2>${r.note ? `<p class="row-desc">${esc(r.note)}</p>` : ""}</div>
-            <div class="arrows"><button class="arrow" data-act="prev" data-row="${r.id}" aria-label="anterior">‹</button><button class="arrow" data-act="next" data-row="${r.id}" aria-label="próximo">›</button></div>
+            <div class="arrows"><button class="arrow" data-act="prev" data-row="${esc(r.id)}" aria-label="anterior">‹</button><button class="arrow" data-act="next" data-row="${esc(r.id)}" aria-label="próximo">›</button></div>
           </div>
-          <div class="row-scroll" data-row="${r.id}">${items.map(cardHtml).join("")}</div>
+          <div class="row-scroll" data-row="${esc(r.id)}">${items.map(cardHtml).join("")}</div>
         </section>`;
   }
   function renderRows() {
@@ -680,6 +681,7 @@
           <div class="body">
             <div>
               <p class="syn">${esc(s.syn)}</p>
+              ${s.badge === "LENDA" ? `<p class="legal">Skill independente: reúne o método publicado em livros, cursos e entrevistas do autor. Sem afiliação nem endosso dele.</p>` : ""}
               <div class="lbl mono">COMO USAR</div>
               <p class="how">${esc(s.how)}</p>
               <div class="install">${installHtml(s)}</div>
@@ -772,7 +774,7 @@
     else { const ta = document.createElement("textarea"); ta.value = text; document.body.appendChild(ta); ta.select(); try { document.execCommand("copy"); } catch (e) {} ta.remove(); done(); }
   }
   function scrollRow(id, dir) {
-    const el = document.querySelector('.row-scroll[data-row="' + id + '"]');
+    const el = document.querySelector('.row-scroll[data-row="' + CSS.escape(String(id)) + '"]');
     if (el) el.scrollBy({ left: dir * el.clientWidth * 0.82, behavior: "smooth" });
   }
 

@@ -138,7 +138,7 @@ fields:
 - [ ] Source directory exists with autobiographical content
 - [ ] At least 2 files contain personal journey/story details
 - [ ] At least 3 files contain business metrics or achievements
-- [ ] Output directory exists at `outputs/minds/{slug}/analysis/`
+- [ ] Output directory exists at `{pasta}/{slug}/analysis/`
 
 ---
 
@@ -591,7 +591,7 @@ proof_stack_templates:
 
 ### Output Location
 
-Save to: `outputs/minds/{slug}/analysis/authority-arsenal.yaml`
+Save to: `{pasta}/{slug}/analysis/authority-arsenal.yaml`
 
 ---
 
@@ -3681,7 +3681,7 @@ Mas aqui está a verdade: [RESPOSTA]"
 # USAGE:
 # 1. Execute tasks/build-authority-arsenal.md
 # 2. Fill this template with extracted data from source materials
-# 3. Save to outputs/minds/{slug}/analysis/authority-arsenal.yaml
+# 3. Save to {pasta}/{slug}/analysis/authority-arsenal.yaml
 #
 # REFERENCE:
 # - agents/david-ogilvy.md authority_proof_arsenal section (structure model)
@@ -3694,7 +3694,7 @@ template:
   output:
     format: yaml
     filename: "authority-arsenal.yaml"
-    location: "outputs/minds/{slug}/analysis/"
+    location: "{pasta}/{slug}/analysis/"
 
 # =============================================================================
 # HEADER METADATA
@@ -4265,7 +4265,7 @@ scoring:
 # =============================================================================
 #
 # 1. Execute tasks/build-authority-arsenal.md with source materials
-# 2. Copy this template to outputs/minds/{slug}/analysis/authority-arsenal.yaml
+# 2. Copy this template to {pasta}/{slug}/analysis/authority-arsenal.yaml
 # 3. Replace all {{placeholder}} markers with extracted data
 # 4. Ensure all sources are cited
 # 5. Run quality checklist before finalizing
