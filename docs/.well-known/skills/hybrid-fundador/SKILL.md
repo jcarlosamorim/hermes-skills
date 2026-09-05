@@ -5,9 +5,9 @@ license: MIT
 compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
   author: José Carlos Amorim
-  version: 0.4.1
+  version: 0.4.2
   hub: https://agentsflix.ai
-  source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/hybrid-fundador
+  source: https://github.com/AgentsFlix/hermes-skills/tree/main/skills/hybrid-fundador
   tags: hybrid-workspace, negocio, elicitacao, yaml
   related: hybrid-diagnostico, hybrid-proxima-acao, hybrid-perfil, hybrid-icp
   config: 'hybrid.pasta: Pasta do negócio no seu computador: é onde os YAML do Hybrid Workspace vivem (perfil, ICP, marca, oferta, diagnósticos). Um negócio por pasta.'

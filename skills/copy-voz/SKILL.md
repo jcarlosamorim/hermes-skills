@@ -1,7 +1,7 @@
 ---
 name: copy-voz
 description: "Extrai o DNA de comunicação de uma pessoa: vocabulário, frases-assinatura, frameworks que ela repete, o jeito de abrir e fechar. Use quando o pedido envolver voz da marca, DNA de comunicação…"
-version: 0.4.1
+version: 0.4.2
 author: "José Carlos Amorim"
 license: MIT
 platforms: [linux, macos, windows]

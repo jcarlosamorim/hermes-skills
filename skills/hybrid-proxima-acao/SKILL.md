@@ -1,7 +1,7 @@
 ---
 name: hybrid-proxima-acao
 description: "Empresário para na frente de dez gaps e vinte recomendações. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando: \"qual a próxima ação para [negócio]\"."
-version: 0.4.1
+version: 0.4.2
 author: "José Carlos Amorim"
 license: MIT
 platforms: [linux, macos, windows]

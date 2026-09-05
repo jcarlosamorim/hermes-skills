@@ -10,8 +10,8 @@ HERMES_TAG = "v2026.8.27"                                            # a versão
 HERMES_SHA = "5fc308a70719a83cccdbba4c0e39c23f5a8239d5"             # commit da tag: a tag pode ser movida, o commit não
 GUARD_SHA256 = "e99c4b7967474ba7a5a29109717b00aa21f1d4535f52fe3df2771aa203156ce6"  # tools/skills_guard.py nesse commit
 
-REPO_SLUG = "jcarlosamorim/hermes-skills"
-WELLKNOWN = "https://jcarlosamorim.github.io/hermes-skills"          # host técnico: catálogo, .well-known, coláveis
+REPO_SLUG = "AgentsFlix/hermes-skills"                               # transferido de jcarlosamorim em 05/09/2026; o GitHub redireciona o slug antigo
+WELLKNOWN = "https://agentsflix.github.io/hermes-skills"             # host técnico: catálogo, .well-known, coláveis
 HUB_URL = "https://agentsflix.ai"                                     # a página (agentflix.nexialismo.ai redireciona para cá)
 
 DESC_MAX = 200                                                        # Claude.ai rejeita description maior; `hermes skills search` lê os primeiros chars

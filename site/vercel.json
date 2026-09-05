@@ -3,23 +3,23 @@
   "rewrites": [
     {
       "source": "/catalog.json",
-      "destination": "https://jcarlosamorim.github.io/hermes-skills/catalog.json"
+      "destination": "https://agentsflix.github.io/hermes-skills/catalog.json"
     },
     {
       "source": "/.well-known/:path*",
-      "destination": "https://jcarlosamorim.github.io/hermes-skills/.well-known/:path*"
+      "destination": "https://agentsflix.github.io/hermes-skills/.well-known/:path*"
     },
     {
       "source": "/prompt/:path*",
-      "destination": "https://jcarlosamorim.github.io/hermes-skills/prompt/:path*"
+      "destination": "https://agentsflix.github.io/hermes-skills/prompt/:path*"
     },
     {
       "source": "/covers/:path*",
-      "destination": "https://jcarlosamorim.github.io/hermes-skills/covers/:path*"
+      "destination": "https://agentsflix.github.io/hermes-skills/covers/:path*"
     },
     {
       "source": "/download/:tag/:file",
-      "destination": "https://github.com/jcarlosamorim/hermes-skills/releases/download/:tag/:file"
+      "destination": "https://github.com/AgentsFlix/hermes-skills/releases/download/:tag/:file"
     }
   ],
   "headers": [

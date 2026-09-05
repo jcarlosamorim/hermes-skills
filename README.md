@@ -5,7 +5,7 @@ lançamento, processos (SOP), o **Hybrid Workspace** do seu negócio, operação
 Código aberto, licença MIT, escaneado pelo mesmo scanner que o Hermes roda na instalação.
 
 **Página do catálogo:** https://agentsflix.ai (clique num card, escolha o agente, copie o comando).
-O GitHub Pages do repo (https://jcarlosamorim.github.io/hermes-skills/) segue como host técnico: catálogo,
+O GitHub Pages do repo (https://agentsflix.github.io/hermes-skills/) segue como host técnico: catálogo,
 `.well-known` e coláveis. A página lê tudo de lá, então uma release nova aparece nela sem deploy.
 
 ## Instalar
@@ -15,13 +15,13 @@ Cada skill existe em três formas, geradas da mesma fonte. Na página, cada card
 
 | agente | como | observação |
 |---|---|---|
-| **Hermes** | `hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/<slug>/SKILL.md` ou `hermes skills tap add jcarlosamorim/hermes-skills` | tag = aula reproduzível; tap = descoberta e `update` |
-| **Claude.ai** (site/app, Free a Enterprise) | baixe `<slug>.zip` na [release](https://github.com/jcarlosamorim/hermes-skills/releases) e envie em *Customize › Skills › + › Upload* | exige "Code execution and file creation" ligado |
-| **Claude Code** | `npx skills add https://jcarlosamorim.github.io/hermes-skills --skill <slug> -a claude-code -g` | exige Node |
+| **Hermes** | `hermes skills install https://raw.githubusercontent.com/AgentsFlix/hermes-skills/v0.4.0/skills/<slug>/SKILL.md` ou `hermes skills tap add AgentsFlix/hermes-skills` | tag = aula reproduzível; tap = descoberta e `update` |
+| **Claude.ai** (site/app, Free a Enterprise) | baixe `<slug>.zip` na [release](https://github.com/AgentsFlix/hermes-skills/releases) e envie em *Customize › Skills › + › Upload* | exige "Code execution and file creation" ligado |
+| **Claude Code** | `npx skills add https://agentsflix.github.io/hermes-skills --skill <slug> -a claude-code -g` | exige Node |
 | **ChatGPT com Skills** (Business, Enterprise, Edu; Plus/Pro em Work) | baixe o zip e envie em *Plugins › Skills › Create › Upload*; invoque com `@<slug>` | o ChatGPT escaneia o arquivo antes de liberar |
-| **ChatGPT desktop / Codex** | `npx skills add https://jcarlosamorim.github.io/hermes-skills --skill <slug> -a codex -g` | ou pasta em `~/.agents/skills/` |
-| **ChatGPT sem Skills** (qualquer plano) | crie um *Project*, envie `https://jcarlosamorim.github.io/hermes-skills/prompt/<slug>.md` em Files e cole o texto de ativação (está no topo do arquivo) nas instruções | versão colável: SKILL.md + referências num arquivo só |
-| **Cursor, Copilot, Gemini CLI, Kiro e mais 70** | `npx skills add https://jcarlosamorim.github.io/hermes-skills --skill <slug> -g` | o instalador escolhe a pasta de cada agente |
+| **ChatGPT desktop / Codex** | `npx skills add https://agentsflix.github.io/hermes-skills --skill <slug> -a codex -g` | ou pasta em `~/.agents/skills/` |
+| **ChatGPT sem Skills** (qualquer plano) | crie um *Project*, envie `https://agentsflix.github.io/hermes-skills/prompt/<slug>.md` em Files e cole o texto de ativação (está no topo do arquivo) nas instruções | versão colável: SKILL.md + referências num arquivo só |
+| **Cursor, Copilot, Gemini CLI, Kiro e mais 70** | `npx skills add https://agentsflix.github.io/hermes-skills --skill <slug> -g` | o instalador escolhe a pasta de cada agente |
 
 `ads-otimizar` e `hybrid-etl` rodam script e precisam de rede: só Hermes, Claude Code e Codex.
 
