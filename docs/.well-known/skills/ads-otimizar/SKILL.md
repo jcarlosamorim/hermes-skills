@@ -6,7 +6,7 @@ compatibility: 'Requer: terminal. Antes de usar, defina no ambiente: META_AUTH. 
 metadata:
   author: José Carlos Amorim
   version: 0.4.1
-  hub: https://agentflix.nexialismo.ai
+  hub: https://agentsflix.ai
   source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/ads-otimizar
   tags: trafego-pago, meta-ads, otimizacao, graph-api, blueprint
   related: ads-gate-compliance, ads-plano

@@ -6,7 +6,7 @@ compatibility: 'Requer: web, terminal. Agent Skills (agentskills.io). Funciona e
 metadata:
   author: José Carlos Amorim
   version: 0.4.1
-  hub: https://agentflix.nexialismo.ai
+  hub: https://agentsflix.ai
   source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/hybrid-etl
   tags: hybrid-workspace, negocio, elicitacao, yaml
   related: hybrid-diagnostico, hybrid-proxima-acao, hybrid-perfil, hybrid-fundador

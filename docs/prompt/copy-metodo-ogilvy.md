@@ -1,6 +1,6 @@
 # copy-metodo-ogilvy · versão para colar
 
-> Esta é a mesma skill de https://agentflix.nexialismo.ai, num arquivo só, para quem não instala skill:
+> Esta é a mesma skill de https://agentsflix.ai, num arquivo só, para quem não instala skill:
 > ChatGPT sem Skills no plano, Claude sem upload, ou qualquer chat. Onde o texto disser `references/arquivo.md`
 > ou `templates/arquivo`, o conteúdo está na seção **Referência:** correspondente, mais abaixo.
 >
