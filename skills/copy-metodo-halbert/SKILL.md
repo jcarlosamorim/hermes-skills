@@ -1,7 +1,7 @@
 ---
 name: copy-metodo-halbert
-description: "Escreve copy pelo método de Gary Halbert: Pilha A / Pilha B, Multidão faminta, Carta pessoal, Coat of Arms, Boron Letters. Use quando pedirem 'como Halbert', cartas que fazem sacar a carteira, ou uma"
-version: 0.4.0
+description: "Escreve copy pelo método de Gary Halbert: Pilha A / Pilha B, Multidão faminta, Carta pessoal, Coat of Arms, Boron Letters. Use quando pedirem 'como Halbert', cartas que fazem sacar a carteira, ou uma…"
+version: 0.4.1
 author: "José Carlos Amorim"
 license: MIT
 platforms: [linux, macos, windows]

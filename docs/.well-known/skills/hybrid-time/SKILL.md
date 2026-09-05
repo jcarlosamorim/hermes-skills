@@ -1,11 +1,11 @@
 ---
 name: hybrid-time
-description: 'Estrutura de time que dá para ler: cada cadeira, o que ela entrega, a quem responde e o KPI que prova que está funcionando. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando: "estrutura'
+description: 'Estrutura de time que dá para ler: cada cadeira, o que ela entrega, a quem responde e o KPI que prova que está funcionando. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando…'
 license: MIT
 compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
   author: José Carlos Amorim
-  version: 0.4.0
+  version: 0.4.1
   hub: https://agentflix.nexialismo.ai
   source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/hybrid-time
   tags: hybrid-workspace, negocio, elicitacao, yaml

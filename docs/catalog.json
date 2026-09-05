@@ -1,6 +1,6 @@
 {
   "name": "AgentFlix",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "skills": [
     {
       "name": "google-oauth-onboarding",
@@ -40,18 +40,19 @@
       "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.1.0/skills/google-oauth-onboarding/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "since": "0.1.0",
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/google-oauth-onboarding.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/google-oauth-onboarding.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/google-oauth-onboarding.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill google-oauth-onboarding -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill google-oauth-onboarding -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill google-oauth-onboarding -g",
-      "activation_prompt": "Você tem no arquivo `google-oauth-onboarding.md` uma skill chamada google-oauth-onboarding. Quando eu pedir algo como \"conecta meu Gmail (ou Calendar, Drive) ao Hermes\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `google-oauth-onboarding.md` uma skill chamada google-oauth-onboarding. Quando eu pedir algo como \"conecta meu Gmail (ou Calendar, Drive) ao Hermes\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "copy-metodo-halbert",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/copy-metodo-halbert/SKILL.md",
-      "description": "Escreve copy pelo método de Gary Halbert: Pilha A / Pilha B, Multidão faminta, Carta pessoal, Coat of Arms, Boron Letters. Use quando pedirem 'como Halbert', cartas que fazem sacar a carteira, ou uma",
+      "description": "Escreve copy pelo método de Gary Halbert: Pilha A / Pilha B, Multidão faminta, Carta pessoal, Coat of Arms, Boron Letters. Use quando pedirem 'como Halbert', cartas que fazem sacar a carteira, ou uma…",
       "row": "lendas",
       "title": "Gary Halbert",
       "title_netflix": "HALBERT",
@@ -61,9 +62,9 @@
       "needs_photo": true,
       "files": 3,
       "badge": "Atualizada",
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-metodo-halbert/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-metodo-halbert/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-metodo-halbert/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-metodo-halbert/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-metodo-halbert/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-metodo-halbert/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/copy-metodo-halbert/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -90,18 +91,19 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/copy-metodo-halbert.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/copy-metodo-halbert.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/copy-metodo-halbert.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-metodo-halbert -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-metodo-halbert -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-metodo-halbert -g",
-      "activation_prompt": "Você tem no arquivo `copy-metodo-halbert.md` uma skill chamada copy-metodo-halbert. Quando eu pedir algo como \"escreve como Halbert: [peça e contexto]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `copy-metodo-halbert.md` uma skill chamada copy-metodo-halbert. Quando eu pedir algo como \"escreve como Halbert: [peça e contexto]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "copy-metodo-ogilvy",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/copy-metodo-ogilvy/SKILL.md",
-      "description": "Escreve copy pelo método de David Ogilvy: Big Idea, Pesquisa primeiro, Copy longa, Imagem de marca, Headline factual. Use quando pedirem 'como Ogilvy', big idea, pesquisa e elegância, ou uma peça ness",
+      "description": "Escreve copy pelo método de David Ogilvy: Big Idea, Pesquisa primeiro, Copy longa, Imagem de marca, Headline factual. Use quando pedirem 'como Ogilvy', big idea, pesquisa e elegância, ou uma peça…",
       "row": "lendas",
       "title": "David Ogilvy",
       "title_netflix": "OGILVY",
@@ -111,9 +113,9 @@
       "needs_photo": true,
       "files": 2,
       "badge": null,
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-metodo-ogilvy/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-metodo-ogilvy/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-metodo-ogilvy/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-metodo-ogilvy/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-metodo-ogilvy/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-metodo-ogilvy/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/copy-metodo-ogilvy/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -140,18 +142,19 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/copy-metodo-ogilvy.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/copy-metodo-ogilvy.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/copy-metodo-ogilvy.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-metodo-ogilvy -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-metodo-ogilvy -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-metodo-ogilvy -g",
-      "activation_prompt": "Você tem no arquivo `copy-metodo-ogilvy.md` uma skill chamada copy-metodo-ogilvy. Quando eu pedir algo como \"escreve como Ogilvy: [peça e contexto]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `copy-metodo-ogilvy.md` uma skill chamada copy-metodo-ogilvy. Quando eu pedir algo como \"escreve como Ogilvy: [peça e contexto]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "copy-metodo-schwartz",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/copy-metodo-schwartz/SKILL.md",
-      "description": "Escreve copy pelo método de Eugene Schwartz: Desejo de massa, 5 níveis de consciência, 5 estágios de sofisticação, Breakthrough Adverti. Use quando pedirem 'como Schwartz', desejo de massa e breakthro",
+      "description": "Escreve copy pelo método de Eugene Schwartz: Desejo de massa, 5 níveis de consciência, 5 estágios de sofisticação, Breakthrough Adverti. Use quando pedirem 'como Schwartz', desejo de massa e…",
       "row": "lendas",
       "title": "Eugene Schwartz",
       "title_netflix": "SCHWARTZ",
@@ -161,9 +164,9 @@
       "needs_photo": true,
       "files": 2,
       "badge": null,
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-metodo-schwartz/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-metodo-schwartz/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-metodo-schwartz/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-metodo-schwartz/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-metodo-schwartz/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-metodo-schwartz/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/copy-metodo-schwartz/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -190,18 +193,19 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/copy-metodo-schwartz.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/copy-metodo-schwartz.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/copy-metodo-schwartz.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-metodo-schwartz -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-metodo-schwartz -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-metodo-schwartz -g",
-      "activation_prompt": "Você tem no arquivo `copy-metodo-schwartz.md` uma skill chamada copy-metodo-schwartz. Quando eu pedir algo como \"escreve como Schwartz: [produto e mercado]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `copy-metodo-schwartz.md` uma skill chamada copy-metodo-schwartz. Quando eu pedir algo como \"escreve como Schwartz: [produto e mercado]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "copy-metodo-hopkins",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/copy-metodo-hopkins/SKILL.md",
-      "description": "Escreve copy pelo método de Claude Hopkins: Publicidade científica, Reason why, Teste com cupom, Alegação preemptiva, Amostra grátis. Use quando pedirem 'como Hopkins', publicidade científica e o test",
+      "description": "Escreve copy pelo método de Claude Hopkins: Publicidade científica, Reason why, Teste com cupom, Alegação preemptiva, Amostra grátis. Use quando pedirem 'como Hopkins', publicidade científica e o…",
       "row": "lendas",
       "title": "Claude Hopkins",
       "title_netflix": "HOPKINS",
@@ -211,9 +215,9 @@
       "needs_photo": true,
       "files": 2,
       "badge": null,
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-metodo-hopkins/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-metodo-hopkins/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-metodo-hopkins/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-metodo-hopkins/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-metodo-hopkins/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-metodo-hopkins/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/copy-metodo-hopkins/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -240,18 +244,19 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/copy-metodo-hopkins.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/copy-metodo-hopkins.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/copy-metodo-hopkins.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-metodo-hopkins -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-metodo-hopkins -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-metodo-hopkins -g",
-      "activation_prompt": "Você tem no arquivo `copy-metodo-hopkins.md` uma skill chamada copy-metodo-hopkins. Quando eu pedir algo como \"escreve como Hopkins: [peça]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `copy-metodo-hopkins.md` uma skill chamada copy-metodo-hopkins. Quando eu pedir algo como \"escreve como Hopkins: [peça]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "copy-metodo-kennedy",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/copy-metodo-kennedy/SKILL.md",
-      "description": "Escreve copy pelo método de Dan Kennedy: Urgência com prazo, No B.S., Magnetic Marketing, Oferta irresistível, Fechamento direto. Use quando pedirem 'como Kennedy', urgência e resposta direta, ou uma",
+      "description": "Escreve copy pelo método de Dan Kennedy: Urgência com prazo, No B.S., Magnetic Marketing, Oferta irresistível, Fechamento direto. Use quando pedirem 'como Kennedy', urgência e resposta direta, ou uma…",
       "row": "lendas",
       "title": "Dan Kennedy",
       "title_netflix": "KENNEDY",
@@ -261,9 +266,9 @@
       "needs_photo": true,
       "files": 2,
       "badge": null,
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-metodo-kennedy/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-metodo-kennedy/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-metodo-kennedy/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-metodo-kennedy/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-metodo-kennedy/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-metodo-kennedy/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/copy-metodo-kennedy/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -290,18 +295,19 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/copy-metodo-kennedy.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/copy-metodo-kennedy.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/copy-metodo-kennedy.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-metodo-kennedy -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-metodo-kennedy -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-metodo-kennedy -g",
-      "activation_prompt": "Você tem no arquivo `copy-metodo-kennedy.md` uma skill chamada copy-metodo-kennedy. Quando eu pedir algo como \"escreve como Kennedy: [peça e prazo]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `copy-metodo-kennedy.md` uma skill chamada copy-metodo-kennedy. Quando eu pedir algo como \"escreve como Kennedy: [peça e prazo]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "copy-metodo-bencivenga",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/copy-metodo-bencivenga/SKILL.md",
-      "description": "Escreve copy pelo método de Gary Bencivenga: Bullets e fascinações, Prova acima de promessa, Credibilidade, Curiosidade específica. Use quando pedirem 'como Bencivenga', bullets e fascinações, ou uma",
+      "description": "Escreve copy pelo método de Gary Bencivenga: Bullets e fascinações, Prova acima de promessa, Credibilidade, Curiosidade específica. Use quando pedirem 'como Bencivenga', bullets e fascinações, ou uma…",
       "row": "lendas",
       "title": "Gary Bencivenga",
       "title_netflix": "BENCIVENGA",
@@ -311,9 +317,9 @@
       "needs_photo": true,
       "files": 2,
       "badge": null,
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-metodo-bencivenga/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-metodo-bencivenga/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-metodo-bencivenga/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-metodo-bencivenga/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-metodo-bencivenga/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-metodo-bencivenga/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/copy-metodo-bencivenga/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -339,18 +345,19 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/copy-metodo-bencivenga.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/copy-metodo-bencivenga.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/copy-metodo-bencivenga.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-metodo-bencivenga -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-metodo-bencivenga -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-metodo-bencivenga -g",
-      "activation_prompt": "Você tem no arquivo `copy-metodo-bencivenga.md` uma skill chamada copy-metodo-bencivenga. Quando eu pedir algo como \"bullets como Bencivenga para [produto]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `copy-metodo-bencivenga.md` uma skill chamada copy-metodo-bencivenga. Quando eu pedir algo como \"bullets como Bencivenga para [produto]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "copy-metodo-sugarman",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/copy-metodo-sugarman/SKILL.md",
-      "description": "Escreve copy pelo método de Joe Sugarman: Escorregador, Gatilhos psicológicos, Storytelling, BluBlocker. Use quando pedirem 'como Sugarman', storytelling e gatilhos psicológicos, ou uma peça nesse est",
+      "description": "Escreve copy pelo método de Joe Sugarman: Escorregador, Gatilhos psicológicos, Storytelling, BluBlocker. Use quando pedirem 'como Sugarman', storytelling e gatilhos psicológicos, ou uma peça nesse…",
       "row": "lendas",
       "title": "Joe Sugarman",
       "title_netflix": "SUGARMAN",
@@ -360,9 +367,9 @@
       "needs_photo": true,
       "files": 4,
       "badge": "Atualizada",
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-metodo-sugarman/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-metodo-sugarman/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-metodo-sugarman/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-metodo-sugarman/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-metodo-sugarman/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-metodo-sugarman/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/copy-metodo-sugarman/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -388,16 +395,17 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/copy-metodo-sugarman.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/copy-metodo-sugarman.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/copy-metodo-sugarman.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-metodo-sugarman -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-metodo-sugarman -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-metodo-sugarman -g",
-      "activation_prompt": "Você tem no arquivo `copy-metodo-sugarman.md` uma skill chamada copy-metodo-sugarman. Quando eu pedir algo como \"escreve como Sugarman: [produto]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `copy-metodo-sugarman.md` uma skill chamada copy-metodo-sugarman. Quando eu pedir algo como \"escreve como Sugarman: [produto]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "copy-metodo-kern",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/copy-metodo-kern/SKILL.md",
       "description": "Escreve copy pelo método de Frank Kern: Mass Control, Autenticidade, Lançamento, Conteúdo que vende. Use quando pedirem 'como Kern', autenticidade que vende em massa, ou uma peça nesse estilo.",
       "row": "lendas",
@@ -409,9 +417,9 @@
       "needs_photo": true,
       "files": 2,
       "badge": null,
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-metodo-kern/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-metodo-kern/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-metodo-kern/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-metodo-kern/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-metodo-kern/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-metodo-kern/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/copy-metodo-kern/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -437,16 +445,17 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/copy-metodo-kern.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/copy-metodo-kern.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/copy-metodo-kern.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-metodo-kern -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-metodo-kern -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-metodo-kern -g",
-      "activation_prompt": "Você tem no arquivo `copy-metodo-kern.md` uma skill chamada copy-metodo-kern. Quando eu pedir algo como \"campanha como Kern para [oferta]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `copy-metodo-kern.md` uma skill chamada copy-metodo-kern. Quando eu pedir algo como \"campanha como Kern para [oferta]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "copy-metodo-benson",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/copy-metodo-benson/SKILL.md",
       "description": "Escreve copy pelo método de Jon Benson: Video Sales Letter, Persuasão ética, Ritmo controlado, Conexão emocional. Use quando pedirem 'como Benson', a vsl e a persuasão ética, ou uma peça nesse estilo.",
       "row": "lendas",
@@ -458,9 +467,9 @@
       "needs_photo": true,
       "files": 2,
       "badge": null,
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-metodo-benson/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-metodo-benson/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-metodo-benson/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-metodo-benson/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-metodo-benson/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-metodo-benson/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/copy-metodo-benson/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -486,18 +495,19 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/copy-metodo-benson.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/copy-metodo-benson.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/copy-metodo-benson.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-metodo-benson -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-metodo-benson -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-metodo-benson -g",
-      "activation_prompt": "Você tem no arquivo `copy-metodo-benson.md` uma skill chamada copy-metodo-benson. Quando eu pedir algo como \"VSL como Benson para [oferta]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `copy-metodo-benson.md` uma skill chamada copy-metodo-benson. Quando eu pedir algo como \"VSL como Benson para [oferta]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "copy-metodo-sethi",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/copy-metodo-sethi/SKILL.md",
-      "description": "Escreve copy pelo método de Ramit Sethi: Psicologia do comprador, E-mail como relação, Preço premium, I Will Teach You To Be Rich. Use quando pedirem 'como Sethi', psicologia, e-mail e premium, ou uma",
+      "description": "Escreve copy pelo método de Ramit Sethi: Psicologia do comprador, E-mail como relação, Preço premium, I Will Teach You To Be Rich. Use quando pedirem 'como Sethi', psicologia, e-mail e premium, ou…",
       "row": "lendas",
       "title": "Ramit Sethi",
       "title_netflix": "SETHI",
@@ -507,9 +517,9 @@
       "needs_photo": true,
       "files": 2,
       "badge": null,
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-metodo-sethi/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-metodo-sethi/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-metodo-sethi/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-metodo-sethi/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-metodo-sethi/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-metodo-sethi/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/copy-metodo-sethi/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -535,16 +545,17 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/copy-metodo-sethi.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/copy-metodo-sethi.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/copy-metodo-sethi.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-metodo-sethi -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-metodo-sethi -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-metodo-sethi -g",
-      "activation_prompt": "Você tem no arquivo `copy-metodo-sethi.md` uma skill chamada copy-metodo-sethi. Quando eu pedir algo como \"e-mails como Sethi para [público e produto]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `copy-metodo-sethi.md` uma skill chamada copy-metodo-sethi. Quando eu pedir algo como \"e-mails como Sethi para [público e produto]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "copy-metodo-hormozi",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/copy-metodo-hormozi/SKILL.md",
       "description": "Escreve copy pelo método de Alex Hormozi: Equação do valor, Grand Slam Offer, Garantias, Escassez e urgência. Use quando pedirem 'como Hormozi', ofertas irrecusáveis, ou uma peça nesse estilo.",
       "row": "lendas",
@@ -556,9 +567,9 @@
       "needs_photo": true,
       "files": 2,
       "badge": null,
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-metodo-hormozi/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-metodo-hormozi/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-metodo-hormozi/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-metodo-hormozi/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-metodo-hormozi/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-metodo-hormozi/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/copy-metodo-hormozi/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -584,18 +595,19 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/copy-metodo-hormozi.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/copy-metodo-hormozi.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/copy-metodo-hormozi.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-metodo-hormozi -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-metodo-hormozi -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-metodo-hormozi -g",
-      "activation_prompt": "Você tem no arquivo `copy-metodo-hormozi.md` uma skill chamada copy-metodo-hormozi. Quando eu pedir algo como \"oferta como Hormozi: [produto e preço atual]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `copy-metodo-hormozi.md` uma skill chamada copy-metodo-hormozi. Quando eu pedir algo como \"oferta como Hormozi: [produto e preço atual]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "copy-metodo-koe",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/copy-metodo-koe/SKILL.md",
-      "description": "Escreve copy pelo método de Dan Koe: One-person business, Alavancagem, Produto digital, Conteúdo como funil. Use quando pedirem 'como Koe', negócio de uma pessoa e alavancagem, ou uma peça nesse estil",
+      "description": "Escreve copy pelo método de Dan Koe: One-person business, Alavancagem, Produto digital, Conteúdo como funil. Use quando pedirem 'como Koe', negócio de uma pessoa e alavancagem, ou uma peça nesse…",
       "row": "lendas",
       "title": "Dan Koe",
       "title_netflix": "KOE",
@@ -605,9 +617,9 @@
       "needs_photo": true,
       "files": 2,
       "badge": null,
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-metodo-koe/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-metodo-koe/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-metodo-koe/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-metodo-koe/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-metodo-koe/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-metodo-koe/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/copy-metodo-koe/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -633,16 +645,17 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/copy-metodo-koe.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/copy-metodo-koe.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/copy-metodo-koe.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-metodo-koe -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-metodo-koe -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-metodo-koe -g",
-      "activation_prompt": "Você tem no arquivo `copy-metodo-koe.md` uma skill chamada copy-metodo-koe. Quando eu pedir algo como \"escreve como Koe: [tema ou produto]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `copy-metodo-koe.md` uma skill chamada copy-metodo-koe. Quando eu pedir algo como \"escreve como Koe: [tema ou produto]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "copy-metodo-khayat",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/copy-metodo-khayat/SKILL.md",
       "description": "Escreve copy pelo método de Amanda Khayat: Método Twenty Five, Estrutura invisível, 7 alavancas. Use quando pedirem 'como Khayat', criativos que batem controle, ou uma peça nesse estilo.",
       "row": "lendas",
@@ -654,9 +667,9 @@
       "needs_photo": true,
       "files": 2,
       "badge": null,
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-metodo-khayat/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-metodo-khayat/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-metodo-khayat/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-metodo-khayat/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-metodo-khayat/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-metodo-khayat/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/copy-metodo-khayat/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -681,16 +694,17 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/copy-metodo-khayat.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/copy-metodo-khayat.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/copy-metodo-khayat.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-metodo-khayat -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-metodo-khayat -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-metodo-khayat -g",
-      "activation_prompt": "Você tem no arquivo `copy-metodo-khayat.md` uma skill chamada copy-metodo-khayat. Quando eu pedir algo como \"criativos como Khayat para [oferta]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `copy-metodo-khayat.md` uma skill chamada copy-metodo-khayat. Quando eu pedir algo como \"criativos como Khayat para [oferta]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "copy-metodo-brown",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/copy-metodo-brown/SKILL.md",
       "description": "Escreve copy pelo método de Todd Brown: E5 Method, Big Idea, Unique Mechanism. Use quando pedirem 'como Brown', big idea e mecanismo único, ou uma peça nesse estilo.",
       "row": "lendas",
@@ -702,9 +716,9 @@
       "needs_photo": true,
       "files": 2,
       "badge": null,
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-metodo-brown/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-metodo-brown/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-metodo-brown/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-metodo-brown/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-metodo-brown/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-metodo-brown/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/copy-metodo-brown/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -729,16 +743,17 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/copy-metodo-brown.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/copy-metodo-brown.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/copy-metodo-brown.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-metodo-brown -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-metodo-brown -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-metodo-brown -g",
-      "activation_prompt": "Você tem no arquivo `copy-metodo-brown.md` uma skill chamada copy-metodo-brown. Quando eu pedir algo como \"big idea como Brown para [produto e mercado]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `copy-metodo-brown.md` uma skill chamada copy-metodo-brown. Quando eu pedir algo como \"big idea como Brown para [produto e mercado]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "copy-headlines",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/copy-headlines/SKILL.md",
       "description": "Você entrega o produto, o benefício principal e para quem é. Use quando o pedido envolver headline, título, gancho, hook, bullets, chamada de abertura.",
       "row": "objetivo",
@@ -750,9 +765,9 @@
       "needs_photo": false,
       "files": 5,
       "badge": null,
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-headlines/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-headlines/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-headlines/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-headlines/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-headlines/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-headlines/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/copy-headlines/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -778,18 +793,19 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/copy-headlines.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/copy-headlines.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/copy-headlines.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-headlines -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-headlines -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-headlines -g",
-      "activation_prompt": "Você tem no arquivo `copy-headlines.md` uma skill chamada copy-headlines. Quando eu pedir algo como \"gera headlines para [produto], benefício [x], público [y]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `copy-headlines.md` uma skill chamada copy-headlines. Quando eu pedir algo como \"gera headlines para [produto], benefício [x], público [y]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "copy-sales-page",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/copy-sales-page/SKILL.md",
-      "description": "Uma página de vendas longa não é um texto grande, é uma sequência de decisões pequenas até o botão. Use quando o pedido envolver página de vendas, sales page, landing page, carta de vendas longa, maga",
+      "description": "Uma página de vendas longa não é um texto grande, é uma sequência de decisões pequenas até o botão. Use quando o pedido envolver página de vendas, sales page, landing page, carta de vendas longa…",
       "row": "objetivo",
       "title": "Sales Page",
       "title_netflix": "ATÉ O BOTÃO",
@@ -799,9 +815,9 @@
       "needs_photo": false,
       "files": 7,
       "badge": "Atualizada",
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-sales-page/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-sales-page/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-sales-page/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-sales-page/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-sales-page/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-sales-page/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/copy-sales-page/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -826,18 +842,19 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/copy-sales-page.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/copy-sales-page.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/copy-sales-page.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-sales-page -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-sales-page -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-sales-page -g",
-      "activation_prompt": "Você tem no arquivo `copy-sales-page.md` uma skill chamada copy-sales-page. Quando eu pedir algo como \"escreve a sales page de [oferta]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `copy-sales-page.md` uma skill chamada copy-sales-page. Quando eu pedir algo como \"escreve a sales page de [oferta]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "copy-oferta",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/copy-oferta/SKILL.md",
-      "description": "Antes do texto vem a oferta, e a maioria das páginas fracas tem uma oferta fraca por baixo. Use quando o pedido envolver oferta, stack, bônus, bump, upsell, downsell, página de obrigado, prova, garant",
+      "description": "Antes do texto vem a oferta, e a maioria das páginas fracas tem uma oferta fraca por baixo. Use quando o pedido envolver oferta, stack, bônus, bump, upsell, downsell, página de obrigado, prova…",
       "row": "objetivo",
       "title": "Oferta",
       "title_netflix": "IMPOSSÍVEL DIZER NÃO",
@@ -847,9 +864,9 @@
       "needs_photo": false,
       "files": 9,
       "badge": null,
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-oferta/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-oferta/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-oferta/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-oferta/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-oferta/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-oferta/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/copy-oferta/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -873,18 +890,19 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/copy-oferta.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/copy-oferta.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/copy-oferta.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-oferta -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-oferta -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-oferta -g",
-      "activation_prompt": "Você tem no arquivo `copy-oferta.md` uma skill chamada copy-oferta. Quando eu pedir algo como \"monta a oferta para [produto] a [preço]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `copy-oferta.md` uma skill chamada copy-oferta. Quando eu pedir algo como \"monta a oferta para [produto] a [preço]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "copy-email",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/copy-email/SKILL.md",
-      "description": "Sequência de boas-vindas, e-mail diário, lançamento, cold e-mail, carrinho abandonado, lead que sumiu, martelo pré-call e newsletter. Use quando o pedido envolver e-mail, sequência, newsletter, cold e",
+      "description": "Sequência de boas-vindas, e-mail diário, lançamento, cold e-mail, carrinho abandonado, lead que sumiu, martelo pré-call e newsletter. Use quando o pedido envolver e-mail, sequência, newsletter, cold…",
       "row": "objetivo",
       "title": "Sequência de E-mail",
       "title_netflix": "TODA MANHÃ",
@@ -894,9 +912,9 @@
       "needs_photo": false,
       "files": 9,
       "badge": null,
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-email/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-email/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-email/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-email/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-email/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-email/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/copy-email/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -921,16 +939,17 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/copy-email.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/copy-email.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/copy-email.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-email -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-email -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-email -g",
-      "activation_prompt": "Você tem no arquivo `copy-email.md` uma skill chamada copy-email. Quando eu pedir algo como \"sequência de [tipo] para [público], [n] e-mails\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `copy-email.md` uma skill chamada copy-email. Quando eu pedir algo como \"sequência de [tipo] para [público], [n] e-mails\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "copy-anuncios",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/copy-anuncios/SKILL.md",
       "description": "O anúncio tem três segundos para parar o dedo. Use quando o pedido envolver anúncio, ad copy, criativo, roteiro de anúncio, nativo, YouTube ads.",
       "row": "objetivo",
@@ -942,9 +961,9 @@
       "needs_photo": false,
       "files": 5,
       "badge": null,
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-anuncios/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-anuncios/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-anuncios/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-anuncios/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-anuncios/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-anuncios/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/copy-anuncios/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -969,18 +988,19 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/copy-anuncios.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/copy-anuncios.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/copy-anuncios.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-anuncios -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-anuncios -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-anuncios -g",
-      "activation_prompt": "Você tem no arquivo `copy-anuncios.md` uma skill chamada copy-anuncios. Quando eu pedir algo como \"anúncios para [oferta], [plataforma], [n] variações\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `copy-anuncios.md` uma skill chamada copy-anuncios. Quando eu pedir algo como \"anúncios para [oferta], [plataforma], [n] variações\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "copy-vsl-webinar",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/copy-vsl-webinar/SKILL.md",
-      "description": "Roteiro de VSL e de webinar, do gancho de abertura ao fechamento, com os pontos de tensão marcados no tempo. Use quando o pedido envolver VSL, roteiro de vídeo de vendas, webinar frio ou quente, apres",
+      "description": "Roteiro de VSL e de webinar, do gancho de abertura ao fechamento, com os pontos de tensão marcados no tempo. Use quando o pedido envolver VSL, roteiro de vídeo de vendas, webinar frio ou quente…",
       "row": "objetivo",
       "title": "VSL & Webinar",
       "title_netflix": "APERTE O PLAY",
@@ -990,9 +1010,9 @@
       "needs_photo": false,
       "files": 5,
       "badge": "Atualizada",
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-vsl-webinar/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-vsl-webinar/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-vsl-webinar/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-vsl-webinar/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-vsl-webinar/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-vsl-webinar/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/copy-vsl-webinar/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -1016,18 +1036,19 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/copy-vsl-webinar.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/copy-vsl-webinar.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/copy-vsl-webinar.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-vsl-webinar -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-vsl-webinar -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-vsl-webinar -g",
-      "activation_prompt": "Você tem no arquivo `copy-vsl-webinar.md` uma skill chamada copy-vsl-webinar. Quando eu pedir algo como \"roteiro de VSL para [oferta], [duração]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `copy-vsl-webinar.md` uma skill chamada copy-vsl-webinar. Quando eu pedir algo como \"roteiro de VSL para [oferta], [duração]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "copy-vendas-por-chamada",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/copy-vendas-por-chamada/SKILL.md",
-      "description": "Script de ligação, script de fechamento e os algoritmos de objeção: para cada \"vou pensar\", o que perguntar e o que dizer. Use quando o pedido envolver script de call, ligação de vendas, fechamento, o",
+      "description": "Script de ligação, script de fechamento e os algoritmos de objeção: para cada \"vou pensar\", o que perguntar e o que dizer. Use quando o pedido envolver script de call, ligação de vendas, fechamento…",
       "row": "objetivo",
       "title": "Script de Vendas",
       "title_netflix": "A LIGAÇÃO",
@@ -1037,9 +1058,9 @@
       "needs_photo": false,
       "files": 5,
       "badge": null,
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-vendas-por-chamada/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-vendas-por-chamada/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-vendas-por-chamada/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-vendas-por-chamada/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-vendas-por-chamada/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-vendas-por-chamada/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/copy-vendas-por-chamada/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -1063,16 +1084,17 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/copy-vendas-por-chamada.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/copy-vendas-por-chamada.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/copy-vendas-por-chamada.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-vendas-por-chamada -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-vendas-por-chamada -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-vendas-por-chamada -g",
-      "activation_prompt": "Você tem no arquivo `copy-vendas-por-chamada.md` uma skill chamada copy-vendas-por-chamada. Quando eu pedir algo como \"script de call para [oferta]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `copy-vendas-por-chamada.md` uma skill chamada copy-vendas-por-chamada. Quando eu pedir algo como \"script de call para [oferta]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "copy-pesquisa-avatar",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/copy-pesquisa-avatar/SKILL.md",
       "description": "Antes de escrever, saber o que a pessoa já diz para si mesma. Use quando o pedido envolver avatar, público, conversa mental, motivos, nível de consciência, sofisticação do mercado.",
       "row": "objetivo",
@@ -1084,9 +1106,9 @@
       "needs_photo": false,
       "files": 11,
       "badge": "Atualizada",
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-pesquisa-avatar/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-pesquisa-avatar/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-pesquisa-avatar/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-pesquisa-avatar/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-pesquisa-avatar/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-pesquisa-avatar/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/copy-pesquisa-avatar/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -1110,16 +1132,17 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/copy-pesquisa-avatar.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/copy-pesquisa-avatar.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/copy-pesquisa-avatar.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-pesquisa-avatar -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-pesquisa-avatar -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-pesquisa-avatar -g",
-      "activation_prompt": "Você tem no arquivo `copy-pesquisa-avatar.md` uma skill chamada copy-pesquisa-avatar. Quando eu pedir algo como \"pesquisa o avatar de [produto] em [mercado]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `copy-pesquisa-avatar.md` uma skill chamada copy-pesquisa-avatar. Quando eu pedir algo como \"pesquisa o avatar de [produto] em [mercado]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "copy-big-idea-lead-magnet",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/copy-big-idea-lead-magnet/SKILL.md",
       "description": "Uma campanha inteira cabe em uma ideia. Use quando o pedido envolver big idea, ideia central, mecanismo único, RMBC, brief de campanha, lead magnet.",
       "row": "objetivo",
@@ -1131,9 +1154,9 @@
       "needs_photo": false,
       "files": 9,
       "badge": "Atualizada",
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-big-idea-lead-magnet/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-big-idea-lead-magnet/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-big-idea-lead-magnet/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-big-idea-lead-magnet/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-big-idea-lead-magnet/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-big-idea-lead-magnet/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/copy-big-idea-lead-magnet/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -1157,18 +1180,19 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/copy-big-idea-lead-magnet.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/copy-big-idea-lead-magnet.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/copy-big-idea-lead-magnet.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-big-idea-lead-magnet -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-big-idea-lead-magnet -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-big-idea-lead-magnet -g",
-      "activation_prompt": "Você tem no arquivo `copy-big-idea-lead-magnet.md` uma skill chamada copy-big-idea-lead-magnet. Quando eu pedir algo como \"big idea para [produto e mercado]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `copy-big-idea-lead-magnet.md` uma skill chamada copy-big-idea-lead-magnet. Quando eu pedir algo como \"big idea para [produto e mercado]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "copy-voz",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/copy-voz/SKILL.md",
-      "description": "Extrai o DNA de comunicação de uma pessoa: vocabulário, frases-assinatura, frameworks que ela repete, o jeito de abrir e fechar. Use quando o pedido envolver voz da marca, DNA de comunicação, frases-a",
+      "description": "Extrai o DNA de comunicação de uma pessoa: vocabulário, frases-assinatura, frameworks que ela repete, o jeito de abrir e fechar. Use quando o pedido envolver voz da marca, DNA de comunicação…",
       "row": "objetivo",
       "title": "Voz da Marca",
       "title_netflix": "INCONFUNDÍVEL",
@@ -1178,9 +1202,9 @@
       "needs_photo": false,
       "files": 9,
       "badge": null,
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-voz/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-voz/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-voz/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-voz/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-voz/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-voz/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/copy-voz/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -1203,16 +1227,17 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/copy-voz.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/copy-voz.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/copy-voz.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-voz -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-voz -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-voz -g",
-      "activation_prompt": "Você tem no arquivo `copy-voz.md` uma skill chamada copy-voz. Quando eu pedir algo como \"extrai a voz de [nome] a partir destes textos: [colar ou apontar]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `copy-voz.md` uma skill chamada copy-voz. Quando eu pedir algo como \"extrai a voz de [nome] a partir destes textos: [colar ou apontar]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "copy-auditoria",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/copy-auditoria/SKILL.md",
       "description": "A copy já existe e não está vendendo. Use quando o pedido envolver auditar copy, otimizar texto, comparar versões, split test, por que não vende.",
       "row": "objetivo",
@@ -1224,9 +1249,9 @@
       "needs_photo": false,
       "files": 9,
       "badge": "Atualizada",
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-auditoria/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-auditoria/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-auditoria/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-auditoria/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-auditoria/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-auditoria/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/copy-auditoria/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -1250,18 +1275,19 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/copy-auditoria.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/copy-auditoria.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/copy-auditoria.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-auditoria -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-auditoria -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-auditoria -g",
-      "activation_prompt": "Você tem no arquivo `copy-auditoria.md` uma skill chamada copy-auditoria. Quando eu pedir algo como \"audita esta copy: [texto]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `copy-auditoria.md` uma skill chamada copy-auditoria. Quando eu pedir algo como \"audita esta copy: [texto]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "copy-pipeline",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/copy-pipeline/SKILL.md",
-      "description": "Da estratégia à peça pronta, em uma esteira só: define o ângulo, escolhe o formato, escreve e revisa, chamando as outras skills de copy na ordem certa. Use quando o pedido envolver campanha completa,",
+      "description": "Da estratégia à peça pronta, em uma esteira só: define o ângulo, escolhe o formato, escreve e revisa, chamando as outras skills de copy na ordem certa. Use quando o pedido envolver campanha completa…",
       "row": "objetivo",
       "title": "Pipeline de Copy",
       "title_netflix": "DA IDEIA À PEÇA",
@@ -1271,9 +1297,9 @@
       "needs_photo": false,
       "files": 19,
       "badge": null,
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-pipeline/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-pipeline/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-pipeline/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-pipeline/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-pipeline/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-pipeline/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/copy-pipeline/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -1296,16 +1322,23 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/copy-pipeline.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/copy-pipeline.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/copy-pipeline.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-pipeline -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-pipeline -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-pipeline -g",
-      "activation_prompt": "Você tem no arquivo `copy-pipeline.md` uma skill chamada copy-pipeline. Quando eu pedir algo como \"campanha completa para [oferta]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `copy-pipeline.md` uma skill chamada copy-pipeline. Quando eu pedir algo como \"campanha completa para [oferta]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": [
+        "templates/authority-arsenal-tmpl.yaml",
+        "templates/communication-dna-tmpl.yaml",
+        "templates/copywriter-agent-tmpl.yaml",
+        "templates/objection-algorithms-tmpl.yaml",
+        "templates/signature-phrases-tmpl.yaml"
+      ]
     },
     {
       "name": "copy-lancamento",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/copy-lancamento/SKILL.md",
       "description": "Um lançamento é uma sequência com data, não um post com link. Use quando o pedido envolver lançamento, PLF, carrinho aberto, pré-lançamento, PLC, soap opera, funil de livro, seed launch, evergreen.",
       "row": "objetivo",
@@ -1317,9 +1350,9 @@
       "needs_photo": false,
       "files": 678,
       "badge": "Nova",
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-lancamento/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-lancamento/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/copy-lancamento/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-lancamento/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-lancamento/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/copy-lancamento/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/copy-lancamento/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -1344,16 +1377,25 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/copy-lancamento.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/copy-lancamento.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/copy-lancamento.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-lancamento -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-lancamento -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill copy-lancamento -g",
-      "activation_prompt": "Você tem no arquivo `copy-lancamento.md` uma skill chamada copy-lancamento. Quando eu pedir algo como \"monta o lançamento de [produto], carrinho de [data] a [data]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `copy-lancamento.md` uma skill chamada copy-lancamento. Quando eu pedir algo como \"monta o lançamento de [produto], carrinho de [data] a [data]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": [
+        "references/checklist-plf-todos.md",
+        "templates/plf-plc1-script-tmpl.md",
+        "templates/plf-plc2-script-tmpl.md",
+        "templates/plf-plc3-script-tmpl.md",
+        "templates/plf-preprelaunch-survey-tmpl.md",
+        "templates/plf-rubric-scores-tmpl.yaml",
+        "templates/plf-sales-page-blueprint-tmpl.md"
+      ]
     },
     {
       "name": "ops-rotear-tarefa",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/ops-rotear-tarefa/SKILL.md",
       "description": "Toda tarefa que chega tem alguém do time para quem ela é natural e alguém para quem ela é tortura. Usa o perfil do SEU time (zona de genialidade, Kolbe) como entrada. Use quando: \"roteia esta tarefa.",
       "row": "operacao",
@@ -1365,9 +1407,9 @@
       "needs_photo": false,
       "files": 3,
       "badge": null,
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/ops-rotear-tarefa/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/ops-rotear-tarefa/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/ops-rotear-tarefa/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/ops-rotear-tarefa/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/ops-rotear-tarefa/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/ops-rotear-tarefa/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/ops-rotear-tarefa/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -1391,18 +1433,19 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/ops-rotear-tarefa.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/ops-rotear-tarefa.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/ops-rotear-tarefa.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill ops-rotear-tarefa -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill ops-rotear-tarefa -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill ops-rotear-tarefa -g",
-      "activation_prompt": "Você tem no arquivo `ops-rotear-tarefa.md` uma skill chamada ops-rotear-tarefa. Quando eu pedir algo como \"roteia esta tarefa: [descrição]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `ops-rotear-tarefa.md` uma skill chamada ops-rotear-tarefa. Quando eu pedir algo como \"roteia esta tarefa: [descrição]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "ops-briefing",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/ops-briefing/SKILL.md",
-      "description": "O mesmo briefing, escrito do jeito que cada pessoa lê: texto corrido para quem lê, checklist para quem executa, diagrama para quem enxerga. Usa o perfil do SEU time (zona de genialidade, Kolbe) como e",
+      "description": "O mesmo briefing, escrito do jeito que cada pessoa lê: texto corrido para quem lê, checklist para quem executa, diagrama para quem enxerga. Usa o perfil do SEU time (zona de genialidade, Kolbe) como…",
       "row": "operacao",
       "title": "Briefing no Formato Certo",
       "title_netflix": "DO JEITO QUE VOCÊ LÊ",
@@ -1412,9 +1455,9 @@
       "needs_photo": false,
       "files": 3,
       "badge": null,
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/ops-briefing/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/ops-briefing/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/ops-briefing/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/ops-briefing/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/ops-briefing/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/ops-briefing/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/ops-briefing/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -1437,18 +1480,19 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/ops-briefing.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/ops-briefing.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/ops-briefing.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill ops-briefing -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill ops-briefing -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill ops-briefing -g",
-      "activation_prompt": "Você tem no arquivo `ops-briefing.md` uma skill chamada ops-briefing. Quando eu pedir algo como \"briefing para [pessoa] sobre [tarefa]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `ops-briefing.md` uma skill chamada ops-briefing. Quando eu pedir algo como \"briefing para [pessoa] sobre [tarefa]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "ops-revisao-semanal",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/ops-revisao-semanal/SKILL.md",
-      "description": "Toda sexta, quem operou na zona de genialidade e quem passou a semana fora dela. Usa o perfil do SEU time (zona de genialidade, Kolbe) como entrada. Use quando: \"revisão da semana\" e cole ou aponte as",
+      "description": "Toda sexta, quem operou na zona de genialidade e quem passou a semana fora dela. Usa o perfil do SEU time (zona de genialidade, Kolbe) como entrada. Use quando: \"revisão da semana\" e cole ou aponte…",
       "row": "operacao",
       "title": "Revisão Semanal",
       "title_netflix": "SEXTA-FEIRA",
@@ -1458,9 +1502,9 @@
       "needs_photo": false,
       "files": 3,
       "badge": null,
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/ops-revisao-semanal/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/ops-revisao-semanal/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/ops-revisao-semanal/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/ops-revisao-semanal/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/ops-revisao-semanal/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/ops-revisao-semanal/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/ops-revisao-semanal/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -1484,16 +1528,17 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/ops-revisao-semanal.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/ops-revisao-semanal.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/ops-revisao-semanal.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill ops-revisao-semanal -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill ops-revisao-semanal -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill ops-revisao-semanal -g",
-      "activation_prompt": "Você tem no arquivo `ops-revisao-semanal.md` uma skill chamada ops-revisao-semanal. Quando eu pedir algo como \"revisão da semana\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `ops-revisao-semanal.md` uma skill chamada ops-revisao-semanal. Quando eu pedir algo como \"revisão da semana\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "ops-avaliar-fit",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/ops-avaliar-fit/SKILL.md",
       "description": "Um projeto novo bate na porta. Usa o perfil do SEU time (zona de genialidade, Kolbe) como entrada. Use quando: \"avalia o fit deste projeto.",
       "row": "operacao",
@@ -1505,9 +1550,9 @@
       "needs_photo": false,
       "files": 3,
       "badge": null,
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/ops-avaliar-fit/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/ops-avaliar-fit/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/ops-avaliar-fit/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/ops-avaliar-fit/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/ops-avaliar-fit/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/ops-avaliar-fit/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/ops-avaliar-fit/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -1531,16 +1576,17 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/ops-avaliar-fit.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/ops-avaliar-fit.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/ops-avaliar-fit.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill ops-avaliar-fit -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill ops-avaliar-fit -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill ops-avaliar-fit -g",
-      "activation_prompt": "Você tem no arquivo `ops-avaliar-fit.md` uma skill chamada ops-avaliar-fit. Quando eu pedir algo como \"avalia o fit deste projeto: [descrição]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `ops-avaliar-fit.md` uma skill chamada ops-avaliar-fit. Quando eu pedir algo como \"avalia o fit deste projeto: [descrição]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "ads-gate-compliance",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/ads-gate-compliance/SKILL.md",
       "description": "Confere um criativo de anúncio contra a régua de compliance da Meta antes de subir e devolve APROVADO ou REPROVADO com o ajuste exato. Use quando: gate, revisar criativo, anúncio reprovado, risco de…",
       "row": "trafego",
@@ -1552,9 +1598,9 @@
       "needs_photo": false,
       "files": 2,
       "badge": null,
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/ads-gate-compliance/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/ads-gate-compliance/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/ads-gate-compliance/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/ads-gate-compliance/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/ads-gate-compliance/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/ads-gate-compliance/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/ads-gate-compliance/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -1577,16 +1623,17 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/ads-gate-compliance.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/ads-gate-compliance.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/ads-gate-compliance.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill ads-gate-compliance -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill ads-gate-compliance -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill ads-gate-compliance -g",
-      "activation_prompt": "Você tem no arquivo `ads-gate-compliance.md` uma skill chamada ads-gate-compliance. Quando eu pedir algo como \"gate: [texto do anúncio e descrição da imagem]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `ads-gate-compliance.md` uma skill chamada ads-gate-compliance. Quando eu pedir algo como \"gate: [texto do anúncio e descrição da imagem]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "ads-plano",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/ads-plano/SKILL.md",
       "description": "Calcula CAC-alvo, CAC-teto, CPL e orçamento por fase antes do primeiro real, e entrega o briefing do produto para o motor. Use quando: plano de tráfego, quanto gastar, unit economics, vale anunciar.",
       "row": "trafego",
@@ -1598,9 +1645,9 @@
       "needs_photo": false,
       "files": 3,
       "badge": null,
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/ads-plano/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/ads-plano/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/ads-plano/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/ads-plano/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/ads-plano/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/ads-plano/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/ads-plano/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -1623,16 +1670,17 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/ads-plano.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/ads-plano.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/ads-plano.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill ads-plano -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill ads-plano -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill ads-plano -g",
-      "activation_prompt": "Você tem no arquivo `ads-plano.md` uma skill chamada ads-plano. Quando eu pedir algo como \"plano de tráfego para [oferta] a [preço], margem [x]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `ads-plano.md` uma skill chamada ads-plano. Quando eu pedir algo como \"plano de tráfego para [oferta] a [preço], margem [x]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "ads-otimizar",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/ads-otimizar/SKILL.md",
       "description": "Lê 7 dias da Graph API, calcula o CAC real por campanha e classifica: escalar, duplicar, manter, matar. Só leitura; a mutação é sua. Use quando: otimizar campanhas, o que pausar, leitura diária, CAC…",
       "row": "trafego",
@@ -1644,9 +1692,9 @@
       "needs_photo": false,
       "files": 4,
       "badge": null,
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/ads-otimizar/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/ads-otimizar/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/ads-otimizar/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/ads-otimizar/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/ads-otimizar/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/ads-otimizar/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/ads-otimizar/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -1670,16 +1718,17 @@
         ]
       },
       "runtime_only": true,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/ads-otimizar.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/ads-otimizar.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/ads-otimizar.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill ads-otimizar -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill ads-otimizar -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill ads-otimizar -g",
-      "activation_prompt": "Você tem no arquivo `ads-otimizar.md` uma skill chamada ads-otimizar. Quando eu pedir algo como \"otimiza hoje\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `ads-otimizar.md` uma skill chamada ads-otimizar. Quando eu pedir algo como \"otimiza hoje\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "ads-pesquisa",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/ads-pesquisa/SKILL.md",
       "description": "Campanha sem pesquisa é orçamento em teste cego. Só leitura e julgamento: não toca na conta de anúncios. Use quando: \"pesquisa para a campanha de [produto]\".",
       "row": "trafego",
@@ -1691,9 +1740,9 @@
       "needs_photo": false,
       "files": 27,
       "badge": "Nova",
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/ads-pesquisa/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/ads-pesquisa/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/ads-pesquisa/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/ads-pesquisa/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/ads-pesquisa/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/ads-pesquisa/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/ads-pesquisa/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -1718,18 +1767,19 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/ads-pesquisa.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/ads-pesquisa.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/ads-pesquisa.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill ads-pesquisa -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill ads-pesquisa -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill ads-pesquisa -g",
-      "activation_prompt": "Você tem no arquivo `ads-pesquisa.md` uma skill chamada ads-pesquisa. Quando eu pedir algo como \"pesquisa para a campanha de [produto]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `ads-pesquisa.md` uma skill chamada ads-pesquisa. Quando eu pedir algo como \"pesquisa para a campanha de [produto]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "ads-criativos",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/ads-criativos/SKILL.md",
-      "description": "Com as métricas por criativo na mão, o agente separa o que venceu do que cansou: analisa os primeiros três segundos, encontra padrões entre os vencedores, detecta fadiga e propõe os próximos testes. S",
+      "description": "Com as métricas por criativo na mão, o agente separa o que venceu do que cansou: analisa os primeiros três segundos, encontra padrões entre os vencedores, detecta fadiga e propõe os próximos testes.…",
       "row": "trafego",
       "title": "Análise de criativos",
       "title_netflix": "O QUE VENCEU",
@@ -1739,9 +1789,9 @@
       "needs_photo": false,
       "files": 6,
       "badge": "Nova",
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/ads-criativos/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/ads-criativos/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/ads-criativos/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/ads-criativos/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/ads-criativos/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/ads-criativos/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/ads-criativos/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -1766,16 +1816,17 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/ads-criativos.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/ads-criativos.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/ads-criativos.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill ads-criativos -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill ads-criativos -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill ads-criativos -g",
-      "activation_prompt": "Você tem no arquivo `ads-criativos.md` uma skill chamada ads-criativos. Quando eu pedir algo como \"analisa estes criativos\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `ads-criativos.md` uma skill chamada ads-criativos. Quando eu pedir algo como \"analisa estes criativos\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "ads-tracking",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/ads-tracking/SKILL.md",
       "description": "Se o pixel não conta, a otimização otimiza o nada. Só leitura e julgamento: não toca na conta de anúncios. Use quando: \"audita o tracking de [URL]\" e informe a plataforma e os eventos esperados.",
       "row": "trafego",
@@ -1787,9 +1838,9 @@
       "needs_photo": false,
       "files": 4,
       "badge": "Nova",
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/ads-tracking/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/ads-tracking/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/ads-tracking/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/ads-tracking/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/ads-tracking/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/ads-tracking/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/ads-tracking/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -1814,16 +1865,17 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/ads-tracking.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/ads-tracking.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/ads-tracking.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill ads-tracking -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill ads-tracking -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill ads-tracking -g",
-      "activation_prompt": "Você tem no arquivo `ads-tracking.md` uma skill chamada ads-tracking. Quando eu pedir algo como \"audita o tracking de [URL]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `ads-tracking.md` uma skill chamada ads-tracking. Quando eu pedir algo como \"audita o tracking de [URL]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "hybrid-diagnostico",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/hybrid-diagnostico/SKILL.md",
       "description": "Antes de decidir o que fazer, saber onde o negócio dói. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando: \"diagnostica o negócio [nome]\" ou \"diagnostica a oferta de [produto]\".",
       "row": "hybrid",
@@ -1835,9 +1887,9 @@
       "needs_photo": false,
       "files": 12,
       "badge": "Nova",
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/hybrid-diagnostico/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/hybrid-diagnostico/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/hybrid-diagnostico/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/hybrid-diagnostico/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/hybrid-diagnostico/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/hybrid-diagnostico/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/hybrid-diagnostico/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -1862,16 +1914,17 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/hybrid-diagnostico.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/hybrid-diagnostico.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/hybrid-diagnostico.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill hybrid-diagnostico -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill hybrid-diagnostico -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill hybrid-diagnostico -g",
-      "activation_prompt": "Você tem no arquivo `hybrid-diagnostico.md` uma skill chamada hybrid-diagnostico. Quando eu pedir algo como \"diagnostica o negócio [nome]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `hybrid-diagnostico.md` uma skill chamada hybrid-diagnostico. Quando eu pedir algo como \"diagnostica o negócio [nome]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "hybrid-proxima-acao",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/hybrid-proxima-acao/SKILL.md",
       "description": "Empresário para na frente de dez gaps e vinte recomendações. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando: \"qual a próxima ação para [negócio]\".",
       "row": "hybrid",
@@ -1883,9 +1936,9 @@
       "needs_photo": false,
       "files": 2,
       "badge": "Nova",
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/hybrid-proxima-acao/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/hybrid-proxima-acao/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/hybrid-proxima-acao/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/hybrid-proxima-acao/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/hybrid-proxima-acao/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/hybrid-proxima-acao/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/hybrid-proxima-acao/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -1909,18 +1962,19 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/hybrid-proxima-acao.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/hybrid-proxima-acao.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/hybrid-proxima-acao.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill hybrid-proxima-acao -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill hybrid-proxima-acao -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill hybrid-proxima-acao -g",
-      "activation_prompt": "Você tem no arquivo `hybrid-proxima-acao.md` uma skill chamada hybrid-proxima-acao. Quando eu pedir algo como \"qual a próxima ação para [negócio]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `hybrid-proxima-acao.md` uma skill chamada hybrid-proxima-acao. Quando eu pedir algo como \"qual a próxima ação para [negócio]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "hybrid-perfil",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/hybrid-perfil/SKILL.md",
-      "description": "O perfil completo da empresa em YAML: quem é, para quem existe, o que promete, que credenciais sustentam a promessa. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando: \"monta o perfil d",
+      "description": "O perfil completo da empresa em YAML: quem é, para quem existe, o que promete, que credenciais sustentam a promessa. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando: \"monta o perfil…",
       "row": "hybrid",
       "title": "Perfil do negócio",
       "title_netflix": "QUEM SOMOS",
@@ -1930,9 +1984,9 @@
       "needs_photo": false,
       "files": 9,
       "badge": "Nova",
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/hybrid-perfil/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/hybrid-perfil/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/hybrid-perfil/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/hybrid-perfil/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/hybrid-perfil/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/hybrid-perfil/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/hybrid-perfil/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -1957,16 +2011,17 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/hybrid-perfil.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/hybrid-perfil.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/hybrid-perfil.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill hybrid-perfil -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill hybrid-perfil -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill hybrid-perfil -g",
-      "activation_prompt": "Você tem no arquivo `hybrid-perfil.md` uma skill chamada hybrid-perfil. Quando eu pedir algo como \"monta o perfil do negócio [nome]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `hybrid-perfil.md` uma skill chamada hybrid-perfil. Quando eu pedir algo como \"monta o perfil do negócio [nome]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "hybrid-fundador",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/hybrid-fundador/SKILL.md",
       "description": "O negócio herda o fundador: as crenças, o jeito de decidir, o que ele nunca faria. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando: \"extrai meu DNA de fundador\".",
       "row": "hybrid",
@@ -1978,9 +2033,9 @@
       "needs_photo": false,
       "files": 3,
       "badge": "Nova",
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/hybrid-fundador/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/hybrid-fundador/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/hybrid-fundador/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/hybrid-fundador/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/hybrid-fundador/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/hybrid-fundador/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/hybrid-fundador/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -2004,16 +2059,17 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/hybrid-fundador.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/hybrid-fundador.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/hybrid-fundador.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill hybrid-fundador -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill hybrid-fundador -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill hybrid-fundador -g",
-      "activation_prompt": "Você tem no arquivo `hybrid-fundador.md` uma skill chamada hybrid-fundador. Quando eu pedir algo como \"extrai meu DNA de fundador\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `hybrid-fundador.md` uma skill chamada hybrid-fundador. Quando eu pedir algo como \"extrai meu DNA de fundador\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "hybrid-icp",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/hybrid-icp/SKILL.md",
       "description": "Quem é a pessoa que compra, em 47 campos: demografia, dor, desejo, objeções, linguagem, onde está. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando: \"monta o ICP de [produto]\".",
       "row": "hybrid",
@@ -2025,9 +2081,9 @@
       "needs_photo": false,
       "files": 5,
       "badge": "Nova",
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/hybrid-icp/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/hybrid-icp/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/hybrid-icp/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/hybrid-icp/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/hybrid-icp/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/hybrid-icp/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/hybrid-icp/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -2052,18 +2108,19 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/hybrid-icp.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/hybrid-icp.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/hybrid-icp.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill hybrid-icp -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill hybrid-icp -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill hybrid-icp -g",
-      "activation_prompt": "Você tem no arquivo `hybrid-icp.md` uma skill chamada hybrid-icp. Quando eu pedir algo como \"monta o ICP de [produto]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `hybrid-icp.md` uma skill chamada hybrid-icp. Quando eu pedir algo como \"monta o ICP de [produto]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "hybrid-marca",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/hybrid-marca/SKILL.md",
-      "description": "A marca escrita antes de virar logo: o núcleo, as promessas que faz e as que não faz, a personalidade, o DNA de voz e os valores. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando: \"doc",
+      "description": "A marca escrita antes de virar logo: o núcleo, as promessas que faz e as que não faz, a personalidade, o DNA de voz e os valores. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando…",
       "row": "hybrid",
       "title": "Marca",
       "title_netflix": "A MARCA",
@@ -2073,9 +2130,9 @@
       "needs_photo": false,
       "files": 5,
       "badge": "Nova",
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/hybrid-marca/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/hybrid-marca/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/hybrid-marca/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/hybrid-marca/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/hybrid-marca/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/hybrid-marca/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/hybrid-marca/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -2100,18 +2157,19 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/hybrid-marca.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/hybrid-marca.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/hybrid-marca.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill hybrid-marca -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill hybrid-marca -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill hybrid-marca -g",
-      "activation_prompt": "Você tem no arquivo `hybrid-marca.md` uma skill chamada hybrid-marca. Quando eu pedir algo como \"documenta a marca [nome]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `hybrid-marca.md` uma skill chamada hybrid-marca. Quando eu pedir algo como \"documenta a marca [nome]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "hybrid-oferta",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/hybrid-oferta/SKILL.md",
-      "description": "O offerbook é o documento da oferta: o que entra, o que custa, por que vale mais que custa, quais objeções ela já responde. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando: \"monta o o",
+      "description": "O offerbook é o documento da oferta: o que entra, o que custa, por que vale mais que custa, quais objeções ela já responde. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando: \"monta o…",
       "row": "hybrid",
       "title": "Oferta e preço",
       "title_netflix": "PREÇO E PROMESSA",
@@ -2121,9 +2179,9 @@
       "needs_photo": false,
       "files": 6,
       "badge": "Nova",
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/hybrid-oferta/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/hybrid-oferta/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/hybrid-oferta/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/hybrid-oferta/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/hybrid-oferta/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/hybrid-oferta/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/hybrid-oferta/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -2148,16 +2206,17 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/hybrid-oferta.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/hybrid-oferta.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/hybrid-oferta.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill hybrid-oferta -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill hybrid-oferta -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill hybrid-oferta -g",
-      "activation_prompt": "Você tem no arquivo `hybrid-oferta.md` uma skill chamada hybrid-oferta. Quando eu pedir algo como \"monta o offerbook de [produto]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `hybrid-oferta.md` uma skill chamada hybrid-oferta. Quando eu pedir algo como \"monta o offerbook de [produto]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "hybrid-cultura",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/hybrid-cultura/SKILL.md",
       "description": "Cultura é o que a empresa faz quando o dono não está olhando. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando: \"documenta a cultura de [empresa]\".",
       "row": "hybrid",
@@ -2169,9 +2228,9 @@
       "needs_photo": false,
       "files": 13,
       "badge": "Nova",
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/hybrid-cultura/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/hybrid-cultura/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/hybrid-cultura/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/hybrid-cultura/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/hybrid-cultura/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/hybrid-cultura/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/hybrid-cultura/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -2196,18 +2255,19 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/hybrid-cultura.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/hybrid-cultura.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/hybrid-cultura.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill hybrid-cultura -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill hybrid-cultura -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill hybrid-cultura -g",
-      "activation_prompt": "Você tem no arquivo `hybrid-cultura.md` uma skill chamada hybrid-cultura. Quando eu pedir algo como \"documenta a cultura de [empresa]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `hybrid-cultura.md` uma skill chamada hybrid-cultura. Quando eu pedir algo como \"documenta a cultura de [empresa]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "hybrid-time",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/hybrid-time/SKILL.md",
-      "description": "Estrutura de time que dá para ler: cada cadeira, o que ela entrega, a quem responde e o KPI que prova que está funcionando. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando: \"estrutura",
+      "description": "Estrutura de time que dá para ler: cada cadeira, o que ela entrega, a quem responde e o KPI que prova que está funcionando. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando…",
       "row": "hybrid",
       "title": "Estrutura do time",
       "title_netflix": "QUEM FAZ O QUÊ",
@@ -2217,9 +2277,9 @@
       "needs_photo": false,
       "files": 5,
       "badge": "Nova",
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/hybrid-time/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/hybrid-time/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/hybrid-time/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/hybrid-time/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/hybrid-time/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/hybrid-time/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/hybrid-time/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -2243,18 +2303,19 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/hybrid-time.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/hybrid-time.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/hybrid-time.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill hybrid-time -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill hybrid-time -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill hybrid-time -g",
-      "activation_prompt": "Você tem no arquivo `hybrid-time.md` uma skill chamada hybrid-time. Quando eu pedir algo como \"estrutura o time de [empresa]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `hybrid-time.md` uma skill chamada hybrid-time. Quando eu pedir algo como \"estrutura o time de [empresa]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "hybrid-tech",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/hybrid-tech/SKILL.md",
-      "description": "O que roda hoje, o que deveria rodar, e onde a IA entra de verdade. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando: \"mapeia a stack de [empresa]\" ou \"estratégia de IA para [empresa]\"",
+      "description": "O que roda hoje, o que deveria rodar, e onde a IA entra de verdade. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando: \"mapeia a stack de [empresa]\" ou \"estratégia de IA para…",
       "row": "hybrid",
       "title": "Tecnologia e IA",
       "title_netflix": "A STACK",
@@ -2264,9 +2325,9 @@
       "needs_photo": false,
       "files": 7,
       "badge": "Nova",
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/hybrid-tech/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/hybrid-tech/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/hybrid-tech/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/hybrid-tech/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/hybrid-tech/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/hybrid-tech/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/hybrid-tech/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -2291,16 +2352,17 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/hybrid-tech.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/hybrid-tech.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/hybrid-tech.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill hybrid-tech -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill hybrid-tech -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill hybrid-tech -g",
-      "activation_prompt": "Você tem no arquivo `hybrid-tech.md` uma skill chamada hybrid-tech. Quando eu pedir algo como \"mapeia a stack de [empresa]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `hybrid-tech.md` uma skill chamada hybrid-tech. Quando eu pedir algo como \"mapeia a stack de [empresa]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "hybrid-etl",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/hybrid-etl/SKILL.md",
       "description": "A empresa já escreveu sobre si mesma: site, PDFs, apresentações, posts. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando: \"extrai tudo sobre [empresa] de [pasta ou site]\".",
       "row": "hybrid",
@@ -2312,9 +2374,9 @@
       "needs_photo": false,
       "files": 7,
       "badge": "Nova",
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/hybrid-etl/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/hybrid-etl/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/hybrid-etl/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/hybrid-etl/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/hybrid-etl/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/hybrid-etl/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/hybrid-etl/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -2339,16 +2401,17 @@
         ]
       },
       "runtime_only": true,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/hybrid-etl.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/hybrid-etl.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/hybrid-etl.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill hybrid-etl -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill hybrid-etl -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill hybrid-etl -g",
-      "activation_prompt": "Você tem no arquivo `hybrid-etl.md` uma skill chamada hybrid-etl. Quando eu pedir algo como \"extrai tudo sobre [empresa] de [pasta ou site]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `hybrid-etl.md` uma skill chamada hybrid-etl. Quando eu pedir algo como \"extrai tudo sobre [empresa] de [pasta ou site]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "sop-extrair",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/sop-extrair/SKILL.md",
       "description": "O processo existe na cabeça de quem faz. Use quando: \"extrai o SOP de [processo]\" e aponte a fonte (texto, arquivo, transcrição) ou peça a entrevista.",
       "row": "sop",
@@ -2360,9 +2423,9 @@
       "needs_photo": false,
       "files": 8,
       "badge": "Nova",
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/sop-extrair/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/sop-extrair/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/sop-extrair/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/sop-extrair/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/sop-extrair/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/sop-extrair/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/sop-extrair/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -2386,18 +2449,19 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/sop-extrair.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/sop-extrair.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/sop-extrair.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill sop-extrair -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill sop-extrair -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill sop-extrair -g",
-      "activation_prompt": "Você tem no arquivo `sop-extrair.md` uma skill chamada sop-extrair. Quando eu pedir algo como \"extrai o SOP de [processo]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `sop-extrair.md` uma skill chamada sop-extrair. Quando eu pedir algo como \"extrai o SOP de [processo]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "sop-criar",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/sop-criar/SKILL.md",
-      "description": "Escreve o procedimento duas vezes, de propósito: uma versão para pessoa, no padrão FDA/GMP, e uma para agente, em YAML ou JSON com estados, decisões e ferramentas. Use quando: \"escreve o SOP de [proce",
+      "description": "Escreve o procedimento duas vezes, de propósito: uma versão para pessoa, no padrão FDA/GMP, e uma para agente, em YAML ou JSON com estados, decisões e ferramentas. Use quando: \"escreve o SOP de…",
       "row": "sop",
       "title": "Escrever um SOP",
       "title_netflix": "POR ESCRITO",
@@ -2407,9 +2471,9 @@
       "needs_photo": false,
       "files": 19,
       "badge": "Nova",
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/sop-criar/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/sop-criar/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/sop-criar/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/sop-criar/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/sop-criar/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/sop-criar/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/sop-criar/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -2434,16 +2498,17 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/sop-criar.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/sop-criar.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/sop-criar.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill sop-criar -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill sop-criar -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill sop-criar -g",
-      "activation_prompt": "Você tem no arquivo `sop-criar.md` uma skill chamada sop-criar. Quando eu pedir algo como \"escreve o SOP de [processo]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `sop-criar.md` uma skill chamada sop-criar. Quando eu pedir algo como \"escreve o SOP de [processo]\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     },
     {
       "name": "sop-auditar",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "path": "skills/sop-auditar/SKILL.md",
       "description": "Um SOP pode existir e não servir. Use quando: \"audita este SOP\" (ou uma pasta inteira).",
       "row": "sop",
@@ -2455,9 +2520,9 @@
       "needs_photo": false,
       "files": 18,
       "badge": "Nova",
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/sop-auditar/SKILL.md",
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/sop-auditar/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.0/skills/sop-auditar/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
+      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/sop-auditar/SKILL.md",
+      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/sop-auditar/SKILL.md",
+      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.4.1/skills/sop-auditar/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
       "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/sop-auditar/SKILL.md",
       "painel": {
         "ano": 2026,
@@ -2483,12 +2548,13 @@
         ]
       },
       "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.0/sop-auditar.zip",
+      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/sop-auditar.zip",
       "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/sop-auditar.md",
       "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill sop-auditar -a claude-code -g",
       "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill sop-auditar -a codex -g",
       "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill sop-auditar -g",
-      "activation_prompt": "Você tem no arquivo `sop-auditar.md` uma skill chamada sop-auditar. Quando eu pedir algo como \"audita este SOP\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever."
+      "activation_prompt": "Você tem no arquivo `sop-auditar.md` uma skill chamada sop-auditar. Quando eu pedir algo como \"audita este SOP\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
+      "prompt_truncated": []
     }
   ],
   "repo": "jcarlosamorim/hermes-skills",

@@ -1,7 +1,7 @@
 ---
 name: copy-metodo-sugarman
-description: "Escreve copy pelo método de Joe Sugarman: Escorregador, Gatilhos psicológicos, Storytelling, BluBlocker. Use quando pedirem 'como Sugarman', storytelling e gatilhos psicológicos, ou uma peça nesse est"
-version: 0.4.0
+description: "Escreve copy pelo método de Joe Sugarman: Escorregador, Gatilhos psicológicos, Storytelling, BluBlocker. Use quando pedirem 'como Sugarman', storytelling e gatilhos psicológicos, ou uma peça nesse…"
+version: 0.4.1
 author: "José Carlos Amorim"
 license: MIT
 platforms: [linux, macos, windows]

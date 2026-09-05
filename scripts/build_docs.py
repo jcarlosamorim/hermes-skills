@@ -16,6 +16,8 @@ from pathlib import Path
 
 import yaml
 
+from hub_common import HUB_URL, REPO_SLUG, activation_text, cap200
+
 ROOT = Path(__file__).resolve().parents[1]
 SKILLS, DOCS, DIST = ROOT / "skills", ROOT / "docs", ROOT / "dist" / "portable"
 WK, PROMPT = DOCS / ".well-known" / "skills", DOCS / "prompt"
@@ -25,17 +27,15 @@ PROMPT_CAP = 250_000  # chars; acima disso a versão colável para e aponta para
 # ───────────── frontmatter estrito ─────────────
 def strict_frontmatter(fm: dict, slug: str, version: str) -> dict:
     h = (fm.get("metadata") or {}).get("hermes") or {}
-    desc = fm["description"].strip()
-    if len(desc) > 200:
-        desc = desc[:200].rsplit(" ", 1)[0].rstrip(",;:") + "…"
+    desc = cap200(fm["description"])
     compat = []
     if h.get("requires_toolsets"): compat.append("Requer: " + ", ".join(h["requires_toolsets"]) + ".")
     if fm.get("required_environment_variables"):
         compat.append("Antes de usar, defina no ambiente: " + ", ".join(e["name"] for e in fm["required_environment_variables"]) + ".")
     if h.get("blueprint"): compat.append("No Hermes roda agendada; em outros agentes, sob demanda.")
     compat.append("Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.")
-    meta = {"author": str(fm.get("author", "")), "version": version, "hub": "https://agentflix.nexialismo.ai",
-            "source": f"https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/{slug}",
+    meta = {"author": str(fm.get("author", "")), "version": version, "hub": HUB_URL,
+            "source": f"https://github.com/{REPO_SLUG}/tree/main/skills/{slug}",
             "tags": ", ".join(h.get("tags", [])), "related": ", ".join(h.get("related_skills", []))}
     if h.get("config"):
         meta["config"] = "; ".join(f"{c['key']}: {c['description']}" for c in h["config"])
@@ -83,16 +83,13 @@ def referenced_files(body: str) -> list[str]:
     m = re.search(r"## Arquivos desta skill\n\n((?:- `[^`]+`\n?)+)", body)
     return re.findall(r"- `([^`]+)`", m.group(1)) if m else []
 
-ACTIVATION = ("Você tem no arquivo `{slug}.md` uma skill chamada {name}. Quando eu pedir {trig}, siga o `## Procedure` desse arquivo à risca, "
-              "use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.")
-
-def build_prompt(slug: str, fm: dict, body: str, files: list[str], version: str, act: str = "") -> tuple[str, str]:
+def build_prompt(slug: str, fm: dict, body: str, files: list[str], version: str, act: str = "") -> tuple[str, str, list[str]]:
     if not act:
         desc = fm["description"]; trig = desc.split("Use quando")[-1].strip(": .…") if "Use quando" in desc else "isso"
-        act = ACTIVATION.format(slug=slug, name=fm["name"], trig=trig)
+        act = activation_text(slug, trig)
     head = f"""# {fm['name']} · versão para colar
 
-> Esta é a mesma skill de https://agentflix.nexialismo.ai, num arquivo só, para quem não instala skill:
+> Esta é a mesma skill de {HUB_URL}, num arquivo só, para quem não instala skill:
 > ChatGPT sem Skills no plano, Claude sem upload, ou qualquer chat. Onde o texto disser `references/arquivo.md`
 > ou `templates/arquivo`, o conteúdo está na seção **Referência:** correspondente, mais abaixo.
 >
@@ -105,17 +102,19 @@ def build_prompt(slug: str, fm: dict, body: str, files: list[str], version: str,
 ---
 """
     doc = head + adapt_body(body).replace("## Arquivos desta skill", "## Arquivos desta skill (incluídos abaixo)")
-    left = []
+    left, truncated = [], []   # truncated: o que ficou fora só pelo teto de tamanho (vai para o catálogo, a página avisa)
+    base = (SKILLS / slug).resolve()
     for rel in files:
-        p = SKILLS / slug / rel
+        p = (SKILLS / slug / rel).resolve()
+        if not str(p).startswith(str(base) + "/"): left.append(rel + " (fora da skill: ignorado)"); continue
         if not p.exists(): continue
         if rel.endswith((".py", ".zip", ".png", ".jpg")): left.append(rel + " (script: só no zip)"); continue
         chunk = f"\n\n---\n\n## Referência: {rel}\n\n" + prune(p.read_text(encoding="utf-8", errors="replace"), rel)
-        if len(doc) + len(chunk) > PROMPT_CAP: left.append(rel); continue
+        if len(doc) + len(chunk) > PROMPT_CAP: left.append(rel); truncated.append(rel); continue
         doc += chunk
     if left:
         doc += "\n\n---\n\n## Não incluído neste arquivo (está no zip da skill)\n\n" + "\n".join(f"- `{r}`" for r in left) + "\n"
-    return doc, act
+    return doc, act, truncated
 
 # ───────────── principal ─────────────
 def main() -> None:
@@ -124,7 +123,6 @@ def main() -> None:
         if d.exists(): shutil.rmtree(d)
         d.mkdir(parents=True)
     DOCS.mkdir(exist_ok=True); (DOCS / ".nojekyll").touch()
-    shutil.copyfile(ROOT / "catalog.json", DOCS / "catalog.json")
     index, n = [], 0
     for d in sorted(p for p in SKILLS.iterdir() if (p / "SKILL.md").exists()):
         slug = d.name; fm, body = split((d / "SKILL.md").read_text(encoding="utf-8"))
@@ -134,17 +132,24 @@ def main() -> None:
         (pd / "SKILL.md").write_text(dump_fm(strict_frontmatter(fm, slug, version)) + adapt_body(body), encoding="utf-8")
         with zipfile.ZipFile(DIST / f"{slug}.zip", "w", zipfile.ZIP_DEFLATED) as z:
             for f in sorted(pd.rglob("*")):
-                if f.is_file(): z.write(f, f"{slug}/{f.relative_to(pd)}")
+                if not f.is_file(): continue
+                zi = zipfile.ZipInfo(f"{slug}/{f.relative_to(pd)}", date_time=(1980, 1, 1, 0, 0, 0))  # sem mtime: zip igual para fonte igual
+                zi.compress_type = zipfile.ZIP_DEFLATED; zi.external_attr = 0o644 << 16
+                z.writestr(zi, f.read_bytes())
         # well-known serve a portable
         shutil.copytree(pd, WK / slug)
         index.append({"name": slug, "description": strict_frontmatter(fm, slug, version)["description"],
                       "files": sorted(str(f.relative_to(pd)) for f in pd.rglob("*") if f.is_file())})
         # colável
-        entry = next((s for s in cat["skills"] if s["name"] == slug), {})
-        doc, act = build_prompt(slug, fm, body, files, version, act=entry.get("activation_prompt", ""))
+        entry = next((s for s in cat["skills"] if s["name"] == slug), None)
+        doc, act, truncated = build_prompt(slug, fm, body, files, version, act=(entry or {}).get("activation_prompt", ""))
+        if entry is not None: entry["prompt_truncated"] = truncated
         (PROMPT / f"{slug}.md").write_text(doc, encoding="utf-8")
         n += 1
     (WK / "index.json").write_text(json.dumps({"skills": index}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    # o catálogo ganha prompt_truncated por skill; raiz e docs/ ficam iguais
+    cat_text = json.dumps(cat, ensure_ascii=False, indent=2) + "\n"
+    (ROOT / "catalog.json").write_text(cat_text, encoding="utf-8"); (DOCS / "catalog.json").write_text(cat_text, encoding="utf-8")
     print(f"dist: {n} portable + {n} zips em dist/portable · well-known (portable) · {n} coláveis em docs/prompt · catálogo copiado")
 
 if __name__ == "__main__":

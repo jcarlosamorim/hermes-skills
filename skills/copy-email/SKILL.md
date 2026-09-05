@@ -1,7 +1,7 @@
 ---
 name: copy-email
-description: "Sequência de boas-vindas, e-mail diário, lançamento, cold e-mail, carrinho abandonado, lead que sumiu, martelo pré-call e newsletter. Use quando o pedido envolver e-mail, sequência, newsletter, cold e"
-version: 0.4.0
+description: "Sequência de boas-vindas, e-mail diário, lançamento, cold e-mail, carrinho abandonado, lead que sumiu, martelo pré-call e newsletter. Use quando o pedido envolver e-mail, sequência, newsletter, cold…"
+version: 0.4.1
 author: "José Carlos Amorim"
 license: MIT
 platforms: [linux, macos, windows]

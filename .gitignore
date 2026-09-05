@@ -11,3 +11,4 @@ dist/
 
 # link local da Vercel (site/)
 site/.vercel/
+site/covers

@@ -1,11 +1,11 @@
 ---
 name: copy-metodo-hopkins
-description: 'Escreve copy pelo método de Claude Hopkins: Publicidade científica, Reason why, Teste com cupom, Alegação preemptiva, Amostra grátis. Use quando pedirem ''como Hopkins'', publicidade científica e o test'
+description: 'Escreve copy pelo método de Claude Hopkins: Publicidade científica, Reason why, Teste com cupom, Alegação preemptiva, Amostra grátis. Use quando pedirem ''como Hopkins'', publicidade científica e o…'
 license: MIT
 compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
   author: José Carlos Amorim
-  version: 0.4.0
+  version: 0.4.1
   hub: https://agentflix.nexialismo.ai
   source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/copy-metodo-hopkins
   tags: copy, copywriting, hopkins, metodo, resposta-direta

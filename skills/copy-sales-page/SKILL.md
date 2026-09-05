@@ -1,7 +1,7 @@
 ---
 name: copy-sales-page
-description: "Uma página de vendas longa não é um texto grande, é uma sequência de decisões pequenas até o botão. Use quando o pedido envolver página de vendas, sales page, landing page, carta de vendas longa, maga"
-version: 0.4.0
+description: "Uma página de vendas longa não é um texto grande, é uma sequência de decisões pequenas até o botão. Use quando o pedido envolver página de vendas, sales page, landing page, carta de vendas longa…"
+version: 0.4.1
 author: "José Carlos Amorim"
 license: MIT
 platforms: [linux, macos, windows]

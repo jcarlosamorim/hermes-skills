@@ -13,6 +13,7 @@ Exige Python 3.10+ (o guard usa `X | None`).
 """
 from __future__ import annotations
 
+import hashlib
 import importlib.util
 import os
 import sys
@@ -20,8 +21,9 @@ import tempfile
 import urllib.request
 from pathlib import Path
 
-HERMES_TAG = "v2026.8.27"  # 0.20.6, a versão medida na instância de referência em 2026-08-31
-GUARD_URL = f"https://raw.githubusercontent.com/NousResearch/hermes-agent/{HERMES_TAG}/tools/skills_guard.py"
+from hub_common import GUARD_SHA256, HERMES_SHA, HERMES_TAG
+
+GUARD_URL = f"https://raw.githubusercontent.com/NousResearch/hermes-agent/{HERMES_SHA}/tools/skills_guard.py"
 ROOT = Path(__file__).resolve().parents[1]
 SKILLS = ROOT / "skills"
 
@@ -33,11 +35,22 @@ def load_guard():
     path = os.environ.get("SKILLS_GUARD_PATH")
     if path:
         src = Path(path)
+        data = src.read_bytes()
+        if hashlib.sha256(data).hexdigest() != GUARD_SHA256:
+            print(f"aviso: {src} não é o skills_guard.py pinado ({HERMES_TAG}); o veredito pode divergir do CI")
     else:
-        tmp = Path(tempfile.mkdtemp()) / "skills_guard.py"
-        with urllib.request.urlopen(GUARD_URL, timeout=30) as r:
-            tmp.write_bytes(r.read())
-        src = tmp
+        try:
+            with urllib.request.urlopen(GUARD_URL, timeout=30) as r:
+                data = r.read()
+        except Exception as exc:  # rede fora: falha alta e explicada, não um traceback
+            sys.exit(f"não consegui baixar o skills_guard.py pinado ({GUARD_URL}): {exc}\n"
+                     f"offline: SKILLS_GUARD_PATH=/caminho/skills_guard.py python3 scripts/scan_skills.py")
+        got = hashlib.sha256(data).hexdigest()
+        if got != GUARD_SHA256:
+            sys.exit(f"skills_guard.py baixado não bate com o sha256 pinado (esperado {GUARD_SHA256[:12]}…, veio {got[:12]}…); "
+                     "alguém mexeu no arquivo ou no commit. Não escaneio com código não verificado.")
+        src = Path(tempfile.mkdtemp()) / "skills_guard.py"
+        src.write_bytes(data)
     spec = importlib.util.spec_from_file_location("skills_guard", src)
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)

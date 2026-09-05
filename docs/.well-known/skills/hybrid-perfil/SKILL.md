@@ -1,11 +1,11 @@
 ---
 name: hybrid-perfil
-description: 'O perfil completo da empresa em YAML: quem é, para quem existe, o que promete, que credenciais sustentam a promessa. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando: "monta o perfil d'
+description: 'O perfil completo da empresa em YAML: quem é, para quem existe, o que promete, que credenciais sustentam a promessa. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando: "monta o perfil…'
 license: MIT
 compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
   author: José Carlos Amorim
-  version: 0.4.0
+  version: 0.4.1
   hub: https://agentflix.nexialismo.ai
   source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/hybrid-perfil
   tags: hybrid-workspace, negocio, elicitacao, yaml

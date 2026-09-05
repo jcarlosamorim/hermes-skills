@@ -1,11 +1,11 @@
 ---
 name: copy-email
-description: Sequência de boas-vindas, e-mail diário, lançamento, cold e-mail, carrinho abandonado, lead que sumiu, martelo pré-call e newsletter. Use quando o pedido envolver e-mail, sequência, newsletter, cold e
+description: Sequência de boas-vindas, e-mail diário, lançamento, cold e-mail, carrinho abandonado, lead que sumiu, martelo pré-call e newsletter. Use quando o pedido envolver e-mail, sequência, newsletter, cold…
 license: MIT
 compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
   author: José Carlos Amorim
-  version: 0.4.0
+  version: 0.4.1
   hub: https://agentflix.nexialismo.ai
   source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/copy-email
   tags: copy, copywriting, copy, e-mail

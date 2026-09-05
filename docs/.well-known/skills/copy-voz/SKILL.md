@@ -1,11 +1,11 @@
 ---
 name: copy-voz
-description: 'Extrai o DNA de comunicação de uma pessoa: vocabulário, frases-assinatura, frameworks que ela repete, o jeito de abrir e fechar. Use quando o pedido envolver voz da marca, DNA de comunicação, frases-a'
+description: 'Extrai o DNA de comunicação de uma pessoa: vocabulário, frases-assinatura, frameworks que ela repete, o jeito de abrir e fechar. Use quando o pedido envolver voz da marca, DNA de comunicação…'
 license: MIT
 compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
   author: José Carlos Amorim
-  version: 0.4.0
+  version: 0.4.1
   hub: https://agentflix.nexialismo.ai
   source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/copy-voz
   tags: copy, copywriting, voz, marca-pessoal

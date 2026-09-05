@@ -1,11 +1,11 @@
 ---
 name: ops-revisao-semanal
-description: 'Toda sexta, quem operou na zona de genialidade e quem passou a semana fora dela. Usa o perfil do SEU time (zona de genialidade, Kolbe) como entrada. Use quando: "revisão da semana" e cole ou aponte as'
+description: 'Toda sexta, quem operou na zona de genialidade e quem passou a semana fora dela. Usa o perfil do SEU time (zona de genialidade, Kolbe) como entrada. Use quando: "revisão da semana" e cole ou aponte…'
 license: MIT
 compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
   author: José Carlos Amorim
-  version: 0.4.0
+  version: 0.4.1
   hub: https://agentflix.nexialismo.ai
   source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/ops-revisao-semanal
   tags: operacao, time, genius-zone, kolbe, gestao

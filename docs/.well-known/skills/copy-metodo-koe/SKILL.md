@@ -1,11 +1,11 @@
 ---
 name: copy-metodo-koe
-description: 'Escreve copy pelo método de Dan Koe: One-person business, Alavancagem, Produto digital, Conteúdo como funil. Use quando pedirem ''como Koe'', negócio de uma pessoa e alavancagem, ou uma peça nesse estil'
+description: 'Escreve copy pelo método de Dan Koe: One-person business, Alavancagem, Produto digital, Conteúdo como funil. Use quando pedirem ''como Koe'', negócio de uma pessoa e alavancagem, ou uma peça nesse…'
 license: MIT
 compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
   author: José Carlos Amorim
-  version: 0.4.0
+  version: 0.4.1
   hub: https://agentflix.nexialismo.ai
   source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/copy-metodo-koe
   tags: copy, copywriting, koe, metodo, resposta-direta

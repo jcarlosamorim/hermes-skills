@@ -68,10 +68,15 @@ site/                           a página AgentFlix (Vercel, agentflix.nexialism
                                 lê catalog.json; site/vercel.json reescreve /catalog.json, /.well-known, /prompt
                                 e /covers para o Pages, então o domínio da marca também serve o well-known
 dist/portable/                  gerado, fora do git: pasta e zip estritos por skill; a release da tag recebe os zips
-scripts/build_docs.py           gera portable, zips, well-known, coláveis e copia o catálogo
+scripts/hub_common.py           fonte única: tag/commit do Hermes, URLs, limite da description, texto de ativação (o gerador importa daqui)
+scripts/build_docs.py           gera portable, zips (reprodutíveis), well-known, coláveis; grava prompt_truncated no catálogo
+tests/                          unittest das funções puras (cap200, frontmatter estrito, referências, poda, zip)
 scripts/validate_skills.py      forma do SKILL.md (fonte) e do portable (chaves do spec, description ≤200)
-scripts/scan_skills.py          scanner do Hermes contra cada skill
-.github/workflows/release.yml   em push de tag v*, anexa os zips portable à release
+scripts/scan_skills.py          scanner do Hermes contra cada skill (skills_guard.py pinado por commit + sha256)
+.github/workflows/release.yml   em push de tag v*: confere tag = catalog.version, valida, escaneia e anexa os zips
+docs/covers/                    capas <slug>-desktop.jpg (hero/modal), -mobile.jpg (hero no celular), -card.jpg (fileiras);
+                                importadas por mmos/outputs/hermes-hub/capas/importar_capas.py
+site/audio/*.v2.mp3             os cinco cues da abertura; /audio tem cache imutável, então som novo = nome novo
 ```
 
 O que muda da fonte para o portable: só o frontmatter (name, description ≤200, license, compatibility,
@@ -81,11 +86,12 @@ injetada, variável de ambiente). O procedimento é o mesmo.
 ## Publicar uma mudança
 
 1. Branch. Edite ou crie `skills/<nome>/`.
-2. `python3 scripts/validate_skills.py && python3 scripts/scan_skills.py` (Python 3.10+).
+2. `python3 -m venv .venv && . .venv/bin/activate && pip install -r requirements.txt` (uma vez; Python 3.10+),
+   depois `python3 -m unittest discover -s tests && python3 scripts/validate_skills.py && python3 scripts/scan_skills.py`.
 3. `python3 scripts/build_docs.py` e confira o diff em `docs/` (portable, coláveis, well-known).
-4. PR. O CI repete os dois primeiros passos, inclusive a validação do portable.
+4. PR. O CI repete testes, validador e scanner, e reprova se `docs/` ou `catalog.json` não forem o build de `skills/`.
 5. Merge em `main` (o tap passa a ver) e **tag** (`vX.Y.Z`): os comandos da página apontam para a tag, e o
-   workflow de release anexa os zips portable a ela.
+   workflow de release confere que a tag é `v` + `catalog.version`, valida, escaneia e anexa os zips portable a ela.
 6. A página não precisa de deploy por release (lê o catálogo do Pages). Só quando `site/` mudar:
    `cd site && vercel deploy --prod` (projeto `agentflix`).
 

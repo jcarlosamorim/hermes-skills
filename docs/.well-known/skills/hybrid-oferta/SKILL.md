@@ -1,11 +1,11 @@
 ---
 name: hybrid-oferta
-description: 'O offerbook é o documento da oferta: o que entra, o que custa, por que vale mais que custa, quais objeções ela já responde. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando: "monta o o'
+description: 'O offerbook é o documento da oferta: o que entra, o que custa, por que vale mais que custa, quais objeções ela já responde. Grava YAML na pasta do negócio (config hybrid.pasta). Use quando: "monta o…'
 license: MIT
 compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
   author: José Carlos Amorim
-  version: 0.4.0
+  version: 0.4.1
   hub: https://agentflix.nexialismo.ai
   source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/hybrid-oferta
   tags: hybrid-workspace, negocio, diagnostico, yaml
