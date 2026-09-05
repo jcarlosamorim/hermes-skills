@@ -4,7 +4,7 @@ Skills instaláveis por comando no [Hermes Agent](https://github.com/NousResearc
 lançamento, processos (SOP), o **Hybrid Workspace** do seu negócio, operação de time e tráfego pago. Cada skill é um procedimento com verificação, não um prompt.
 Código aberto, licença MIT, escaneado pelo mesmo scanner que o Hermes roda na instalação.
 
-**Página do catálogo:** https://agentflix.nexialismo.ai (clique num card, escolha o agente, copie o comando).
+**Página do catálogo:** https://agentsflix.ai (clique num card, escolha o agente, copie o comando).
 O GitHub Pages do repo (https://jcarlosamorim.github.io/hermes-skills/) segue como host técnico: catálogo,
 `.well-known` e coláveis. A página lê tudo de lá, então uma release nova aparece nela sem deploy.
 
@@ -63,7 +63,7 @@ docs/                           host técnico (GitHub Pages): catálogo, docs/pr
                                 docs/.well-known/skills/ (a versão PORTABLE, spec estrito: é o que
                                 `npx skills add <url>` e `hermes skills search <url>` leem);
                                 docs/index.html só redireciona para a página
-site/                           a página AgentFlix (Vercel, agentflix.nexialismo.ai): um HTML sem framework que
+site/                           a página AgentFlix (Vercel, agentsflix.ai): um HTML sem framework que
                                 lê catalog.json; site/vercel.json reescreve /catalog.json, /.well-known, /prompt
                                 e /covers para o Pages, então o domínio da marca também serve o well-known
 dist/portable/                  gerado, fora do git: pasta e zip estritos por skill; a release da tag recebe os zips

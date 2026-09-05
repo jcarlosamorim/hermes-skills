@@ -6,7 +6,7 @@ compatibility: 'Requer: web. Agent Skills (agentskills.io). Funciona em Claude, 
 metadata:
   author: José Carlos Amorim
   version: 0.4.1
-  hub: https://agentflix.nexialismo.ai
+  hub: https://agentsflix.ai
   source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/ads-tracking
   tags: trafego-pago, meta-ads, tracking
   related: ads-gate-compliance, ads-plano, ads-otimizar

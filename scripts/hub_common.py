@@ -12,7 +12,7 @@ GUARD_SHA256 = "e99c4b7967474ba7a5a29109717b00aa21f1d4535f52fe3df2771aa203156ce6
 
 REPO_SLUG = "jcarlosamorim/hermes-skills"
 WELLKNOWN = "https://jcarlosamorim.github.io/hermes-skills"          # host técnico: catálogo, .well-known, coláveis
-HUB_URL = "https://agentflix.nexialismo.ai"                           # a página
+HUB_URL = "https://agentsflix.ai"                                     # a página (agentflix.nexialismo.ai redireciona para cá)
 
 DESC_MAX = 200                                                        # Claude.ai rejeita description maior; `hermes skills search` lê os primeiros chars
 RUNTIME_ONLY = {"ads-otimizar", "hybrid-etl"}                         # exigem terminal e rede: só onde há máquina (Hermes, Claude Code, Codex)

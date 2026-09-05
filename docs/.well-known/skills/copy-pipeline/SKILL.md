@@ -6,7 +6,7 @@ compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex
 metadata:
   author: José Carlos Amorim
   version: 0.4.1
-  hub: https://agentflix.nexialismo.ai
+  hub: https://agentsflix.ai
   source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/copy-pipeline
   tags: copy, copywriting, pipeline, campanha
   related: copy-pipeline, copy-auditoria
