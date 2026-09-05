@@ -12,8 +12,8 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://agentsflix.ai/">
 <link rel="canonical" href="https://agentsflix.ai/">
-<meta property="og:image" content="https://agentsflix.ai/og.jpg">
-<meta property="og:image:secure_url" content="https://agentsflix.ai/og.jpg">
+<meta property="og:image" content="https://agentsflix.ai/og-v2.jpg">
+<meta property="og:image:secure_url" content="https://agentsflix.ai/og-v2.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -21,8 +21,10 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="AgentFlix">
 <meta name="twitter:description" content="Instale um método, não um prompt. 51 skills para Hermes, Claude, ChatGPT e Codex.">
-<meta name="twitter:image" content="https://agentsflix.ai/og.jpg">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23141414'/%3E%3Ctext x='32' y='46' font-family='Archivo,Helvetica,Arial,sans-serif' font-weight='900' font-size='40' text-anchor='middle' fill='%2330B0C7'%3EA%3C/text%3E%3C/svg%3E">
+<meta name="twitter:image" content="https://agentsflix.ai/og-v2.jpg">
+<link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="brand/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
 <link rel="preload" href="catalog.json" as="fetch" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -67,8 +69,7 @@
   #intro .bloom { position: absolute; left: 50%; top: 50%; width: 900px; height: 900px; margin: -450px 0 0 -450px; border-radius: 50%; background: radial-gradient(circle, rgba(var(--accent-rgb),0.5) 0%, rgba(var(--accent-rgb),0.12) 38%, rgba(var(--accent-rgb),0) 68%); animation: aBloom 900ms var(--ease) 2250ms both; }
   #intro .center { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 22px; }
   #intro .mark { animation: aMark 1000ms var(--ease) 2300ms both; }
-  #intro .mark span { font-size: clamp(44px, 8.5vw, 124px); font-weight: 900; letter-spacing: -0.055em; color: #fff; }
-  #intro .mark span.red { color: var(--accent); text-shadow: 0 0 90px rgba(var(--accent-rgb),0.6), 0 0 12px rgba(255,80,90,0.35); }
+  #intro .mark img { display: block; width: min(760px, 78vw); height: auto; filter: drop-shadow(0 0 48px rgba(var(--accent-rgb),0.45)); }
   #intro .rule { width: min(520px, 60vw); height: 1px; background: linear-gradient(90deg, rgba(var(--accent-rgb),0) 0%, var(--accent) 50%, rgba(var(--accent-rgb),0) 100%); animation: aRule 700ms var(--ease) 2900ms both; }
   #intro .tag { font-size: 12px; color: #c9c9c9; text-align: center; animation: aTag 800ms var(--ease) 3000ms both; }
   #intro .grain { position: absolute; inset: 0; pointer-events: none; background: repeating-linear-gradient(0deg, rgba(255,255,255,0.06) 0 1px, rgba(0,0,0,0) 1px 3px); animation: aGrain 900ms linear infinite; }
@@ -87,9 +88,7 @@
 
   header.top { position: sticky; top: 0; z-index: 60; display: flex; align-items: center; gap: 24px; padding: 16px var(--gutter); overflow: hidden; background: linear-gradient(180deg, #161616 0%, rgba(22,22,22,0.92) 70%, rgba(22,22,22,0) 100%); backdrop-filter: blur(6px); }
   .brand { display: flex; align-items: baseline; gap: 8px; flex: 0 0 auto; }
-  .brand .w { font-size: 26px; font-weight: 900; letter-spacing: -0.04em; color: #fff; }
-  .brand .r { font-size: 26px; font-weight: 900; letter-spacing: -0.04em; color: var(--accent); margin-left: -8px; }
-  .brand .tag { font-size: 11px; font-weight: 500; color: #9a9a9a; letter-spacing: 0.14em; }
+  .brand .logo { display: block; height: 36px; width: auto; }   /* kit: logo completa nunca abaixo de 180px de largura */
   nav.main { display: flex; gap: 14px; flex: 0 0 auto; white-space: nowrap; font-size: 14px; font-weight: 600; color: #d6d6d6; }
   .spacer { flex: 1 1 12px; min-width: 12px; }
   .search { display: flex; align-items: center; gap: 10px; padding: 9px 14px; background: var(--panel); border: 1px solid var(--line); border-radius: 4px; flex: 1 1 120px; min-width: 0; max-width: 320px; }
@@ -278,7 +277,7 @@
     :root { --gutter: 20px; }
     /* celular: header sai do sticky (relative mantém o empilhamento sobre o hero), marca + nav numa linha, busca na segunda */
     header.top { position: relative; padding-top: 12px; padding-bottom: 12px; gap: 12px; flex-wrap: wrap; background: #161616; }
-    .brand .tag { display: none; }
+    .brand .logo { height: 30px; }
     nav.main { flex: 1 1 0; min-width: 0; overflow-x: auto; gap: 12px; font-size: 13px; scrollbar-width: none; }
     nav.main::-webkit-scrollbar { display: none; }
     .spacer { display: none; }
@@ -317,8 +316,7 @@
 <div class="page" id="page">
   <header class="top">
     <a class="brand" href="#" data-act="home" aria-label="AgentFlix">
-      <span class="w">AGENT</span><span class="r">FLIX</span>
-      <span class="tag mono">/SKILLS</span>
+      <img class="logo" src="brand/horizontal-transparente-dark.svg" alt="AgentFlix" width="180" height="36">
     </a>
     <nav class="main">
       <a href="#copy">Copy</a>
@@ -897,7 +895,7 @@
         <div class="scan"></div>
         <div class="bloom"></div>
         <div class="center">
-          <div class="mark"><span>AGENT</span><span class="red">FLIX</span></div>
+          <div class="mark"><img src="brand/horizontal-transparente-dark.svg" alt="AgentFlix"></div>
           <div class="rule"></div>
           <div class="tag mono">HUB DE SKILLS PARA AGENTES</div>
         </div>
@@ -912,7 +910,7 @@
     const el = $("intro");
     el.innerHTML = `
       <div class="gate" tabindex="-1">
-        <div class="mark"><span>AGENT</span><span class="red">FLIX</span></div>
+        <div class="mark"><img src="brand/horizontal-transparente-dark.svg" alt="AgentFlix"></div>
         <div class="rule"></div>
         <button class="enter" data-act="enter"><span>▶</span><span>Entrar</span></button>
       </div>
