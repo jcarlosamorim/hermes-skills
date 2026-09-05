@@ -3,52 +3,6 @@
   "version": "0.4.1",
   "skills": [
     {
-      "name": "google-oauth-onboarding",
-      "version": "0.1.0",
-      "path": "skills/google-oauth-onboarding/SKILL.md",
-      "description": "Guide Google Cloud setup and OAuth consent safely.",
-      "row": "base",
-      "title": "Google OAuth",
-      "title_netflix": "AUTORIZAÇÃO",
-      "subtitle": "Conecte o Google com escopo mínimo",
-      "genre": "base",
-      "install_url": "https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.1.0/skills/google-oauth-onboarding/SKILL.md",
-      "github_url": "https://github.com/jcarlosamorim/hermes-skills/blob/main/skills/google-oauth-onboarding/SKILL.md",
-      "painel": {
-        "ano": 2026,
-        "tamanho": "1 procedimento",
-        "requer": "terminal",
-        "sinopse": "Conecta a conta Google do aluno ao Hermes com o menor acesso necessário: cria ou reaproveita o projeto no Google Cloud, pede só o escopo da ação e autoriza por PKCE. Não envia e-mail nem mexe em dados como parte da autorização.",
-        "como_usar": "Diga: \"conecta meu Gmail (ou Calendar, Drive) ao Hermes\". Ele pergunta a ação e pede só o escopo dela.",
-        "elenco": [
-          "Google Cloud",
-          "OAuth 2.0",
-          "PKCE"
-        ],
-        "generos": [
-          "Base",
-          "Google",
-          "Autorização"
-        ],
-        "esta_skill_e": [
-          "Segura",
-          "Passo a passo",
-          "Escopo mínimo"
-        ]
-      },
-      "install_cmd": "hermes skills install https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.1.0/skills/google-oauth-onboarding/SKILL.md",
-      "chat_cmd": "Inspecione e instale esta skill: https://raw.githubusercontent.com/jcarlosamorim/hermes-skills/v0.1.0/skills/google-oauth-onboarding/SKILL.md\nAntes de instalar, leia a licença, o SKILL.md e qualquer arquivo de apoio. Não execute scripts nem forneça credenciais sem explicar antes o que acontecerá.",
-      "since": "0.1.0",
-      "runtime_only": false,
-      "zip_url": "https://github.com/jcarlosamorim/hermes-skills/releases/download/v0.4.1/google-oauth-onboarding.zip",
-      "prompt_url": "https://jcarlosamorim.github.io/hermes-skills/prompt/google-oauth-onboarding.md",
-      "npx_claude_code": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill google-oauth-onboarding -a claude-code -g",
-      "npx_codex": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill google-oauth-onboarding -a codex -g",
-      "npx_any": "npx skills add https://jcarlosamorim.github.io/hermes-skills --skill google-oauth-onboarding -g",
-      "activation_prompt": "Você tem no arquivo `google-oauth-onboarding.md` uma skill chamada google-oauth-onboarding. Quando eu pedir algo como \"conecta meu Gmail (ou Calendar, Drive) ao Hermes\", siga o `## Procedure` desse arquivo à risca, use as seções `Referência:` dele no lugar dos arquivos que ele cita, e termine pela `## Verification`. Se faltar informação, pergunte antes de escrever.",
-      "prompt_truncated": []
-    },
-    {
       "name": "copy-metodo-halbert",
       "version": "0.4.1",
       "path": "skills/copy-metodo-halbert/SKILL.md",
@@ -2564,9 +2518,8 @@
     "objetivo": "Por objetivo",
     "operacao": "Operação",
     "trafego": "Tráfego",
-    "hybrid": "Hybrid Workspace",
-    "sop": "Processos",
-    "base": "Base"
+    "hybrid": "Negócios",
+    "sop": "Processos"
   },
   "brand": "AGENTFLIX",
   "tagline": "Instale um método, não um prompt.",
@@ -2576,8 +2529,40 @@
     "trafego",
     "lendas",
     "hybrid",
-    "sop",
-    "base"
+    "sop"
   ],
-  "wellknown": "https://jcarlosamorim.github.io/hermes-skills"
+  "wellknown": "https://jcarlosamorim.github.io/hermes-skills",
+  "featured": "copy-oferta",
+  "curated": [
+    {
+      "id": "alta",
+      "title": "Em alta no hub",
+      "note": "Oito skills para entender o hub numa passada: da headline ao diagnóstico do negócio.",
+      "slugs": [
+        "copy-headlines",
+        "copy-lancamento",
+        "copy-oferta",
+        "copy-metodo-hormozi",
+        "hybrid-diagnostico",
+        "copy-anuncios",
+        "copy-sales-page",
+        "copy-metodo-schwartz"
+      ]
+    },
+    {
+      "id": "comecar",
+      "title": "Para começar",
+      "note": "Um caminho para a primeira semana: pesquisa, cliente ideal, big idea, e-mails e a próxima ação.",
+      "slugs": [
+        "copy-pesquisa-avatar",
+        "hybrid-icp",
+        "copy-big-idea-lead-magnet",
+        "copy-metodo-bencivenga",
+        "hybrid-proxima-acao",
+        "sop-criar",
+        "copy-email",
+        "ops-rotear-tarefa"
+      ]
+    }
+  ]
 }
