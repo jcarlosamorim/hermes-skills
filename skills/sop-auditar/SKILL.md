@@ -1,7 +1,7 @@
 ---
 name: sop-auditar
 description: "Um SOP pode existir e não servir. Use quando: \"audita este SOP\" (ou uma pasta inteira)."
-version: 0.4.1
+version: 0.4.2
 author: "José Carlos Amorim"
 license: MIT
 platforms: [linux, macos, windows]

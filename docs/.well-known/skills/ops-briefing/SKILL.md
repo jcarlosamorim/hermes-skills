@@ -5,9 +5,9 @@ license: MIT
 compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
   author: José Carlos Amorim
-  version: 0.4.1
+  version: 0.4.2
   hub: https://agentsflix.ai
-  source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/ops-briefing
+  source: https://github.com/AgentsFlix/hermes-skills/tree/main/skills/ops-briefing
   tags: operacao, time, genius-zone, kolbe, gestao
   related: ops-rotear-tarefa, ops-revisao-semanal, ops-avaliar-fit
   config: 'ops.perfis_do_time: Caminho do YAML com o perfil do time (zona de genialidade, Kolbe, formato de briefing). Modelo em templates/perfil-do-time.yaml'

@@ -5,9 +5,9 @@ license: MIT
 compatibility: 'Requer: terminal. Antes de usar, defina no ambiente: META_AUTH. No Hermes roda agendada; em outros agentes, sob demanda. Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.'
 metadata:
   author: José Carlos Amorim
-  version: 0.4.1
+  version: 0.4.2
   hub: https://agentsflix.ai
-  source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/ads-otimizar
+  source: https://github.com/AgentsFlix/hermes-skills/tree/main/skills/ads-otimizar
   tags: trafego-pago, meta-ads, otimizacao, graph-api, blueprint
   related: ads-gate-compliance, ads-plano
   config: 'ads.briefing: Caminho do briefing.yaml do produto (modelo em templates/briefing.yaml, preenchido pelo ads-plano); ads.estado: Pasta onde o motor grava o snapshot diário e o CSV de decisões'

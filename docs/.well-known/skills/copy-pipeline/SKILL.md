@@ -5,9 +5,9 @@ license: MIT
 compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
   author: José Carlos Amorim
-  version: 0.4.1
+  version: 0.4.2
   hub: https://agentsflix.ai
-  source: https://github.com/jcarlosamorim/hermes-skills/tree/main/skills/copy-pipeline
+  source: https://github.com/AgentsFlix/hermes-skills/tree/main/skills/copy-pipeline
   tags: copy, copywriting, pipeline, campanha
   related: copy-pipeline, copy-auditoria
 ---
