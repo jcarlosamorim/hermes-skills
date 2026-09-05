@@ -47,38 +47,26 @@
 
   @keyframes hFade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
   @keyframes hPop { from { opacity: 0; transform: scale(0.96) translateY(10px); } to { opacity: 1; transform: none; } }
-  @keyframes aLine { 0% { transform: scaleY(0); opacity: 0; } 45% { transform: scaleY(1); opacity: 1; } 100% { transform: scaleY(1); opacity: 1; } }
-  @keyframes aLineOut { 0% { opacity: 1; transform: scaleX(1); } 100% { opacity: 0; transform: scaleX(14); } }
-  @keyframes aBarIn { 0% { transform: scaleY(0); } 100% { transform: scaleY(1); } }
-  @keyframes aBarOut { 0% { transform: scaleY(1); } 100% { transform: scaleY(0); } }
-  @keyframes aScan { 0% { transform: translateX(-120%); opacity: 0; } 12% { opacity: 1; } 88% { opacity: 1; } 100% { transform: translateX(120%); opacity: 0; } }
-  @keyframes aBloom { 0% { opacity: 0; transform: scale(0.4); } 40% { opacity: 0.9; } 100% { opacity: 0; transform: scale(1.9); } }
-  @keyframes aMark { 0% { opacity: 0; transform: scale(1.22); filter: blur(14px); } 55% { opacity: 1; transform: scale(1); filter: blur(0); } 100% { opacity: 1; transform: scale(1); filter: blur(0); } }
-  @keyframes aTag { 0% { opacity: 0; letter-spacing: 0.62em; } 100% { opacity: 1; letter-spacing: 0.3em; } }
-  @keyframes aRule { 0% { transform: scaleX(0); } 100% { transform: scaleX(1); } }
-  @keyframes aOut { 0% { opacity: 1; transform: scale(1); } 100% { opacity: 0; transform: scale(1.06); } }
+  @keyframes aWipe { from { clip-path: inset(0 0 0 0); } to { clip-path: inset(0 0 0 100%); } }
+  @keyframes aSweep { from { transform: translateX(-14vw); } to { transform: translateX(86vw); } }
   @keyframes aGrain { 0% { opacity: 0.05; } 50% { opacity: 0.09; } 100% { opacity: 0.05; } }
 
   /* ---------- abertura: 4,4 s, 5 atos (Faísca, Colunas, Varredura, Colapso, Assinatura) ---------- */
   #intro { position: fixed; inset: 0; z-index: 200; background: #0a0a0a; overflow: hidden; }
-  #intro .stage { position: absolute; inset: 0; animation: aOut 700ms var(--ease) 3700ms both; }
-  #intro .spark { position: absolute; left: 50%; top: 0; bottom: 0; width: 3px; margin-left: -1.5px; transform-origin: center; background: linear-gradient(180deg, rgba(var(--accent-rgb),0) 0%, #7FD8E8 50%, rgba(var(--accent-rgb),0) 100%); animation: aLine 520ms var(--ease) both, aLineOut 380ms var(--ease) 560ms forwards; }
-  #intro .bars { position: absolute; inset: 0; display: flex; gap: 2px; }
-  #intro .bar { flex: 1; background: linear-gradient(180deg, #5FC9DC 0%, #30B0C7 42%, #0B2E36 100%); box-shadow: 0 0 22px rgba(var(--accent-rgb),0.35); animation: aBarIn 480ms var(--ease) both, aBarOut 520ms var(--ease) forwards; }
-  #intro .scan { position: absolute; top: 0; bottom: 0; left: 0; width: 34%; background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.22) 48%, rgba(255,255,255,0) 100%); mix-blend-mode: screen; animation: aScan 1100ms var(--ease) 1200ms both; }
-  #intro .bloom { position: absolute; left: 50%; top: 50%; width: 900px; height: 900px; margin: -450px 0 0 -450px; border-radius: 50%; background: radial-gradient(circle, rgba(var(--accent-rgb),0.5) 0%, rgba(var(--accent-rgb),0.12) 38%, rgba(var(--accent-rgb),0) 68%); animation: aBloom 900ms var(--ease) 2250ms both; }
-  #intro .center { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 22px; }
-  #intro .mark { animation: aMark 1000ms var(--ease) 2300ms both; }
+  #intro .veil { position: absolute; inset: 0; background: #0a0a0a; }
+  #intro canvas.motion { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+  /* varredura: a luz cruza a tela e o véu escuro é varrido junto, revelando a home atrás */
+  #intro.sweep { background: transparent; }
+  #intro.sweep .veil { animation: aWipe 1000ms cubic-bezier(0.65,0,0.35,1) both; }
+  #intro.sweep::before { content: ""; position: absolute; top: 0; bottom: 0; left: 0; width: 28vw; z-index: 2; pointer-events: none; background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(160,226,238,0.34) 50%, rgba(255,255,255,0) 100%); mix-blend-mode: screen; animation: aSweep 1000ms cubic-bezier(0.65,0,0.35,1) both; }
   #intro .mark img { display: block; width: min(760px, 78vw); height: auto; filter: drop-shadow(0 0 48px rgba(var(--accent-rgb),0.45)); }
-  #intro .rule { width: min(520px, 60vw); height: 1px; background: linear-gradient(90deg, rgba(var(--accent-rgb),0) 0%, var(--accent) 50%, rgba(var(--accent-rgb),0) 100%); animation: aRule 700ms var(--ease) 2900ms both; }
-  #intro .tag { font-size: 12px; color: #c9c9c9; text-align: center; animation: aTag 800ms var(--ease) 3000ms both; }
+  #intro .rule { width: min(520px, 60vw); height: 1px; background: linear-gradient(90deg, rgba(var(--accent-rgb),0) 0%, var(--accent) 50%, rgba(var(--accent-rgb),0) 100%); }
   #intro .grain { position: absolute; inset: 0; pointer-events: none; background: repeating-linear-gradient(0deg, rgba(255,255,255,0.06) 0 1px, rgba(0,0,0,0) 1px 3px); animation: aGrain 900ms linear infinite; }
   #intro .vignette { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(80% 80% at 50% 50%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.75) 100%); }
   #intro .skip { position: absolute; bottom: 36px; right: 44px; z-index: 5; padding: 10px 18px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.24); border-radius: 4px; color: #fff; font-size: 11px; letter-spacing: 0.12em; cursor: pointer; }
   #intro .skip:hover { background: rgba(255,255,255,0.18); }
   #intro .gate { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 26px; animation: hFade 500ms var(--ease) both; }
   #intro .gate { outline: none; }
-  #intro .gate .mark, #intro .gate .rule { animation: none; }
   #intro .enter { display: flex; align-items: center; gap: 12px; height: 52px; padding: 0 30px; background: var(--accent); border: 0; border-radius: 4px; color: var(--on-accent); font-family: Archivo, Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 800; cursor: pointer; animation: gPulse 1800ms ease-in-out infinite; }
   #intro .enter:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
   @keyframes gPulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(var(--accent-rgb),0.55); } 50% { box-shadow: 0 0 0 14px rgba(var(--accent-rgb),0); } }
@@ -304,7 +292,7 @@
     #intro .skip { bottom: 20px; right: 20px; }
   }
   @media (prefers-reduced-motion: reduce) {
-    #intro .enter, #intro .grain, #intro .bar, #intro .spark, #intro .scan, #intro .bloom { animation: none; }
+    #intro .enter, #intro .grain { animation: none; }
     .card, .btn-red { transition: none; }
   }
 </style>
@@ -421,14 +409,15 @@
   }
 
   // nomes versionados (.v2): /audio tem cache imutável de 1 ano, então arquivo novo = nome novo
+  // cada som no gesto que ele descreve: faísca quando as letras acendem, assinatura com o wordmark inteiro,
+  // colapso quando as peças se sobrepõem, varredura na luz que revela a home (colunas.v2 ficou sem uso)
   const CUES = [
     { at: 0,    src: "audio/faisca.v2.mp3" },
-    { at: 300,  src: "audio/colunas.v2.mp3" },
-    { at: 1200, src: "audio/varredura.v2.mp3" },
-    { at: 2200, src: "audio/colapso.v2.mp3" },
-    { at: 3000, src: "audio/assinatura.v2.mp3" }
+    { at: 700,  src: "audio/assinatura.v2.mp3" },
+    { at: 2350, src: "audio/colapso.v2.mp3" },
+    { at: 3700, src: "audio/varredura.v2.mp3" }
   ];
-  const INTRO_MS = 4400, BARS = 27;
+  const SWEEP_MS = 1000;   // varredura; abertura inteira = MOTION.HANDOFF_MS + SWEEP_MS = 4,7 s (teto: 5 s)
 
   // ---------- estado ----------
   const store = {
@@ -798,11 +787,11 @@
     else if (act === "prev") scrollRow(el.dataset.row, -1);
     else if (act === "next") scrollRow(el.dataset.row, 1);
     else if (act === "replay" || act === "enter") playIntro(true);
-    else if (act === "skip") stopIntro();
+    else if (act === "skip") stopIntro(true);
     else if (act === "home") { e.preventDefault(); state.q = ""; state.filter = "Tudo"; $("q").value = ""; closeModal(); renderChips(); renderCatalog(); window.scrollTo({ top: 0, behavior: "smooth" }); }
   });
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") { if (introPhase !== "gate") stopIntro(); closeModal(); return; }
+    if (e.key === "Escape") { if (introPhase !== "gate") stopIntro(true); closeModal(); return; }
     if ((e.key === "Enter" || e.key === " ") && introPhase === "gate") { e.preventDefault(); playIntro(true); return; }
     if (e.key === "/" && document.activeElement !== $("q")) { e.preventDefault(); $("q").focus(); return; }
     if ((e.key === "Enter" || e.key === " ") && e.target.matches && e.target.matches('.card[data-act="open"]')) { e.preventDefault(); openModal(e.target.dataset.slug); }
@@ -863,51 +852,172 @@
   window.addEventListener("resize", hidePreview);
 
   // ---------- abertura ----------
+  // ---------- abertura, fase 1: o motion do A ----------
+  // O A em 12 triângulos equiláteros; "gentFlix" sai de dentro dele, fica, volta; a perna direita se
+  // sobrepõe peça a peça até o vértice, depois a esquerda, e a última peça apaga. As letras são um
+  // recorte do próprio SVG do kit, então desenho e cor são os do wordmark que aparece no palco.
+  // Linha do tempo do vídeo agentflix-motion-v2 comprimida para 3,7 s; a varredura entra enquanto o vértice apaga.
+  const MOTION = (() => {
+    const TILE = "#30B0C7", PLAY = "#FFFFFF", SQ3 = Math.sqrt(3) / 2;
+    // kit v2 (brand/horizontal-transparente-dark.svg, 1600×320), medido nos paths: tinta das letras de
+    // x=291.0 a 1539.3 (conferido rasterizando o SVG), caixa alta de y=74.10 a 245.90; vão médio entre
+    // letras vizinhas = 0.159 × cap (o kit encosta o A no G a 0.029 × cap; aqui o A entra na palavra com o vão médio)
+    const KIT = { src: "brand/horizontal-transparente-dark.svg", x: 291.0, y: 74.10, w: 1248.30, cap: 171.80, gap: 0.159 };
+    const CAP_RATIO = 0.75;                                       // caixa alta = 0.75 da altura do A
+    const T_OUT0 = 0.15, T_OUT1 = 0.7, T_BACK0 = 1.8, T_BACK1 = 2.25, T_PLAY = 2.15, T_COL0 = 2.35, MOVE = 0.14, STEP = 0.11;
+    const MOVES = [   // perna direita sobe peça sobre peça até o vértice; depois a esquerda (passos inteiros no trilho)
+      [[3,"u",3],[2,"u",2]], [[3,"d",2],[2,"d",1]], [[2,"u",2],[1,"u",1]], [[2,"d",1],[1,"d",0]], [[1,"u",1],[0,"u",0]],
+      [[3,"u",0],[2,"u",0]], [[3,"d",0],[2,"d",0]], [[2,"u",0],[1,"u",0]], [[2,"d",0],[1,"d",0]], [[1,"u",0],[0,"u",0]]
+    ].map((m, i) => ({ from: m[0], to: m[1], t0: T_COL0 + i * STEP }));
+    const T_FINAL = MOVES[MOVES.length - 1].t0 + MOVE + 0.1;     // 3.58 s: sobrou ▲ no vértice e ▼ abaixo
+    const HANDOFF_MS = 3700, END_MS = 3950;                       // ▼ entra no ▲ até 3.84 s; o ▲ apaga de 3.68 a 3.88 s; a varredura começa em 3.7 s
+    const TILES = [[0,"u",0],[1,"u",0],[1,"d",0],[1,"u",1],[2,"u",0],[2,"d",0],[2,"d",1],[2,"u",2],[3,"u",0],[3,"d",0],[3,"d",2],[3,"u",3]];
+    const key = (c) => c.join("");
+    const easeInOut = (x) => x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+    const clamp01 = (x) => Math.min(1, Math.max(0, x));
+
+    const img = new Image(); let imgOk = null;                    // null = carregando
+    img.onload = () => { imgOk = true; }; img.onerror = () => { imgOk = false; }; img.src = KIT.src;
+    function ready(ms) {
+      return new Promise((res) => {
+        if (imgOk !== null) return res(imgOk);
+        const tm = setTimeout(() => res(false), ms);
+        img.addEventListener("load", () => { clearTimeout(tm); res(true); }, { once: true });
+        img.addEventListener("error", () => { clearTimeout(tm); res(false); }, { once: true });
+      });
+    }
+    function layout(W, H) {
+      const s = Math.min(0.0369 * W, 0.121 * H, 48);              // lado da peça: o conjunto cabe em 86% da largura e 42% da altura
+      const h = s * SQ3, AW = 4 * s, AH = 4 * h, CAP = CAP_RATIO * AH, k = CAP / KIT.cap;
+      return { s, h, AW, AH, CAP, k, textW: KIT.w * k, gapA: KIT.gap * CAP, GAP: 0.05 * s, R: 0.083 * s };
+    }
+    // A ancorado em (ax, ay): centro horizontal ax, topo em ay; r = linha, i = posição, tipo u=▲ d=▼
+    function slot(L, ax, ay, r, type, i) {
+      const { s, h } = L, y0 = ay + r * h, y1 = ay + (r + 1) * h;
+      if (type === "u") { const x = ax + (i - r / 2) * s; return { v: [[x, y0], [x - s / 2, y1], [x + s / 2, y1]], c: [x, y0 + 2 * h / 3] }; }
+      const x = ax + (i - r / 2 + 0.5) * s; return { v: [[x - s / 2, y0], [x + s / 2, y0], [x, y1]], c: [x, y0 + h / 3] };
+    }
+    function poly(ctx, pts, color, scale, gap, R, alpha) {
+      const gx = (pts[0][0] + pts[1][0] + pts[2][0]) / 3, gy = (pts[0][1] + pts[1][1] + pts[2][1]) / 3;
+      const q = pts.map(([x, y]) => { const dx = x - gx, dy = y - gy, d = Math.hypot(dx, dy) || 1; const f = (d - gap) / d * scale; return [gx + dx * f, gy + dy * f]; });
+      ctx.beginPath();
+      for (let i = 0; i < 3; i++) {
+        const p0 = q[(i + 2) % 3], p1 = q[i], p2 = q[(i + 1) % 3];
+        const a = [p1[0] - p0[0], p1[1] - p0[1]], b = [p2[0] - p1[0], p2[1] - p1[1]]; const la = Math.hypot(a[0], a[1]) || 1, lb = Math.hypot(b[0], b[1]) || 1;
+        const rr = Math.min(R, la / 3, lb / 3);
+        const st = [p1[0] - a[0] / la * rr, p1[1] - a[1] / la * rr], en = [p1[0] + b[0] / lb * rr, p1[1] + b[1] / lb * rr];
+        if (i === 0) ctx.moveTo(st[0], st[1]); else ctx.lineTo(st[0], st[1]);
+        ctx.quadraticCurveTo(p1[0], p1[1], en[0], en[1]);
+      }
+      ctx.closePath(); ctx.globalAlpha = alpha; ctx.fillStyle = color; ctx.fill(); ctx.globalAlpha = 1;
+    }
+    const playTri = ([x, y], a) => { const Rr = a / Math.sqrt(3); return [[x + Rr, y], [x - Rr / 2, y - a / 2], [x - Rr / 2, y + a / 2]]; };
+
+    function render(ctx, W, H, t) {
+      const L = layout(W, H), { s, h, AW, AH, CAP, GAP, R } = L;
+      ctx.clearRect(0, 0, W, H);
+      // composição: A sozinho centrado; com o texto, o conjunto (A + vão + letras) centrado
+      const fullW = AW + L.gapA + L.textW, axC = W / 2, axL = W / 2 - fullW / 2 + AW / 2;
+      const out = easeInOut(clamp01((t - T_OUT0) / (T_OUT1 - T_OUT0))), back = easeInOut(clamp01((t - T_BACK0) / (T_BACK1 - T_BACK0)));
+      const kk = out * (1 - back);                                // 0 = A no centro; 1 = A à esquerda com o texto fora
+      const ax = axC + (axL - axC) * kk, ay = H / 2 - AH / 2, aRight = ax + AW / 2, base = ay + AH;
+      // letras saindo de dentro do A: uma máscara avança da borda do A para a direita (e recua na volta)
+      if (imgOk && t > T_OUT0 && t < T_BACK1) {
+        const SLIDE = 0.9 * AW, xFinal = aRight - GAP + L.gapA, tx = xFinal - SLIDE * (1 - kk);
+        const reveal = aRight + GAP + (L.gapA + L.textW + 0.5 * s) * kk;
+        ctx.save(); ctx.beginPath(); ctx.rect(aRight + GAP, 0, Math.max(0, reveal - aRight - GAP), H); ctx.clip();
+        const pad = 3;   // folga do recorte, para não cortar o antialias da borda das letras
+        ctx.drawImage(img, KIT.x - pad, KIT.y - pad, KIT.w + 2 * pad, KIT.cap + 2 * pad, tx - pad * L.k, base - CAP - pad * L.k, L.textW + 2 * pad * L.k, CAP + 2 * pad * L.k);
+        ctx.restore();
+      }
+      // peças (colapso)
+      const cells = new Map(TILES.map((c) => [key(c), { cell: c, alive: true, pos: null }]));
+      for (const m of MOVES) {
+        if (t < m.t0) break;
+        const mover = cells.get(key(m.from)), target = cells.get(key(m.to));
+        if (!mover) continue;
+        const p = clamp01((t - m.t0) / MOVE), e = easeInOut(p), a = slot(L, ax, ay, ...m.from).c, b = slot(L, ax, ay, ...m.to).c;
+        mover.pos = [a[0] + (b[0] - a[0]) * e, a[1] + (b[1] - a[1]) * e];
+        if (p >= 1) { if (target && target !== mover) target.alive = false; cells.delete(key(m.from)); mover.cell = m.to; mover.pos = null; cells.set(key(m.to), mover); }
+      }
+      ctx.shadowColor = "rgba(0,0,0,0.35)"; ctx.shadowBlur = 0.27 * s; ctx.shadowOffsetY = 0.1 * s;
+      const fade = t < T_FINAL ? 0 : clamp01((t - T_FINAL - 0.12) / 0.2);
+      for (const it of cells.values()) {
+        if (!it.alive) continue;
+        const sl = slot(L, ax, ay, ...it.cell); let v = sl.v, sc = 1, al = 1;
+        if (it.pos) { const d = [it.pos[0] - sl.c[0], it.pos[1] - sl.c[1]]; v = v.map(([x, y]) => [x + d[0], y + d[1]]); }
+        if (key(it.cell) === "1d0" && t >= T_FINAL) {           // o ▼ que sobrou encolhe subindo para dentro do ▲ do vértice
+          const p = easeInOut(clamp01((t - T_FINAL) / 0.26)), apex = slot(L, ax, ay, 0, "u", 0).c;
+          v = v.map(([x, y]) => [x + (apex[0] - sl.c[0]) * p, y + (apex[1] - sl.c[1]) * p]); sc = 1 - p; if (sc <= 0.01) continue;
+        }
+        if (key(it.cell) === "0u0" && t >= T_FINAL) { sc = Math.max(0.001, 1 - easeInOut(fade)); al = 1 - fade; if (sc <= 0.002) continue; }
+        poly(ctx, v, TILE, sc, GAP, R, al);
+      }
+      // play: dentro do vão do A, some antes do colapso
+      const pa = t < T_PLAY ? 1 : 1 - easeInOut(clamp01((t - T_PLAY) / 0.25));
+      if (pa > 0.01) poly(ctx, playTri([ax, ay + 2 * h + (2 * h) * 2 / 3 - 0.06 * s], 0.86 * s), PLAY, pa, 0, R, pa);
+      ctx.shadowColor = "transparent";
+    }
+
+    let raf = 0;
+    // desenha em tempo real; chama onHandoff uma vez, no instante da passagem; devolve o instante (ms)
+    function start(canvas, onHandoff) {
+      stop();
+      const ctx = canvas.getContext("2d"); if (!ctx) return 0;
+      const dpr = Math.min(2, window.devicePixelRatio || 1); let t0 = 0, handed = false;
+      const frame = (now) => {
+        if (!t0) t0 = now;
+        const W = canvas.clientWidth, H = canvas.clientHeight, bw = Math.round(W * dpr), bh = Math.round(H * dpr);
+        if (canvas.width !== bw || canvas.height !== bh) { canvas.width = bw; canvas.height = bh; }
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        const ms = now - t0; render(ctx, W, H, ms / 1000);
+        if (!handed && ms >= HANDOFF_MS) { handed = true; onHandoff(); }
+        if (ms < END_MS) raf = requestAnimationFrame(frame); else { ctx.clearRect(0, 0, W, H); raf = 0; }
+      };
+      raf = requestAnimationFrame(frame);
+      return HANDOFF_MS;
+    }
+    function stop() { if (raf) cancelAnimationFrame(raf); raf = 0; }
+    return { ready, start, stop, render, layout, HANDOFF_MS };
+  })();
+
+  // ---------- abertura, fase 2: varredura e som ----------
   // O som é parte da marca: a abertura nunca roda muda. O navegador só libera áudio depois de um
-  // toque, então, quando o autoplay é bloqueado, a tela vira o portão (wordmark + ENTRAR) e o clique
-  // dispara a abertura com som. Quem o navegador já libera passa direto.
-  const audio = {}; let cueTimers = []; let introTimer = null;
+  // toque, então uma sonda muda (10 ms de silêncio) pergunta antes de começar: bloqueado, a tela vira o
+  // portão (wordmark + ENTRAR) e o clique dispara a abertura com som. Quem o navegador já libera passa direto.
+  const SILENCE = "data:audio/wav;base64,UklGRsQAAABXQVZFZm10IBAAAAABAAEAQB8AAIA+AAACABAAZGF0YaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+  const audio = {}; let cueTimers = []; let introTimer = null; let introRun = 0;
   function loadAudio() { CUES.forEach((c) => { if (!audio[c.src]) { const a = new Audio(c.src); a.preload = "auto"; audio[c.src] = a; } }); }
   function stopCues() { cueTimers.forEach(clearTimeout); cueTimers = []; Object.values(audio).forEach((a) => { try { a.pause(); a.currentTime = 0; } catch (e) {} }); }
   function playCue(c) { const a = audio[c.src]; if (!a) return Promise.resolve(); try { a.currentTime = 0; } catch (e) {} const p = a.play(); return p && p.catch ? p : Promise.resolve(); }
-  function playCues(onBlocked) {
+  // cues na linha do tempo da abertura (shift < 0 quando o motion não roda: só a varredura); se mesmo
+  // assim o primeiro for barrado, vira portão
+  function playCues(shift) {
     stopCues(); loadAudio();
-    CUES.forEach((c, i) => {
-      const run = () => playCue(c).catch((err) => { if (i === 0 && onBlocked && err && err.name === "NotAllowedError") onBlocked(); });
-      if (c.at === 0) run(); else cueTimers.push(setTimeout(run, c.at));
+    CUES.filter((c) => c.at + shift >= 0).forEach((c, i) => {
+      const run = () => playCue(c).catch((err) => { if (i === 0 && err && err.name === "NotAllowedError") showGate(); });
+      cueTimers.push(setTimeout(run, c.at + shift));
+    });
+  }
+  const tryPlay = (a) => { const p = a.play(); return p && p.then ? p : Promise.resolve(); };
+  const blocked = (e) => !!(e && e.name === "NotAllowedError");
+  function probeAutoplay() {
+    loadAudio();
+    return tryPlay(new Audio(SILENCE)).then(() => true, (e) => {
+      if (blocked(e)) return false;
+      const a = audio[CUES[0].src];   // sonda não suportada: tenta o cue real e pausa na hora
+      return tryPlay(a).then(() => { try { a.pause(); a.currentTime = 0; } catch (x) {} return true; }, (e2) => !blocked(e2));
     });
   }
   // iOS só toca áudio agendado se cada elemento já tocou dentro de um gesto: toca mudo e pausa
   function unlockAudio() {
     loadAudio();
-    CUES.slice(1).forEach((c) => { const a = audio[c.src]; a.muted = true; const p = a.play(); if (p && p.then) p.then(() => { a.pause(); a.currentTime = 0; a.muted = false; }).catch(() => { a.muted = false; }); });
-  }
-  function stageHtml() {
-    const mid = (BARS - 1) / 2;
-    const bars = Array.from({ length: BARS }, (_, i) => {
-      const d = Math.abs(i - mid);
-      return `<div class="bar" style="transform-origin:${i % 2 ? "top" : "bottom"};animation-delay:${Math.round(320 + d * 46)}ms,${Math.round(2150 + (mid - d) * 34)}ms"></div>`;
-    }).join("");
-    return `
-      <div class="stage">
-        <div class="spark"></div>
-        <div class="bars">${bars}</div>
-        <div class="scan"></div>
-        <div class="bloom"></div>
-        <div class="center">
-          <div class="mark"><img src="brand/horizontal-transparente-dark.svg" alt="AgentFlix"></div>
-          <div class="rule"></div>
-          <div class="tag mono">HUB DE SKILLS PARA AGENTES</div>
-        </div>
-        <div class="grain"></div>
-        <div class="vignette"></div>
-      </div>
-      <button class="skip mono" data-act="skip">PULAR ›</button>`;
+    CUES.forEach((c) => { const a = audio[c.src]; a.muted = true; const p = a.play(); if (p && p.then) p.then(() => { a.pause(); a.currentTime = 0; a.muted = false; }).catch(() => { a.muted = false; }); });
   }
   function setIntroVisible(on) { $("intro").hidden = !on; updateInert(); }
   function showGate() {
-    clearTimeout(introTimer); stopCues(); introPhase = "gate";
-    const el = $("intro");
+    clearTimeout(introTimer); stopCues(); MOTION.stop(); introPhase = "gate"; introRun++;
+    const el = $("intro"); el.classList.remove("sweep");
     el.innerHTML = `
       <div class="gate" tabindex="-1">
         <div class="mark"><img src="brand/horizontal-transparente-dark.svg" alt="AgentFlix"></div>
@@ -920,15 +1030,28 @@
     const g = el.querySelector(".gate"); if (g) g.focus({ preventScroll: true });
   }
   function playIntro(fromGesture) {
-    clearTimeout(introTimer); introPhase = "playing";
-    const el = $("intro");
-    el.innerHTML = stageHtml();
+    clearTimeout(introTimer); stopCues(); MOTION.stop(); introPhase = "playing";
+    const run = ++introRun, el = $("intro"); el.classList.remove("sweep");
+    el.innerHTML = `<div class="veil"><canvas class="motion" aria-hidden="true"></canvas></div><button class="skip mono" data-act="skip">PULAR ›</button>`;
     setIntroVisible(true);
     if (fromGesture) unlockAudio();
-    playCues(fromGesture ? null : showGate);
-    introTimer = setTimeout(stopIntro, INTRO_MS);
+    const startSweep = () => { if (run === introRun) el.classList.add("sweep"); };   // a luz cruza e leva o véu junto
+    Promise.all([fromGesture ? Promise.resolve(true) : probeAutoplay(), MOTION.ready(700)]).then(([soundOk, motionOk]) => {
+      if (run !== introRun || introPhase !== "playing") return;
+      if (!soundOk) return showGate();
+      const canvas = el.querySelector("canvas.motion");
+      const offset = motionOk && canvas ? MOTION.start(canvas, startSweep) : 0;   // sem motion (kit não carregou): só a varredura
+      if (!offset) startSweep();
+      playCues(offset - MOTION.HANDOFF_MS);
+      introTimer = setTimeout(() => stopIntro(false), offset + SWEEP_MS);
+    });
   }
-  function stopIntro() { clearTimeout(introTimer); stopCues(); introPhase = "off"; const el = $("intro"); if (!el.hidden) { setIntroVisible(false); el.innerHTML = ""; } }
+  // cut = interrompida (Pular, Esc): corta o som; no fim natural a cauda da varredura termina sobre a home
+  function stopIntro(cut) {
+    clearTimeout(introTimer); MOTION.stop(); introPhase = "off"; introRun++;
+    if (cut) stopCues(); else { cueTimers.forEach(clearTimeout); cueTimers = []; }
+    const el = $("intro"); if (!el.hidden) { setIntroVisible(false); el.innerHTML = ""; el.classList.remove("sweep"); }
+  }
 
   // ---------- boot ----------
   function showLoadError(msg) {
