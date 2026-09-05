@@ -5,9 +5,9 @@ license: MIT
 compatibility: Agent Skills (agentskills.io). Funciona em Claude, ChatGPT, Codex, Cursor, Copilot e agentes compatíveis.
 metadata:
   author: José Carlos Amorim
-  version: 0.4.2
+  version: 0.4.3
   hub: https://agentsflix.ai
-  source: https://github.com/AgentsFlix/hermes-skills/tree/main/skills/copy-metodo-kennedy
+  source: https://github.com/AgentsFlix/skills/tree/main/skills/copy-metodo-kennedy
   tags: copy, copywriting, kennedy, metodo, resposta-direta
   related: copy-headlines, copy-sales-page, copy-pipeline
 ---

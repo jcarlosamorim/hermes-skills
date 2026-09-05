@@ -349,7 +349,7 @@
   // ---------- fontes de dados ----------
   // Relativo primeiro (a Vercel reescreve /catalog.json para o Pages, sempre na tag mais recente);
   // o endereço absoluto do Pages fica de reserva.
-  const CATALOG_URLS = ["catalog.json", "https://agentsflix.github.io/hermes-skills/catalog.json"];
+  const CATALOG_URLS = ["catalog.json", "https://agentsflix.github.io/skills/catalog.json"];
   const COVERS = "covers/";
   const FEATURED_DEFAULT = "copy-oferta";
 
@@ -495,7 +495,7 @@
     heroSlug = (pinnedHero() || nextHero() || ALL[0] || {}).slug || null;
     startHeroRotation();
     $("footTotal").textContent = ALL.length + " obras · v" + (cat.version || "");
-    const tap = cat.tap || "hermes skills tap add AgentsFlix/hermes-skills";
+    const tap = cat.tap || "hermes skills tap add AgentsFlix/skills";
     $("tapText").textContent = tap; $("tapBtn").dataset.text = tap;
     render(true);
     const h = hashSlug();
