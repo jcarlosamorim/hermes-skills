@@ -93,9 +93,12 @@
   .acct:hover, .acct[data-logged="1"] { border-color: var(--accent); color: #fff; }
   .art .lock { position: absolute; top: 10px; right: 10px; z-index: 3; width: 28px; height: 28px; display: grid; place-items: center; border-radius: 50%; background: rgba(20,22,26,0.82); border: 1px solid rgba(255,255,255,0.18); font-size: 13px; }
   .exclusive { margin: 0 0 26px; padding: 16px; border: 1px solid var(--line); border-radius: 6px; background: rgba(var(--accent-rgb),0.06); }
-  .exclusive .player { display: none; aspect-ratio: 16 / 9; background: #000; border-radius: 4px; overflow: hidden; margin: 12px 0; }
-  .exclusive .player:has(iframe), .exclusive .player:has(.loading) { display: block; }
+  .exclusive .player { display: none; aspect-ratio: 16 / 9; background: #000; border: 1px solid var(--line); border-radius: 4px; overflow: hidden; margin: 12px 0; }
+  .exclusive .player.show { display: block; }
   .exclusive .player iframe { width: 100%; height: 100%; border: 0; display: block; }
+  .exclusive .player .ph { display: grid; place-items: center; align-content: center; height: 100%; gap: 10px; color: #8f8f8f; font-size: 11px; letter-spacing: 0.14em; text-align: center; padding: 20px; }
+  .exclusive .player .ph b { font-size: 34px; color: var(--accent); line-height: 1; }
+  .vbtn.on { border-color: var(--accent); background: rgba(var(--accent-rgb),0.12); }
   .vlist { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 6px; }
   .vbtn { width: 100%; display: flex; align-items: center; gap: 12px; padding: 10px 12px; background: var(--ink); border: 1px solid var(--line); border-radius: 4px; color: #eee; font-size: 13px; text-align: left; cursor: pointer; }
   .vbtn:hover { border-color: var(--accent); }
@@ -1214,9 +1217,10 @@
   }
   async function play(videoId) {
     const box = document.querySelector("#modal .player"); if (!box) return;
-    box.innerHTML = `<div class="loading">Abrindo…</div>`;
+    box.classList.add("show"); box.innerHTML = `<div class="ph mono">ABRINDO…</div>`;
+    document.querySelectorAll("#modal .vbtn").forEach((b) => b.classList.toggle("on", b.dataset.video === videoId));
     const r = await authed("api/video?id=" + encodeURIComponent(videoId)); const j = await r.json().catch(() => ({}));
-    if (!j.embed) { box.innerHTML = `<div class="loading">${esc(j.error || "Vídeo indisponível.")}</div>`; return; }
+    if (!j.embed) { box.innerHTML = `<div class="ph mono">${esc((j.error || "vídeo indisponível").toUpperCase())}</div>`; return; }
     box.innerHTML = `<iframe src="${esc(j.embed)}" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen title="${esc(j.title || "vídeo")}"></iframe>`;
   }
   // bloco do modal: vídeos da skill, com Assistir para quem tem direito e Comprar / Passe para quem não tem
@@ -1230,7 +1234,8 @@
     const buy = ok
       ? `<p class="owned">ACESSO LIBERADO${shop.access.has("pass") && !shop.access.has(s.slug) ? " · PASSE" : ""}</p>`
       : `<div class="buy">${item ? `<button class="btn-red" data-act="buy" data-slug="${esc(s.slug)}">Comprar por ${esc(money(item.unit_amount, item.currency))}</button>` : ""}${mo ? `<button class="btn-ghost" data-act="buy" data-slug="pass" data-interval="month">Passe · ${esc(money(mo.unit_amount, mo.currency))}/mês</button>` : ""}${yr ? `<button class="btn-ghost" data-act="buy" data-slug="pass" data-interval="year">Passe anual · ${esc(money(yr.unit_amount, yr.currency))}</button>` : ""}</div>`;
-    return `<div class="exclusive"><div class="lbl mono">CONTEÚDO EXCLUSIVO${vids.length ? ` · ${vids.length} VÍDEO${vids.length > 1 ? "S" : ""}` : ""}</div><div class="player"></div><ul class="vlist">${list}</ul>${buy}</div>`;
+    const player = ok && vids.length ? `<div class="player show"><div class="ph mono"><b>▶</b>ESCOLHA UMA AULA</div></div>` : `<div class="player"></div>`;
+    return `<div class="exclusive"><div class="lbl mono">CONTEÚDO EXCLUSIVO${vids.length ? ` · ${vids.length} VÍDEO${vids.length > 1 ? "S" : ""}` : ""}</div>${player}<ul class="vlist">${list}</ul>${buy}</div>`;
   }
   function handleReturn() {   // volta do Checkout: ?compra=ok&item=<slug> ou ?compra=cancelada
     const q = new URLSearchParams(location.search); const c = q.get("compra"); if (!c) return;
