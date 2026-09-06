@@ -1,0 +1,131 @@
+{
+  "gerado_em": "2026-09-06",
+  "series": [
+    {
+      "slug": "agente-pessoal",
+      "name": "Agente de IA Pessoal",
+      "sub": "Módulos 2 e 3 do curso: do servidor ao primeiro agente de pé, e os primeiros erros",
+      "badge": "HERMES AGENT",
+      "ano": 2026,
+      "customer": "customer-7o8y5tffw1185pu3",
+      "cover": "img/agente-pessoal-desktop.jpg",
+      "cover_wide": "img/agente-pessoal-wide.jpg",
+      "syn": "Do servidor comprado ao primeiro agente respondendo no Telegram, com os erros que aparecem no caminho gravados de propósito. Sete aulas curtas: instalar o Hermes Agent, ligar a assinatura do ChatGPT no lugar da chave de API, criar o bot no Telegram, escolher o modelo, fazer o primeiro teste, reiniciar quando dá erro e aprovar o terminal.",
+      "cast": [
+        "Hermes Agent",
+        "Hostinger (servidor com o template)",
+        "Telegram e BotFather",
+        "Assinatura do ChatGPT"
+      ],
+      "gen": [
+        "Hermes Agent",
+        "Instalação",
+        "Primeiros passos"
+      ],
+      "traits": [
+        "Mão na massa",
+        "Erro ao vivo",
+        "Sem chave de API"
+      ],
+      "seasons": [
+        {
+          "n": 1,
+          "title": "Instalação: do servidor ao primeiro agente de pé",
+          "note": "Módulo 2 do curso Agente de IA Pessoal. Começa com o servidor já comprado.",
+          "eps": [
+            {
+              "aula": 6,
+              "t": "Instalar o Hermes Agent no servidor",
+              "d": 27,
+              "uid": "a8332e8650e1e2568cf0659fc2b5b9c2",
+              "desc": "Com o servidor comprado, a instalação em si é a parte mais curta do curso inteiro.",
+              "faz": [
+                "Localizar o Hermes Agent na lista de aplicações",
+                "Iniciar a instalação e chegar na tela de configuração inicial"
+              ]
+            },
+            {
+              "aula": 7,
+              "t": "Sem chave de API: usar a assinatura do ChatGPT que você já paga",
+              "d": 130,
+              "uid": "ecd14e00d092988d1bd5b9ec4bf575b6",
+              "desc": "Aqui está o primeiro atalho de verdade, e ele resolve a barreira que trava mais gente: chave de API.",
+              "faz": [
+                "Ativar a autorização por código de dispositivo para o Codex na conta do ChatGPT",
+                "Conectar o Hermes à sua assinatura em vez de a uma chave de API",
+                "Colar o código de dispositivo e confirmar que a tela do servidor atualizou sozinha"
+              ]
+            },
+            {
+              "aula": 8,
+              "t": "Telegram, não WhatsApp: criar o bot no BotFather e pegar o seu ID",
+              "d": 216,
+              "uid": "881f6ff7b679f4411e9d843b47e708fe",
+              "desc": "O WhatsApp é o aplicativo mais usado pelo brasileiro. E não é o que a gente vai usar.",
+              "faz": [
+                "Criar o bot no BotFather com o sufixo obrigatório no nome de usuário",
+                "Copiar o token do bot e guardar nos dois lugares certos",
+                "Pegar o seu ID numérico com o User Info Bot e concluir a configuração"
+              ]
+            },
+            {
+              "aula": 9,
+              "t": "Lua, Terra e Sol: qual modelo escolher, e por que não o maior",
+              "d": 100,
+              "uid": "03ea2abe2fdaf6d3680b8957f397c0f7",
+              "desc": "Na última tela da configuração ele pergunta qual modelo de IA usar, e a resposta intuitiva está errada.",
+              "faz": [
+                "Entender a escala Lua, Terra e Sol e o que ela representa",
+                "Escolher o Terra e saber justificar por que não o maior",
+                "Concluir a configuração e abrir a aplicação pela primeira vez"
+              ]
+            }
+          ]
+        },
+        {
+          "n": 2,
+          "title": "Primeiro contato e os primeiros erros",
+          "note": "Módulo 3 do curso. O agente de pé, o primeiro teste e o que assusta quem nunca viu.",
+          "eps": [
+            {
+              "aula": 10,
+              "t": "O primeiro teste: falar com o agente no Telegram",
+              "d": 77,
+              "uid": "fddb4d97796880b8eb8b7c1f349aa6a2",
+              "desc": "Seu agente está de pé. Agora vem o primeiro teste, e ele começa parecendo pouco.",
+              "faz": [
+                "Conversar com o agente pela interface web do painel",
+                "Abrir o bot no Telegram e iniciar a primeira sessão",
+                "Fixar a distinção entre bot (canal) e profile (agente)"
+              ]
+            },
+            {
+              "aula": 11,
+              "t": "Deu erro ao vivo: reiniciar a aplicação, e por que isso vai repetir",
+              "d": 57,
+              "uid": "8b415fad6188d0e541c6c05126332f5e",
+              "desc": "Neste ponto do vídeo o agente não respondeu. E o erro ficou na gravação de propósito.",
+              "faz": [
+                "Reconhecer o sintoma de agente que não responde",
+                "Executar o reinício da aplicação pelo painel",
+                "Parar de tratar erro de execução como erro seu"
+              ]
+            },
+            {
+              "aula": 12,
+              "t": "Always Approve: por que o agente pede o terminal",
+              "d": 101,
+              "uid": "cd9535d2fbedc0e1364fd5f01eb2eec0",
+              "desc": "Depois de reiniciar, ele responde. E logo aparece uma janela pedindo autorização, que assusta quem nunca viu.",
+              "faz": [
+                "Entender o que o agente está pedindo quando pede terminal",
+                "Aprovar de forma permanente o acesso que ele precisa para operar sozinho",
+                "Enxergar a diferença prática entre agente autônomo e estagiário que pergunta tudo"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
