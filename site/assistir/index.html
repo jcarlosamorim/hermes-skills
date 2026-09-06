@@ -58,22 +58,27 @@ a { color: inherit; text-decoration: none; }
 .tp-tabs button { padding: 10px 0 12px; font-size: 14px; font-weight: 700; color: var(--muted); border-bottom: 3px solid transparent; margin-bottom: -1px; }
 .tp-tabs button.on { color: #fff; border-color: var(--accent); }
 .tp-tab { padding: 18px 44px 36px; }
-.eps-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 6px; }
-.eps-head h2 { margin: 0; font-size: 22px; font-weight: 700; }
+
+/* episódios, no visual limpo: número, capa, nome, tempo, descrição */
+.eps-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 18px; }
+.eps-head h2 { margin: 0; font-size: 24px; font-weight: 700; }
 .season-sel { position: relative; }
-.season-sel > button { display: flex; align-items: center; gap: 12px; height: 40px; padding: 0 14px; background: #242424; border: 1px solid #4d4d4d; border-radius: 4px; font-size: 15px; font-weight: 700; }
-.season-sel > button svg { width: 14px; height: 14px; fill: #fff; }
-.season-sel .menu { position: absolute; top: 44px; right: 0; min-width: 320px; background: #1c1c1c; border: 1px solid #3d3d3d; border-radius: 4px; box-shadow: 0 16px 40px rgba(0,0,0,.7); z-index: 5; overflow: hidden; }
-.season-sel .menu button { display: flex; justify-content: space-between; gap: 18px; width: 100%; padding: 12px 16px; text-align: left; font-size: 14px; border-top: 1px solid #2a2a2a; }
-.season-sel .menu button:first-child { border-top: 0; }
+.season-sel > button { display: flex; align-items: center; gap: 16px; height: 44px; padding: 0 18px; background: #242424; border: 1px solid #4d4d4d; border-radius: 4px; font-size: 17px; font-weight: 700; }
+.season-sel > button svg { width: 14px; height: 14px; fill: #fff; transition: transform .15s; }
+.season-sel.open > button svg { transform: rotate(180deg); }
+.season-sel .menu { position: absolute; top: 48px; right: 0; min-width: 300px; background: #1c1c1c; border: 1px solid #3d3d3d; border-radius: 4px; box-shadow: 0 16px 40px rgba(0,0,0,.7); z-index: 5; padding: 6px 0; }
+.season-sel .menu button { display: flex; align-items: baseline; gap: 10px; width: 100%; padding: 12px 22px; text-align: left; font-size: 18px; font-weight: 700; color: #e5e5e5; }
 .season-sel .menu button:hover { background: #2b2b2b; }
-.season-sel .menu button.on { font-weight: 700; }
-.season-sel .menu span { color: var(--dim); font-size: 12px; white-space: nowrap; }
-.season-note { font-size: 13px; color: var(--muted); margin: 0 0 16px; }
+.season-sel .menu button.on { color: #fff; }
+.season-sel .menu button span { font-size: 15px; font-weight: 400; color: #b3b3b3; }
+.season-sel .menu hr { border: 0; border-top: 1px solid #444; margin: 8px 22px; }
+.season-h { margin: 26px 0 6px; font-size: 18px; font-weight: 700; color: #e5e5e5; }
+.season-h:first-child { margin-top: 0; }
 .eps { list-style: none; margin: 0; padding: 0; }
-.ep { display: grid; grid-template-columns: 44px 168px 1fr; gap: 0 18px; align-items: center; padding: 16px 12px; border-bottom: 1px solid #333; border-radius: 6px; cursor: pointer; }
-.ep:hover, .ep.cur { background: var(--row-hover); }
-.ep .n { font-size: 22px; color: #d2d2d2; text-align: center; }
+.ep { display: grid; grid-template-columns: 56px 190px 1fr; gap: 0 22px; align-items: center; padding: 20px 14px; border-bottom: 1px solid #333; border-radius: 6px; cursor: pointer; }
+.ep:hover { background: #2a2a2a; }
+.ep.cur { background: #333; border-bottom-color: transparent; }
+.ep .n { font-size: 24px; color: #d2d2d2; text-align: center; }
 .ep .th { position: relative; aspect-ratio: 16/9; border-radius: 4px; overflow: hidden; background: #333; }
 .ep .th img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .ep .th .play { position: absolute; inset: 0; display: grid; place-items: center; opacity: 0; transition: opacity .15s; background: rgba(0,0,0,.25); }
@@ -83,22 +88,22 @@ a { color: inherit; text-decoration: none; }
 .ep .th .prog { position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: rgba(90,90,90,.9); }
 .ep .th .prog i { display: block; height: 100%; background: var(--accent); }
 .ep .tx { min-width: 0; }
-.ep .tt { display: flex; justify-content: space-between; gap: 12px; font-size: 16px; font-weight: 700; margin-bottom: 4px; }
-.ep .tt .dur { font-family: var(--mono); font-size: 13px; color: var(--muted); font-weight: 400; font-variant-numeric: tabular-nums; white-space: nowrap; }
-.ep .ds { font-size: 13.5px; line-height: 1.45; color: #d2d2d2; margin: 0; }
-.tag { display: inline-block; font-family: var(--mono); font-size: 10px; letter-spacing: .1em; padding: 2px 6px; border: 1px solid #5a5a5a; border-radius: 3px; color: #ccc; margin-left: 8px; vertical-align: 2px; }
+.ep .tt { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; font-size: 17px; font-weight: 700; margin-bottom: 6px; }
+.ep .tt .dur { font-size: 15px; color: #d2d2d2; font-weight: 400; white-space: nowrap; }
+.ep .ds { font-size: 14.5px; line-height: 1.5; color: #d2d2d2; margin: 0; }
 .sobre { font-size: 14px; line-height: 1.6; color: #d2d2d2; max-width: 640px; }
-.sobre ul { padding-left: 18px; }
 .foot { text-align: center; font-size: 12px; color: var(--dim); padding: 30px 16px 10px; }
 .foot a { text-decoration: underline; }
 
 /* ---------- player ---------- */
 #player { position: fixed; inset: 0; background: #000; overflow: hidden; user-select: none; z-index: 50; }
-#player video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: #000; }
-#player.paused video { filter: brightness(.45); }
+#player video { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: contain; background: #000; transition: left .55s cubic-bezier(.2,.8,.2,1), top .55s cubic-bezier(.2,.8,.2,1), width .55s cubic-bezier(.2,.8,.2,1), height .55s cubic-bezier(.2,.8,.2,1), border-radius .55s, filter .3s; }
+#player.paused video, #player.pre video { filter: brightness(.45); }
+#player.checkout video { left: 4%; top: 11%; width: 56%; height: 66%; border-radius: 10px; filter: none; box-shadow: 0 30px 80px rgba(0,0,0,.7); }
 #player .vig { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,0) 22%, rgba(0,0,0,0) 60%, rgba(0,0,0,.85) 100%); opacity: 0; transition: opacity .25s; pointer-events: none; }
 #player.ui .vig, #player.paused .vig { opacity: 1; }
 #player .hit { position: absolute; inset: 0; }
+#player.checkout .hit { right: 40%; }
 #player .flash { position: absolute; left: 50%; top: 50%; width: 96px; height: 96px; margin: -48px 0 0 -48px; border-radius: 50%; background: rgba(0,0,0,.55); display: grid; place-items: center; opacity: 0; transform: scale(.7); pointer-events: none; }
 #player .flash svg { width: 44px; height: 44px; fill: #fff; }
 #player .flash.go { animation: flash .6s ease-out; }
@@ -106,7 +111,7 @@ a { color: inherit; text-decoration: none; }
 #player .spin { position: absolute; left: 50%; top: 50%; width: 56px; height: 56px; margin: -28px 0 0 -28px; border: 4px solid rgba(255,255,255,.25); border-top-color: #fff; border-radius: 50%; animation: spin 1s linear infinite; pointer-events: none; }
 @keyframes spin { to { transform: rotate(360deg); } }
 #player .back { position: absolute; top: 22px; left: 26px; width: 44px; height: 44px; display: grid; place-items: center; opacity: 0; transition: opacity .25s; z-index: 4; }
-#player.ui .back, #player.paused .back { opacity: 1; }
+#player.ui .back, #player.paused .back, #player.pre .back, #player.checkout .back { opacity: 1; }
 #player .back svg { width: 30px; height: 30px; fill: #fff; filter: drop-shadow(0 1px 6px rgba(0,0,0,.8)); }
 #player .pause-info { position: absolute; left: 80px; bottom: 150px; max-width: 560px; opacity: 0; transform: translateY(8px); transition: all .3s; z-index: 3; pointer-events: none; }
 #player.paused .pause-info { opacity: 1; transform: none; }
@@ -116,7 +121,50 @@ a { color: inherit; text-decoration: none; }
 #player .pause-info p { margin: 0; font-size: 14px; line-height: 1.5; color: #ddd; }
 #player .toast { position: absolute; left: 60px; bottom: 132px; padding: 8px 12px; background: rgba(0,0,0,.7); border-left: 3px solid var(--accent); font-size: 13px; z-index: 4; text-align: left; }
 #player .toast b { font-family: var(--mono); font-size: 11px; letter-spacing: .12em; color: var(--accent-text); display: block; margin-bottom: 2px; }
-#player.paused .toast, #player.pp .toast, #player.pp .pause-info, #player.pp .controls { display: none !important; }
+#player .toast.human { border-left-color: #f0c674; }
+#player .toast.human b { color: #f0c674; }
+#player.paused .toast, #player.pp .toast, #player.pp .pause-info, #player.pp .controls,
+#player.pre .toast, #player.pre .controls, #player.pre .pause-info,
+#player.checkout .vig, #player.checkout .controls, #player.checkout .toast, #player.checkout .pause-info, #player.checkout .flash, #player.checkout .spin { display: none !important; }
+
+/* antes de começar (só informação) */
+.preplay { position: absolute; inset: 0; z-index: 8; display: flex; align-items: center; padding: 0 80px; }
+.pre-card { width: min(520px, 100%); background: rgba(18,18,18,.92); border: 1px solid #333; border-radius: 8px; padding: 26px 28px; box-shadow: 0 30px 80px rgba(0,0,0,.7); }
+.pre-card .k { font-family: var(--mono); font-size: 11px; letter-spacing: .14em; color: var(--accent-text); }
+.pre-card h3 { margin: 8px 0 14px; font-size: 24px; font-weight: 800; letter-spacing: -.01em; line-height: 1.15; }
+.pre-card .lbl { font-family: var(--mono); font-size: 10px; letter-spacing: .14em; color: var(--dim); margin-bottom: 8px; }
+.pre-card ul { list-style: none; margin: 0 0 18px; padding: 0; }
+.pre-card li { display: flex; gap: 10px; align-items: flex-start; padding: 8px 0; border-top: 1px solid #2a2a2a; font-size: 14px; line-height: 1.4; }
+.pre-card li:first-child { border-top: 0; }
+.pre-card li i { flex: 0 0 auto; width: 20px; height: 20px; border-radius: 50%; border: 1px solid #555; display: grid; place-items: center; font-style: normal; font-size: 11px; color: var(--accent-text); margin-top: 1px; }
+.pre-card li.need i { border-color: #6b5a2a; color: #f0c674; }
+.pre-card li small { display: block; color: var(--muted); font-size: 12px; }
+
+/* parada de compra: vídeo encolhido à esquerda, componente à direita */
+.vidcap { position: absolute; left: 4%; right: 40%; bottom: 12%; display: flex; align-items: center; gap: 10px; font-size: 13px; color: #ddd; z-index: 6; }
+.vidcap i { width: 10px; height: 10px; border-radius: 50%; background: #f0c674; box-shadow: 0 0 0 4px rgba(240,198,116,.2); font-style: normal; }
+.vidcap b { color: #fff; }
+.buybox { position: absolute; top: 0; right: 0; bottom: 0; width: 36%; z-index: 8; background: rgba(16,16,16,.98); border-left: 1px solid #333; padding: 34px 32px; overflow: auto; }
+.buybox .k { font-family: var(--mono); font-size: 11px; letter-spacing: .14em; color: #f0c674; }
+.buybox h3 { margin: 8px 0 10px; font-size: 26px; font-weight: 800; letter-spacing: -.01em; line-height: 1.12; }
+.buybox p { margin: 0 0 16px; font-size: 14px; line-height: 1.55; color: #d2d2d2; }
+.buybox .selo { font-family: var(--mono); font-size: 10px; letter-spacing: .08em; color: #f0c674; line-height: 1.6; margin: 6px 0 22px; }
+.buybox .steps { border-top: 1px solid #2a2a2a; padding-top: 16px; }
+.buybox .steps .lbl { font-family: var(--mono); font-size: 10px; letter-spacing: .14em; color: var(--dim); margin-bottom: 8px; }
+.buybox .steps ol { margin: 0; padding-left: 18px; font-size: 13px; line-height: 1.55; color: #cfcfcf; }
+.buybox .skipbtn { display: block; margin-top: 22px; font-size: 13px; color: #bbb; text-decoration: underline; }
+.psel-lbl { font-family: var(--mono); font-size: 10px; letter-spacing: .14em; color: var(--dim); margin-bottom: 6px; }
+.psel-row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin: 4px 0 14px; }
+.psel { position: relative; display: inline-block; min-width: 168px; }
+.psel-btn { display: flex; align-items: center; justify-content: space-between; gap: 14px; width: 100%; height: 44px; padding: 0 16px; background: #1c1c1c; border: 2px solid #4a4a4a; border-radius: 8px; font-size: 15px; font-weight: 600; color: #fff; }
+.psel-btn svg { width: 16px; height: 16px; fill: #fff; transition: transform .15s; }
+.psel.open .psel-btn { border-color: var(--accent); }
+.psel.open .psel-btn svg { transform: rotate(180deg); }
+.psel-menu { position: absolute; top: 50px; left: 0; right: 0; z-index: 20; background: #1c1c1c; border: 1px solid #3d3d3d; border-radius: 8px; padding: 6px; box-shadow: 0 18px 40px rgba(0,0,0,.7); }
+.psel-menu button { display: block; width: 100%; padding: 12px 14px; text-align: left; font-size: 15px; border-radius: 6px; color: #eee; }
+.psel-menu button:hover { background: #2b2b2b; }
+.psel-menu button.on { background: #333; font-weight: 700; }
+
 .controls { position: absolute; left: 0; right: 0; bottom: 0; padding: 0 60px 26px; opacity: 0; transform: translateY(6px); transition: all .25s; z-index: 5; }
 #player.ui .controls, #player.paused .controls { opacity: 1; transform: none; }
 .mtitle { display: none; font-size: 13px; color: #ddd; margin-bottom: 10px; }
@@ -128,6 +176,9 @@ a { color: inherit; text-decoration: none; }
 .rail .fill { position: absolute; left: 0; top: 0; bottom: 0; width: 0; background: var(--accent); }
 .rail .knob { position: absolute; top: 50%; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; background: var(--accent); transform: scale(0); transition: transform .12s; }
 .rail:hover .knob, .rail.drag .knob { transform: scale(1); }
+.rail .mk { position: absolute; top: -3px; bottom: -3px; width: 3px; margin-left: -1px; background: rgba(255,255,255,.75); border-radius: 1px; }
+.rail .mk.human { background: #f0c674; box-shadow: 0 0 0 2px rgba(240,198,116,.35); }
+.rail .mk.done { background: var(--accent); box-shadow: 0 0 0 2px rgba(var(--accent-rgb),.35); }
 .rail .pv { position: absolute; bottom: 20px; width: 200px; margin-left: -100px; background: #000; border: 1px solid #555; border-radius: 4px; overflow: hidden; display: none; pointer-events: none; }
 .rail:hover .pv, .rail.drag .pv { display: block; }
 .rail .pv img { display: block; width: 100%; aspect-ratio: 16/9; object-fit: cover; background: #222; }
@@ -205,13 +256,26 @@ a { color: inherit; text-decoration: none; }
   .tp-body { grid-template-columns: 1fr; gap: 12px; padding: 16px 18px 0; }
   .tp-tabs { margin: 16px 18px 0; gap: 18px; }
   .tp-tab { padding: 14px 12px 40px; }
+  .eps-head h2 { font-size: 20px; }
+  .season-sel > button { height: 40px; font-size: 15px; padding: 0 14px; }
+  .season-sel .menu { min-width: 260px; }
+  .season-sel .menu button { font-size: 16px; padding: 10px 18px; }
   .ep { grid-template-columns: 26px 110px 1fr; gap: 0 10px; padding: 12px 6px; }
   .ep .n { font-size: 15px; }
-  .ep .tt { font-size: 14px; flex-direction: column; gap: 2px; }
+  .ep .tt { font-size: 14px; flex-direction: column; align-items: flex-start; gap: 2px; }
+  .ep .tt .dur { font-size: 13px; }
   .ep .ds { grid-column: 1 / -1; margin-top: 10px; font-size: 13px; }
   #player .pause-info { left: 22px; right: 22px; bottom: 160px; max-width: none; }
   #player .pause-info h2 { font-size: 22px; }
   #player .toast { left: 16px; bottom: 150px; }
+  .preplay { padding: 0 14px 20px; align-items: flex-end; }
+  .pre-card { padding: 20px; }
+  .pre-card h3 { font-size: 19px; }
+  #player.checkout video { left: 5%; top: 4%; width: 90%; height: 34%; }
+  #player.checkout .hit { right: 0; bottom: 60%; }
+  .vidcap { left: 5%; right: 5%; bottom: auto; top: calc(38% + 10px); font-size: 12px; }
+  .buybox { top: auto; height: 58%; width: 100%; border-left: 0; border-top: 1px solid #333; border-radius: 14px 14px 0 0; padding: 22px 18px; }
+  .buybox h3 { font-size: 21px; }
   .controls { padding: 0 14px 12px; }
   .mtitle { display: block; }
   .crow { grid-template-columns: auto 1fr auto; }
@@ -260,9 +324,8 @@ a { color: inherit; text-decoration: none; }
       <button data-act="tab" data-tab="sobre">Sobre</button>
     </div>
     <div class="tp-tab" id="tab-eps">
-      <div class="eps-head"><h2>Episódios</h2><div class="season-sel" id="season-sel"></div></div>
-      <p class="season-note" id="season-note"></p>
-      <ol class="eps" id="eps"></ol>
+      <div class="eps-head"><h2 id="eps-title">Temporada 1</h2><div class="season-sel" id="season-sel"></div></div>
+      <div id="eps"></div>
     </div>
     <div class="tp-tab sobre" id="tab-sobre" hidden>
       <p>Este é o player do AgentsFlix em teste. Os episódios vêm do curso Agente de IA Pessoal, publicado na Hotmart, e estão abertos aqui para você validar o jeito de assistir: temporada por módulo, episódio por aula, continuar de onde parou, próximo episódio automático.</p>
@@ -282,7 +345,10 @@ a { color: inherit; text-decoration: none; }
   <div class="flash" id="flash"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></div>
   <button class="back" data-act="close-player" title="Voltar para a série (Esc)"><svg viewBox="0 0 24 24"><path d="M20 11H7.8l5.6-5.6L12 4l-8 8 8 8 1.4-1.4L7.8 13H20z"/></svg></button>
   <div class="pause-info"><div class="k">VOCÊ ESTÁ ASSISTINDO</div><h2 id="pi-title"></h2><div class="e" id="pi-ep"></div><p id="pi-desc"></p></div>
-  <div class="toast" id="toast" hidden></div>
+  <button class="toast" id="toast" hidden></button>
+  <div class="vidcap" id="vidcap" hidden></div>
+  <aside class="buybox" id="checkout" hidden></aside>
+  <div class="preplay" id="preplay" hidden></div>
   <div class="err" id="err" hidden></div>
 
   <div class="controls">
@@ -290,6 +356,7 @@ a { color: inherit; text-decoration: none; }
     <div class="scrub">
       <div class="rail" id="rail">
         <div class="buf" id="buf"></div><div class="fill" id="fill"></div><div class="knob" id="knob"></div>
+        <div id="marks"></div>
         <div class="pv" id="pv"><img id="pv-img" alt=""><div class="t"><span id="pv-time"></span></div></div>
       </div>
       <span class="remain" id="remain">0:00</span>
@@ -331,27 +398,36 @@ a { color: inherit; text-decoration: none; }
 // ---------- utilidades ----------
 const $ = (id) => document.getElementById(id);
 const fmt = (s) => { s = Math.max(0, Math.round(s || 0)); return Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0"); };
+const fmtDur = (s) => { s = Math.round(s || 0); return s < 60 ? `${s}s` : `${Math.round(s / 60)}min`; };
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const store = { get(k, d) { try { const v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } }, set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} } };
+const SELO = "LINK DE INDICAÇÃO · você paga o mesmo, o AgentsFlix recebe comissão";
 
 // ---------- dados ----------
 let SERIES = [], SERIE = null;
-const state = { season: 0, ep: 0, hls: null, uiTimer: null, drawer: false, pop: false, dseason: 0, ppTimer: null, seasonMenu: false, toastTimer: null, lastSave: 0 };
+const state = { season: 0, ep: 0, hls: null, uiTimer: null, drawer: false, pop: false, dseason: 0, ppTimer: null, seasonMenu: false, allSeasons: false, toastTimer: null, lastSave: 0, lastChapter: -1, checkout: null, stopped: {}, preSeen: {}, periodo: {}, pselOpen: null };
 const video = $("video");
 const curEp = () => SERIE.seasons[state.season].eps[state.ep];
 const base = (uid) => `https://${SERIE.customer}.cloudflarestream.com/${uid}`;
 const thumb = (uid, h = 270, t) => `${base(uid)}/thumbnails/thumbnail.jpg?height=${h}${t !== undefined ? `&time=${Math.max(0, Math.floor(t))}s` : ""}`;
 const progKey = (uid) => `agentflix-prog-${uid}`;
 const prog = (e) => { const p = store.get(progKey(e.uid), null); return p && e.d ? Math.min(1, p.t / e.d) : 0; };
-const isDone = (e) => prog(e) >= 0.95;
+const isWatched = (e) => prog(e) >= 0.95;
+const doneKey = (uid, k) => `${uid}-${k}`;
+const isDone = (uid, k) => !!store.get("agentflix-done", {})[doneKey(uid, k)];
+const markDoneStore = (uid, k) => { const d = store.get("agentflix-done", {}); d[doneKey(uid, k)] = Date.now(); store.set("agentflix-done", d); };
 const nextEp = () => { const s = SERIE.seasons[state.season]; if (state.ep + 1 < s.eps.length) return { season: state.season, ep: state.ep + 1 }; if (state.season + 1 < SERIE.seasons.length) return { season: state.season + 1, ep: 0 }; return null; };
 function resumeEp() {
   let last = null;
-  SERIE.seasons.forEach((s, si) => s.eps.forEach((e, ei) => { const p = store.get(progKey(e.uid), null); if (p && (!last || p.at > last.at)) last = { season: si, ep: ei, at: p.at, done: isDone(e) }; }));
+  SERIE.seasons.forEach((s, si) => s.eps.forEach((e, ei) => { const p = store.get(progKey(e.uid), null); if (p && (!last || p.at > last.at)) last = { season: si, ep: ei, at: p.at, done: isWatched(e) }; }));
   if (!last) return { season: 0, ep: 0, fresh: true };
   if (last.done) { const s = SERIE.seasons[last.season]; if (last.ep + 1 < s.eps.length) return { season: last.season, ep: last.ep + 1, fresh: true }; if (last.season + 1 < SERIE.seasons.length) return { season: last.season + 1, ep: 0, fresh: true }; }
   return { season: last.season, ep: last.ep, fresh: last.done };
 }
+const chapters = (e) => e.ch || [];
+const chapterAt = (e, t) => { let k = -1; chapters(e).forEach((c, i) => { if (t >= c.t) k = i; }); return k; };
+const optDefault = (a) => (a.opcoes || []).find((o) => o.padrao) || (a.opcoes || [])[0];
+const optChosen = (a, uid, k) => { const i = state.periodo[doneKey(uid, k)]; return i === undefined ? optDefault(a) : a.opcoes[i]; };
 
 // ---------- página do título ----------
 function renderTitle() {
@@ -369,27 +445,36 @@ function renderTitle() {
   renderSeasonSel(); renderEps();
 }
 function renderSeasonSel() {
-  const s = SERIE.seasons[state.season];
-  $("season-sel").innerHTML = `<button data-act="season-menu">Temporada ${s.n} <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>` +
-    (state.seasonMenu ? `<div class="menu">${SERIE.seasons.map((x, i) => `<button class="${i === state.season ? "on" : ""}" data-act="season" data-i="${i}">Temporada ${x.n}: ${esc(x.title)}<span>${x.eps.length} episódios</span></button>`).join("")}</div>` : "");
-  $("season-note").textContent = `Temporada ${s.n} · ${s.title}. ${s.note || ""}`;
+  const s = SERIE.seasons[state.season]; const el = $("season-sel");
+  el.classList.toggle("open", state.seasonMenu);
+  el.innerHTML = `<button data-act="season-menu" aria-haspopup="listbox" aria-expanded="${state.seasonMenu}">${state.allSeasons ? "Todos os episódios" : `Temporada ${s.n}`} <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>` +
+    (state.seasonMenu ? `<div class="menu" role="listbox">${SERIE.seasons.map((x, i) => `<button class="${!state.allSeasons && i === state.season ? "on" : ""}" data-act="season" data-i="${i}">Temporada ${x.n} <span>(${x.eps.length} episódios)</span></button>`).join("")}<hr><button class="${state.allSeasons ? "on" : ""}" data-act="season-all">Ver todos os episódios</button></div>` : "");
+  $("eps-title").textContent = state.allSeasons ? "Todos os episódios" : `Temporada ${s.n}`;
+}
+function epRow(e, si, ei, n, cur) {
+  const p = prog(e);
+  return `<li class="ep ${cur ? "cur" : ""}" data-act="open-ep" data-s="${si}" data-e="${ei}">
+    <div class="n">${n}</div>
+    <div class="th"><img src="${thumb(e.uid)}" alt="" loading="lazy"><div class="play"><i><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></i></div>${p > 0 ? `<div class="prog"><i style="width:${Math.round(p * 100)}%"></i></div>` : ""}</div>
+    <div class="tx"><div class="tt"><span>${esc(e.t)}</span><span class="dur">${fmtDur(e.d)}</span></div><p class="ds">${esc(e.desc)}</p></div>
+  </li>`;
 }
 function renderEps() {
-  const s = SERIE.seasons[state.season];
-  $("eps").innerHTML = s.eps.map((e, i) => { const p = prog(e); return `
-    <li class="ep" data-act="open-ep" data-s="${state.season}" data-e="${i}">
-      <div class="n">${i + 1}</div>
-      <div class="th"><img src="${thumb(e.uid)}" alt="" loading="lazy"><div class="play"><i><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></i></div>${p > 0 ? `<div class="prog"><i style="width:${Math.round(p * 100)}%"></i></div>` : ""}</div>
-      <div class="tx"><div class="tt"><span>${esc(e.t)}${e.aula ? `<span class="tag">AULA ${String(e.aula).padStart(2, "0")}</span>` : ""}</span><span class="dur">${fmt(e.d)}</span></div><p class="ds">${esc(e.desc)}</p></div>
-    </li>`; }).join("");
+  const r = resumeEp(); const cur = (si, ei) => si === r.season && ei === r.ep;
+  if (state.allSeasons) {
+    $("eps").innerHTML = SERIE.seasons.map((s, si) => `<h3 class="season-h">Temporada ${s.n} · ${esc(s.title)}</h3><ol class="eps">${s.eps.map((e, ei) => epRow(e, si, ei, ei + 1, cur(si, ei))).join("")}</ol>`).join("");
+  } else {
+    const s = SERIE.seasons[state.season];
+    $("eps").innerHTML = `<ol class="eps">${s.eps.map((e, ei) => epRow(e, state.season, ei, ei + 1, cur(state.season, ei))).join("")}</ol>`;
+  }
 }
 
 // ---------- player ----------
-function attach(uid, startAt) {
+function attach(uid, startAt, autoplay) {
   const src = `${base(uid)}/manifest/video.m3u8`;
   if (state.hls) { state.hls.destroy(); state.hls = null; }
-  $("err").hidden = true; $("spin").hidden = false;
-  const onReady = () => { if (startAt > 0 && startAt < (video.duration || Infinity) - 3) video.currentTime = startAt; video.play().catch(() => {}); };
+  $("err").hidden = true; $("spin").hidden = !autoplay;
+  const onReady = () => { if (startAt > 0 && startAt < (video.duration || Infinity) - 3) video.currentTime = startAt; if (autoplay) video.play().catch(() => {}); };
   if (window.Hls && Hls.isSupported()) {
     const hls = new Hls({ startPosition: -1 }); state.hls = hls;
     hls.loadSource(src); hls.attachMedia(video);
@@ -400,17 +485,56 @@ function attach(uid, startAt) {
   } else showErr("Este navegador não toca o vídeo. Use Chrome, Safari, Edge ou Firefox atualizados.");
 }
 function showErr(msg) { $("spin").hidden = true; $("err").textContent = msg; $("err").hidden = false; }
+function resetOverlays() { $("postplay").hidden = true; $("preplay").hidden = true; closeCheckout(); $("player").classList.remove("pp", "pre"); clearInterval(state.ppTimer); $("toast").hidden = true; }
 function loadEp(season, ep, { from } = {}) {
-  state.season = season; state.ep = ep; const e = curEp();
-  $("postplay").hidden = true; $("player").classList.remove("pp"); clearInterval(state.ppTimer); $("toast").hidden = true;
+  state.season = season; state.ep = ep; const e = curEp(); state.lastChapter = -1;
+  resetOverlays();
   $("ctl-title").textContent = SERIE.name; $("ctl-ep").textContent = `T${season + 1}:E${ep + 1} ${e.t}`;
   $("mtitle").innerHTML = `<b>${esc(SERIE.name)}</b> · T${season + 1}:E${ep + 1} ${esc(e.t)}`;
   $("pi-title").textContent = SERIE.name; $("pi-ep").textContent = `T${season + 1}:E${ep + 1} · ${e.t}`; $("pi-desc").textContent = e.desc;
   $("btn-next").style.visibility = nextEp() ? "visible" : "hidden";
   video.poster = thumb(e.uid, 720);
-  const saved = store.get(progKey(e.uid), null); const startAt = from !== undefined ? from : (saved && !isDone(e) ? saved.t : 0);
+  const saved = store.get(progKey(e.uid), null); const startAt = from !== undefined ? from : (saved && !isWatched(e) ? saved.t : 0);
   location.hash = `t${season + 1}e${ep + 1}`;
-  attach(e.uid, startAt); renderDrawer(); paint(); showUI(true);
+  paintMarks(); renderDrawer(); paint(); showUI(true);
+  // antes de começar: só informação, quando o episódio pede algo de fora e ainda não foi marcado como feito
+  const pk = `${e.uid}`; const needs = e.preplay && e.preplay.req.some((r) => r.need && r.acao !== undefined && !isDone(e.uid, r.acao));
+  if (needs && !state.preSeen[pk]) { state.preSeen[pk] = true; attach(e.uid, startAt, false); showPreplay(); return; }
+  attach(e.uid, startAt, true);
+}
+function showPreplay() {
+  const e = curEp(); const ch = chapters(e);
+  const list = e.preplay.req.map((r) => { const d = r.acao !== undefined && isDone(e.uid, r.acao); const c = r.acao !== undefined ? ch[r.acao] : null; return `<li class="${r.need && !d ? "need" : ""}"><i>${d ? "✓" : r.need ? "!" : "·"}</i><div>${esc(r.t)}${r.need && !d && c ? `<small>Ainda não tem? Sem problema: em ${fmt(c.t)} o vídeo para e abre a compra do lado.</small>` : ""}</div></li>`; }).join("");
+  $("preplay").innerHTML = `<div class="pre-card"><div class="k">ANTES DE COMEÇAR · T${state.season + 1}:E${state.ep + 1}</div><h3>${esc(e.t)}</h3><div class="lbl">VOCÊ VAI PRECISAR DE</div><ul>${list}</ul><div class="tp-actions" style="margin-top:0"><button class="btn primary" data-act="pre-go">Começar</button></div></div>`;
+  $("preplay").hidden = false; $("player").classList.add("pre");
+}
+function paintMarks() {
+  const e = curEp(); const d = e.d || 1;
+  $("marks").innerHTML = chapters(e).filter((c) => c.acao).map((c, i) => { const k = chapters(e).indexOf(c); return `<div class="mk ${c.acao.humano ? "human" : ""} ${isDone(e.uid, k) ? "done" : ""}" style="left:${(c.t / d) * 100}%" title="${esc(c.n)}"></div>`; }).join("");
+}
+function periodSel(a, uid, k) {
+  const kk = doneKey(uid, k); const cur = optChosen(a, uid, k); const open = state.pselOpen === kk;
+  const menu = open ? `<div class="psel-menu">${a.opcoes.map((o, i) => `<button class="${o === cur ? "on" : ""}" data-act="psel-pick" data-key="${kk}" data-i="${i}">${esc(o.label)}</button>`).join("")}</div>` : "";
+  return `<div class="psel-lbl">PERÍODO</div><div class="psel-row"><div class="psel ${open ? "open" : ""}" data-psel="${kk}"><button class="psel-btn" data-act="psel-toggle" data-key="${kk}">${esc(cur.label)}<svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>${menu}</div><button class="btn primary" data-act="ext" data-url="${esc(cur.url)}" data-k="${k}">${esc(a.cta || a.label)} · ${esc(cur.label)} ↗</button></div>`;
+}
+function openCheckout(k) {
+  const e = curEp(); const c = chapters(e)[k]; const a = c.acao;
+  video.pause(); openDrawer(false); openPop(false); $("toast").hidden = true;
+  state.checkout = k; $("player").classList.add("checkout");
+  $("vidcap").innerHTML = `<i></i><span><b>Pausado.</b> Escolha o plano e a gente continua.</span>`; $("vidcap").hidden = false;
+  $("checkout").innerHTML = `<div class="k">T${state.season + 1}:E${state.ep + 1} · ${fmt(c.t)} · COMPRA</div><h3>${esc(a.titulo || "Escolha o seu plano")}</h3><p>${esc(a.nota || "")}</p>
+    ${a.opcoes && a.opcoes.length > 1 ? periodSel(a, e.uid, k) : `<div class="psel-row"><button class="btn primary" data-act="ext" data-url="${esc(optDefault(a).url)}" data-k="${k}">${esc(a.cta || a.label)} ↗</button></div>`}
+    ${a.indicacao ? `<div class="selo">${SELO}<br>Abre em nova aba. Assim que você clicar, o vídeo continua daqui.</div>` : ""}
+    ${a.depois ? `<div class="steps"><div class="lbl">NA HOSTINGER, DEPOIS DO CARRINHO</div><ol>${a.depois.map((x) => `<li>${esc(x)}</li>`).join("")}</ol></div>` : ""}
+    <button class="skipbtn" data-act="checkout-skip">${esc(a.pular || "Já tenho, continuar o vídeo")} ▶</button>`;
+  $("checkout").hidden = false;
+}
+function closeCheckout() { state.checkout = null; $("player").classList.remove("checkout"); $("checkout").hidden = true; $("vidcap").hidden = true; }
+function goExternal(url, k) {
+  try { window.open(url, "_blank", "noopener"); } catch (err) {}
+  const e = curEp(); const a = chapters(e)[k] && chapters(e)[k].acao;
+  if (a && a.humano) { markDoneStore(e.uid, k); paintMarks(); }
+  if (state.checkout !== null) { closeCheckout(); video.play().catch(() => {}); }
 }
 function setPaused(p) { $("player").classList.toggle("paused", p); $("ic-play").hidden = !p; $("ic-pause").hidden = p; }
 function toggle() { if (video.paused) video.play().catch(() => {}); else video.pause(); flash(); }
@@ -422,6 +546,12 @@ function paint() {
   const d = video.duration || curEp().d || 1; const t = video.currentTime || 0; const p = Math.min(1, t / d);
   $("fill").style.width = p * 100 + "%"; $("knob").style.left = p * 100 + "%"; $("remain").textContent = fmt(d - t);
   try { const b = video.buffered; if (b.length) $("buf").style.width = Math.min(100, (b.end(b.length - 1) / d) * 100) + "%"; } catch (e) {}
+}
+function onChapter() {
+  const e = curEp(); const k = chapterAt(e, video.currentTime); if (k === state.lastChapter) return; state.lastChapter = k;
+  if (k < 0) return; const c = chapters(e)[k]; const a = c.acao;
+  if (a && a.parar && !isDone(e.uid, k) && !state.stopped[doneKey(e.uid, k)] && !video.paused) { state.stopped[doneKey(e.uid, k)] = true; openCheckout(k); return; }
+  if (a) { const t = $("toast"); t.className = "toast" + (a.humano ? " human" : ""); t.innerHTML = `<b>${a.humano ? "REQUER VOCÊ" : "AÇÃO"} →</b>${esc(a.label || c.n)}`; t.hidden = false; clearTimeout(state.toastTimer); state.toastTimer = setTimeout(() => { t.hidden = true; }, 5000); showUI(false); }
 }
 function saveProgress(force) {
   const now = Date.now(); if (!force && now - state.lastSave < 4000) return; state.lastSave = now;
@@ -440,12 +570,12 @@ function endOfEpisode() {
 function renderDrawer() {
   $("stabs").innerHTML = SERIE.seasons.map((s, i) => `<button class="${i === state.dseason ? "on" : ""}" data-act="dseason" data-i="${i}">T${s.n} · ${esc(s.title)}</button>`).join("");
   const s = SERIE.seasons[state.dseason];
-  $("dl").innerHTML = s.eps.map((e, i) => { const p = prog(e); return `<div class="dep ${state.dseason === state.season && i === state.ep ? "cur" : ""}" data-act="open-ep" data-s="${state.dseason}" data-e="${i}"><div class="n">${i + 1}</div><div class="th"><img src="${thumb(e.uid, 180)}" alt="" loading="lazy">${p > 0 ? `<div class="prog"><i style="width:${Math.round(p * 100)}%"></i></div>` : ""}</div><div><div class="tt">${esc(e.t)}</div><div class="dur">${fmt(e.d)}${e.aula ? ` · aula ${String(e.aula).padStart(2, "0")}` : ""}</div></div></div>`; }).join("");
+  $("dl").innerHTML = s.eps.map((e, i) => { const p = prog(e); return `<div class="dep ${state.dseason === state.season && i === state.ep ? "cur" : ""}" data-act="open-ep" data-s="${state.dseason}" data-e="${i}"><div class="n">${i + 1}</div><div class="th"><img src="${thumb(e.uid, 180)}" alt="" loading="lazy">${p > 0 ? `<div class="prog"><i style="width:${Math.round(p * 100)}%"></i></div>` : ""}</div><div><div class="tt">${esc(e.t)}</div><div class="dur">${fmtDur(e.d)}</div></div></div>`; }).join("");
 }
 function openDrawer(force) {
   state.drawer = force === undefined ? !state.drawer : force;
   if (state.drawer) { state.dseason = state.season; renderDrawer(); }
-  $("drawer").hidden = !state.drawer; $("btn-eps").classList.toggle("on", state.drawer); showUI(!state.drawer ? false : true);
+  $("drawer").hidden = !state.drawer; $("btn-eps").classList.toggle("on", state.drawer); showUI(state.drawer);
 }
 function openPop(force) { state.pop = force === undefined ? !state.pop : force; $("pop-speed").hidden = !state.pop; showUI(state.pop); }
 function toggleFs() { const p = $("player"); if (document.fullscreenElement) document.exitFullscreen(); else if (p.requestFullscreen) p.requestFullscreen(); else if (video.webkitEnterFullscreen) video.webkitEnterFullscreen(); }
@@ -454,16 +584,16 @@ function toggleFs() { const p = $("player"); if (document.fullscreenElement) doc
 function show(screen) {
   $("title-page").hidden = screen !== "title"; $("player").hidden = screen !== "player";
   document.body.style.overflow = screen === "player" ? "hidden" : "";
-  if (screen === "title") { saveProgress(true); video.pause(); if (state.hls) { state.hls.destroy(); state.hls = null; } video.removeAttribute("src"); video.load(); history.replaceState(null, "", location.pathname + location.search); renderTitle(); }
+  if (screen === "title") { saveProgress(true); video.pause(); resetOverlays(); if (state.hls) { state.hls.destroy(); state.hls = null; } video.removeAttribute("src"); video.load(); history.replaceState(null, "", location.pathname + location.search); renderTitle(); }
 }
 function openPlayer(season, ep, opts) { show("player"); loadEp(season, ep, opts); }
 
 // ---------- eventos do vídeo ----------
 video.addEventListener("play", () => { setPaused(false); $("spin").hidden = true; bumpUI(); });
 video.addEventListener("pause", () => { setPaused(true); saveProgress(true); showUI(true); });
-video.addEventListener("waiting", () => { $("spin").hidden = false; });
+video.addEventListener("waiting", () => { if (!$("player").classList.contains("pre")) $("spin").hidden = false; });
 video.addEventListener("playing", () => { $("spin").hidden = true; });
-video.addEventListener("timeupdate", () => { paint(); saveProgress(false); });
+video.addEventListener("timeupdate", () => { paint(); saveProgress(false); onChapter(); });
 video.addEventListener("progress", paint);
 video.addEventListener("ended", endOfEpisode);
 video.addEventListener("volumechange", () => { $("btn-mute").style.opacity = video.muted || video.volume === 0 ? .5 : 1; });
@@ -476,26 +606,35 @@ document.addEventListener("click", (ev) => {
   const a = el.dataset.act;
   if (a === "tab") { document.querySelectorAll(".tp-tabs button").forEach((b) => b.classList.toggle("on", b.dataset.tab === el.dataset.tab)); ["eps", "sobre"].forEach((t) => { $("tab-" + t).hidden = t !== el.dataset.tab; }); }
   else if (a === "season-menu") { state.seasonMenu = !state.seasonMenu; renderSeasonSel(); }
-  else if (a === "season") { state.season = +el.dataset.i; state.seasonMenu = false; renderSeasonSel(); renderEps(); }
+  else if (a === "season") { state.season = +el.dataset.i; state.allSeasons = false; state.seasonMenu = false; renderSeasonSel(); renderEps(); }
+  else if (a === "season-all") { state.allSeasons = true; state.seasonMenu = false; renderSeasonSel(); renderEps(); }
   else if (a === "resume") { const r = resumeEp(); openPlayer(r.season, r.ep); }
   else if (a === "restart") { openPlayer(0, 0, { from: 0 }); }
   else if (a === "open-ep") { openDrawer(false); openPlayer(+el.dataset.s, +el.dataset.e); }
-  else if (a === "toggle") { if (state.pop) { openPop(false); return; } if (state.drawer) { openDrawer(false); return; } toggle(); }
+  else if (a === "toggle") { if (state.pop) { openPop(false); return; } if (state.drawer) { openDrawer(false); return; } if (state.checkout !== null || !$("preplay").hidden) return; toggle(); }
   else if (a === "seek") seek(+el.dataset.d);
   else if (a === "mute") { video.muted = !video.muted; }
   else if (a === "next") { const nx = nextEp(); if (nx) loadEp(nx.season, nx.ep, { from: 0 }); }
-  else if (a === "stay") { $("postplay").hidden = true; $("player").classList.remove("pp"); clearInterval(state.ppTimer); video.currentTime = 0; video.play().catch(() => {}); }
+  else if (a === "stay") { $("postplay").hidden = true; $("player").classList.remove("pp"); clearInterval(state.ppTimer); video.currentTime = 0; state.lastChapter = -1; video.play().catch(() => {}); }
   else if (a === "drawer") openDrawer();
   else if (a === "dseason") { state.dseason = +el.dataset.i; renderDrawer(); }
   else if (a === "pop") openPop();
   else if (a === "fs") toggleFs();
+  else if (a === "pre-go") { $("preplay").hidden = true; $("player").classList.remove("pre"); video.play().catch(() => {}); }
+  else if (a === "psel-toggle") { state.pselOpen = state.pselOpen === el.dataset.key ? null : el.dataset.key; if (state.checkout !== null) openCheckout(state.checkout); }
+  else if (a === "psel-pick") { state.periodo[el.dataset.key] = +el.dataset.i; state.pselOpen = null; if (state.checkout !== null) openCheckout(state.checkout); }
+  else if (a === "ext") goExternal(el.dataset.url, +el.dataset.k);
+  else if (a === "checkout-skip") { closeCheckout(); video.play().catch(() => {}); }
   else if (a === "close-player") { clearInterval(state.ppTimer); show("title"); }
 });
-document.addEventListener("click", (ev) => { if (state.seasonMenu && !ev.target.closest("#season-sel")) { state.seasonMenu = false; renderSeasonSel(); } });
+document.addEventListener("click", (ev) => {
+  if (state.seasonMenu && !ev.target.closest("#season-sel") && !ev.target.closest('[data-act="season-menu"]')) { state.seasonMenu = false; renderSeasonSel(); }
+  if (state.pselOpen && !ev.target.closest("[data-psel]") && !ev.target.closest('[data-act="psel-toggle"]') && !ev.target.closest('[data-act="psel-pick"]')) { state.pselOpen = null; if (state.checkout !== null) openCheckout(state.checkout); }
+});
 document.addEventListener("keydown", (ev) => {
   if ($("player").hidden || ev.target.tagName === "INPUT") return;
   const k = ev.key.toLowerCase();
-  if (ev.key === " ") { ev.preventDefault(); toggle(); }
+  if (ev.key === " ") { ev.preventDefault(); if (state.checkout !== null || !$("preplay").hidden) return; toggle(); }
   else if (ev.key === "ArrowLeft") seek(-10); else if (ev.key === "ArrowRight") seek(10);
   else if (k === "e") openDrawer(); else if (k === "f") toggleFs(); else if (k === "m") video.muted = !video.muted;
   else if (ev.key === "Escape") { if (state.drawer) openDrawer(false); else if (state.pop) openPop(false); else { clearInterval(state.ppTimer); show("title"); } }
