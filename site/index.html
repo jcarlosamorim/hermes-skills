@@ -88,6 +88,34 @@
   .count { display: flex; align-items: center; gap: 8px; flex: 0 0 auto; white-space: nowrap; font-size: 11px; color: #9a9a9a; }
   .count .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent); }
 
+  /* loja: conta, cadeado, conteúdo exclusivo, login, aviso */
+  .acct { padding: 8px 14px; background: transparent; border: 1px solid var(--line); border-radius: 4px; color: #d6d6d6; font-size: 11px; letter-spacing: 0.12em; cursor: pointer; flex: 0 0 auto; }
+  .acct:hover, .acct[data-logged="1"] { border-color: var(--accent); color: #fff; }
+  .art .lock { position: absolute; top: 10px; right: 10px; z-index: 3; width: 28px; height: 28px; display: grid; place-items: center; border-radius: 50%; background: rgba(20,22,26,0.82); border: 1px solid rgba(255,255,255,0.18); font-size: 13px; }
+  .exclusive { margin: 0 0 26px; padding: 16px; border: 1px solid var(--line); border-radius: 6px; background: rgba(var(--accent-rgb),0.06); }
+  .exclusive .player { display: none; aspect-ratio: 16 / 9; background: #000; border-radius: 4px; overflow: hidden; margin: 12px 0; }
+  .exclusive .player:has(iframe), .exclusive .player:has(.loading) { display: block; }
+  .exclusive .player iframe { width: 100%; height: 100%; border: 0; display: block; }
+  .vlist { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 6px; }
+  .vbtn { width: 100%; display: flex; align-items: center; gap: 12px; padding: 10px 12px; background: var(--ink); border: 1px solid var(--line); border-radius: 4px; color: #eee; font-size: 13px; text-align: left; cursor: pointer; }
+  .vbtn:hover { border-color: var(--accent); }
+  .vbtn.off { color: #a8a8a8; }
+  .vbtn .vn { flex: 1; }
+  .vbtn .vd { font-size: 11px; color: #8f8f8f; }
+  .buy { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+  .owned { margin: 12px 0 0; font-size: 11px; color: var(--accent-text); letter-spacing: 0.12em; }
+  #auth .overlay { position: fixed; inset: 0; z-index: 210; background: rgba(0,0,0,0.7); display: grid; place-items: center; padding: 20px; }
+  .authbox { position: relative; width: min(440px, 100%); background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 28px; }
+  .authbox .lbl { font-size: 10px; letter-spacing: 0.14em; color: #8f8f8f; }
+  .authbox .close { position: absolute; top: 10px; right: 10px; background: transparent; border: 0; color: #bbb; font-size: 16px; cursor: pointer; }
+  .authbox .who { margin: 6px 0 16px; font-size: 14px; color: #d6d6d6; line-height: 1.6; overflow-wrap: anywhere; }
+  .authform { display: flex; gap: 8px; }
+  .authform input { flex: 1; min-width: 0; padding: 10px 12px; background: var(--ink); border: 1px solid var(--line); border-radius: 4px; color: #fff; font-size: 13px; }
+  .authform input:focus { outline: 0; border-color: var(--accent); }
+  .authnote { margin: 12px 0 0; font-size: 12px; color: #a8a8a8; min-height: 1.4em; }
+  .authacts { display: flex; gap: 10px; flex-wrap: wrap; }
+  #toast { position: fixed; left: 50%; bottom: 28px; transform: translateX(-50%); z-index: 220; padding: 12px 18px; background: #0f1113; border: 1px solid var(--accent); border-radius: 6px; color: #fff; font-size: 12px; letter-spacing: 0.04em; box-shadow: 0 10px 30px rgba(0,0,0,0.5); max-width: min(560px, 92vw); text-align: center; }
+
   /* destaque */
   .hero.swapping { opacity: 0; }
   .hero { transition: opacity 380ms var(--ease); position: relative; margin-top: -72px; padding: 180px var(--gutter) 64px; overflow: hidden; }
@@ -324,6 +352,7 @@
       <input id="q" class="mono" type="search" placeholder="buscar skill, lenda ou gênero" autocomplete="off">
     </label>
     <div class="count mono"><span class="dot"></span><span id="listCount">0 na lista</span></div>
+    <button class="acct mono" data-act="account" id="acctBtn" hidden>ENTRAR</button>
   </header>
 
   <section class="hero" id="hero" data-cover-host><div class="loading">Carregando o catálogo…</div></section>
@@ -342,6 +371,8 @@
 
 <div id="modal" hidden></div>
 <div id="preview" hidden></div>
+<div id="auth" hidden></div>
+<div id="toast" class="mono" role="status" hidden></div>
 
 <script>
 (() => {
@@ -519,6 +550,7 @@
         <div class="lines"></div>
         <div class="num">${s.n}</div>
         ${cover}
+        ${isLocked(s.slug) ? '<div class="lock" title="Conteúdo exclusivo" aria-label="Conteúdo exclusivo">🔒</div>' : ""}
         <div class="foot">
           <div class="badge mono">${esc(s.badge)}</div>
           <div class="ttl">${esc(s.title)}</div>
@@ -682,6 +714,7 @@
             <div>
               <p class="syn">${esc(s.syn)}</p>
               ${s.badge === "LENDA" ? `<p class="legal">Skill independente: reúne o método publicado em livros, cursos e entrevistas do autor. Sem afiliação nem endosso dele.</p>` : ""}
+              ${exclusiveHtml(s)}
               <div class="lbl mono">COMO USAR</div>
               <p class="how">${esc(s.how)}</p>
               <div class="install">${installHtml(s)}</div>
@@ -721,6 +754,7 @@
   function openModal(slug) {
     hidePreview();
     if (!state.open) lastFocus = document.activeElement;
+    if (state.open !== slug) track("card_open", slug);
     state.open = slug;
     if (location.hash !== "#" + slug) history.replaceState(null, "", "#" + slug);
     renderModal();
@@ -794,11 +828,18 @@
     else if (act === "replay" || act === "enter") playIntro(true);
     else if (act === "skip") stopIntro(true);
     else if (act === "home") { e.preventDefault(); state.q = ""; state.filter = "Tudo"; $("q").value = ""; closeModal(); renderChips(); renderCatalog(); window.scrollTo({ top: 0, behavior: "smooth" }); }
+    else if (act === "account") { if (shop.on) openAuth(); }
+    else if (act === "auth-close") closeAuth();
+    else if (act === "logout") logout();
+    else if (act === "portal") portal();
+    else if (act === "buy") checkout(el.dataset.slug, el.dataset.interval);
+    else if (act === "play") play(el.dataset.video);
   });
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") { if (introPhase !== "gate") stopIntro(true); closeModal(); return; }
+    if (e.key === "Escape") { if (introPhase !== "gate") stopIntro(true); closeAuth(); closeModal(); return; }
     if ((e.key === "Enter" || e.key === " ") && introPhase === "gate") { e.preventDefault(); playIntro(true); return; }
-    if (e.key === "/" && document.activeElement !== $("q")) { e.preventDefault(); $("q").focus(); return; }
+    const typing = /^(INPUT|TEXTAREA)$/.test((document.activeElement || {}).tagName || "");
+    if (e.key === "/" && !typing) { e.preventDefault(); $("q").focus(); return; }
     if ((e.key === "Enter" || e.key === " ") && e.target.matches && e.target.matches('.card[data-act="open"]')) { e.preventDefault(); openModal(e.target.dataset.slug); }
   });
   let qTimer = null;
@@ -1068,6 +1109,117 @@
     const el = $("intro"); if (!el.hidden) { setIntroVisible(false); el.innerHTML = ""; el.classList.remove("sweep"); }
   }
 
+  // ---------- loja: login, direitos e conteúdo exclusivo ----------
+  // A skill continua gratuita; o que se vende é o conteúdo exclusivo (vídeos e extras) por item ou pelo Passe.
+  // Tudo aqui só liga quando /api/config diz storeEnabled; até lá a página é exatamente a de sempre.
+  const shop = { on: false, cfg: null, sb: null, user: null, access: new Set(), prices: Object.create(null), videos: Object.create(null) };
+  const money = (cents, cur = "brl") => new Intl.NumberFormat("pt-BR", { style: "currency", currency: String(cur).toUpperCase() }).format(cents / 100);
+  const loadScript = (src) => new Promise((ok, err) => { const s = document.createElement("script"); s.src = src; s.onload = ok; s.onerror = err; document.head.appendChild(s); });
+  const anonId = () => { try { let a = localStorage.getItem("agentflix-anon"); if (!a) { a = crypto.randomUUID(); localStorage.setItem("agentflix-anon", a); } return a; } catch (e) { return null; } };
+  function track(kind, product_id, meta) {   // métrica da vitrine: anônima, sem bloquear a interface
+    if (!shop.on || !shop.sb) return;
+    shop.sb.from("events").insert({ kind, product_id: product_id || null, user_id: shop.user ? shop.user.id : null, anon_id: shop.user ? null : anonId(), agent: state.target, meta: meta || null }).then(() => {}, () => {});
+  }
+  const hasAccess = (slug) => shop.access.has(slug) || shop.access.has("pass");
+  const isLocked = (slug) => shop.on && (shop.videos[slug] || []).length > 0 && !hasAccess(slug);
+  async function initShop() {
+    try {
+      const cfg = await (await fetch("api/config", { cache: "no-store" })).json(); shop.cfg = cfg;
+      if (!cfg.storeEnabled || !cfg.supabaseUrl || !cfg.supabaseAnonKey) return;
+      if (!window.supabase) await loadScript("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.49.1/dist/umd/supabase.min.js");
+      shop.sb = window.supabase.createClient(cfg.supabaseUrl, cfg.supabaseAnonKey);
+      shop.on = true; $("acctBtn").hidden = false;
+      await loadShopCatalog();
+      shop.sb.auth.onAuthStateChange((_ev, session) => { setUser(session ? session.user : null); });
+      const { data } = await shop.sb.auth.getSession();
+      await setUser(data && data.session ? data.session.user : null);
+      handleReturn();
+    } catch (e) { console.warn("loja indisponível:", e); }
+  }
+  async function loadShopCatalog() {
+    const [p, v] = await Promise.all([
+      shop.sb.from("prices").select("id, product_id, unit_amount, currency, interval").eq("active", true),
+      shop.sb.from("videos").select("id, product_id, title, position, duration_seconds").eq("status", "ready").order("position"),
+    ]);
+    shop.prices = Object.create(null); (p.data || []).forEach((x) => { (shop.prices[x.product_id] = shop.prices[x.product_id] || []).push(x); });
+    shop.videos = Object.create(null); (v.data || []).forEach((x) => { (shop.videos[x.product_id] = shop.videos[x.product_id] || []).push(x); });
+  }
+  async function setUser(u) {
+    shop.user = u; shop.access = new Set();
+    if (u) { const { data } = await shop.sb.rpc("my_access"); (data || []).forEach((r) => shop.access.add(r.product_id)); }
+    const b = $("acctBtn"); b.textContent = u ? "MINHA CONTA" : "ENTRAR"; if (u) b.dataset.logged = "1"; else delete b.dataset.logged;
+    if (ALL.length) { renderCatalog(); if (state.open) renderModal(); }
+  }
+  async function authed(path, opts = {}) {
+    const { data } = await shop.sb.auth.getSession(); const t = data && data.session ? data.session.access_token : null;
+    return fetch(path, { ...opts, headers: { ...(opts.headers || {}), "content-type": "application/json", ...(t ? { authorization: "Bearer " + t } : {}) } });
+  }
+  let toastTimer = null;
+  function toast(msg, ms = 3200) { const t = $("toast"); t.textContent = msg; t.hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(() => { t.hidden = true; }, ms); }
+  function openAuth(reason) {
+    const a = $("auth");
+    a.innerHTML = `<div class="overlay" data-act="auth-close"><div class="authbox" data-act="stop" role="dialog" aria-modal="true" aria-label="Sua conta">
+      <button class="close" data-act="auth-close" aria-label="fechar">✕</button>
+      ${shop.user
+        ? `<div class="lbl mono">SUA CONTA</div><p class="who">${esc(shop.user.email || "")}</p>
+           <div class="authacts"><button class="btn-red" data-act="portal">Pagamentos e assinatura</button><button class="btn-ghost" data-act="logout">Sair</button></div>`
+        : `<div class="lbl mono">ENTRAR</div><p class="who">${esc(reason || "Receba um link de acesso por e-mail. Sem senha.")}</p>
+           <form class="authform" data-act="stop" id="authForm"><input type="email" id="authEmail" class="mono" placeholder="seu@email.com" required autocomplete="email"><button class="btn-red" type="submit">Enviar link</button></form>
+           <p class="authnote" id="authNote"></p>`}
+    </div></div>`;
+    a.hidden = false;
+    const f = $("authForm"); if (f) { f.addEventListener("submit", sendLink); setTimeout(() => { const i = $("authEmail"); if (i) i.focus(); }, 50); }
+  }
+  function closeAuth() { const a = $("auth"); if (a.hidden) return; a.hidden = true; a.innerHTML = ""; }
+  async function sendLink(e) {
+    e.preventDefault(); const email = $("authEmail").value.trim(); const note = $("authNote");
+    note.textContent = "Enviando…";
+    const { error } = await shop.sb.auth.signInWithOtp({ email, options: { emailRedirectTo: location.origin + location.pathname } });
+    note.textContent = error ? "Não deu: " + error.message : "Link enviado. Abra o e-mail neste mesmo navegador.";
+  }
+  async function logout() { await shop.sb.auth.signOut(); closeAuth(); toast("Você saiu."); }
+  async function checkout(slug, interval) {
+    if (!shop.on) return;
+    if (!shop.user) { openAuth("Entre para comprar. O acesso fica ligado ao seu e-mail."); return; }
+    const r = await authed("api/checkout", { method: "POST", body: JSON.stringify({ product_id: slug, interval: interval || undefined }) });
+    const j = await r.json().catch(() => ({}));
+    if (j.url) location.href = j.url; else toast(j.error || "Não foi possível abrir o pagamento.");
+  }
+  async function portal() {
+    const r = await authed("api/portal", { method: "POST" }); const j = await r.json().catch(() => ({}));
+    if (j.url) location.href = j.url; else toast(j.error || "Portal indisponível.");
+  }
+  async function play(videoId) {
+    const box = document.querySelector("#modal .player"); if (!box) return;
+    box.innerHTML = `<div class="loading">Abrindo…</div>`;
+    const r = await authed("api/video?id=" + encodeURIComponent(videoId)); const j = await r.json().catch(() => ({}));
+    if (!j.embed) { box.innerHTML = `<div class="loading">${esc(j.error || "Vídeo indisponível.")}</div>`; return; }
+    box.innerHTML = `<iframe src="${esc(j.embed)}" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen title="${esc(j.title || "vídeo")}"></iframe>`;
+  }
+  // bloco do modal: vídeos da skill, com Assistir para quem tem direito e Comprar / Passe para quem não tem
+  function exclusiveHtml(s) {
+    if (!shop.on) return "";
+    const vids = shop.videos[s.slug] || [], prices = shop.prices[s.slug] || [], pass = shop.prices.pass || [];
+    if (!vids.length && !prices.length) return "";
+    const ok = hasAccess(s.slug);
+    const list = vids.map((v) => `<li><button class="vbtn ${ok ? "" : "off"}" data-act="${ok ? "play" : "buy"}" data-video="${esc(v.id)}" data-slug="${esc(s.slug)}"><span class="vt">${ok ? "▶" : "🔒"}</span><span class="vn">${esc(v.title)}</span>${v.duration_seconds ? `<span class="vd mono">${Math.max(1, Math.round(v.duration_seconds / 60))} min</span>` : ""}</button></li>`).join("");
+    const item = prices.find((p) => !p.interval), mo = pass.find((p) => p.interval === "month"), yr = pass.find((p) => p.interval === "year");
+    const buy = ok
+      ? `<p class="owned">ACESSO LIBERADO${shop.access.has("pass") && !shop.access.has(s.slug) ? " · PASSE" : ""}</p>`
+      : `<div class="buy">${item ? `<button class="btn-red" data-act="buy" data-slug="${esc(s.slug)}">Comprar por ${esc(money(item.unit_amount, item.currency))}</button>` : ""}${mo ? `<button class="btn-ghost" data-act="buy" data-slug="pass" data-interval="month">Passe · ${esc(money(mo.unit_amount, mo.currency))}/mês</button>` : ""}${yr ? `<button class="btn-ghost" data-act="buy" data-slug="pass" data-interval="year">Passe anual · ${esc(money(yr.unit_amount, yr.currency))}</button>` : ""}</div>`;
+    return `<div class="exclusive"><div class="lbl mono">CONTEÚDO EXCLUSIVO${vids.length ? ` · ${vids.length} VÍDEO${vids.length > 1 ? "S" : ""}` : ""}</div><div class="player"></div><ul class="vlist">${list}</ul>${buy}</div>`;
+  }
+  function handleReturn() {   // volta do Checkout: ?compra=ok&item=<slug> ou ?compra=cancelada
+    const q = new URLSearchParams(location.search); const c = q.get("compra"); if (!c) return;
+    const item = q.get("item");
+    history.replaceState(null, "", location.pathname + location.hash);
+    if (c === "ok") {
+      toast("Pagamento recebido. Liberando seu acesso…", 6000);
+      let n = 0;
+      const t = setInterval(async () => { await setUser(shop.user); n++; const done = item ? hasAccess(item) : shop.access.size > 0; if (done || n >= 8) { clearInterval(t); if (done) toast("Acesso liberado. Bom estudo!"); } }, 2500);
+    } else if (c === "cancelada") toast("Pagamento cancelado. Nada foi cobrado.");
+  }
+
   // ---------- boot ----------
   function showLoadError(msg) {
     $("hero").className = "hero";
@@ -1085,7 +1237,8 @@
     }
     if (!cat) { showLoadError(lastErr && lastErr.message || "sem rede"); return; }
     try { loadCatalog(cat); }
-    catch (e) { console.error(e); showLoadError("catálogo inválido: " + (e && e.message || e)); }
+    catch (e) { console.error(e); showLoadError("catálogo inválido: " + (e && e.message || e)); return; }
+    initShop();   // só muda algo se a loja estiver ligada em /api/config
   })();
 })();
 </script>
