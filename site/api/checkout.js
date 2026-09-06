@@ -17,9 +17,10 @@ export async function POST(request) {
   const { data: price } = await q.order("unit_amount", { ascending: true }).limit(1).maybeSingle();
   if (!price) return json({ error: "sem preço ativo para este produto" }, 409);
 
-  // já tem? não cobra duas vezes
-  const { data: access } = await admin.rpc("has_access", { p_product_id: product.id }).catch(() => ({ data: null }));
-  if (access === true) return json({ error: "você já tem acesso a este conteúdo", already: true }, 409);
+  // já tem? não cobra duas vezes (direito direto ou Passe vigente; o cliente admin não tem auth.uid(), então a consulta é explícita)
+  const { data: owned } = await admin.from("entitlements").select("id, expires_at").eq("user_id", user.id).in("product_id", [product.id, "pass"]).is("revoked_at", null);
+  const now = Date.now();
+  if ((owned || []).some((e) => !e.expires_at || new Date(e.expires_at).getTime() > now)) return json({ error: "você já tem acesso a este conteúdo", already: true }, 409);
 
   const customer = await customerFor(user);
   const common = {
