@@ -1,0 +1,13 @@
+{
+  "name": "agentsflix-site",
+  "private": true,
+  "type": "module",
+  "description": "Página do AgentsFlix (estática) + funções da API na Vercel: login Supabase, cobrança Stripe, vídeo Bunny.",
+  "engines": {
+    "node": "24.x"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.0",
+    "stripe": "^18.0.0"
+  }
+}
