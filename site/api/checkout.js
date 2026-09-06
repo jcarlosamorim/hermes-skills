@@ -23,13 +23,17 @@ export async function POST(request) {
   if ((owned || []).some((e) => !e.expires_at || new Date(e.expires_at).getTime() > now)) return json({ error: "você já tem acesso a este conteúdo", already: true }, 409);
 
   const customer = await customerFor(user);
+  // volta para a página de onde a compra saiu (site, www ou a demonstração local), nunca para um endereço arbitrário
+  const ALLOWED = new Set([SITE, "https://agentsflix.ai", "https://www.agentsflix.ai", "http://127.0.0.1:8765", "http://localhost:8765"]);
+  const origin = (request.headers.get("origin") || "").replace(/\/$/, "");
+  const back = ALLOWED.has(origin) ? origin : SITE;
   const common = {
     customer,
     client_reference_id: user.id,
     locale: "pt-BR",
     allow_promotion_codes: true,
-    success_url: `${SITE}/?compra=ok&item=${encodeURIComponent(product.id)}#${encodeURIComponent(product.id)}`,
-    cancel_url: `${SITE}/?compra=cancelada#${encodeURIComponent(product.id)}`,
+    success_url: `${back}/?compra=ok&item=${encodeURIComponent(product.id)}#${encodeURIComponent(product.id)}`,
+    cancel_url: `${back}/?compra=cancelada#${encodeURIComponent(product.id)}`,
     metadata: { user_id: user.id, product_id: product.id, price_id: price.id },
     line_items: [{ price: price.id, quantity: 1 }],
   };
