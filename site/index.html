@@ -1128,11 +1128,18 @@
       if (!cfg.storeEnabled || !cfg.supabaseUrl || !cfg.supabaseAnonKey) return;
       if (!window.supabase) await loadScript("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.49.1/dist/umd/supabase.min.js");
       shop.sb = window.supabase.createClient(cfg.supabaseUrl, cfg.supabaseAnonKey);
+      // o ouvinte vai antes de qualquer await: o SIGNED_IN da volta do link mágico dispara enquanto o resto carrega
+      let resumed = false;
+      const resume = (u) => { if (resumed) return; resumed = true; resumePending(u); };
+      shop.sb.auth.onAuthStateChange((ev, session) => {
+        setUser(session ? session.user : null).then(() => { if (ev === "SIGNED_IN" && session) resume(session.user); });
+      });
       shop.on = true; $("acctBtn").hidden = false;
       await loadShopCatalog();
-      shop.sb.auth.onAuthStateChange((_ev, session) => { setUser(session ? session.user : null); });
+      if (ALL.length) { renderCatalog(); if (state.open) renderModal(); }   // preços e vídeos chegaram: pinta cadeados e o bloco
       const { data } = await shop.sb.auth.getSession();
       await setUser(data && data.session ? data.session.user : null);
+      if (data && data.session && readPending()) resume(data.session.user);   // se o evento veio antes do ouvinte, retoma aqui
       handleReturn();
     } catch (e) { console.warn("loja indisponível:", e); }
   }
@@ -1174,13 +1181,29 @@
   async function sendLink(e) {
     e.preventDefault(); const email = $("authEmail").value.trim(); const note = $("authNote");
     note.textContent = "Enviando…";
+    if (state.open && !readPending()) savePending(state.open, null);   // entrou pelo cabeçalho com uma skill aberta: volta para ela
     const { error } = await shop.sb.auth.signInWithOtp({ email, options: { emailRedirectTo: location.origin + location.pathname } });
-    note.textContent = error ? "Não deu: " + error.message : "Link enviado. Abra o e-mail neste mesmo navegador.";
+    note.textContent = error ? "Não deu: " + error.message : "Link enviado. Abra o e-mail neste mesmo navegador: ao clicar, você volta para esta skill já logado.";
   }
   async function logout() { await shop.sb.auth.signOut(); closeAuth(); toast("Você saiu."); }
+  // o link mágico volta para a raiz da página: guardamos o que a pessoa estava comprando e reabrimos a skill ao entrar
+  const PENDING = "agentflix-pending";
+  function savePending(slug, interval) { try { localStorage.setItem(PENDING, JSON.stringify({ slug, interval: interval || null, at: Date.now() })); } catch (e) {} }
+  function readPending() { try { return JSON.parse(localStorage.getItem(PENDING) || "null"); } catch (e) { return null; } }
+  function resumePending(user) {
+    const p = readPending(); try { localStorage.removeItem(PENDING); } catch (e) {}
+    closeAuth();
+    const who = user && user.email ? ` como ${user.email}` : "";
+    const fresh = p && Date.now() - (p.at || 0) < 60 * 60 * 1000 && BY[p.slug];
+    if (fresh) {
+      openModal(p.slug);
+      toast(`Você entrou${who}. Agora é só concluir a compra.`, 6000);
+      setTimeout(() => { const b = document.querySelector("#modal .buy"); if (b) b.scrollIntoView({ block: "center", behavior: "smooth" }); }, 300);
+    } else toast(`Você entrou${who}.`, 3500);
+  }
   async function checkout(slug, interval) {
     if (!shop.on) return;
-    if (!shop.user) { openAuth("Entre para comprar. O acesso fica ligado ao seu e-mail."); return; }
+    if (!shop.user) { savePending(slug === "pass" && state.open ? state.open : slug, interval); openAuth("Entre para comprar. O acesso fica ligado ao seu e-mail."); return; }
     const r = await authed("api/checkout", { method: "POST", body: JSON.stringify({ product_id: slug, interval: interval || undefined }) });
     const j = await r.json().catch(() => ({}));
     if (j.url) location.href = j.url; else toast(j.error || "Não foi possível abrir o pagamento.");
