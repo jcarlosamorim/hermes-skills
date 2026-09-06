@@ -14,3 +14,4 @@ site/.vercel/
 site/covers
 site/catalog.json
 .vercel/
+node_modules/
