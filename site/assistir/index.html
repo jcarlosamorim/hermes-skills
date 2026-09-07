@@ -332,12 +332,12 @@ a { color: inherit; text-decoration: none; }
       <div id="eps"></div>
     </div>
     <div class="tp-tab sobre" id="tab-sobre" hidden>
-      <p>Este é o player do AgentsFlix em teste. Os episódios vêm do curso Agente de IA Pessoal, publicado na Hotmart, e estão abertos aqui para você validar o jeito de assistir: temporada por módulo, episódio por aula, continuar de onde parou, próximo episódio automático.</p>
+      <p>Este é o player do AgentFlix em teste. Os episódios vêm do curso Agente de IA Pessoal, publicado na Hotmart, e estão abertos aqui para você validar o jeito de assistir: temporada por módulo, episódio por aula, continuar de onde parou, próximo episódio automático.</p>
       <p>Teclas: <b>espaço</b> pausa · <b>←</b> e <b>→</b> voltam e avançam 10 segundos · <b>E</b> abre os episódios · <b>P</b> abre os planos da VPS quando a aula tem compra · <b>F</b> tela cheia · <b>M</b> mudo · <b>Esc</b> volta para a página da série.</p>
       <p>O progresso fica só neste navegador. Achou algo estranho? Manda para o Zé com o número da temporada e do episódio.</p>
     </div>
   </div>
-  <p class="foot">AgentsFlix · <a href="/">voltar para a vitrine</a></p>
+  <p class="foot">AgentFlix · <a href="/">voltar para a vitrine</a></p>
 </section>
 
 <!-- ===================== PLAYER ===================== -->
@@ -406,7 +406,7 @@ const fmt = (s) => { s = Math.max(0, Math.round(s || 0)); return Math.floor(s / 
 const fmtDur = (s) => { s = Math.round(s || 0); return s < 60 ? `${s}s` : `${Math.round(s / 60)}min`; };
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const store = { get(k, d) { try { const v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } }, set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} } };
-const SELO = "LINK DE INDICAÇÃO · você paga o mesmo, o AgentsFlix recebe comissão";
+const SELO = "LINK DE INDICAÇÃO · você paga o mesmo, o AgentFlix recebe comissão";
 
 // ---------- dados ----------
 let SERIES = [], SERIE = null;

@@ -15,7 +15,7 @@
     },
     {
       "source": "/covers/:path*",
-      "destination": "https://agentsflix.github.io/skills/covers/:path*"
+      "destination": "https://imagedelivery.net/4Co9W7pMsYa-duNBi7UzxA/covers/:path*/capa"
     },
     {
       "source": "/download/:tag/:file",

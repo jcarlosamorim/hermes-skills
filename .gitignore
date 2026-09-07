@@ -15,3 +15,6 @@ site/covers
 site/catalog.json
 .vercel/
 node_modules/
+
+# capas vivem no Cloudflare Images (06/09/2026); a pasta local é só o cache do importar_capas.py
+docs/covers/
