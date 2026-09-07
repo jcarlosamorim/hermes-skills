@@ -176,9 +176,13 @@ a { color: inherit; text-decoration: none; }
 .rail .fill { position: absolute; left: 0; top: 0; bottom: 0; width: 0; background: var(--accent); }
 .rail .knob { position: absolute; top: 50%; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; background: var(--accent); transform: scale(0); transition: transform .12s; }
 .rail:hover .knob, .rail.drag .knob { transform: scale(1); }
-.rail .mk { position: absolute; top: -3px; bottom: -3px; width: 3px; margin-left: -1px; background: rgba(255,255,255,.75); border-radius: 1px; }
-.rail .mk.human { background: #f0c674; box-shadow: 0 0 0 2px rgba(240,198,116,.35); }
-.rail .mk.done { background: var(--accent); box-shadow: 0 0 0 2px rgba(var(--accent-rgb),.35); }
+.rail .mk { position: absolute; top: -9px; bottom: -9px; width: 16px; margin-left: -8px; cursor: pointer; }
+.rail .mk::before { content: ""; position: absolute; left: 6px; top: 6px; bottom: 6px; width: 4px; border-radius: 2px; background: rgba(255,255,255,.75); }
+.rail .mk.human::before { background: #f0c674; box-shadow: 0 0 0 2px rgba(240,198,116,.35); }
+.rail .mk.done::before { background: var(--accent); box-shadow: 0 0 0 2px rgba(var(--accent-rgb),.35); }
+.rail .mk:hover::before { transform: scaleY(1.3); }
+#player .toast[data-act] { cursor: pointer; }
+#player .toast[data-act]:hover { background: rgba(0,0,0,.9); }
 .rail .pv { position: absolute; bottom: 20px; width: 200px; margin-left: -100px; background: #000; border: 1px solid #555; border-radius: 4px; overflow: hidden; display: none; pointer-events: none; }
 .rail:hover .pv, .rail.drag .pv { display: block; }
 .rail .pv img { display: block; width: 100%; aspect-ratio: 16/9; object-fit: cover; background: #222; }
@@ -329,7 +333,7 @@ a { color: inherit; text-decoration: none; }
     </div>
     <div class="tp-tab sobre" id="tab-sobre" hidden>
       <p>Este é o player do AgentsFlix em teste. Os episódios vêm do curso Agente de IA Pessoal, publicado na Hotmart, e estão abertos aqui para você validar o jeito de assistir: temporada por módulo, episódio por aula, continuar de onde parou, próximo episódio automático.</p>
-      <p>Teclas: <b>espaço</b> pausa · <b>←</b> e <b>→</b> voltam e avançam 10 segundos · <b>E</b> abre os episódios · <b>F</b> tela cheia · <b>M</b> mudo · <b>Esc</b> volta para a página da série.</p>
+      <p>Teclas: <b>espaço</b> pausa · <b>←</b> e <b>→</b> voltam e avançam 10 segundos · <b>E</b> abre os episódios · <b>P</b> abre os planos da VPS quando a aula tem compra · <b>F</b> tela cheia · <b>M</b> mudo · <b>Esc</b> volta para a página da série.</p>
       <p>O progresso fica só neste navegador. Achou algo estranho? Manda para o Zé com o número da temporada e do episódio.</p>
     </div>
   </div>
@@ -371,6 +375,7 @@ a { color: inherit; text-decoration: none; }
       <div class="m"><b id="ctl-title"></b><span id="ctl-ep"></span></div>
       <div class="r">
         <button class="cb" data-act="next" id="btn-next"><svg viewBox="0 0 24 24"><path d="M6 4l10 8-10 8zM18 4h2v16h-2z"/></svg><span class="lab">Próximo episódio</span></button>
+        <button class="cb" data-act="buy" id="btn-buy" hidden><svg viewBox="0 0 24 24"><path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM3 2v2h2l3.6 7.6L7.2 14A2 2 0 0 0 9 17h11v-2H9.4a.3.3 0 0 1-.2-.4l.9-1.6h7.5a2 2 0 0 0 1.7-1l3.6-6.5A1 1 0 0 0 22 4H6.2l-.9-2H3z"/></svg><span class="lab">Planos da VPS (P)</span></button>
         <button class="cb" data-act="drawer" id="btn-eps"><svg viewBox="0 0 24 24"><path d="M3 5h18v2H3zm0 6h18v2H3zm0 6h12v2H3z"/></svg><span class="lab">Episódios (E)</span></button>
         <button class="cb txt hide-m" data-act="pop" id="btn-speed">1x<span class="lab">Velocidade</span></button>
         <button class="cb" data-act="fs"><svg viewBox="0 0 24 24"><path d="M4 4h6v2H6v4H4zm10 0h6v6h-2V6h-4zM4 14h2v4h4v2H4zm14 0h2v6h-6v-2h4z"/></svg><span class="lab">Tela cheia (F)</span></button>
@@ -426,6 +431,7 @@ function resumeEp() {
 }
 const chapters = (e) => e.ch || [];
 const chapterAt = (e, t) => { let k = -1; chapters(e).forEach((c, i) => { if (t >= c.t) k = i; }); return k; };
+const buyIdx = (e) => chapters(e).findIndex((c) => c.acao && c.acao.tipo === "link" && c.acao.parar);
 const optDefault = (a) => (a.opcoes || []).find((o) => o.padrao) || (a.opcoes || [])[0];
 const optChosen = (a, uid, k) => { const i = state.periodo[doneKey(uid, k)]; return i === undefined ? optDefault(a) : a.opcoes[i]; };
 
@@ -493,6 +499,7 @@ function loadEp(season, ep, { from } = {}) {
   $("mtitle").innerHTML = `<b>${esc(SERIE.name)}</b> · T${season + 1}:E${ep + 1} ${esc(e.t)}`;
   $("pi-title").textContent = SERIE.name; $("pi-ep").textContent = `T${season + 1}:E${ep + 1} · ${e.t}`; $("pi-desc").textContent = e.desc;
   $("btn-next").style.visibility = nextEp() ? "visible" : "hidden";
+  $("btn-buy").hidden = buyIdx(e) < 0;
   video.poster = thumb(e.uid, 720);
   const saved = store.get(progKey(e.uid), null); const startAt = from !== undefined ? from : (saved && !isWatched(e) ? saved.t : 0);
   location.hash = `t${season + 1}e${ep + 1}`;
@@ -510,7 +517,7 @@ function showPreplay() {
 }
 function paintMarks() {
   const e = curEp(); const d = e.d || 1;
-  $("marks").innerHTML = chapters(e).filter((c) => c.acao).map((c, i) => { const k = chapters(e).indexOf(c); return `<div class="mk ${c.acao.humano ? "human" : ""} ${isDone(e.uid, k) ? "done" : ""}" style="left:${(c.t / d) * 100}%" title="${esc(c.n)}"></div>`; }).join("");
+  $("marks").innerHTML = chapters(e).map((c, k) => c.acao ? `<div class="mk ${c.acao.humano ? "human" : ""} ${isDone(e.uid, k) ? "done" : ""}" data-act="mark" data-k="${k}" style="left:${(c.t / d) * 100}%" title="${esc(c.acao.label || c.n)}"></div>` : "").join("");
 }
 function periodSel(a, uid, k) {
   const kk = doneKey(uid, k); const cur = optChosen(a, uid, k); const open = state.pselOpen === kk;
@@ -551,7 +558,12 @@ function onChapter() {
   const e = curEp(); const k = chapterAt(e, video.currentTime); if (k === state.lastChapter) return; state.lastChapter = k;
   if (k < 0) return; const c = chapters(e)[k]; const a = c.acao;
   if (a && a.parar && !isDone(e.uid, k) && !state.stopped[doneKey(e.uid, k)] && !video.paused) { state.stopped[doneKey(e.uid, k)] = true; openCheckout(k); return; }
-  if (a) { const t = $("toast"); t.className = "toast" + (a.humano ? " human" : ""); t.innerHTML = `<b>${a.humano ? "REQUER VOCÊ" : "AÇÃO"} →</b>${esc(a.label || c.n)}`; t.hidden = false; clearTimeout(state.toastTimer); state.toastTimer = setTimeout(() => { t.hidden = true; }, 5000); showUI(false); }
+  if (a) {
+    // quem já comprou ou pulou vê só o aviso, clicável, sem pausa
+    const t = $("toast"); t.className = "toast" + (a.humano ? " human" : ""); t.dataset.act = a.parar ? "buy" : ""; if (!a.parar) delete t.dataset.act;
+    t.innerHTML = `<b>${a.parar ? (isDone(e.uid, k) ? "COMPRA FEITA · VER OS PLANOS" : "PLANOS DA VPS") : (a.humano ? "REQUER VOCÊ" : "AÇÃO")} →</b>${esc(a.label || c.n)}`;
+    t.hidden = false; clearTimeout(state.toastTimer); state.toastTimer = setTimeout(() => { t.hidden = true; }, 5000); showUI(false);
+  }
 }
 function saveProgress(force) {
   const now = Date.now(); if (!force && now - state.lastSave < 4000) return; state.lastSave = now;
@@ -625,6 +637,8 @@ document.addEventListener("click", (ev) => {
   else if (a === "psel-pick") { state.periodo[el.dataset.key] = +el.dataset.i; state.pselOpen = null; if (state.checkout !== null) openCheckout(state.checkout); }
   else if (a === "ext") goExternal(el.dataset.url, +el.dataset.k);
   else if (a === "checkout-skip") { closeCheckout(); video.play().catch(() => {}); }
+  else if (a === "buy") { const k = buyIdx(curEp()); if (k >= 0) { if (state.checkout !== null) { closeCheckout(); video.play().catch(() => {}); } else openCheckout(k); } }
+  else if (a === "mark") { ev.stopPropagation(); const k = +el.dataset.k; const c = chapters(curEp())[k]; video.currentTime = c.t; state.lastChapter = k; paint(); if (c.acao && c.acao.tipo === "link") openCheckout(k); }
   else if (a === "close-player") { clearInterval(state.ppTimer); show("title"); }
 });
 document.addEventListener("click", (ev) => {
@@ -637,6 +651,7 @@ document.addEventListener("keydown", (ev) => {
   if (ev.key === " ") { ev.preventDefault(); if (state.checkout !== null || !$("preplay").hidden) return; toggle(); }
   else if (ev.key === "ArrowLeft") seek(-10); else if (ev.key === "ArrowRight") seek(10);
   else if (k === "e") openDrawer(); else if (k === "f") toggleFs(); else if (k === "m") video.muted = !video.muted;
+  else if (k === "p") { const bk = buyIdx(curEp()); if (bk >= 0) { if (state.checkout !== null) { closeCheckout(); video.play().catch(() => {}); } else openCheckout(bk); } }
   else if (ev.key === "Escape") { if (state.drawer) openDrawer(false); else if (state.pop) openPop(false); else { clearInterval(state.ppTimer); show("title"); } }
 });
 $("player").addEventListener("mousemove", bumpUI);
@@ -645,10 +660,10 @@ $("player").addEventListener("touchstart", () => showUI(false), { passive: true 
 const rail = $("rail");
 const railT = (x) => { const r = rail.getBoundingClientRect(); return Math.min(1, Math.max(0, (x - r.left) / r.width)) * (video.duration || curEp().d); };
 rail.addEventListener("mousemove", (ev) => { const t = railT(ev.clientX); $("pv").style.left = (t / (video.duration || curEp().d)) * 100 + "%"; $("pv-img").src = thumb(curEp().uid, 180, t); $("pv-time").textContent = fmt(t); if (rail.classList.contains("drag")) { video.currentTime = t; paint(); } });
-rail.addEventListener("mousedown", (ev) => { rail.classList.add("drag"); video.currentTime = railT(ev.clientX); paint(); });
+rail.addEventListener("mousedown", (ev) => { if (ev.target.closest(".mk")) return; rail.classList.add("drag"); video.currentTime = railT(ev.clientX); paint(); });
 document.addEventListener("mouseup", () => rail.classList.remove("drag"));
-rail.addEventListener("click", (ev) => { video.currentTime = railT(ev.clientX); paint(); bumpUI(); });
-rail.addEventListener("touchstart", (ev) => { video.currentTime = railT(ev.touches[0].clientX); paint(); }, { passive: true });
+rail.addEventListener("click", (ev) => { if (ev.target.closest(".mk")) return; video.currentTime = railT(ev.clientX); paint(); bumpUI(); });
+rail.addEventListener("touchstart", (ev) => { if (ev.target.closest(".mk")) return; video.currentTime = railT(ev.touches[0].clientX); paint(); }, { passive: true });
 rail.addEventListener("touchmove", (ev) => { video.currentTime = railT(ev.touches[0].clientX); paint(); }, { passive: true });
 window.addEventListener("beforeunload", () => { if (!$("player").hidden) saveProgress(true); });
 
