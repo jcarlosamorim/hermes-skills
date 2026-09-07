@@ -94,8 +94,9 @@ injetada, variável de ambiente). O procedimento é o mesmo.
 4. PR. O CI repete testes, validador e scanner, e reprova se `docs/` ou `catalog.json` não forem o build de `skills/`.
 5. Merge em `main` (o tap passa a ver) e **tag** (`vX.Y.Z`): os comandos da página apontam para a tag, e o
    workflow de release confere que a tag é `v` + `catalog.version`, valida, escaneia e anexa os zips portable a ela.
-6. A página não precisa de deploy por release (lê o catálogo do Pages). Só quando `site/` mudar:
-   `vercel deploy --prod --yes` pela raiz do repositório (projeto `agentflix`, Root Directory `site`; dentro de `site/` ele procura `site/site`).
+6. A página não precisa de deploy por release (lê o catálogo do Pages). Quando `site/` mudar, o merge em `main`
+   publica sozinho: o projeto `agentflix` da Vercel está conectado a este repositório (Root Directory `site`, produção =
+   `main`, preview por PR) desde 07/09/2026. `vercel deploy --prod --yes` pela raiz continua valendo só como plano B.
 
 ## Origem
 
