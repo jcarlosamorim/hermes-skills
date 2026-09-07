@@ -54,7 +54,7 @@ Não ensine `--force` a ninguém. Se uma skill foi bloqueada, o problema é dela
 ## Estrutura
 
 ```text
-skills/<nome>/SKILL.md          GERADO por mmos/outputs/hermes-hub/build_hub.py a partir do manifest e das fontes; não edite à mão
+skills/<nome>/SKILL.md          GERADO por build_hub.py do repositório privado AgentsFlix/agentsflix a partir do manifest e das fontes; não edite à mão
 skills/<nome>/references/       fórmulas, métodos, checklists (carregados sob demanda)
 skills/<nome>/templates/        modelos que a skill preenche
 skills/<nome>/scripts/          código determinístico (só no ads-otimizar)
@@ -74,7 +74,7 @@ scripts/validate_skills.py      forma do SKILL.md (fonte) e do portable (chaves 
 scripts/scan_skills.py          scanner do Hermes contra cada skill (skills_guard.py pinado por commit + sha256)
 .github/workflows/release.yml   em push de tag v*: confere tag = catalog.version, valida, escaneia e anexa os zips
 docs/covers/                    capas <slug>-desktop.jpg (hero/modal), -wide.jpg (fileiras no desktop), -mobile.jpg (hero no celular), -card.jpg (fileiras no celular);
-                                importadas por mmos/outputs/hermes-hub/capas/importar_capas.py
+                                importadas por capas/importar_capas.py do repositório privado AgentsFlix/agentsflix
 site/audio/*.v2.mp3             os cinco cues da abertura; /audio tem cache imutável, então som novo = nome novo
 ```
 
@@ -84,7 +84,7 @@ injetada, variável de ambiente). O procedimento é o mesmo.
 
 ## Publicar uma mudança
 
-1. Branch. `skills/` e `catalog.json` são gerados: edite o manifest ou as fontes em `mmos/outputs/hermes-hub` e rode
+1. Branch. `skills/` e `catalog.json` são gerados: edite o manifest ou as fontes no repositório privado `AgentsFlix/agentsflix` (clone `~/Projects/agentsflix`) e rode
    `python3 build_hub.py` (ele se recusa a rodar com `skills/` sujo, porque apaga e reescreve as pastas). Contribuição
    externa: abra uma issue ou PR descrevendo a mudança; ela entra pelo gerador.
 2. `python3 -m venv .venv && . .venv/bin/activate && pip install -r requirements.txt` (uma vez; Python 3.10+),

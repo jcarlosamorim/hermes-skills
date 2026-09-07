@@ -1,4 +1,4 @@
-"""Constantes e funções que o gerador (mmos/outputs/hermes-hub/build_hub.py) e os scripts deste repo compartilham.
+"""Constantes e funções que o gerador (build_hub.py, no repositório privado AgentsFlix/agentsflix) e os scripts deste repo compartilham.
 
 Uma fonte só para: tag/commit do Hermes de referência, URLs base, limite da description, skills que exigem
 terminal e o texto de ativação da versão colável. O gerador importa este módulo pelo caminho do repo.
