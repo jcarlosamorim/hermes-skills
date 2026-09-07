@@ -15,7 +15,7 @@ Cada skill existe em três formas, geradas da mesma fonte. Na página, cada card
 
 | agente | como | observação |
 |---|---|---|
-| **Hermes** | `hermes skills install https://raw.githubusercontent.com/AgentsFlix/skills/v0.4.0/skills/<slug>/SKILL.md` ou `hermes skills tap add AgentsFlix/skills` | tag = aula reproduzível; tap = descoberta e `update` |
+| **Hermes** | `hermes skills install https://raw.githubusercontent.com/AgentsFlix/skills/<tag>/skills/<slug>/SKILL.md` (a tag atual é `version` em `catalog.json`) ou `hermes skills tap add AgentsFlix/skills` | tag = aula reproduzível; tap = descoberta e `update` |
 | **Claude.ai** (site/app, Free a Enterprise) | baixe `<slug>.zip` na [release](https://github.com/AgentsFlix/skills/releases) e envie em *Customize › Skills › + › Upload* | exige "Code execution and file creation" ligado |
 | **Claude Code** | `npx skills add https://agentsflix.github.io/skills --skill <slug> -a claude-code -g` | exige Node |
 | **ChatGPT com Skills** (Business, Enterprise, Edu; Plus/Pro em Work) | baixe o zip e envie em *Plugins › Skills › Create › Upload*; invoque com `@<slug>` | o ChatGPT escaneia o arquivo antes de liberar |
@@ -54,7 +54,7 @@ Não ensine `--force` a ninguém. Se uma skill foi bloqueada, o problema é dela
 ## Estrutura
 
 ```text
-skills/<nome>/SKILL.md          GERADO por mmos/outputs/hermes-hub/build_hub.py a partir do manifest e das fontes; não edite à mão
+skills/<nome>/SKILL.md          GERADO por build_hub.py do repositório privado AgentsFlix/agentsflix a partir do manifest e das fontes; não edite à mão
 skills/<nome>/references/       fórmulas, métodos, checklists (carregados sob demanda)
 skills/<nome>/templates/        modelos que a skill preenche
 skills/<nome>/scripts/          código determinístico (só no ads-otimizar)
@@ -74,7 +74,7 @@ scripts/validate_skills.py      forma do SKILL.md (fonte) e do portable (chaves 
 scripts/scan_skills.py          scanner do Hermes contra cada skill (skills_guard.py pinado por commit + sha256)
 .github/workflows/release.yml   em push de tag v*: confere tag = catalog.version, valida, escaneia e anexa os zips
 docs/covers/                    capas <slug>-desktop.jpg (hero/modal), -wide.jpg (fileiras no desktop), -mobile.jpg (hero no celular), -card.jpg (fileiras no celular);
-                                importadas por mmos/outputs/hermes-hub/capas/importar_capas.py
+                                importadas por capas/importar_capas.py do repositório privado AgentsFlix/agentsflix
 site/audio/*.v2.mp3             os cinco cues da abertura; /audio tem cache imutável, então som novo = nome novo
 ```
 
@@ -84,7 +84,7 @@ injetada, variável de ambiente). O procedimento é o mesmo.
 
 ## Publicar uma mudança
 
-1. Branch. `skills/` e `catalog.json` são gerados: edite o manifest ou as fontes em `mmos/outputs/hermes-hub` e rode
+1. Branch. `skills/` e `catalog.json` são gerados: edite o manifest ou as fontes no repositório privado `AgentsFlix/agentsflix` (clone `~/Projects/agentsflix`) e rode
    `python3 build_hub.py` (ele se recusa a rodar com `skills/` sujo, porque apaga e reescreve as pastas). Contribuição
    externa: abra uma issue ou PR descrevendo a mudança; ela entra pelo gerador.
 2. `python3 -m venv .venv && . .venv/bin/activate && pip install -r requirements.txt` (uma vez; Python 3.10+),
@@ -94,7 +94,7 @@ injetada, variável de ambiente). O procedimento é o mesmo.
 5. Merge em `main` (o tap passa a ver) e **tag** (`vX.Y.Z`): os comandos da página apontam para a tag, e o
    workflow de release confere que a tag é `v` + `catalog.version`, valida, escaneia e anexa os zips portable a ela.
 6. A página não precisa de deploy por release (lê o catálogo do Pages). Só quando `site/` mudar:
-   `cd site && vercel deploy --prod` (projeto `agentflix`).
+   `vercel deploy --prod --yes` pela raiz do repositório (projeto `agentflix`, Root Directory `site`; dentro de `site/` ele procura `site/site`).
 
 ## Origem
 

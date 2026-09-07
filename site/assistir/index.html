@@ -421,12 +421,13 @@ const isWatched = (e) => prog(e) >= 0.95;
 const doneKey = (uid, k) => `${uid}-${k}`;
 const isDone = (uid, k) => !!store.get("agentflix-done", {})[doneKey(uid, k)];
 const markDoneStore = (uid, k) => { const d = store.get("agentflix-done", {}); d[doneKey(uid, k)] = Date.now(); store.set("agentflix-done", d); };
-const nextEp = () => { const s = SERIE.seasons[state.season]; if (state.ep + 1 < s.eps.length) return { season: state.season, ep: state.ep + 1 }; if (state.season + 1 < SERIE.seasons.length) return { season: state.season + 1, ep: 0 }; return null; };
+const nextSeasonWithEps = (after) => SERIE.seasons.findIndex((x, i) => i > after && x.eps && x.eps.length);
+const nextEp = () => { const s = SERIE.seasons[state.season]; if (state.ep + 1 < s.eps.length) return { season: state.season, ep: state.ep + 1 }; const ns = nextSeasonWithEps(state.season); return ns >= 0 ? { season: ns, ep: 0 } : null; };
 function resumeEp() {
   let last = null;
   SERIE.seasons.forEach((s, si) => s.eps.forEach((e, ei) => { const p = store.get(progKey(e.uid), null); if (p && (!last || p.at > last.at)) last = { season: si, ep: ei, at: p.at, done: isWatched(e) }; }));
-  if (!last) return { season: 0, ep: 0, fresh: true };
-  if (last.done) { const s = SERIE.seasons[last.season]; if (last.ep + 1 < s.eps.length) return { season: last.season, ep: last.ep + 1, fresh: true }; if (last.season + 1 < SERIE.seasons.length) return { season: last.season + 1, ep: 0, fresh: true }; }
+  if (!last) return { season: Math.max(0, nextSeasonWithEps(-1)), ep: 0, fresh: true };
+  if (last.done) { const s = SERIE.seasons[last.season]; if (last.ep + 1 < s.eps.length) return { season: last.season, ep: last.ep + 1, fresh: true }; const ns = nextSeasonWithEps(last.season); if (ns >= 0) return { season: ns, ep: 0, fresh: true }; }
   return { season: last.season, ep: last.ep, fresh: last.done };
 }
 const chapters = (e) => e.ch || [];
@@ -488,7 +489,7 @@ function attach(uid, startAt, autoplay) {
     hls.on(Hls.Events.ERROR, (ev, data) => { if (data.fatal) showErr("O vídeo não carregou. Recarregue a página; se continuar, avise o Zé com o número do episódio."); });
   } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
     video.src = src; video.addEventListener("loadedmetadata", onReady, { once: true });
-  } else showErr("Este navegador não toca o vídeo. Use Chrome, Safari, Edge ou Firefox atualizados.");
+  } else showErr(window.Hls ? "Este navegador não toca o vídeo. Use Chrome, Safari, Edge ou Firefox atualizados." : "O componente de vídeo não carregou (rede ou bloqueador). Recarregue a página ou tente outra rede.");
 }
 function showErr(msg) { $("spin").hidden = true; $("err").textContent = msg; $("err").hidden = false; }
 function resetOverlays() { $("postplay").hidden = true; $("preplay").hidden = true; closeCheckout(); $("player").classList.remove("pp", "pre"); clearInterval(state.ppTimer); $("toast").hidden = true; }
@@ -502,7 +503,7 @@ function loadEp(season, ep, { from } = {}) {
   $("btn-buy").hidden = buyIdx(e) < 0;
   video.poster = thumb(e.uid, 720);
   const saved = store.get(progKey(e.uid), null); const startAt = from !== undefined ? from : (saved && !isWatched(e) ? saved.t : 0);
-  location.hash = `t${season + 1}e${ep + 1}`;
+  history.replaceState(null, "", `#t${season + 1}e${ep + 1}`); // uma entrada de histórico por visita: Voltar não empilha episódio
   paintMarks(); renderDrawer(); paint(); showUI(true);
   // antes de começar: só informação, quando o episódio pede algo de fora e ainda não foi marcado como feito
   const pk = `${e.uid}`; const needs = e.preplay && e.preplay.req.some((r) => r.need && r.acao !== undefined && !isDone(e.uid, r.acao));
@@ -637,7 +638,7 @@ document.addEventListener("click", (ev) => {
   else if (a === "psel-pick") { state.periodo[el.dataset.key] = +el.dataset.i; state.pselOpen = null; if (state.checkout !== null) openCheckout(state.checkout); }
   else if (a === "ext") goExternal(el.dataset.url, +el.dataset.k);
   else if (a === "checkout-skip") { closeCheckout(); video.play().catch(() => {}); }
-  else if (a === "buy") { const k = buyIdx(curEp()); if (k >= 0) { if (state.checkout !== null) { closeCheckout(); video.play().catch(() => {}); } else openCheckout(k); } }
+  else if (a === "buy") { if (!$("preplay").hidden) return; const k = buyIdx(curEp()); if (k >= 0) { if (state.checkout !== null) { closeCheckout(); video.play().catch(() => {}); } else openCheckout(k); } }
   else if (a === "mark") { ev.stopPropagation(); const k = +el.dataset.k; const c = chapters(curEp())[k]; video.currentTime = c.t; state.lastChapter = k; paint(); if (c.acao && c.acao.tipo === "link") openCheckout(k); }
   else if (a === "close-player") { clearInterval(state.ppTimer); show("title"); }
 });
@@ -651,7 +652,7 @@ document.addEventListener("keydown", (ev) => {
   if (ev.key === " ") { ev.preventDefault(); if (state.checkout !== null || !$("preplay").hidden) return; toggle(); }
   else if (ev.key === "ArrowLeft") seek(-10); else if (ev.key === "ArrowRight") seek(10);
   else if (k === "e") openDrawer(); else if (k === "f") toggleFs(); else if (k === "m") video.muted = !video.muted;
-  else if (k === "p") { const bk = buyIdx(curEp()); if (bk >= 0) { if (state.checkout !== null) { closeCheckout(); video.play().catch(() => {}); } else openCheckout(bk); } }
+  else if (k === "p") { if (!$("preplay").hidden) return; const bk = buyIdx(curEp()); if (bk >= 0) { if (state.checkout !== null) { closeCheckout(); video.play().catch(() => {}); } else openCheckout(bk); } }
   else if (ev.key === "Escape") { if (state.drawer) openDrawer(false); else if (state.pop) openPop(false); else { clearInterval(state.ppTimer); show("title"); } }
 });
 $("player").addEventListener("mousemove", bumpUI);

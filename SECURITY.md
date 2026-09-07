@@ -11,4 +11,6 @@
 
 Não publique credenciais, dados de alunos, dados de clientes, contatos, logs reais, arquivos `.env`, tokens OAuth ou chaves privadas.
 
-Reporte uma falha de segurança de forma privada ao mantenedor do repositório. Não abra issue pública com material sensível.
+Reporte uma falha de segurança de forma privada pela aba **Security** deste repositório (*Report a vulnerability*).
+Vale para as skills, o site agentsflix.ai, as funções em `/api` e o player em `/assistir`. Não abra issue pública
+com material sensível.
