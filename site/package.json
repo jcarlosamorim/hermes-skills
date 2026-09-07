@@ -8,6 +8,6 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.49.0",
-    "stripe": "^18.0.0"
+    "stripe": "^22.6.1"
   }
 }
