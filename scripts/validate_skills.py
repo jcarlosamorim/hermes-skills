@@ -35,9 +35,16 @@ for path in files:
         if not re.search(rf"^{field}:\s*.+$", frontmatter, re.MULTILINE):
             errors.append(f"{path}: missing {field}")
     description = re.search(r"^description:\s*(.+)$", frontmatter, re.MULTILINE)
-    if description and len(description.group(1).strip().strip('"')) > DESC_MAX:
+    # mede a description como o agente a lê (YAML), não a linha escapada: cada aspa interna contaria 2 chars
+    desc_len = None
+    if description:
+        try:
+            desc_len = len(str((yaml.safe_load(frontmatter) or {}).get("description", "")).strip())
+        except yaml.YAMLError:
+            desc_len = len(description.group(1).strip().strip('"'))
+    if desc_len is not None and desc_len > DESC_MAX:
         errors.append(f"{path}: description must be {DESC_MAX} characters or fewer")
-    if description and len(description.group(1).strip().strip('"')) < 40:
+    if desc_len is not None and desc_len < 40:
         errors.append(f"{path}: description too short to be found by skills search (min 40 chars)")
     if not re.search(r"^## When to use", body, re.MULTILINE | re.IGNORECASE) or "## Verification" not in body:
         errors.append(f"{path}: requires When to Use and Verification sections")

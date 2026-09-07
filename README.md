@@ -15,7 +15,7 @@ Cada skill existe em três formas, geradas da mesma fonte. Na página, cada card
 
 | agente | como | observação |
 |---|---|---|
-| **Hermes** | `hermes skills install https://raw.githubusercontent.com/AgentsFlix/skills/v0.4.0/skills/<slug>/SKILL.md` ou `hermes skills tap add AgentsFlix/skills` | tag = aula reproduzível; tap = descoberta e `update` |
+| **Hermes** | `hermes skills install https://raw.githubusercontent.com/AgentsFlix/skills/<tag>/skills/<slug>/SKILL.md` (a tag atual é `version` em `catalog.json`) ou `hermes skills tap add AgentsFlix/skills` | tag = aula reproduzível; tap = descoberta e `update` |
 | **Claude.ai** (site/app, Free a Enterprise) | baixe `<slug>.zip` na [release](https://github.com/AgentsFlix/skills/releases) e envie em *Customize › Skills › + › Upload* | exige "Code execution and file creation" ligado |
 | **Claude Code** | `npx skills add https://agentsflix.github.io/skills --skill <slug> -a claude-code -g` | exige Node |
 | **ChatGPT com Skills** (Business, Enterprise, Edu; Plus/Pro em Work) | baixe o zip e envie em *Plugins › Skills › Create › Upload*; invoque com `@<slug>` | o ChatGPT escaneia o arquivo antes de liberar |
@@ -94,7 +94,7 @@ injetada, variável de ambiente). O procedimento é o mesmo.
 5. Merge em `main` (o tap passa a ver) e **tag** (`vX.Y.Z`): os comandos da página apontam para a tag, e o
    workflow de release confere que a tag é `v` + `catalog.version`, valida, escaneia e anexa os zips portable a ela.
 6. A página não precisa de deploy por release (lê o catálogo do Pages). Só quando `site/` mudar:
-   `cd site && vercel deploy --prod` (projeto `agentflix`).
+   `vercel deploy --prod --yes` pela raiz do repositório (projeto `agentflix`, Root Directory `site`; dentro de `site/` ele procura `site/site`).
 
 ## Origem
 
