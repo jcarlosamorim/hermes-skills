@@ -9,3 +9,7 @@ updates:
     schedule:
       interval: weekly
     open-pull-requests-limit: 3
+    ignore:
+      # o SDK do Stripe só sobe de versão maior de propósito, com apiVersion e compra de teste (story SA-7.1)
+      - dependency-name: stripe
+        update-types: ["version-update:semver-major"]
