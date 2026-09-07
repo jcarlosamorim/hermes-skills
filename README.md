@@ -64,8 +64,8 @@ docs/                           host técnico (GitHub Pages): catálogo, docs/pr
                                 `npx skills add <url>` e `hermes skills search <url>` leem);
                                 docs/index.html só redireciona para a página
 site/                           a página AgentFlix (Vercel, agentsflix.ai): um HTML sem framework que
-                                lê catalog.json; site/vercel.json reescreve /catalog.json, /.well-known, /prompt
-                                e /covers para o Pages, então o domínio da marca também serve o well-known
+                                lê catalog.json; site/vercel.json reescreve /catalog.json, /.well-known e /prompt
+                                para o Pages (o domínio da marca também serve o well-known) e /covers para o Cloudflare Images
 dist/portable/                  gerado, fora do git: pasta e zip estritos por skill; a release da tag recebe os zips
 scripts/hub_common.py           fonte única: tag/commit do Hermes, URLs, limite da description, texto de ativação (o gerador importa daqui)
 scripts/build_docs.py           gera portable, zips (reprodutíveis), well-known, coláveis; grava prompt_truncated no catálogo
@@ -73,8 +73,9 @@ tests/                          unittest das funções puras (cap200, frontmatte
 scripts/validate_skills.py      forma do SKILL.md (fonte) e do portable (chaves do spec, description ≤200)
 scripts/scan_skills.py          scanner do Hermes contra cada skill (skills_guard.py pinado por commit + sha256)
 .github/workflows/release.yml   em push de tag v*: confere tag = catalog.version, valida, escaneia e anexa os zips
-docs/covers/                    capas <slug>-desktop.jpg (hero/modal), -wide.jpg (fileiras no desktop), -mobile.jpg (hero no celular), -card.jpg (fileiras no celular);
-                                importadas por capas/importar_capas.py do repositório privado AgentsFlix/agentsflix
+(capas)                         vivem no Cloudflare Images desde 06/09/2026, não no git: <slug>-desktop.jpg (hero/modal), -wide.jpg (fileiras no
+                                desktop), -mobile.jpg (hero no celular), -card.jpg (fileiras no celular), em imagedelivery.net/<hash>/covers/<arquivo>/capa;
+                                importadas e subidas por capas/importar_capas.py e capas/subir_capas.py do repositório privado AgentsFlix/agentsflix
 site/audio/*.v2.mp3             os cinco cues da abertura; /audio tem cache imutável, então som novo = nome novo
 ```
 
